@@ -2,7 +2,7 @@ import { Box, Stack } from "@mui/material"
 
 export const HomePage = () => {
     return (
-        <Stack sx={{ backgroundColor: '#ffffff' }}>
+        <Stack sx={{ backgroundColor: 'primary.dark' }}>
             <Box component="section" id="selection">
 
             </Box>
