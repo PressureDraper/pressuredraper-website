@@ -1,5 +1,7 @@
 export const SelectView = () => {
     return (
-        <div>SelectView</div>
+        <div>
+            SelectView
+        </div>
     )
 }

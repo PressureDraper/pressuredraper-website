@@ -1,28 +1,23 @@
 import { AppBar, Box, Button, Container, Divider, IconButton, Menu, MenuItem, Toolbar, Typography, useMediaQuery } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink, NavigateFunction, useNavigate } from 'react-router-dom';
 import CodeOffIcon from '@mui/icons-material/CodeOff';
+import { UIContext } from '../../context/UIContext';
+import { PropsUIContext } from '../../interfaces/IUIContext';
 
 const navItem = [
-    { name: 'Selection', pathTo: 'selection', width: '79%' },
-    { name: 'About', pathTo: 'about', width: '70%' },
-    { name: 'Career', pathTo: 'career', width: '72%' },
-    { name: 'Contact', pathTo: 'contact', width: '75%' },
+    { name: 'Selection', width: '79%' },
+    { name: 'About', width: '70%' },
+    { name: 'Career', width: '72%' },
+    { name: 'Contact', width: '75%' },
 ]
 
 export const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-    /* const { activeSection } = useSelector((state: ReduxJornadasSlidesSelector) => state.section); */ //replace for context API
-    const [activeItem, setActiveItem] = useState<string>('Inicio');
+    const { activeSection, setActiveSection } = useContext<PropsUIContext>(UIContext);
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const navigate: NavigateFunction = useNavigate();
-
-    /* useEffect(() => {
-
-        setActiveItem(activeSection);
-
-    }, [activeSection]) */
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
@@ -34,12 +29,8 @@ export const Navbar = () => {
 
     const goToSection = (pathTo: string) => {
         setAnchorElNav(null);
-
-        if (pathTo === 'register') {
-            navigate(`/register`, { replace: true });
-        } else {
-            navigate(`/?section=${pathTo}`, { replace: true });
-        }
+        setActiveSection(pathTo);
+        navigate(`/?section=${pathTo}`, { replace: true });
     };
 
     return (
@@ -59,6 +50,7 @@ export const Navbar = () => {
                                 sx={{
                                     mr: 1,
                                     ml: 1.5,
+                                    fontSize: '25px',
                                     fontFamily: 'sans-serif',
                                     fontWeight: 700,
                                     letterSpacing: '.2rem',
@@ -73,10 +65,10 @@ export const Navbar = () => {
                     <Box sx={{ display: responsive ? 'none' : 'flex' }}>
                         {navItem.map((item) => (
                             <Button
-                                onClick={() => goToSection(item.pathTo)}
+                                onClick={() => goToSection(item.name)}
                                 key={item.name}
                                 sx={{
-                                    color: activeItem === item.name ? 'text.secondary' : 'primary.200',
+                                    color: activeSection === item.name ? 'primary.light' : 'primary.200',
                                     fontWeight: 600,
                                     textTransform: 'capitalize',
                                     fontSize: '16px',
@@ -86,7 +78,7 @@ export const Navbar = () => {
                                         position: 'absolute',
                                         bottom: 6,
                                         left: 10,
-                                        width: '0px',
+                                        width: activeSection === item.name ? item.width : '0px',
                                         height: '2px',
                                         backgroundColor: 'primary.light', // line color
                                         transition: 'all 0.5s ease', // expand animation
@@ -96,14 +88,13 @@ export const Navbar = () => {
                                     },
                                     '&:hover::after': {
                                         width: item.width // expands to 100% on hover
-                                    },
+                                    }
                                 }}
                             >
                                 {item.name}
                             </Button>
                         ))}
                     </Box>
-
                     {/* responsive */}
                     <Box sx={{ flexGrow: 1, display: responsive ? 'flex' : 'none' }}>
                         <IconButton
@@ -133,7 +124,7 @@ export const Navbar = () => {
                             sx={{ display: responsive ? 'block' : 'none' }}
                         >
                             {navItem.map((page) => (
-                                <MenuItem key={page.name} onClick={() => goToSection(page.pathTo)}>
+                                <MenuItem key={page.name} onClick={() => goToSection(page.name)}>
                                     <Typography sx={{ textAlign: 'center' }}>{page.name}</Typography>
                                 </MenuItem>
                             ))}
