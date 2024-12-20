@@ -58,7 +58,7 @@ export const Navbar = () => {
                                     textDecoration: 'none',
                                 }}
                             >
-                                Fullstack Dev
+                                Title
                             </Typography>
                         </NavLink>
                     </Box>
