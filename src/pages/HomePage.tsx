@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 export const navBarHeigth: number = 64;
-export const navBarHeigthResponsive: number = 54;
+export const navBarHeigthResponsive: number = 48;
 
 export const HomePage = () => {
     const location = useLocation();
