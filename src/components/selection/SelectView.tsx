@@ -1,13 +1,15 @@
 import { Avatar, Box, useMediaQuery } from "@mui/material";
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
 import 'animate.css';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
+import { UIContext } from "../../context/UIContext";
 
 export const SelectView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const [gradient, setGradient] = useState('linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)');
-    const [hover, setHover] = useState<boolean>(true);
+    const [hover, setHover] = useState<boolean>(false);
+    const { selectedUI, setSelectedUI } = useContext(UIContext);
 
     const handleMouseEnter = () => {
         setHover(true);
@@ -17,6 +19,16 @@ export const SelectView = () => {
     const handleMouseLeave = () => {
         setHover(false);
         setGradient('linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)')
+    }
+
+    const handleSelectUI = () => {
+        console.log('hello');
+        
+        if (selectedUI === 'Sahib') {
+            setSelectedUI('Hideline');
+        } else {
+            setSelectedUI('Sahib');
+        }
     }
 
     return (
@@ -53,7 +65,7 @@ export const SelectView = () => {
                     background: gradient,
                     height: 'auto',
                     width: 'auto',
-                    padding: hover ? 14 : 12,
+                    padding: 12,
                     borderRadius: '50%',
                     cursor: 'pointer'
                 }}
@@ -67,10 +79,11 @@ export const SelectView = () => {
                 }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                onClick={() => handleSelectUI}
             >
                 <Avatar
                     alt="Me"
-                    src="/sahib.png"
+                    src={selectedUI === 'Sahib' ? "/sahib.png" : '/logo.jpg'}
                     sx={{
                         zIndex: 1,
                         mt: 'auto',
