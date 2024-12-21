@@ -39,7 +39,7 @@ export const Navbar = () => {
                 <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Box sx={{ display: responsive ? 'none' : 'flex', flexDirection: 'row', alignItems: 'center' }}>
                         <NavLink to={'/'} style={{ marginBottom: -7 }}>
-                            <CodeOffIcon sx={{ color: 'primary.400', fontSize: '32px' }} />
+                            <CodeOffIcon sx={{ color: 'primary.500', fontSize: '35px' }} />
                         </NavLink>
                         <Divider orientation="vertical" variant='middle' flexItem sx={{ ml: 1.5, backgroundColor: 'primary.main' }} />
                         <NavLink to={'/'} style={{ textDecoration: 'none' }}>
@@ -50,15 +50,17 @@ export const Navbar = () => {
                                 sx={{
                                     mr: 1,
                                     ml: 1.5,
-                                    fontSize: '25px',
-                                    fontFamily: 'sans-serif',
-                                    fontWeight: 700,
-                                    letterSpacing: '.2rem',
+                                    fontSize: '28px',
+                                    fontFamily: "Ubuntu, serif",
+                                    fontWeight: 'bold',
+                                    fontOpticalSizing: 'auto',
+                                    fontStyle: 'normal',
+                                    letterSpacing: '.4rem',
                                     color: 'primary.dark',
                                     textDecoration: 'none',
                                 }}
                             >
-                                Title
+                                Fullstack Dev
                             </Typography>
                         </NavLink>
                     </Box>
@@ -70,6 +72,8 @@ export const Navbar = () => {
                                 sx={{
                                     color: activeSection === item.name ? 'primary.light' : 'primary.200',
                                     fontWeight: 600,
+                                    letterSpacing: '.2rem',
+                                    fontFamily: "Ubuntu, serif",
                                     textTransform: 'capitalize',
                                     fontSize: '16px',
                                     transition: 'all 0.5s ease',
