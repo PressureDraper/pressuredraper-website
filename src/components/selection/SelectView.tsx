@@ -79,8 +79,9 @@ export const SelectView = () => {
                         color="primary.light"
                         fontFamily={'Ubuntu, serif'}
                         fontWeight={'bold'}
-                        fontSize={'78px'}
+                        fontSize={responsive ? '60px' :'80px'}
                         fontStyle={'italic'}
+                        letterSpacing={'.3rem'}
                     >
                         Who is...
                     </Typography>
@@ -120,21 +121,37 @@ export const SelectView = () => {
                                 mb: 'auto',
                                 width: 'auto',
                                 height: '21.5dvh',
-                                transition: 'all 1s ease',
-                                filter: 'grayscale(15%)',
-                                ':hover': {
-                                    filter: 'grayscale(0%)',
-                                }
+                                transition: 'all 1s ease'
                             }}
                         />
                     </motion.div>
                 </Grid2>
                 <Grid2 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', height: '30%' }}>
                     <Grid2 sx={{ zIndex: 11, display: 'flex', justifyContent: 'center' }}>
-                        <Typography color="primary.200">Omar Sahib Mirón Hernández</Typography>
+                        <Typography
+                            color="primary.200"
+                            fontFamily={'Ubuntu, serif'}
+                            fontWeight={'bold'}
+                            fontSize={responsive ? '25px' : '30px'}
+                            fontStyle={'normal'}
+                            letterSpacing={'.2rem'}
+                            textAlign={'center'}
+                        >
+                            Omar Sahib Mirón Hernández
+                        </Typography>
                     </Grid2>
-                    <Grid2 sx={{ zIndex: 11, color: 'primary.300' }}>
-                        <Typography color="primary.300">«Perpetual Optism is A Forceful Multiplier»</Typography>
+                    <Grid2 sx={{ zIndex: 11, display: 'flex', justifyContent: 'center' }}>
+                        <Typography
+                            color="primary.300"
+                            fontFamily={'Ubuntu, serif'}
+                            fontWeight={'bold'}
+                            fontSize={ responsive ? '13px' : '18px'}
+                            fontStyle={'normal'}
+                            letterSpacing={'.1rem'}
+                            textAlign={'center'}
+                        >
+                            «Perpetual Optism is A Forceful Multiplier»
+                        </Typography>
                     </Grid2>
                 </Grid2>
             </Grid2>
