@@ -1,4 +1,4 @@
-import { Avatar, Box, useMediaQuery } from "@mui/material";
+import { Avatar, Box, Grid2, Typography, useMediaQuery } from "@mui/material";
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
 import 'animate.css';
 import { useContext, useState } from "react";
@@ -73,49 +73,71 @@ export const SelectView = () => {
                     objectFit: 'cover'
                 }}
             />
-            <motion.div
-            className="animate__animated animate__fadeInUp"
-                style={{
-                    zIndex: 10,
-                    marginTop: 'auto',
-                    marginBottom: 'auto',
-                    background: gradient,
-                    height: 'auto',
-                    width: 'auto',
-                    padding: 12,
-                    borderRadius: '50%',
-                    cursor: 'pointer'
-                }}
-                animate={{
-                    background: gradient,
-                    padding: hover ? 14 : 12
-                }}
-                transition={{
-                    background: { duration: 0.5, ease: 'easeOut' }, // 0.5sec transition
-                    padding: { duration: 0.3, ease: 'easeOut' },
-                }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleSelectUI}
-            >
-                <Avatar
-                    alt="Me"
-                    src={selectedUI === 'Sahib' ? "/sahib.png" : '/logo.jpg'}
-                    sx={{
-                        zIndex: 11,
-                        mt: 'auto',
-                        mb: 'auto',
-                        width: 'auto',
-                        height: '21.5dvh',
-                        position: 'relative',
-                        transition: 'all 1s ease',
-                        filter: 'grayscale(15%)',
-                        ':hover': {
-                            filter: 'grayscale(0%)',
-                        }
-                    }}
-                />
-            </motion.div>
+            <Grid2 container columns={12} direction={'column'}>
+                <Grid2 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: 'auto', height: '30%' }}>
+                    <Typography
+                        color="primary.light"
+                        fontFamily={'Ubuntu, serif'}
+                        fontWeight={'bold'}
+                        fontSize={'78px'}
+                        fontStyle={'italic'}
+                    >
+                        Who is...
+                    </Typography>
+                </Grid2>
+                <Grid2 sx={{ display: 'flex', justifyContent: 'center', height: '40%' }}>
+                    <motion.div
+                        className="animate__animated animate__fadeInUp"
+                        style={{
+                            zIndex: 10,
+                            marginTop: 'auto',
+                            marginBottom: 'auto',
+                            background: gradient,
+                            height: 'auto',
+                            width: 'auto',
+                            padding: 12,
+                            borderRadius: '50%',
+                            cursor: 'pointer'
+                        }}
+                        animate={{
+                            background: gradient,
+                            padding: hover ? 14 : 12
+                        }}
+                        transition={{
+                            background: { duration: 0.5, ease: 'easeOut' }, // 0.5sec transition
+                            padding: { duration: 0.3, ease: 'easeOut' },
+                        }}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={() => handleSelectUI}
+                    >
+                        <Avatar
+                            alt="Me"
+                            src={selectedUI === 'Sahib' ? "/sahib.png" : '/logo.jpg'}
+                            sx={{
+                                zIndex: 11,
+                                mt: 'auto',
+                                mb: 'auto',
+                                width: 'auto',
+                                height: '21.5dvh',
+                                transition: 'all 1s ease',
+                                filter: 'grayscale(15%)',
+                                ':hover': {
+                                    filter: 'grayscale(0%)',
+                                }
+                            }}
+                        />
+                    </motion.div>
+                </Grid2>
+                <Grid2 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', height: '30%' }}>
+                    <Grid2 sx={{ zIndex: 11, display: 'flex', justifyContent: 'center' }}>
+                        <Typography color="primary.200">Omar Sahib Mirón Hernández</Typography>
+                    </Grid2>
+                    <Grid2 sx={{ zIndex: 11, color: 'primary.300' }}>
+                        <Typography color="primary.300">«Perpetual Optism is A Forceful Multiplier»</Typography>
+                    </Grid2>
+                </Grid2>
+            </Grid2>
         </Box>
     )
 }
