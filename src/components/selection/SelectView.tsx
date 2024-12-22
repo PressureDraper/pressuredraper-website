@@ -23,7 +23,7 @@ export const SelectView = () => {
 
     const handleSelectUI = () => {
         console.log('hello');
-        
+
         if (selectedUI === 'Sahib') {
             setSelectedUI('Hideline');
         } else {
@@ -40,26 +40,43 @@ export const SelectView = () => {
                 p: 0,
                 height: '70dvh',
                 width: '100%',
-                backgroundImage: 'url("/banner.jpeg")',
+                /* backgroundImage: 'url("/banner.jpeg")',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'center', */
+                objectFit: 'cover',
                 position: 'relative',
                 display: 'flex',
                 justifyContent: 'center',
+                overflow: 'hidden',
                 '&::after': {
                     content: '""',
                     position: 'absolute',
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    height: '60%',
+                    height: '100%',
                     background: 'linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0))',
                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
                 }
             }}
         >
-            <motion.div
+            <video
+                src="/background2.mp4"
+                autoPlay
+                loop
+                muted
                 style={{
+                    zIndex: -1,
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                }}
+            />
+            <motion.div
+            className="animate__animated animate__fadeInUp"
+                style={{
+                    zIndex: 10,
                     marginTop: 'auto',
                     marginBottom: 'auto',
                     background: gradient,
@@ -74,8 +91,8 @@ export const SelectView = () => {
                     padding: hover ? 14 : 12
                 }}
                 transition={{
-                    background: { duration: 0.5, ease: 'easeOut' }, // Transición suave de 2 segundos
-                    padding: { duration: 0.3, ease: 'easeOut' }, // Transición suave de 2 segundos
+                    background: { duration: 0.5, ease: 'easeOut' }, // 0.5sec transition
+                    padding: { duration: 0.3, ease: 'easeOut' },
                 }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -85,7 +102,7 @@ export const SelectView = () => {
                     alt="Me"
                     src={selectedUI === 'Sahib' ? "/sahib.png" : '/logo.jpg'}
                     sx={{
-                        zIndex: 1,
+                        zIndex: 11,
                         mt: 'auto',
                         mb: 'auto',
                         width: 'auto',
