@@ -132,7 +132,7 @@ export const SelectView = () => {
                             color="primary.200"
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
-                            fontSize={responsive ? '25px' : '30px'}
+                            fontSize={responsive ? '25px' : '35px'}
                             fontStyle={'normal'}
                             letterSpacing={'.2rem'}
                             textAlign={'center'}
@@ -145,7 +145,7 @@ export const SelectView = () => {
                             color="primary.300"
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
-                            fontSize={ responsive ? '13px' : '18px'}
+                            fontSize={ responsive ? '13px' : '22px'}
                             fontStyle={'normal'}
                             letterSpacing={'.1rem'}
                             textAlign={'center'}
