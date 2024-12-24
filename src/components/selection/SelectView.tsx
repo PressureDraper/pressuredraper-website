@@ -12,7 +12,8 @@ export const SelectView = () => {
     const [viewData, setViewData] = useState({
         gradient: 'linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)',
         imageUser: '/sahib.png',
-        imageAnimation: ''
+        imageAnimation: '',
+        videoSource: '2'
     });
 
     const handleMouseEnter = () => {
@@ -37,14 +38,16 @@ export const SelectView = () => {
             setViewData({
                 imageUser: '/logo.jpg',
                 gradient: 'linear-gradient(135deg, #8367b6, #d4c9e9, #f9f8fc)',
-                imageAnimation: 'animate__animated animate__fadeInDown'
+                imageAnimation: 'animate__animated animate__fadeInDown',
+                videoSource: '1'
             });
         } else {
             setSelectedUI('Sahib');
             setViewData({
                 imageUser: '/sahib.png',
                 gradient: 'linear-gradient(135deg, #7d6751, #b6a98e, #f5f4f1)',
-                imageAnimation: 'animate__animated animate__fadeInUp'
+                imageAnimation: 'animate__animated animate__fadeInUp',
+                videoSource: '2'
             });
         }
     }
@@ -76,6 +79,7 @@ export const SelectView = () => {
             }}
         >
             <video
+                className="animate__animated animate__fadeIn"
                 src="/background2.mp4"
                 autoPlay
                 loop
@@ -85,7 +89,23 @@ export const SelectView = () => {
                     position: 'absolute',
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover'
+                    objectFit: 'cover',
+                    visibility: viewData.videoSource === '2' ? 'visible' : 'hidden'
+                }}
+            />
+            <video
+                className="animate__animated animate__fadeIn"
+                src="/background1.mp4"
+                autoPlay
+                loop
+                muted
+                style={{
+                    zIndex: -1,
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    visibility: viewData.videoSource === '1' ? 'visible' : 'hidden'
                 }}
             />
             <Grid2 container columns={12} direction={'column'}>
@@ -97,6 +117,7 @@ export const SelectView = () => {
                         fontSize={responsive ? '60px' : '80px'}
                         fontStyle={'italic'}
                         letterSpacing={'.3rem'}
+                        sx={{ transition: 'all 0.5s ease' }}
                     >
                         Who is...
                     </Typography>
@@ -155,26 +176,29 @@ export const SelectView = () => {
                 <Grid2 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', height: '30%' }}>
                     <Grid2 sx={{ zIndex: 11, display: 'flex', justifyContent: 'center' }}>
                         <Typography
-                            color="primary.200"
+                            color={selectedUI === 'Sahib' ? "primary.200" : "secondary.200"}
+                            className="animate__animated animate__fadeIn"
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
                             fontSize={responsive ? '25px' : '35px'}
                             fontStyle={'normal'}
                             letterSpacing={'.2rem'}
                             textAlign={'center'}
+                            sx={{ transition: 'all 0.5s ease' }}
                         >
-                            Omar Sahib Mirón Hernández
+                            {selectedUI === 'Sahib' ? "Omar Sahib Mirón Hernández" : "Hideline"}
                         </Typography>
                     </Grid2>
                     <Grid2 sx={{ zIndex: 11, display: 'flex', justifyContent: 'center' }}>
                         <Typography
-                            color="primary.300"
+                            color={selectedUI === 'Sahib' ? "primary.300" : "secondary.300"}
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
                             fontSize={responsive ? '13px' : '22px'}
                             fontStyle={'normal'}
                             letterSpacing={'.1rem'}
                             textAlign={'center'}
+                            sx={{ transition: 'all 0.5s ease' }}
                         >
                             «Perpetual Optism is A Forceful Multiplier»
                         </Typography>
