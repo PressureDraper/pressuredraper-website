@@ -14,7 +14,7 @@ const navItem = [
 ]
 
 export const Navbar = () => {
-    const { selectedUI, setSelectedUI } = useContext(UIContext);
+    const { selectedUI } = useContext(UIContext);
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const { activeSection, setActiveSection } = useContext<PropsUIContext>(UIContext);
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
