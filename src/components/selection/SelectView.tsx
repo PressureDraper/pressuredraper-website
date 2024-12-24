@@ -7,27 +7,45 @@ import { UIContext } from "../../context/UIContext";
 
 export const SelectView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
-    const [gradient, setGradient] = useState('linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)');
     const [hover, setHover] = useState<boolean>(false);
     const { selectedUI, setSelectedUI } = useContext(UIContext);
+    const [viewData, setViewData] = useState({
+        gradient: 'linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)',
+        imageUser: '/sahib.png',
+        imageAnimation: ''
+    });
 
     const handleMouseEnter = () => {
         setHover(true);
-        setGradient('linear-gradient(135deg, #7d6751, #b6a98e, #f5f4f1)');
+        setViewData(selectedUI === 'Sahib'
+            ? { ...viewData, gradient: 'linear-gradient(135deg, #7d6751, #b6a98e, #f5f4f1)' }
+            : { ...viewData, gradient: 'linear-gradient(135deg, #8367b6, #d4c9e9, #f9f8fc)' }
+        );
     }
 
     const handleMouseLeave = () => {
         setHover(false);
-        setGradient('linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)')
+        setViewData(selectedUI === 'Sahib'
+            ? { ...viewData, gradient: 'linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)' }
+            : { ...viewData, gradient: 'linear-gradient(135deg, #f9f8fc, #d4c9e9, #8367b6)' }
+        );
     }
 
     const handleSelectUI = () => {
-        console.log('hello');
-
         if (selectedUI === 'Sahib') {
             setSelectedUI('Hideline');
+            setViewData({
+                imageUser: '/logo.jpg',
+                gradient: 'linear-gradient(135deg, #8367b6, #d4c9e9, #f9f8fc)',
+                imageAnimation: 'animate__animated animate__fadeInDown'
+            });
         } else {
             setSelectedUI('Sahib');
+            setViewData({
+                imageUser: '/sahib.png',
+                gradient: 'linear-gradient(135deg, #7d6751, #b6a98e, #f5f4f1)',
+                imageAnimation: 'animate__animated animate__fadeInUp'
+            });
         }
     }
 
@@ -40,9 +58,6 @@ export const SelectView = () => {
                 p: 0,
                 height: '70dvh',
                 width: '100%',
-                /* backgroundImage: 'url("/banner.jpeg")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center', */
                 objectFit: 'cover',
                 position: 'relative',
                 display: 'flex',
@@ -76,10 +91,10 @@ export const SelectView = () => {
             <Grid2 container columns={12} direction={'column'}>
                 <Grid2 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: 'auto', height: '30%' }}>
                     <Typography
-                        color="primary.light"
+                        color={selectedUI === 'Sahib' ? "primary.light" : "secondary.light"}
                         fontFamily={'Ubuntu, serif'}
                         fontWeight={'bold'}
-                        fontSize={responsive ? '60px' :'80px'}
+                        fontSize={responsive ? '60px' : '80px'}
                         fontStyle={'italic'}
                         letterSpacing={'.3rem'}
                     >
@@ -93,7 +108,7 @@ export const SelectView = () => {
                             zIndex: 10,
                             marginTop: 'auto',
                             marginBottom: 'auto',
-                            background: gradient,
+                            background: viewData.gradient,
                             height: 'auto',
                             width: 'auto',
                             padding: 12,
@@ -101,7 +116,7 @@ export const SelectView = () => {
                             cursor: 'pointer'
                         }}
                         animate={{
-                            background: gradient,
+                            background: viewData.gradient,
                             padding: hover ? 14 : 12
                         }}
                         transition={{
@@ -110,20 +125,31 @@ export const SelectView = () => {
                         }}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
-                        onClick={() => handleSelectUI}
+                        onClick={handleSelectUI}
                     >
-                        <Avatar
-                            alt="Me"
-                            src={selectedUI === 'Sahib' ? "/sahib.png" : '/logo.jpg'}
-                            sx={{
-                                zIndex: 11,
-                                mt: 'auto',
-                                mb: 'auto',
-                                width: 'auto',
-                                height: '21.5dvh',
-                                transition: 'all 1s ease'
+                        <motion.div
+                            className={viewData.imageAnimation}
+                            style={{
+                                borderRadius: '50%'
                             }}
-                        />
+                            animate={{ opacity: 1 }}
+                            transition={{
+                                default: { duration: 1 }
+                            }}
+                        >
+                            <Avatar
+                                alt="Me"
+                                src={viewData.imageUser}
+                                sx={{
+                                    zIndex: 11,
+                                    mt: 'auto',
+                                    mb: 'auto',
+                                    width: 'auto',
+                                    height: '21.5dvh',
+                                    transition: 'all 1s ease'
+                                }}
+                            />
+                        </motion.div>
                     </motion.div>
                 </Grid2>
                 <Grid2 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', height: '30%' }}>
@@ -145,7 +171,7 @@ export const SelectView = () => {
                             color="primary.300"
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
-                            fontSize={ responsive ? '13px' : '22px'}
+                            fontSize={responsive ? '13px' : '22px'}
                             fontStyle={'normal'}
                             letterSpacing={'.1rem'}
                             textAlign={'center'}

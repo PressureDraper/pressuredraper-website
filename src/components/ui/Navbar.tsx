@@ -14,6 +14,7 @@ const navItem = [
 ]
 
 export const Navbar = () => {
+    const { selectedUI, setSelectedUI } = useContext(UIContext);
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const { activeSection, setActiveSection } = useContext<PropsUIContext>(UIContext);
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
@@ -34,7 +35,7 @@ export const Navbar = () => {
     };
 
     return (
-        <AppBar position="fixed" sx={{ background: 'linear-gradient(135deg, #f5f4f1, #927d60, #2b201d)' }}>
+        <AppBar position="fixed" sx={{ background: selectedUI === 'Sahib' ? 'linear-gradient(135deg, #f5f4f1, #927d60, #2b201d)' : 'linear-gradient(135deg, #f9f8fc, #9c83c9, #322249)', transition: 'all 1s ease' }}>
             <Container maxWidth={'xl'}>
                 <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Box sx={{ display: responsive ? 'none' : 'flex', flexDirection: 'row', alignItems: 'center' }}>
@@ -58,9 +59,14 @@ export const Navbar = () => {
                                     letterSpacing: '.4rem',
                                     color: 'primary.dark',
                                     textDecoration: 'none',
+                                    transition: 'all 0.3s ease'
                                 }}
                             >
-                                Fullstack Dev
+                                {
+                                    selectedUI === 'Sahib'
+                                    ? 'Fullstack Dev'
+                                    : 'Music Producer'
+                                }
                             </Typography>
                         </NavLink>
                     </Box>
