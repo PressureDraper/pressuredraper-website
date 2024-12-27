@@ -1,11 +1,12 @@
 import { AppBar, Box, Button, Container, Divider, IconButton, Menu, MenuItem, Toolbar, Typography, useMediaQuery } from '@mui/material'
 import React, { useContext, useState } from 'react'
-import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink, NavigateFunction, useNavigate } from 'react-router-dom';
 import CodeOffIcon from '@mui/icons-material/CodeOff';
 import { UIContext } from '../../context/UIContext';
 import { PropsUIContext } from '../../interfaces/IUIContext';
 import { motion } from 'framer-motion';
+import MenuIcon from '@mui/icons-material/Menu';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
 const navItem = [
     { name: 'Selection', width: '79%' },
@@ -52,7 +53,11 @@ export const Navbar = () => {
                     <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
                         <Box sx={{ display: responsive ? 'none' : 'flex', flexDirection: 'row', alignItems: 'center' }}>
                             <NavLink to={'/'} style={{ marginBottom: -7 }}>
-                                <CodeOffIcon sx={{ color: 'primary.500', fontSize: '35px' }} />
+                                {
+                                    selectedUI === 'Sahib'
+                                        ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '35px' }} className="animate__animated animate__swing" />
+                                        : <MusicNoteIcon sx={{ color: 'secondary.900', fontSize: '35px' }} className="animate__animated animate__swing" />
+                                }
                             </NavLink>
                             <Divider orientation="vertical" variant='middle' flexItem sx={{ ml: 1.5, backgroundColor: 'primary.main' }} />
                             <NavLink to={'/'} style={{ textDecoration: 'none' }}>
@@ -69,7 +74,7 @@ export const Navbar = () => {
                                         fontOpticalSizing: 'auto',
                                         fontStyle: 'normal',
                                         letterSpacing: '.4rem',
-                                        color: 'primary.dark',
+                                        color: selectedUI === 'Sahib' ? 'primary.dark' : 'secondary.dark',
                                         textDecoration: 'none',
                                         transition: 'all 0.3s ease'
                                     }}
@@ -88,7 +93,9 @@ export const Navbar = () => {
                                     onClick={() => goToSection(item.name)}
                                     key={item.name}
                                     sx={{
-                                        color: activeSection === item.name ? 'primary.light' : 'primary.200',
+                                        color: selectedUI === 'Sahib'
+                                            ? activeSection === item.name ? 'primary.light' : 'primary.200'
+                                            : activeSection === item.name ? 'secondary.light' : 'secondary.200',
                                         fontWeight: 600,
                                         letterSpacing: '.2rem',
                                         fontFamily: "Ubuntu, serif",
@@ -102,11 +109,11 @@ export const Navbar = () => {
                                             left: 10,
                                             width: activeSection === item.name ? item.width : '0px',
                                             height: '2px',
-                                            backgroundColor: 'primary.light', // line color
+                                            backgroundColor: selectedUI === 'Sahib' ? 'primary.light' : 'secondary.light', // line color
                                             transition: 'all 0.5s ease', // expand animation
                                         },
                                         '&:hover': {
-                                            color: 'primary.light'
+                                            color: selectedUI === 'Sahib' ? 'primary.light' : 'secondary.light'
                                         },
                                         '&:hover::after': {
                                             width: item.width // expands to 100% on hover
@@ -155,7 +162,11 @@ export const Navbar = () => {
                         <Box sx={{ display: responsive ? 'flex' : 'none', flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'center' }}>
                             <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                 <NavLink to={'/'} style={{ display: responsive ? 'flex' : 'none' }}>
-                                    <CodeOffIcon sx={{ color: 'primary.900', fontSize: '32px' }} />
+                                    {
+                                        selectedUI === 'Sahib'
+                                            ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '32px' }} className="animate__animated animate__fadeIn" />
+                                            : <MusicNoteIcon sx={{ color: 'secondary.900', fontSize: '32px' }} className="animate__animated animate__fadeIn" />
+                                    }
                                 </NavLink>
                                 <Divider orientation="vertical" variant='middle' flexItem sx={{ ml: 1.5, display: responsive ? 'flex' : 'none', backgroundColor: 'primary.main' }} />
                                 <NavLink to={'/'} style={{ textDecoration: 'none' }}>
@@ -169,12 +180,16 @@ export const Navbar = () => {
                                             flexGrow: 1,
                                             fontFamily: 'sans-serif',
                                             fontWeight: 700,
-                                            color: 'primary.100',
+                                            color: selectedUI === 'Sahib' ? 'primary.100' : 'secondary.100',
                                             fontSize: '20px',
                                             textDecoration: 'none',
                                         }}
                                     >
-                                        Fullstack Dev
+                                        {
+                                            selectedUI === 'Sahib'
+                                                ? 'Fullstack Dev'
+                                                : 'Music Producer'
+                                        }
                                     </Typography>
                                 </NavLink>
                             </Box>

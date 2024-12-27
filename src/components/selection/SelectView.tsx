@@ -38,7 +38,7 @@ export const SelectView = () => {
             setViewData({
                 imageUser: '/logo.jpg',
                 gradient: 'linear-gradient(135deg, #8367b6, #d4c9e9, #f9f8fc)',
-                imageAnimation: 'animate__animated animate__fadeInDown',
+                imageAnimation: 'animate__animated animate__fadeInLeft',
                 videoSource: '1'
             });
         } else {
@@ -46,7 +46,7 @@ export const SelectView = () => {
             setViewData({
                 imageUser: '/sahib.png',
                 gradient: 'linear-gradient(135deg, #7d6751, #b6a98e, #f5f4f1)',
-                imageAnimation: 'animate__animated animate__fadeInUp',
+                imageAnimation: 'animate__animated animate__fadeInRight',
                 videoSource: '2'
             });
         }
@@ -79,7 +79,7 @@ export const SelectView = () => {
             }}
         >
             <video
-                className="animate__animated animate__fadeIn"
+                className="animate__animated animate__fadeIn 1"
                 src="/background2.mp4"
                 autoPlay
                 loop
