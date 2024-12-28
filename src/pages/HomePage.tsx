@@ -30,7 +30,7 @@ export const HomePage = () => {
                 <SelectView />
             </Box>
             <Box component="section" id="About">
-
+                
             </Box>
             <Box component="section" id="Career">
 
