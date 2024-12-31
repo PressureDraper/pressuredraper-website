@@ -1,10 +1,11 @@
-import { Avatar, Box, Grid2, Typography, useMediaQuery } from "@mui/material";
+import { Avatar, Box, Grid2, Typography, Zoom, useMediaQuery } from "@mui/material";
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { UIContext } from "../../context/UIContext";
 import { PropsViewData } from "../../interfaces/selection/IViewData";
 import { BannerVideos } from "./BannerVideos";
+import CustomTooltip from "../ui/CustomTooltip";
 import 'animate.css';
 
 export const SelectView = () => {
@@ -15,6 +16,8 @@ export const SelectView = () => {
         gradient: 'linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)',
         imageUser: '/sahib.png',
         imageAnimation: '',
+        nameAnimation: '',
+        quoteAnimation: '',
         videoSource: '2'
     });
 
@@ -40,7 +43,9 @@ export const SelectView = () => {
             setViewData({
                 imageUser: '/logo.jpg',
                 gradient: 'linear-gradient(135deg, #8367b6, #d4c9e9, #f9f8fc)',
-                imageAnimation: 'animate__animated animate__fadeInLeft',
+                imageAnimation: 'animate__animated animate__fadeIn',
+                nameAnimation: 'animate__animated animate__fadeInUp animate__delay-1s',
+                quoteAnimation: 'animate__animated animate__fadeInUp animate__delay-2s',
                 videoSource: '1'
             });
         } else {
@@ -48,11 +53,22 @@ export const SelectView = () => {
             setViewData({
                 imageUser: '/sahib.png',
                 gradient: 'linear-gradient(135deg, #7d6751, #b6a98e, #f5f4f1)',
-                imageAnimation: 'animate__animated animate__fadeInRight',
+                imageAnimation: 'animate__animated animate__fadeIn',
+                nameAnimation: 'animate__animated animate__fadeInDown animate__delay-1s',
+                quoteAnimation: 'animate__animated animate__fadeInDown animate__delay-2s',
                 videoSource: '2'
             });
         }
     }
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setViewData({ ...viewData, imageAnimation: '' });
+        }, 1000);
+
+        //clear Timeout on component unmount
+        return () => clearTimeout(timer);
+    }, [selectedUI]);
 
     return (
         <Box
@@ -64,6 +80,7 @@ export const SelectView = () => {
                 height: '70dvh',
                 width: '100%',
                 objectFit: 'cover',
+                backgroundColor: '#ffffff',
                 position: 'relative',
                 display: 'flex',
                 justifyContent: 'center',
@@ -87,8 +104,8 @@ export const SelectView = () => {
                         color={selectedUI === 'Sahib' ? "primary.light" : "secondary.light"}
                         fontFamily={'Ubuntu, serif'}
                         fontWeight={'bold'}
-                        fontSize={responsive ? '60px' : '80px'}
-                        fontStyle={'italic'}
+                        fontSize={responsive ? '60px' : '85px'}
+                        fontStyle={'oblique'}
                         letterSpacing={'.3rem'}
                         sx={{ transition: 'all 0.5s ease' }}
                     >
@@ -131,29 +148,51 @@ export const SelectView = () => {
                                 default: { duration: 1 }
                             }}
                         >
-                            <Avatar
-                                alt="Me"
-                                src={viewData.imageUser}
+                            <CustomTooltip
+                                title="Click Me!"
+                                arrow
+                                placement="left"
                                 sx={{
-                                    zIndex: 11,
-                                    mt: 'auto',
-                                    mb: 'auto',
-                                    width: 'auto',
-                                    height: '21.5dvh',
-                                    transition: 'all 1s ease'
+                                    "& .MuiTooltip-tooltip": {
+                                        backgroundColor: selectedUI === 'Sahib' ? "primary.400" : "secondary.400",
+                                        color: selectedUI === 'Sahib' ? "primary.dark" : "secondary.dark",
+                                        fontSize: '13.5px',
+                                        fontWeight: 'bold',
+                                        fontFamily: "Ubuntu, serif",
+                                        letterSpacing: '1px'
+                                    },
+                                    "& .MuiTooltip-arrow": {
+                                        color: selectedUI === 'Sahib' ? 'primary.800' : 'secondary.800'
+                                    }
                                 }}
-                            />
+                                slots={{
+                                    transition: Zoom,
+                                }}
+                            >
+                                <Avatar
+                                    alt="Me"
+                                    src={viewData.imageUser}
+                                    sx={{
+                                        zIndex: 11,
+                                        mt: 'auto',
+                                        mb: 'auto',
+                                        width: 'auto',
+                                        height: '21.5dvh',
+                                        transition: 'all 1s ease'
+                                    }}
+                                />
+                            </CustomTooltip>
                         </motion.div>
                     </motion.div>
                 </Grid2>
                 <Grid2 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', height: '30%' }}>
-                    <Grid2 sx={{ zIndex: 11, display: 'flex', justifyContent: 'center' }}>
+                    <Grid2 className={viewData.nameAnimation} sx={{ zIndex: 11, display: 'flex', justifyContent: 'center' }}>
                         <Typography
                             color={selectedUI === 'Sahib' ? "primary.200" : "secondary.200"}
                             className="animate__animated animate__fadeIn"
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
-                            fontSize={responsive ? '25px' : '35px'}
+                            fontSize={responsive ? '20px' : '35px'}
                             fontStyle={'normal'}
                             letterSpacing={'.2rem'}
                             textAlign={'center'}
@@ -164,12 +203,12 @@ export const SelectView = () => {
                             {selectedUI === 'Sahib' ? "Omar Sahib Mirón Hernández" : "Hideline"}
                         </Typography>
                     </Grid2>
-                    <Grid2 sx={{ zIndex: 11, display: 'flex', justifyContent: 'center' }}>
+                    <Grid2 className={viewData.quoteAnimation} sx={{ zIndex: 11, display: 'flex', justifyContent: 'center' }}>
                         <Typography
                             color={selectedUI === 'Sahib' ? "primary.300" : "secondary.300"}
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
-                            fontSize={responsive ? '13px' : '22px'}
+                            fontSize={responsive ? '13px' : '22.5px'}
                             fontStyle={'normal'}
                             letterSpacing={'.1rem'}
                             textAlign={'center'}

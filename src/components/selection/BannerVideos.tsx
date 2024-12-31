@@ -4,7 +4,6 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
     return (
         <>
             <video
-                className="animate__animated animate__fadeIn 1"
                 src="/background2.mp4"
                 autoPlay
                 loop
@@ -19,7 +18,6 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
                 }}
             />
             <video
-                className="animate__animated animate__fadeIn"
                 src="/background1.mp4"
                 autoPlay
                 loop

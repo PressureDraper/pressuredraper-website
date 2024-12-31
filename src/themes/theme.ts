@@ -13,7 +13,7 @@ export const theme = createTheme({
             "500": '#927d60',
             "600": '#7d6751',
             "800": '#57453c',
-            "900": '#57453c'
+            "900": '#4c3d37'
         },
         secondary: {
             main: '#7155a0', //700
@@ -31,26 +31,5 @@ export const theme = createTheme({
     },
     shape: {
         borderRadius: 8
-    },
-    /* components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    padding: '10px 20px', // Cambiar el padding de todos los botones
-                    borderRadius: '50px', // Bordes redondeados en todos los botones
-                },
-            },
-            defaultProps: {
-                color: 'primary', // Establecer el color predeterminado para el botón
-            },
-        },
-        MuiTypography: {
-            styleOverrides: {
-                h1: {
-                    fontWeight: 700, // Sobrescribir estilo de h1
-                },
-            },
-        },
-    } */
-
+    }
 });

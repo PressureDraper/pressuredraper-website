@@ -1,5 +1,5 @@
 import { AppBar, Box, Button, Container, Divider, IconButton, Menu, MenuItem, Toolbar, Typography, useMediaQuery } from '@mui/material'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { NavLink, NavigateFunction, useNavigate } from 'react-router-dom';
 import CodeOffIcon from '@mui/icons-material/CodeOff';
 import { UIContext } from '../../context/UIContext';
@@ -21,6 +21,7 @@ export const Navbar = () => {
     const { activeSection, setActiveSection } = useContext<PropsUIContext>(UIContext);
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const navigate: NavigateFunction = useNavigate();
+    const [animations, setAnimations] = useState({ headerTitle: 'animate__animated animate__fadeIn' });
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
@@ -36,6 +37,11 @@ export const Navbar = () => {
         navigate(`/?section=${pathTo}`, { replace: true });
     };
 
+    useEffect(() => {
+        selectedUI === 'Sahib' ? setAnimations({ headerTitle: 'animate__animated animate__fadeInDown' }) : setAnimations({ headerTitle: 'animate__animated animate__fadeInUp' });
+
+    }, [selectedUI]);
+
     return (
         <AppBar position="fixed">
             <motion.div
@@ -50,17 +56,17 @@ export const Navbar = () => {
                 }}
             >
                 <Container maxWidth={'xl'}>
-                    <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Toolbar sx={{ display: 'flex', justifyContent: 'space-around' }}>
                         <Box sx={{ display: responsive ? 'none' : 'flex', flexDirection: 'row', alignItems: 'center' }}>
                             <NavLink to={'/'} style={{ marginBottom: -7 }}>
                                 {
                                     selectedUI === 'Sahib'
-                                        ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '35px' }} className="animate__animated animate__swing" />
-                                        : <MusicNoteIcon sx={{ color: 'secondary.900', fontSize: '35px' }} className="animate__animated animate__swing" />
+                                        ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '35px' }} className="animate__animated animate__fadeIn" />
+                                        : <MusicNoteIcon sx={{ color: 'secondary.900', fontSize: '35px' }} className="animate__animated animate__fadeIn" />
                                 }
                             </NavLink>
-                            <Divider orientation="vertical" variant='middle' flexItem sx={{ ml: 1.5, backgroundColor: 'primary.main' }} />
-                            <NavLink to={'/'} style={{ textDecoration: 'none' }}>
+                            <Divider orientation="vertical" variant='middle' flexItem sx={{ ml: 1.5, mr: 0.6, backgroundColor: 'primary.main' }} />
+                            <NavLink className={animations.headerTitle} to={'/'} style={{ textDecoration: 'none' }}>
                                 <Typography
                                     variant="h5"
                                     noWrap
@@ -76,7 +82,7 @@ export const Navbar = () => {
                                         letterSpacing: '.4rem',
                                         color: selectedUI === 'Sahib' ? 'primary.dark' : 'secondary.dark',
                                         textDecoration: 'none',
-                                        transition: 'all 0.3s ease'
+                                        transition: 'all 0.5s ease'
                                     }}
                                 >
                                     {
@@ -164,12 +170,12 @@ export const Navbar = () => {
                                 <NavLink to={'/'} style={{ display: responsive ? 'flex' : 'none' }}>
                                     {
                                         selectedUI === 'Sahib'
-                                            ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '32px' }} className="animate__animated animate__fadeIn" />
-                                            : <MusicNoteIcon sx={{ color: 'secondary.900', fontSize: '32px' }} className="animate__animated animate__fadeIn" />
+                                            ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '32px' }} className="animate__animated animate__swing" />
+                                            : <MusicNoteIcon sx={{ color: 'secondary.900', fontSize: '32px' }} className="animate__animated animate__swing" />
                                     }
                                 </NavLink>
                                 <Divider orientation="vertical" variant='middle' flexItem sx={{ ml: 1.5, display: responsive ? 'flex' : 'none', backgroundColor: 'primary.main' }} />
-                                <NavLink to={'/'} style={{ textDecoration: 'none' }}>
+                                <NavLink className={animations.headerTitle} to={'/'} style={{ textDecoration: 'none' }}>
                                     <Typography
                                         variant="h5"
                                         noWrap

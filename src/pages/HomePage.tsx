@@ -38,18 +38,6 @@ export const HomePage = () => {
             <Box component="section" id="Contact">
 
             </Box>
-            {/* <section id='carousel'>
-                <Inicio />
-            </section>
-            <section id='program'>
-                <Programa />
-            </section>
-            <section id='location'>
-                <Sedes />
-            </section>
-            <section id='contact'>
-                <Contacto />
-            </section> */}
         </Stack>
     )
 }
