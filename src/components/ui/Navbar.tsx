@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { NavLink, NavigateFunction, useNavigate } from 'react-router-dom';
 import CodeOffIcon from '@mui/icons-material/CodeOff';
 import { UIContext } from '../../context/UIContext';
-import { PropsUIContext } from '../../interfaces/IUIContext';
+import { PropsUIContext } from '../../interfaces/context/IUIContext';
 import { motion } from 'framer-motion';
 import MenuIcon from '@mui/icons-material/Menu';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
