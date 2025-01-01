@@ -2,6 +2,7 @@ import { Box, Stack, useMediaQuery } from "@mui/material"
 import { SelectView } from "../components/selection/SelectView"
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { AboutView } from "../components/about/AboutView";
 
 export const navBarHeigth: number = 64;
 export const navBarHeigthResponsive: number = 48;
@@ -30,7 +31,7 @@ export const HomePage = () => {
                 <SelectView />
             </Box>
             <Box component="section" id="About">
-                
+                <AboutView />
             </Box>
             <Box component="section" id="Career">
 

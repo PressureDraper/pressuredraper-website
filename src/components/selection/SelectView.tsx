@@ -12,7 +12,7 @@ export const SelectView = () => {
     const { selectedUI } = useContext(UIContext);
     const [viewData, setViewData] = useState<PropsViewData>({
         gradient: 'linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)',
-        imageUser: '/sahib.png',
+        imageUser: '/sahib.webp',
         imageAnimation: '',
         nameAnimation: '',
         quoteAnimation: '',
@@ -35,7 +35,7 @@ export const SelectView = () => {
                 m: 0,
                 mt: responsive ? `${navBarHeigthResponsive}px` : `${navBarHeigth}px`,
                 p: 0,
-                height: '80dvh',
+                height: '70vh',
                 width: '100%',
                 objectFit: 'cover',
                 backgroundColor: '#ffffff',
@@ -50,7 +50,7 @@ export const SelectView = () => {
                     left: 0,
                     right: 0,
                     height: '100%',
-                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0))',
+                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))',
                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
                 }
             }}

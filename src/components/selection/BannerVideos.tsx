@@ -4,7 +4,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
     return (
         <>
             <video
-                src="/background2.mp4"
+                src="/background2.webm"
                 autoPlay
                 loop
                 muted
@@ -18,7 +18,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
                 }}
             />
             <video
-                src="/background1.mp4"
+                src="/background1.webm"
                 autoPlay
                 loop
                 muted
