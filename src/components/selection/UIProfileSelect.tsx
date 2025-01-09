@@ -13,7 +13,7 @@ interface ChildProps {
 export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData }) => {
     const [hover, setHover] = useState<boolean>(false);
     const { selectedUI, setSelectedUI } = useContext(UIContext);
-
+    
     const handleMouseEnter = () => {
         setHover(true);
         setViewData(selectedUI === 'Sahib'
@@ -119,8 +119,8 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
                             mt: 'auto',
                             mb: 'auto',
                             width: 'auto',
-                            height: '21.5dvh',
-                            transition: 'all 1s ease'
+                            height: '21.5vh',
+                            transition: 'all 0.5s ease'
                         }}
                     />
                 </CustomTooltip>

@@ -18,7 +18,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
                 }}
             />
             <video
-                src="/background1.webm"
+                src="/background1.mp4"
                 autoPlay
                 loop
                 muted
