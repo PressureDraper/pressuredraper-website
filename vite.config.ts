@@ -41,5 +41,5 @@ export default defineConfig({
   build: {
     outDir: 'docs',
   },
-  base: '/pressuredraper-website/'
+  base: '/pressuredraper-website/docs'
 })
