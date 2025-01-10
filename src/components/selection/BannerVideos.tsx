@@ -4,7 +4,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
     return (
         <>
             <video
-                src="../docs/background2.webm"
+                src={`${import.meta.env.VITE_APP_REACT_ENVIRONMENT === "development" ? '' : '/pressuredraper-website'}/background2.webm`}
                 autoPlay
                 loop
                 muted
@@ -18,7 +18,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
                 }}
             />
             <video
-                src="../docs/background1.mp4"
+                src={`${import.meta.env.VITE_APP_REACT_ENVIRONMENT === "development" ? '' : '/pressuredraper-website'}/background1.mp4`}
                 autoPlay
                 loop
                 muted
