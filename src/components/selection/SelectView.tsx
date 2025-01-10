@@ -12,7 +12,7 @@ export const SelectView = () => {
     const { selectedUI } = useContext(UIContext);
     const [viewData, setViewData] = useState<PropsViewData>({
         gradient: 'linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)',
-        imageUser: '/sahib.webp',
+        imageUser: '/pressuredraper-website/sahib.webp',
         imageAnimation: '',
         nameAnimation: '',
         quoteAnimation: '',
