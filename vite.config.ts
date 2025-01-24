@@ -41,5 +41,8 @@ export default defineConfig({
   build: {
     outDir: 'docs',
   },
-  base: '/pressuredraper-website/'
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+  },
+  base: import.meta.env.VITE_APP_NODE_ENVIRONMENT === "development" ? "/" : "/pressuredraper-website"
 })
