@@ -35,7 +35,7 @@ export const SelectView = () => {
                 m: 0,
                 mt: responsive ? `${navBarHeigthResponsive}px` : `${navBarHeigth}px`,
                 p: 0,
-                height: '70vh',
+                height: '73.7vh',
                 width: '100%',
                 objectFit: 'cover',
                 backgroundColor: '#ffffff',
