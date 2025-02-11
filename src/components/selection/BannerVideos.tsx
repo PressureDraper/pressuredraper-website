@@ -8,13 +8,15 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
                 autoPlay
                 loop
                 muted
+                preload='auto'
                 style={{
                     zIndex: -1,
                     position: 'absolute',
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    visibility: viewData.videoSource === '2' ? 'visible' : 'hidden'
+                    visibility: viewData.videoSource === '2' ? 'visible' : 'hidden',
+                    transform: 'translate3d(0, 0, 0)'
                 }}
             />
             <video
@@ -22,13 +24,15 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
                 autoPlay
                 loop
                 muted
+                preload='auto'
                 style={{
                     zIndex: -1,
                     position: 'absolute',
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    visibility: viewData.videoSource === '1' ? 'visible' : 'hidden'
+                    visibility: viewData.videoSource === '1' ? 'visible' : 'hidden',
+                    transform: 'translate3d(0, 0, 0)'
                 }}
             />
         </>
