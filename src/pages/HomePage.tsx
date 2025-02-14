@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { AboutView } from "../components/about/AboutView";
 
 export const navBarHeigth: number = 64;
-export const navBarHeigthResponsive: number = 48;
+export const navBarHeigthResponsive: number = 54;
 
 export const HomePage = () => {
     const location = useLocation();
