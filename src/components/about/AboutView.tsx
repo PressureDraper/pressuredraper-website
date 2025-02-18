@@ -9,7 +9,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
-import StarIcon from '@mui/icons-material/Star';
 
 export const AboutView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
