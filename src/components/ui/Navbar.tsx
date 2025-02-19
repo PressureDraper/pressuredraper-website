@@ -79,7 +79,7 @@ export const Navbar = () => {
                                         fontWeight: 'bold',
                                         fontOpticalSizing: 'auto',
                                         fontStyle: 'normal',
-                                        letterSpacing: '.4rem',
+                                        letterSpacing: '.2rem',
                                         color: selectedUI === 'Sahib' ? 'primary.dark' : 'secondary.dark',
                                         textDecoration: 'none',
                                         transition: 'all 0.5s ease'
@@ -87,7 +87,7 @@ export const Navbar = () => {
                                 >
                                     {
                                         selectedUI === 'Sahib'
-                                            ? 'Fullstack Dev'
+                                            ? 'Software Engineer'
                                             : 'Music Producer'
                                     }
                                 </Typography>
@@ -133,10 +133,7 @@ export const Navbar = () => {
                         {/* responsive */}
                         <Box sx={{ flexGrow: 1, display: responsive ? 'flex' : 'none' }}>
                             <IconButton
-                                size="large"
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
+                                size="small"
                                 onClick={handleOpenNavMenu}
                                 color='primary'
                             >
@@ -193,7 +190,7 @@ export const Navbar = () => {
                                     >
                                         {
                                             selectedUI === 'Sahib'
-                                                ? 'Fullstack Dev'
+                                                ? 'Software Engineer'
                                                 : 'Music Producer'
                                         }
                                     </Typography>

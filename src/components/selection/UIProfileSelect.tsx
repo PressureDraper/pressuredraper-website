@@ -119,7 +119,7 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
                             mt: 'auto',
                             mb: 'auto',
                             width: 'auto',
-                            height: '21.5vh',
+                            height: '23.5vh',
                             transition: 'all 0.5s ease'
                         }}
                     />

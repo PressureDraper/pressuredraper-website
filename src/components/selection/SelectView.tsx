@@ -35,7 +35,7 @@ export const SelectView = () => {
                 m: 0,
                 mt: responsive ? `${navBarHeigthResponsive}px` : `${navBarHeigth}px`,
                 p: 0,
-                height: responsive ? '88vh' : '93vh',
+                height: responsive ? '80vh' : '93vh',
                 width: '100%',
                 objectFit: 'cover',
                 backgroundColor: '#ffffff',
@@ -62,7 +62,7 @@ export const SelectView = () => {
                         color={selectedUI === 'Sahib' ? "primary.light" : "secondary.light"}
                         fontFamily={'Ubuntu, serif'}
                         fontWeight={'bold'}
-                        fontSize={responsive ? '60px' : '85px'}
+                        fontSize={responsive ? '16vw' : '5vw'}
                         fontStyle={'oblique'}
                         letterSpacing={'.3rem'}
                         sx={{ transition: 'all 0.5s ease' }}
@@ -80,9 +80,9 @@ export const SelectView = () => {
                             className="animate__animated animate__fadeIn"
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
-                            fontSize={responsive ? '20px' : '35px'}
+                            fontSize={responsive ? '5vw' : '2vw'}
                             fontStyle={'normal'}
-                            letterSpacing={'.2rem'}
+                            letterSpacing={'.15rem'}
                             textAlign={'center'}
                             sx={{
                                 transition: 'all 0.5s ease'
@@ -96,9 +96,9 @@ export const SelectView = () => {
                             color={selectedUI === 'Sahib' ? "primary.300" : "secondary.300"}
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
-                            fontSize={responsive ? '13px' : '22.5px'}
+                            fontSize={responsive ? '4vw' : '1.3vw'}
                             fontStyle={'normal'}
-                            letterSpacing={'.1rem'}
+                            letterSpacing={'.05rem'}
                             textAlign={'center'}
                             sx={{ transition: 'all 0.5s ease' }}
                         >

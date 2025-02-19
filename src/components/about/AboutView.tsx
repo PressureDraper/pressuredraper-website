@@ -9,6 +9,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
+import TranslateIcon from '@mui/icons-material/Translate';
 
 export const AboutView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
@@ -53,8 +54,8 @@ export const AboutView = () => {
                             overflow: 'auto',
                         }}>
                             <Grid2 container>
-                                <Grid2 size={responsive ? 12 : 7} sx={{ display: 'flex', flexDirection: 'column', gap: 3, textAlign: 'justify', pl: responsive ? 3 : 7, pr: responsive ? 3 : 7 }}>
-                                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: responsive ? 3 : 1 }}>
+                                <Grid2 size={responsive ? 12 : 8.5} sx={{ display: 'flex', flexDirection: 'column', gap: 3, textAlign: 'justify', pl: responsive ? 3 : 7, pr: responsive ? 3 : 7 }}>
+                                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: responsive ? 3 : 2 }}>
                                         <Typography
                                             fontFamily={'Ubuntu, serif'}
                                             fontSize={responsive ? '16px' : '1vw'}
@@ -82,7 +83,7 @@ export const AboutView = () => {
                                     </Box>
                                     <Box>
                                         <Typography
-                                            color={selectedUI === 'Sahib' ? "primary.100" : "secondary.300"}
+                                            color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
                                             fontFamily={'Ubuntu, serif'}
                                             fontWeight={'bold'}
                                             fontSize={responsive ? '25px' : '1.5vw'}
@@ -91,14 +92,14 @@ export const AboutView = () => {
                                             textAlign={responsive ? 'center' : 'left'}
                                             sx={{ transition: 'color 0.5s ease', textAlign: "left" }}
                                         >
-                                            <TipsAndUpdatesIcon sx={{ fontSize: responsive ? '5vw' : '1.3vw', mr: 0.5, mb: -0.2, color: 'primary.light' }} />
+                                            <TipsAndUpdatesIcon sx={{ fontSize: responsive ? '5vw' : '1.3vw', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
                                             Current Focus
                                         </Typography>
                                     </Box>
                                 </Grid2>
-                                <Grid2 size={responsive ? 12 : 5} sx={{ pl: responsive ? 3 : 2, pr: responsive ? 3 : 2, mt: responsive ? 3 : 1, display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'left' }}>
+                                <Grid2 size={responsive ? 12 : 3.5} sx={{ pl: responsive ? 3 : 2, pr: responsive ? 3 : 2, mt: responsive ? 3 : 1, display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'left' }}>
                                     <Typography
-                                        color={selectedUI === 'Sahib' ? "primary.100" : "secondary.300"}
+                                        color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
                                         fontFamily={'Ubuntu, serif'}
                                         fontWeight={'bold'}
                                         fontSize={responsive ? '25px' : '1.5vw'}
@@ -107,11 +108,11 @@ export const AboutView = () => {
                                         textAlign={responsive ? 'center' : 'left'}
                                         sx={{ transition: 'color 0.5s ease', textAlign: "left" }}
                                     >
-                                        <AlternateEmailIcon sx={{ fontSize: responsive ? '5vw' : '1.3vw', mr: 0.5, mb: -0.2, color: 'primary.light' }} />
+                                        <AlternateEmailIcon sx={{ fontSize: responsive ? '5vw' : '1.3vw', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
                                         Social Media
                                     </Typography>
                                     <Box sx={{ display: 'flex' }}>
-                                        <LinkedInIcon className='linkdin' sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.100' }} />
+                                        <LinkedInIcon className='linkdin' sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.light' }} />
                                         <Link href="https://www.linkedin.com/in/pressuredraper/" target="_blank">
                                             <Typography
                                                 color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
@@ -132,7 +133,7 @@ export const AboutView = () => {
                                         </Link>
                                     </Box>
                                     <Box sx={{ display: 'flex' }}>
-                                        <GitHubIcon sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.100' }} />
+                                        <GitHubIcon sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.light' }} />
                                         <Link href="https://github.com/PressureDraper" target="_blank">
                                             <Typography
                                                 color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
@@ -149,7 +150,7 @@ export const AboutView = () => {
                                         </Link>
                                     </Box>
                                     <Box sx={{ display: 'flex' }}>
-                                        <InstagramIcon sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.100' }} />
+                                        <InstagramIcon sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.light' }} />
                                         <Link href="https://www.instagram.com/pressure_draper/" target="_blank">
                                             <Typography
                                                 color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
@@ -166,7 +167,7 @@ export const AboutView = () => {
                                         </Link>
                                     </Box>
                                     <Box sx={{ display: 'flex' }}>
-                                        <FacebookIcon sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.100' }} />
+                                        <FacebookIcon sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.light' }} />
                                         <Link href="https://www.facebook.com/PressureDraper/" target="_blank">
                                             <Typography
                                                 color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
@@ -182,6 +183,19 @@ export const AboutView = () => {
                                             </Typography>
                                         </Link>
                                     </Box>
+                                    <Typography
+                                        color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
+                                        fontFamily={'Ubuntu, serif'}
+                                        fontWeight={'bold'}
+                                        fontSize={responsive ? '25px' : '1.5vw'}
+                                        fontStyle={'normal'}
+                                        letterSpacing={'.1rem'}
+                                        textAlign={responsive ? 'center' : 'left'}
+                                        sx={{ transition: 'color 0.5s ease', textAlign: "left" }}
+                                    >
+                                        <TranslateIcon sx={{ fontSize: responsive ? '5vw' : '1.3vw', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
+                                        Languages
+                                    </Typography>
                                 </Grid2>
                             </Grid2>
                         </Box>
