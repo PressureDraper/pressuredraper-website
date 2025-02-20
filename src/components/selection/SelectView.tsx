@@ -70,10 +70,10 @@ export const SelectView = () => {
                         Who is...
                     </Typography>
                 </Grid2>
-                <Grid2 sx={{ display: 'flex', justifyContent: 'center', height: '40%' }}>
+                <Grid2 sx={{ display: 'flex', justifyContent: 'center', height: '35%' }}>
                     <UIProfileSelect viewData={viewData} setViewData={setViewData} />
                 </Grid2>
-                <Grid2 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', height: '30%' }}>
+                <Grid2 sx={{ display: 'flex', flexDirection: 'column', height: '35%', justifyContent: 'space-evenly' }}>
                     <Grid2 className={viewData.nameAnimation} sx={{ zIndex: 11, display: 'flex', justifyContent: 'center' }}>
                         <Typography
                             color={selectedUI === 'Sahib' ? "primary.200" : "secondary.200"}
