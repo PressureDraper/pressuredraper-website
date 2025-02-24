@@ -15,25 +15,38 @@ import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import 'animate.css';
 
-const performance = ['Enhancing loading times', 'Improving user experience', 'Applying SSR']
+const performance = ['Enhancing loading times', 'Improving user experience', 'Applying SSR'];
+const coding = ['Cooking clean coding', 'Serving security', 'Troubleshooting'];
 
 export const AboutView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const { selectedUI } = useContext(UIContext);
-    const [index, setIndex] = useState(0);
-    const [focus, setFocus] = useState({ performance: 'Enhancing loading times' });
+    const [index, setIndex] = useState({ performance: 0, coding: 0 });
+    const [focus, setFocus] = useState({ performance: 'Enhancing loading times', coding: 'Cooking clean coding' });
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % performance.length);
-        }, 3000); // Cambia el texto cada 3 segundos
+            setIndex((index) => ({ ...index, performance: (index.performance + 1) % performance.length }));
+        }, 3500);
 
         return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
-    }, [performance.length]);
+    }, []);
 
     useEffect(() => {
-        setFocus({ ...focus, performance: performance[index] });
-    }, [index, performance]);
+        const interval = setInterval(() => {
+            setIndex((index) => ({ ...index, coding: (index.coding + 1) % performance.length }));
+        }, 5000);
+
+        return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
+    }, []);
+
+    useEffect(() => {
+        setFocus({ ...focus, performance: performance[index.performance] });
+    }, [index.performance]);
+
+    useEffect(() => {
+        setFocus({ ...focus, coding: coding[index.coding] });
+    }, [index.coding]);
 
     return (
         <>
@@ -119,12 +132,12 @@ export const AboutView = () => {
                                         </Typography>
                                         <Grid2 container sx={{ display: 'flex', gap: 2 }}>
                                             <Box sx={{ display: 'flex' }}>
-                                                <Grid2 size={responsive ? 1.5 : 'auto'}>
+                                                <Grid2 size={'auto'}>
                                                     <Box sx={{ height: 'auto', width: 'fit-content', background: 'linear-gradient(90deg, rgba(245,244,241,0.9) 0%, rgba(231,228,218,0.7) 48%, rgba(245,244,241,0.9) 100%)', borderRadius: '5px', display: 'flex', p: 0.8 }}>
                                                         <ElectricBoltIcon sx={{ color: 'primary.dark' }} />
                                                     </Box>
                                                 </Grid2>
-                                                <Grid2 size={responsive ? 10.5 : 'auto'}>
+                                                <Grid2 size={'auto'}>
                                                     <Box sx={{ height: '100%', width: 'fit-content' }}>
                                                         <Typography
                                                             fontWeight={'bold'}
@@ -152,12 +165,12 @@ export const AboutView = () => {
                                                 </Grid2>
                                             </Box>
                                             <Box sx={{ display: 'flex' }}>
-                                                <Grid2 size={responsive ? 1.5 : 'auto'}>
+                                                <Grid2 size={'auto'}>
                                                     <Box sx={{ height: 'auto', width: 'fit-content', background: 'linear-gradient(90deg, rgba(245,244,241,0.9) 0%, rgba(231,228,218,0.7) 48%, rgba(245,244,241,0.9) 100%)', borderRadius: '5px', display: 'flex', p: 0.8 }}>
                                                         <VerifiedUserIcon sx={{ color: 'primary.dark' }} />
                                                     </Box>
                                                 </Grid2>
-                                                <Grid2 size={responsive ? 10.5 : 'auto'}>
+                                                <Grid2 size={'auto'}>
                                                     <Box sx={{ height: '100%', width: 'fit-content' }}>
                                                         <Typography
                                                             fontWeight={'bold'}
@@ -165,10 +178,10 @@ export const AboutView = () => {
                                                             letterSpacing={'.05rem'}
                                                             sx={{ ml: 1, mt: -0.5 }}
                                                         >
-                                                            Best Practices
+                                                            HQ Solutions
                                                         </Typography>
                                                         <Typography
-                                                            key={focus.performance}
+                                                            key={focus.coding}
                                                             className="animate__animated animate__fadeInUp"
                                                             fontFamily={'Ubuntu, serif'}
                                                             letterSpacing={'.05rem'}
@@ -179,7 +192,7 @@ export const AboutView = () => {
                                                                 textAlign: 'left'
                                                             }}
                                                         >
-                                                            {focus.performance}
+                                                            {focus.coding}
                                                         </Typography>
                                                     </Box>
                                                 </Grid2>
