@@ -13,28 +13,38 @@ import TranslateIcon from '@mui/icons-material/Translate';
 import LanguageIcon from '@mui/icons-material/Language';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import 'animate.css';
 
 const performance = ['Enhancing loading times', 'Improving user experience', 'Applying SSR'];
-const coding = ['Cooking clean coding', 'Serving security', 'Troubleshooting'];
+const coding = ['Clean coding', 'Serving security', 'Troubleshooting'];
+const learning = ['Digging new tech', 'Following trends', 'Cutting-edge projects'];
 
 export const AboutView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const { selectedUI } = useContext(UIContext);
-    const [index, setIndex] = useState({ performance: 0, coding: 0 });
-    const [focus, setFocus] = useState({ performance: 'Enhancing loading times', coding: 'Cooking clean coding' });
+    const [index, setIndex] = useState({ performance: 0, coding: 0, learning: 0 });
+    const [focus, setFocus] = useState({ performance: 'Enhancing loading times', coding: 'Clean coding', learning: 'Digging new tech' });
 
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((index) => ({ ...index, performance: (index.performance + 1) % performance.length }));
-        }, 3500);
+        }, 3000);
 
         return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
     }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((index) => ({ ...index, coding: (index.coding + 1) % performance.length }));
+            setIndex((index) => ({ ...index, coding: (index.coding + 1) % coding.length }));
+        }, 4000);
+
+        return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((index) => ({ ...index, learning: (index.learning + 1) % learning.length }));
         }, 5000);
 
         return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
@@ -47,6 +57,10 @@ export const AboutView = () => {
     useEffect(() => {
         setFocus({ ...focus, coding: coding[index.coding] });
     }, [index.coding]);
+
+    useEffect(() => {
+        setFocus({ ...focus, learning: learning[index.learning] });
+    }, [index.learning]);
 
     return (
         <>
@@ -130,7 +144,7 @@ export const AboutView = () => {
                                             <TipsAndUpdatesIcon sx={{ fontSize: responsive ? '5vw' : '1.3vw', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
                                             Current Focus
                                         </Typography>
-                                        <Grid2 container sx={{ display: 'flex', gap: 2 }}>
+                                        <Grid2 container sx={{ display: 'flex', gap: 3 }}>
                                             <Box sx={{ display: 'flex' }}>
                                                 <Grid2 size={'auto'}>
                                                     <Box sx={{ height: 'auto', width: 'fit-content', background: 'linear-gradient(90deg, rgba(245,244,241,0.9) 0%, rgba(231,228,218,0.7) 48%, rgba(245,244,241,0.9) 100%)', borderRadius: '5px', display: 'flex', p: 0.8 }}>
@@ -178,7 +192,7 @@ export const AboutView = () => {
                                                             letterSpacing={'.05rem'}
                                                             sx={{ ml: 1, mt: -0.5 }}
                                                         >
-                                                            HQ Solutions
+                                                            Quality Solutions
                                                         </Typography>
                                                         <Typography
                                                             key={focus.coding}
@@ -193,6 +207,39 @@ export const AboutView = () => {
                                                             }}
                                                         >
                                                             {focus.coding}
+                                                        </Typography>
+                                                    </Box>
+                                                </Grid2>
+                                            </Box>
+                                            <Box sx={{ display: 'flex' }}>
+                                                <Grid2 size={'auto'}>
+                                                    <Box sx={{ height: 'auto', width: 'fit-content', background: 'linear-gradient(90deg, rgba(245,244,241,0.9) 0%, rgba(231,228,218,0.7) 48%, rgba(245,244,241,0.9) 100%)', borderRadius: '5px', display: 'flex', p: 0.8 }}>
+                                                        <AutoStoriesIcon sx={{ color: 'primary.dark' }} />
+                                                    </Box>
+                                                </Grid2>
+                                                <Grid2 size={'auto'}>
+                                                    <Box sx={{ height: '100%', width: 'fit-content' }}>
+                                                        <Typography
+                                                            fontWeight={'bold'}
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            letterSpacing={'.05rem'}
+                                                            sx={{ ml: 1, mt: -0.5 }}
+                                                        >
+                                                            Active Learning
+                                                        </Typography>
+                                                        <Typography
+                                                            key={focus.learning}
+                                                            className="animate__animated animate__fadeInUp"
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            letterSpacing={'.05rem'}
+                                                            color="primary.light"
+                                                            sx={{
+                                                                ml: 1, mt: -0.5,
+                                                                transition: 'all 0.5s ease',
+                                                                textAlign: 'left'
+                                                            }}
+                                                        >
+                                                            {focus.learning}
                                                         </Typography>
                                                     </Box>
                                                 </Grid2>
