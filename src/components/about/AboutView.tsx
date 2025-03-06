@@ -73,7 +73,7 @@ const AboutView = () => {
                     setIsVisible(false);
                 }
             },
-            { threshold: 0.1 } // Se dispara cuando el 10% del elemento es visible
+            { threshold: 0.1 } // Shows up when 10% of element is visible
         );
 
         if (titleRef.current) {
@@ -116,14 +116,14 @@ const AboutView = () => {
                                 fontStyle={'normal'}
                                 letterSpacing={'.1rem'}
                                 textAlign={responsive ? 'center' : 'left'}
-                                sx={{ transition: 'color 0.5s ease', mt: responsive ? 0 : -8 }}
+                                sx={{ transition: 'color 0.5s ease', mt: responsive ? 2 : -8 }}
                             >
                                 About Me
                             </Typography>
                         </motion.div>
                         <Box sx={{
-                            ml: responsive ? 4 : 0,
-                            mr: responsive ? 4 : 0,
+                            ml: responsive ? 3 : 0,
+                            mr: responsive ? 3 : 0,
                             mt: 2,
                             mb: 3,
                             pt: 4,
@@ -413,7 +413,7 @@ const AboutView = () => {
                         </Box>
                     </Grid2>
                 </Grid2>
-                <Grid2 sx={{ position: 'absolute', bottom: -10, width: '100%', mb: 0 }}>
+                <Grid2 sx={{ position: 'absolute', bottom: -8, width: '100%', mb: 0 }}>
                     <img loading="lazy" src="/pressuredraper-website/triangle2.svg" style={{ width: '100%', height: '50px' }}></img>
                 </Grid2>
             </Grid2>
