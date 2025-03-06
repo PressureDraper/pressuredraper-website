@@ -2,7 +2,8 @@ import { Box, Stack, useMediaQuery } from "@mui/material"
 import { SelectView } from "../components/selection/SelectView"
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { AboutView } from "../components/about/AboutView";
+import { CareerView } from "../components/career/CareerView";
+import AboutView from "../components/about/AboutView";
 
 export const navBarHeigth: number = 64;
 export const navBarHeigthResponsive: number = 54;
@@ -13,7 +14,7 @@ export const HomePage = () => {
 
     useEffect(() => {
         const hash: string | null = new URLSearchParams(location.search).get('section');
-        
+
         if (hash) {
             const sectionElement: HTMLElement | null = document.getElementById(hash);
             if (sectionElement) {
@@ -34,7 +35,7 @@ export const HomePage = () => {
                 <AboutView />
             </Box>
             <Box component="section" id="Career">
-
+                <CareerView />
             </Box>
             <Box component="section" id="Contact">
 
