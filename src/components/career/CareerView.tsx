@@ -97,8 +97,42 @@ export const CareerView = () => {
                                         Professional Background
                                     </Typography>
                                 </Grid2>
-                                <Grid2 size={12} sx={{ width: '100%', backgroundColor: '' }}>
-                                    <Divider />
+                                <Grid2 size={12} sx={{ width: '100%' }}>
+                                    <Divider sx={{ backgroundColor: 'gray' }} />
+                                </Grid2>
+                                <Grid2 size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: '100%', display: 'flex', flexDirection: 'row', pb: 2, pt: 2 }}>
+                                    <Grid2 container sx={{ width: '100%' }} spacing={0.3}>
+                                        <Grid2 size={12} sx={{ pl: 2 }}>
+                                            <Typography
+                                                fontWeight={'bold'}
+                                                fontSize={responsive ? '18px' : '20px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                            >
+                                                Software Engineer
+                                            </Typography>
+                                        </Grid2>
+                                        <Grid2 size={responsive ? 12 : 8} sx={{ pl: 2, display: 'flex', justifyContent: 'left' }}>
+                                            <Typography
+                                                fontSize={responsive ? '16px' : '18px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                fontStyle={'italic'}
+                                            >
+                                                High Specialty Medical Center Dr. Rafael Lucio
+                                            </Typography>
+                                        </Grid2>
+                                        <Grid2 size={responsive ? 12 : 4} sx={{ pr: responsive ? 0 : 2, pl: responsive ? 2 : 0, display: 'flex', justifyContent: responsive ? 'left' : 'right' }}>
+                                            <Typography
+                                                fontSize={responsive ? '16px' : '18px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                fontStyle={'italic'}
+                                            >
+                                                Apr 2023 — Present
+                                            </Typography>
+                                        </Grid2>
+                                        <Grid2 size={12} sx={{ pl: 2, display: 'flex', textJustify: 'justify' }}>
+                                            
+                                        </Grid2>
+                                    </Grid2>
                                 </Grid2>
                             </Grid2>
                         </Box>
