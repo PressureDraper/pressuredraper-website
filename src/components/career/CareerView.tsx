@@ -1,4 +1,4 @@
-import { Box, Grid2, Typography, useMediaQuery } from "@mui/material"
+import { Box, Divider, Grid2, Typography, useMediaQuery } from "@mui/material"
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
 import { motion } from 'framer-motion';
 import { useContext, useEffect, useRef, useState } from "react";
@@ -81,8 +81,8 @@ export const CareerView = () => {
                             alignItems: 'center',
                             justifyContent: responsive ? 'left' : 'left'
                         }}>
-                            <Grid2 container>
-                                <Grid2 size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, m: 'auto' }}>
+                            <Grid2 container spacing={1.5} sx={{ width: '100%' }}>
+                                <Grid2 size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: 'fit-content', display: 'flex', flexDirection: 'row' }}>
                                     <Typography
                                         color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
                                         fontFamily={'Ubuntu, serif'}
@@ -93,13 +93,13 @@ export const CareerView = () => {
                                         textAlign={responsive ? 'center' : 'left'}
                                         sx={{ transition: 'color 0.5s ease', pl: 2, pr: 2 }}
                                     >
-                                        <AddTaskIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.dark' }}/>
+                                        <AddTaskIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.dark' }} />
                                         Professional Background
                                     </Typography>
                                 </Grid2>
-                                {/* <Grid2 size={12}>
-                                    asdas
-                                </Grid2> */}
+                                <Grid2 size={12} sx={{ width: '100%', backgroundColor: '' }}>
+                                    <Divider />
+                                </Grid2>
                             </Grid2>
                         </Box>
                     </Grid2>

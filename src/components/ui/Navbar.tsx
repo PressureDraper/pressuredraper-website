@@ -80,7 +80,7 @@ export const Navbar = () => {
                                         fontOpticalSizing: 'auto',
                                         fontStyle: 'normal',
                                         letterSpacing: '.2rem',
-                                        color: selectedUI === 'Sahib' ? 'primary.dark' : 'secondary.dark',
+                                        color: selectedUI === 'Sahib' ? 'primary.light' : 'secondary.light',
                                         textDecoration: 'none',
                                         transition: 'all 0.5s ease'
                                     }}
@@ -178,7 +178,7 @@ export const Navbar = () => {
                                         noWrap
                                         sx={{
                                             mr: 2,
-                                            ml: 1,
+                                            ml: 1.5,
                                             display: responsive ? 'flex' : 'none',
                                             flexGrow: 1,
                                             fontFamily: 'sans-serif',
