@@ -70,7 +70,6 @@ export const Navbar = () => {
                                 <Typography
                                     variant="h5"
                                     noWrap
-                                    component="a"
                                     sx={{
                                         mr: 1,
                                         ml: 1.5,

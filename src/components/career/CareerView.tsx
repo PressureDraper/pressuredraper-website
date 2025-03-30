@@ -1,4 +1,4 @@
-import { Box, Divider, Grid2, Typography, useMediaQuery } from "@mui/material"
+import { Box, Divider, Grid, Typography, useMediaQuery } from "@mui/material"
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
 import { motion } from 'framer-motion';
 import { useContext, useEffect, useRef, useState } from "react";
@@ -36,16 +36,16 @@ export const CareerView = () => {
 
     return (
         <>
-            <Grid2 sx={{
+            <Grid sx={{
                 backgroundColor: 'primary.100',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                height: `calc(${responsive ? '200vh' : '100vh'} - ${responsive ? navBarHeigthResponsive : navBarHeigth}px)`,
+                height: `calc(auto - ${responsive ? navBarHeigthResponsive : navBarHeigth}px)`,
                 transition: 'background 0.5s ease',
                 flexDirection: 'row'
             }}>
-                <Grid2 container>
-                    <Grid2 size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <Grid container>
+                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
                             ref={titleRef}
                             className={`animate__animated ${isVisible ? 'animate__fadeInUp' : ''}`}
@@ -81,8 +81,8 @@ export const CareerView = () => {
                             alignItems: 'center',
                             justifyContent: responsive ? 'left' : 'left'
                         }}>
-                            <Grid2 container spacing={1.5} sx={{ width: '100%' }}>
-                                <Grid2 size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: 'fit-content', display: 'flex', flexDirection: 'row' }}>
+                            <Grid container spacing={1.5} sx={{ width: '100%' }}>
+                                <Grid size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: 'fit-content', display: 'flex', flexDirection: 'row' }}>
                                     <Typography
                                         color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
                                         fontFamily={'Ubuntu, serif'}
@@ -96,31 +96,40 @@ export const CareerView = () => {
                                         <AddTaskIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.dark' }} />
                                         Professional Background
                                     </Typography>
-                                </Grid2>
-                                <Grid2 size={12} sx={{ width: '100%' }}>
+                                </Grid>
+                                <Grid size={12} sx={{ width: '100%' }}>
                                     <Divider sx={{ backgroundColor: 'gray' }} />
-                                </Grid2>
-                                <Grid2 size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: '100%', display: 'flex', flexDirection: 'row', pb: 2, pt: 2 }}>
-                                    <Grid2 container sx={{ width: '100%' }} spacing={0.3}>
-                                        <Grid2 size={12} sx={{ pl: 2 }}>
+                                </Grid>
+                                <Grid size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: '100%', display: 'flex', flexDirection: 'row', pb: 1, pt: 2 }}>
+                                    <Grid container sx={{ width: '100%' }} spacing={0.3}>
+                                        <Grid size={12} sx={{ pl: 2 }}>
                                             <Typography
                                                 fontWeight={'bold'}
                                                 fontSize={responsive ? '18px' : '20px'}
                                                 fontFamily={'Ubuntu, serif'}
+                                                color="primary.dark"
                                             >
                                                 Software Engineer
                                             </Typography>
-                                        </Grid2>
-                                        <Grid2 size={responsive ? 12 : 8} sx={{ pl: 2, display: 'flex', justifyContent: 'left' }}>
+                                            <Typography
+                                                fontSize={'17.5px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                color="gray"
+                                            >
+                                                Xalapa, Veracruz
+                                            </Typography>
+                                        </Grid>
+                                        <Grid size={responsive ? 12 : 8} sx={{ pl: 2, display: 'flex', justifyContent: 'left' }}>
                                             <Typography
                                                 fontSize={responsive ? '16px' : '18px'}
                                                 fontFamily={'Ubuntu, serif'}
                                                 fontStyle={'italic'}
+                                                color="primary.dark"
                                             >
                                                 High Specialty Medical Center Dr. Rafael Lucio
                                             </Typography>
-                                        </Grid2>
-                                        <Grid2 size={responsive ? 12 : 4} sx={{ pr: responsive ? 0 : 2, pl: responsive ? 2 : 0, display: 'flex', justifyContent: responsive ? 'left' : 'right' }}>
+                                        </Grid>
+                                        <Grid size={responsive ? 12 : 4} sx={{ pr: responsive ? 0 : 2, pl: responsive ? 2 : 0, display: 'flex', justifyContent: responsive ? 'left' : 'right' }}>
                                             <Typography
                                                 fontSize={responsive ? '16px' : '18px'}
                                                 fontFamily={'Ubuntu, serif'}
@@ -128,17 +137,223 @@ export const CareerView = () => {
                                             >
                                                 Apr 2023 — Present
                                             </Typography>
-                                        </Grid2>
-                                        <Grid2 size={12} sx={{ pl: 2, display: 'flex', textJustify: 'justify' }}>
-                                            
-                                        </Grid2>
-                                    </Grid2>
-                                </Grid2>
-                            </Grid2>
+                                        </Grid>
+                                        <Grid size={12} sx={{ pl: 1, display: 'flex', textJustify: 'justify', pr: 4 }}>
+                                            <ul style={{ marginTop: 5 }}>
+                                                <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Developed and deployed a landing page for the hospital annual congress hosting 6000 people in 2023 and
+                                                            2024 editions through a serverless solution using Firebase and MySQL for data transactions, GitHub Pages,
+                                                            AWS for hosting purposes and Google Domains (Squarespace) for DNS services.
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Created back-end side application over the same landing page using NodeJS and Google SMTP services for
+                                                            email sending, containing QR codes for assistance registration based on assistants’ preferences.
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Designed attendance certificates for every assistant using Python and Canvas and distributed over the same
+                                                            SMTP service.
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Developed and maintained many modules for different departments (Human Resources, Teaching, Financial
+                                                            Resources) over the main Administrative Clinical Integral System using NodeJS, Express, React, Redux, MUI
+                                                            Material, Socket IO, Prisma ORM and MySQL.
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Restructuring, entity relationship diagraming and obsolete database migrations using Python to improve the
+                                                            implementation of new modules.
+                                                        </Typography>
+                                                    </li>
+                                                </Grid>
+                                            </ul>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: '100%', display: 'flex', flexDirection: 'row', pb: 1, pt: 2 }}>
+                                    <Grid container sx={{ width: '100%' }} spacing={0.3}>
+                                        <Grid size={12} sx={{ pl: 2 }}>
+                                            <Typography
+                                                fontWeight={'bold'}
+                                                fontSize={responsive ? '18px' : '20px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                color="primary.dark"
+                                            >
+                                                Cloud Engineer
+                                            </Typography>
+                                            <Typography
+                                                fontSize={'17.5px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                color="gray"
+                                            >
+                                                Xalapa, Veracruz
+                                            </Typography>
+                                        </Grid>
+                                        <Grid size={responsive ? 12 : 8} sx={{ pl: 2, display: 'flex', justifyContent: 'left' }}>
+                                            <Typography
+                                                fontSize={responsive ? '16px' : '18px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                fontStyle={'italic'}
+                                                color="primary.dark"
+                                            >
+                                                National Laboratory of Advanced Informatics
+                                            </Typography>
+                                        </Grid>
+                                        <Grid size={responsive ? 12 : 4} sx={{ pr: responsive ? 0 : 2, pl: responsive ? 2 : 0, display: 'flex', justifyContent: responsive ? 'left' : 'right' }}>
+                                            <Typography
+                                                fontSize={responsive ? '16px' : '18px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                fontStyle={'italic'}
+                                            >
+                                                Feb 2022 — Dec 2022
+                                            </Typography>
+                                        </Grid>
+                                        <Grid size={12} sx={{ pl: 1, display: 'flex', textJustify: 'justify', pr: 4 }}>
+                                            <ul style={{ marginTop: 5 }}>
+                                                <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Deployed academic applications in cloud platforms (AWS, Azure, Heroku).
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Analyzed and refactored code of applications built on different frameworks.
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Managed and implemented JBoss (WildFly) server for hosting Java applications on AWS.
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Tested and debugged applications code through SonarQube static code analyzer.
+                                                        </Typography>
+                                                    </li>
+                                                </Grid>
+                                            </ul>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: '100%', display: 'flex', flexDirection: 'row', pb: 1, pt: 2 }}>
+                                    <Grid container sx={{ width: '100%' }} spacing={0.3}>
+                                        <Grid size={12} sx={{ pl: 2 }}>
+                                            <Typography
+                                                fontWeight={'bold'}
+                                                fontSize={responsive ? '18px' : '20px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                color="primary.dark"
+                                            >
+                                                Network Engineer
+                                            </Typography>
+                                            <Typography
+                                                fontSize={'17.5px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                color="gray"
+                                            >
+                                                Xalapa, Veracruz
+                                            </Typography>
+                                        </Grid>
+                                        <Grid size={responsive ? 12 : 8} sx={{ pl: 2, display: 'flex', justifyContent: 'left' }}>
+                                            <Typography
+                                                fontSize={responsive ? '16px' : '18px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                fontStyle={'italic'}
+                                                color="primary.dark"
+                                            >
+                                                Veracruzana University
+                                            </Typography>
+                                        </Grid>
+                                        <Grid size={responsive ? 12 : 4} sx={{ pr: responsive ? 0 : 2, pl: responsive ? 2 : 0, display: 'flex', justifyContent: responsive ? 'left' : 'right' }}>
+                                            <Typography
+                                                fontSize={responsive ? '16px' : '18px'}
+                                                fontFamily={'Ubuntu, serif'}
+                                                fontStyle={'italic'}
+                                            >
+                                                Jul 2021 — Dec 2021
+                                            </Typography>
+                                        </Grid>
+                                        <Grid size={12} sx={{ pl: 1, display: 'flex', textJustify: 'justify', pr: 4 }}>
+                                            <ul style={{ marginTop: 5 }}>
+                                                <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Maintained, managed and organized intermediary devices (routers, switches, VoIP phones, etc.).
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Analyzed and monitored the faculty network using basic sniffing techniques.
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Managed and updated the Faculty of Networks Laboratory Inventory system.
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography
+                                                            fontFamily={'Ubuntu, serif'}
+                                                            textAlign={'justify'}
+                                                        >
+                                                            Created a network practices manual and proposal letter for device management.
+                                                        </Typography>
+                                                    </li>
+                                                </Grid>
+                                            </ul>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
                         </Box>
-                    </Grid2>
-                </Grid2>
-            </Grid2>
+                    </Grid>
+                </Grid>
+            </Grid>
         </>
     )
 }

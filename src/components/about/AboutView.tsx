@@ -1,4 +1,4 @@
-import { Box, Grid2, Link, Typography, useMediaQuery } from "@mui/material"
+import { Box, Button, Grid, Link, Typography, useMediaQuery } from "@mui/material"
 import { HidelineUI, SahibUI } from "../../helpers/about/backgroundPatterns";
 import { useContext, useEffect, useRef, useState } from "react";
 import { UIContext } from "../../context/UIContext";
@@ -13,19 +13,21 @@ import LanguageIcon from '@mui/icons-material/Language';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import DownloadIcon from '@mui/icons-material/Download';
 import 'animate.css';
 import { motion } from 'framer-motion';
 
 const performance = ['Enhancing loading times', 'Improving user experience', 'Applying SSR'];
 const coding = ['Clean coding', 'Serving security', 'Troubleshooting'];
-const learning = ['Digging new tech', 'Following trends', 'Cutting-edge projects'];
+const learning = ['Digging new tools', 'Innovating', 'Cutting-edge Tech'];
 
 const AboutView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const { selectedUI } = useContext(UIContext);
     const [index, setIndex] = useState({ performance: 0, coding: 0, learning: 0 });
     const [focus, setFocus] = useState({ performance: 'Enhancing loading times', coding: 'Clean coding', learning: 'Digging new tech' });
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const titleRef = useRef(null);
 
     useEffect(() => {
@@ -87,9 +89,21 @@ const AboutView = () => {
         };
     }, []);
 
+    const onDownload = () => {
+        setIsLoading(true);
+        setTimeout(() => {
+            const link = document.createElement("a");
+            link.download = `CV_SAHIB_HERNANDEZ_EN.pdf`;
+            link.href = 'https://www.dropbox.com/scl/fi/yjktjqdkimmmoyzqm48eg/CV_SAHIB_HERNANDEZ_EN.pdf?rlkey=xxynshf4ftbgmlvehunyx6cw2&st=bpwh5n10&dl=1';
+            link.click();
+
+            setIsLoading(false);
+        }, 1500);
+    };
+
     return (
         <>
-            <Grid2 sx={{
+            <Grid sx={{
                 backgroundImage: selectedUI === 'Sahib' ? SahibUI : HidelineUI,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
@@ -99,8 +113,8 @@ const AboutView = () => {
                 position: 'relative'
             }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#010100"><path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path></svg>
-                <Grid2 container>
-                    <Grid2 size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh' }}>
+                <Grid container>
+                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh' }}>
                         <motion.div
                             ref={titleRef}
                             className={`animate__animated ${isVisible ? 'animate__fadeInUp' : ''}`}
@@ -136,9 +150,9 @@ const AboutView = () => {
                             display: 'flex',
                             alignItems: 'center'
                         }}>
-                            <Grid2 container>
-                                <Grid2 size={responsive ? 12 : 8.5} sx={{ display: 'flex', flexDirection: 'column', gap: 3, textAlign: 'justify', pl: responsive ? 3 : 7, pr: responsive ? 3 : 7 }}>
-                                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: responsive ? 3 : 2 }}>
+                            <Grid container>
+                                <Grid size={responsive ? 12 : 8.5} sx={{ display: 'flex', flexDirection: 'column', gap: 3.7, textAlign: 'justify', pl: responsive ? 3 : 7, pr: responsive ? 3 : 7 }}>
+                                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
                                         <Typography
                                             fontFamily={'Ubuntu, serif'}
                                             fontSize={responsive ? '16px' : '1vw'}
@@ -178,14 +192,14 @@ const AboutView = () => {
                                             <TipsAndUpdatesIcon sx={{ fontSize: responsive ? '5vw' : '1.3vw', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
                                             Current Focus
                                         </Typography>
-                                        <Grid2 container sx={{ display: 'flex', gap: 3 }}>
+                                        <Grid container sx={{ display: 'flex', gap: 3 }}>
                                             <Box sx={{ display: 'flex' }}>
-                                                <Grid2 size={'auto'}>
+                                                <Grid size={'auto'}>
                                                     <Box sx={{ height: 'auto', width: 'fit-content', background: 'linear-gradient(90deg, rgba(245,244,241,0.9) 0%, rgba(231,228,218,0.7) 48%, rgba(245,244,241,0.9) 100%)', borderRadius: '5px', display: 'flex', p: 0.8 }}>
                                                         <ElectricBoltIcon sx={{ color: 'primary.dark' }} />
                                                     </Box>
-                                                </Grid2>
-                                                <Grid2 size={'auto'}>
+                                                </Grid>
+                                                <Grid size={'auto'}>
                                                     <Box sx={{ height: '100%', width: 'fit-content' }}>
                                                         <Typography
                                                             fontWeight={'bold'}
@@ -210,15 +224,15 @@ const AboutView = () => {
                                                             {focus.performance}
                                                         </Typography>
                                                     </Box>
-                                                </Grid2>
+                                                </Grid>
                                             </Box>
                                             <Box sx={{ display: 'flex' }}>
-                                                <Grid2 size={'auto'}>
+                                                <Grid size={'auto'}>
                                                     <Box sx={{ height: 'auto', width: 'fit-content', background: 'linear-gradient(90deg, rgba(245,244,241,0.9) 0%, rgba(231,228,218,0.7) 48%, rgba(245,244,241,0.9) 100%)', borderRadius: '5px', display: 'flex', p: 0.8 }}>
                                                         <VerifiedUserIcon sx={{ color: 'primary.dark' }} />
                                                     </Box>
-                                                </Grid2>
-                                                <Grid2 size={'auto'}>
+                                                </Grid>
+                                                <Grid size={'auto'}>
                                                     <Box sx={{ height: '100%', width: 'fit-content' }}>
                                                         <Typography
                                                             fontWeight={'bold'}
@@ -243,15 +257,15 @@ const AboutView = () => {
                                                             {focus.coding}
                                                         </Typography>
                                                     </Box>
-                                                </Grid2>
+                                                </Grid>
                                             </Box>
                                             <Box sx={{ display: 'flex' }}>
-                                                <Grid2 size={'auto'}>
+                                                <Grid size={'auto'}>
                                                     <Box sx={{ height: 'auto', width: 'fit-content', background: 'linear-gradient(90deg, rgba(245,244,241,0.9) 0%, rgba(231,228,218,0.7) 48%, rgba(245,244,241,0.9) 100%)', borderRadius: '5px', display: 'flex', p: 0.8 }}>
                                                         <AutoStoriesIcon sx={{ color: 'primary.dark' }} />
                                                     </Box>
-                                                </Grid2>
-                                                <Grid2 size={'auto'}>
+                                                </Grid>
+                                                <Grid size={'auto'}>
                                                     <Box sx={{ height: '100%', width: 'fit-content' }}>
                                                         <Typography
                                                             fontWeight={'bold'}
@@ -276,12 +290,12 @@ const AboutView = () => {
                                                             {focus.learning}
                                                         </Typography>
                                                     </Box>
-                                                </Grid2>
+                                                </Grid>
                                             </Box>
-                                        </Grid2>
+                                        </Grid>
                                     </Box>
-                                </Grid2>
-                                <Grid2 size={responsive ? 12 : 3.5} sx={{ pl: responsive ? 3 : 2, pr: responsive ? 3 : 2, mt: responsive ? 3 : 1, display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'left' }}>
+                                </Grid>
+                                <Grid size={responsive ? 12 : 3.5} sx={{ pl: responsive ? 3 : 2, pr: responsive ? 3 : 2, mt: responsive ? 3 : 1, display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'left' }}>
                                     <Typography
                                         color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
                                         fontFamily={'Ubuntu, serif'}
@@ -408,15 +422,35 @@ const AboutView = () => {
                                             English - Advanced
                                         </Typography>
                                     </Box>
-                                </Grid2>
-                            </Grid2>
+                                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                                        <Button
+                                            loading={isLoading}
+                                            startIcon={<DownloadIcon />}
+                                            onClick={onDownload}
+                                            sx={{
+                                                fontFamily: 'Ubuntu, serif',
+                                                fontStyle: 'italic',
+                                                color: 'primary.700',
+                                                backgroundColor: 'primary.100',
+                                                '&:hover': {
+                                                    color: 'primary.main',
+                                                    backgroundColor: 'primary.200'
+                                                },
+                                                transition: 'all 0.4s ease',
+                                                width: responsive ? '100%' : '75%'
+                                            }}>
+                                            Download Resume
+                                        </Button>
+                                    </Box>
+                                </Grid>
+                            </Grid>
                         </Box>
-                    </Grid2>
-                </Grid2>
-                <Grid2 sx={{ position: 'absolute', bottom: -8, width: '100%', mb: 0 }}>
+                    </Grid>
+                </Grid >
+                <Grid sx={{ position: 'absolute', bottom: -8, width: '100%', mb: 0 }}>
                     <img loading="lazy" src="/pressuredraper-website/triangle2.svg" style={{ width: '100%', height: '50px' }}></img>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid >
         </>
     )
 }
