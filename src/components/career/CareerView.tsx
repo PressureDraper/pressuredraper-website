@@ -1,39 +1,23 @@
 import { Box, Divider, Grid, Typography, useMediaQuery } from "@mui/material"
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
-import { motion } from 'framer-motion';
-import { useContext, useEffect, useRef, useState } from "react";
+import { motion, useInView } from 'framer-motion';
+import { useContext, useEffect, useRef } from "react";
 import { UIContext } from "../../context/UIContext";
 import AddTaskIcon from '@mui/icons-material/AddTask';
+import { PropsUIContext } from "../../interfaces/context/IUIContext";
 
 export const CareerView = () => {
     const { selectedUI } = useContext(UIContext);
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
-    const [isVisible, setIsVisible] = useState(false);
-    const titleRef = useRef(null);
+    const { setActiveSection } = useContext<PropsUIContext>(UIContext);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false });
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                } else {
-                    setIsVisible(false);
-                }
-            },
-            { threshold: 0.1 } // Se dispara cuando el 10% del elemento es visible
-        );
-
-        if (titleRef.current) {
-            observer.observe(titleRef.current);
+        if (isInView) {
+            setActiveSection('Career');
         }
-
-        return () => {
-            if (titleRef.current) {
-                observer.unobserve(titleRef.current);
-            }
-        };
-    }, []);
-
+    }, [isInView]);
     return (
         <>
             <Grid sx={{
@@ -47,10 +31,8 @@ export const CareerView = () => {
                 <Grid container>
                     <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
-                            ref={titleRef}
-                            className={`animate__animated ${isVisible ? 'animate__fadeInUp' : ''}`}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: isVisible ? 1 : 0 }}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1 }}
                             style={{ marginTop: responsive ? '5vh' : '7vh' }}
                         >
@@ -100,7 +82,7 @@ export const CareerView = () => {
                                 <Grid size={12} sx={{ width: '100%' }}>
                                     <Divider sx={{ backgroundColor: 'gray' }} />
                                 </Grid>
-                                <Grid size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: '100%', display: 'flex', flexDirection: 'row', pb: 1, pt: 2 }}>
+                                <Grid ref={ref} size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: '100%', display: 'flex', flexDirection: 'row', pb: 1, pt: 2 }}>
                                     <Grid container sx={{ width: '100%' }} spacing={0.3}>
                                         <Grid size={12} sx={{ pl: 2 }}>
                                             <Typography

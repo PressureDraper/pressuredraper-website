@@ -139,17 +139,7 @@ export const Navbar = () => {
                                 <MenuIcon />
                             </IconButton>
                             <Menu
-                                id="menu-appbar"
                                 anchorEl={anchorElNav}
-                                anchorOrigin={{
-                                    vertical: 'bottom',
-                                    horizontal: 'left',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'left',
-                                }}
                                 open={Boolean(anchorElNav)}
                                 onClose={handleCloseNavMenu}
                                 sx={{ display: responsive ? 'block' : 'none' }}

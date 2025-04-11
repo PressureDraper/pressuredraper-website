@@ -15,7 +15,8 @@ import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import DownloadIcon from '@mui/icons-material/Download';
 import 'animate.css';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { PropsUIContext } from "../../interfaces/context/IUIContext";
 
 const performance = ['Enhancing loading times', 'Improving user experience', 'Applying SSR'];
 const coding = ['Clean coding', 'Serving security', 'Troubleshooting'];
@@ -26,9 +27,10 @@ const AboutView = () => {
     const { selectedUI } = useContext(UIContext);
     const [index, setIndex] = useState({ performance: 0, coding: 0, learning: 0 });
     const [focus, setFocus] = useState({ performance: 'Enhancing loading times', coding: 'Clean coding', learning: 'Digging new tech' });
-    const [isVisible, setIsVisible] = useState<boolean>(false);
+    const { setActiveSection } = useContext<PropsUIContext>(UIContext);
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const titleRef = useRef(null);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false });
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -66,29 +68,6 @@ const AboutView = () => {
         setFocus({ ...focus, learning: learning[index.learning] });
     }, [index.learning]);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                } else {
-                    setIsVisible(false);
-                }
-            },
-            { threshold: 0.1 } // Shows up when 10% of element is visible
-        );
-
-        if (titleRef.current) {
-            observer.observe(titleRef.current);
-        }
-
-        return () => {
-            if (titleRef.current) {
-                observer.unobserve(titleRef.current);
-            }
-        };
-    }, []);
-
     const onDownload = () => {
         setIsLoading(true);
         setTimeout(() => {
@@ -100,6 +79,12 @@ const AboutView = () => {
             setIsLoading(false);
         }, 1500);
     };
+
+    useEffect(() => {
+        if (isInView) {
+            setActiveSection('About');
+        }
+    }, [isInView]);
 
     return (
         <>
@@ -116,11 +101,10 @@ const AboutView = () => {
                 <Grid container>
                     <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh' }}>
                         <motion.div
-                            ref={titleRef}
-                            className={`animate__animated ${isVisible ? 'animate__fadeInUp' : ''}`}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: isVisible ? 1 : 0 }}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1 }}
+                            exit={{ opacity: 0, y: 0 }}
                         >
                             <Typography
                                 color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
@@ -162,6 +146,7 @@ const AboutView = () => {
                                             <b style={{ fontSize: responsive ? '20px' : '1.5vw' }}>S</b>ahib is a Computer Science graduate with 4+ years of experience within the field. He resides in Veracruz, Mexico and is currently working as a Full-Stack developer.
                                         </Typography>
                                         <Typography
+                                            ref={ref}
                                             fontFamily={'Ubuntu, serif'}
                                             fontSize={responsive ? '16px' : '1vw'}
                                             color="primary.dark"

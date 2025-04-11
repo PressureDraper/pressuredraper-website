@@ -1,11 +1,13 @@
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { UIContext } from "../../context/UIContext";
 import { PropsViewData } from "../../interfaces/selection/IViewData";
 import { BannerVideos } from "./BannerVideos";
 import 'animate.css';
 import { UIProfileSelect } from "./UIProfileSelect";
+import { PropsUIContext } from "../../interfaces/context/IUIContext";
+import { useInView } from "framer-motion";
 
 export const SelectView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
@@ -18,6 +20,9 @@ export const SelectView = () => {
         quoteAnimation: '',
         videoSource: '2'
     });
+    const { setActiveSection } = useContext<PropsUIContext>(UIContext);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false });
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -27,6 +32,12 @@ export const SelectView = () => {
         //clear Timeout on component unmount
         return () => clearTimeout(timer);
     }, [selectedUI]);
+
+    useEffect(() => {
+        if (isInView) {
+            setActiveSection('Selection');
+        }
+    }, [isInView]);
 
     return (
         <Box
@@ -70,7 +81,7 @@ export const SelectView = () => {
                         Who is...
                     </Typography>
                 </Grid>
-                <Grid sx={{ display: 'flex', justifyContent: 'center', height: '35%' }}>
+                <Grid ref={ref} sx={{ display: 'flex', justifyContent: 'center', height: '35%' }}>
                     <UIProfileSelect viewData={viewData} setViewData={setViewData} />
                 </Grid>
                 <Grid sx={{ display: 'flex', flexDirection: 'column', height: '35%', justifyContent: 'space-evenly' }}>
