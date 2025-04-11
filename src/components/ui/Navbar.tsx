@@ -43,10 +43,11 @@ export const Navbar = () => {
     }, [selectedUI]);
 
     return (
-        <AppBar position="fixed">
+        <AppBar position="fixed" sx={{ backgroundColor: 'rgba(255,255,255,0)' }}>
             <motion.div
                 style={{
-                    background: 'linear-gradient(135deg, #f5f4f1, #927d60, #2b201d)'
+                    background: 'linear-gradient(135deg, #f5f4f1, #927d60, #2b201d)',
+                    opacity: 1
                 }}
                 animate={{
                     background: selectedUI === 'Sahib' ? 'linear-gradient(135deg, #f5f4f1, #927d60, #2b201d)' : 'linear-gradient(135deg, #f9f8fc, #9c83c9, #322249)'
