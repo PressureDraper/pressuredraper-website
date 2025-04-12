@@ -18,7 +18,7 @@ const navItem = [
 export const Navbar = () => {
     const { selectedUI } = useContext(UIContext);
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-    const { activeSection, setActiveSection } = useContext<PropsUIContext>(UIContext);
+    const { activeSection, setActiveSection, setDynamic } = useContext<PropsUIContext>(UIContext);
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const navigate: NavigateFunction = useNavigate();
     const [animations, setAnimations] = useState({ headerTitle: 'animate__animated animate__fadeIn' });
@@ -35,6 +35,7 @@ export const Navbar = () => {
         setAnchorElNav(null);
         setActiveSection(pathTo);
         navigate(`/?section=${pathTo}`, { replace: true });
+        setDynamic(1);
     };
 
     useEffect(() => {

@@ -8,6 +8,7 @@ import 'animate.css';
 import { UIProfileSelect } from "./UIProfileSelect";
 import { PropsUIContext } from "../../interfaces/context/IUIContext";
 import { useInView } from "framer-motion";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
 export const SelectView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
@@ -20,9 +21,10 @@ export const SelectView = () => {
         quoteAnimation: '',
         videoSource: '2'
     });
-    const { setActiveSection } = useContext<PropsUIContext>(UIContext);
+    const { setActiveSection, setDynamic } = useContext<PropsUIContext>(UIContext);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false });
+    const navigate: NavigateFunction = useNavigate();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -35,7 +37,9 @@ export const SelectView = () => {
 
     useEffect(() => {
         if (isInView) {
+            navigate(`/?section=Selection`, { replace: true });
             setActiveSection('Selection');
+            setDynamic(0);
         }
     }, [isInView]);
 
@@ -68,7 +72,7 @@ export const SelectView = () => {
         >
             <BannerVideos {...viewData} />
             <Grid container columns={12} direction={'column'}>
-                <Grid sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: 'auto', height: '30%' }}>
+                <Grid ref={ref} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: 'auto', height: '30%' }}>
                     <Typography
                         color={selectedUI === 'Sahib' ? "primary.light" : "secondary.light"}
                         fontFamily={'Ubuntu, serif'}
@@ -81,7 +85,7 @@ export const SelectView = () => {
                         Who is...
                     </Typography>
                 </Grid>
-                <Grid ref={ref} sx={{ display: 'flex', justifyContent: 'center', height: '35%' }}>
+                <Grid sx={{ display: 'flex', justifyContent: 'center', height: '35%' }}>
                     <UIProfileSelect viewData={viewData} setViewData={setViewData} />
                 </Grid>
                 <Grid sx={{ display: 'flex', flexDirection: 'column', height: '35%', justifyContent: 'space-evenly' }}>

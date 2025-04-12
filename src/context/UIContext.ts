@@ -5,5 +5,7 @@ export const UIContext = createContext<PropsUIContext>({
     activeSection: 'Selection',
     setActiveSection: () => { },
     selectedUI: 'Sahib',
-    setSelectedUI: () => { }
+    setSelectedUI: () => { },
+    dynamic: 0,
+    setDynamic: () => { }
 });

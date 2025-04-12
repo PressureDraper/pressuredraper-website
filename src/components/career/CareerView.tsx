@@ -18,15 +18,17 @@ export const CareerView = () => {
                 backgroundSize: 'cover',
                 height: `calc(auto - ${responsive ? navBarHeigthResponsive : navBarHeigth}px)`,
                 transition: 'background 0.5s ease',
-                flexDirection: 'row'
+                flexDirection: 'row',
+                overflow: 'visible',
             }}>
                 <Grid container>
-                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1 }}
                             style={{ marginTop: responsive ? '5vh' : '7vh' }}
+                            viewport={{ once: true }}
                         >
                             <Typography
                                 color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
@@ -55,7 +57,7 @@ export const CareerView = () => {
                             alignItems: 'center',
                             justifyContent: responsive ? 'left' : 'left'
                         }}>
-                            <Grid container spacing={1.5} sx={{ width: '100%' }}>
+                            <Grid container spacing={1.5} sx={{ width: '100%', overflow: 'visible' }}>
                                 <Grid size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: 'fit-content', display: 'flex', flexDirection: 'row' }}>
                                     <Typography
                                         color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
