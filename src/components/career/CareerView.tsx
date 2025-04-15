@@ -4,7 +4,9 @@ import { motion } from 'framer-motion';
 import { useContext } from "react";
 import { UIContext } from "../../context/UIContext";
 import AddTaskIcon from '@mui/icons-material/AddTask';
+import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
 import { Curriculum } from "./Curriculum";
+import { Projects } from "./Projects";
 
 export const CareerView = () => {
     const { selectedUI } = useContext(UIContext);
@@ -22,7 +24,7 @@ export const CareerView = () => {
                 overflow: 'visible',
             }}>
                 <Grid container>
-                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '7vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -45,22 +47,21 @@ export const CareerView = () => {
                         </motion.div>
                         <Box sx={{
                             mt: 2,
-                            mb: 3,
                             pt: responsive ? 3 : 4,
-                            pb: 4,
                             pl: responsive ? 2 : 0,
                             pr: responsive ? 2 : 0,
                             height: 'auto',
                             width: '100%',
                             overflow: 'hidden',
                             display: 'flex',
+                            flexDirection: 'column',
                             alignItems: 'center',
                             justifyContent: responsive ? 'left' : 'left'
                         }}>
-                            <Grid container spacing={1.5} sx={{ width: '100%', overflow: 'visible' }}>
-                                <Grid size={12} sx={{ backgroundColor: 'primary.light', borderRadius: 5, width: 'fit-content', display: 'flex', flexDirection: 'row' }}>
+                            <Grid container size={12} spacing={1.5} sx={{ width: '100%', overflow: 'visible' }}>
+                                <Grid size={12} sx={{ backgroundColor: 'primary.dark', borderRadius: 5, width: 'fit-content', display: 'flex', flexDirection: 'row' }}>
                                     <Typography
-                                        color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
+                                        color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
                                         fontFamily={'Ubuntu, serif'}
                                         fontWeight={'bold'}
                                         fontSize={responsive ? '18px' : '1.3vw'}
@@ -69,14 +70,39 @@ export const CareerView = () => {
                                         textAlign={responsive ? 'center' : 'left'}
                                         sx={{ transition: 'color 0.5s ease', pl: 2, pr: 2 }}
                                     >
-                                        <AddTaskIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.dark' }} />
+                                        <AddTaskIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
                                         Professional Background
                                     </Typography>
                                 </Grid>
                                 <Grid size={12} sx={{ width: '100%' }}>
                                     <Divider sx={{ backgroundColor: 'gray' }} />
                                 </Grid>
-                                <Curriculum />
+                                <Grid container sx={{ gap: 2 }}>
+                                    <Curriculum />
+                                </Grid>
+                            </Grid>
+                            <Grid container size={12} spacing={1.5} sx={{ width: '100%', overflow: 'visible', mt: 5 }}>
+                                <Grid size={12} sx={{ backgroundColor: 'primary.dark', borderRadius: 5, width: 'fit-content', display: 'flex', flexDirection: 'row' }}>
+                                    <Typography
+                                        color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
+                                        fontFamily={'Ubuntu, serif'}
+                                        fontWeight={'bold'}
+                                        fontSize={responsive ? '18px' : '1.3vw'}
+                                        fontStyle={'normal'}
+                                        letterSpacing={'.1rem'}
+                                        textAlign={responsive ? 'center' : 'left'}
+                                        sx={{ transition: 'color 0.5s ease', pl: 2, pr: 2 }}
+                                    >
+                                        <FolderSpecialIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
+                                        Projects
+                                    </Typography>
+                                </Grid>
+                                <Grid size={12} sx={{ width: '100%' }}>
+                                    <Divider sx={{ backgroundColor: 'gray' }} />
+                                </Grid>
+                                <Grid container sx={{ gap: 2 }}>
+                                    <Projects />
+                                </Grid>
                             </Grid>
                         </Box>
                     </Grid>

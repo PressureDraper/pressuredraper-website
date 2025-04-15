@@ -68,14 +68,14 @@ export const Curriculum = () => {
                         </Grid>
                         <Grid size={12} sx={{ pl: 1, display: 'flex', textJustify: 'justify', pr: 4 }}>
                             <ul style={{ marginTop: 5 }}>
-                                <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                                <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.7 }}>
                                     <li>
                                         <Typography
                                             fontFamily={'Ubuntu, serif'}
                                             textAlign={'justify'}
                                         >
                                             Developed and deployed a landing page for the hospital annual congress hosting 6000 people in 2023 and
-                                            2024 editions through a serverless solution using Firebase and MySQL for data transactions, GitHub Pages,
+                                            2024 editions through a serverless solution using Firebase and MySQL for data transactions, GitHub Pages and
                                             AWS for hosting purposes and Google Domains (Squarespace) for DNS services.
                                         </Typography>
                                     </li>
@@ -84,7 +84,7 @@ export const Curriculum = () => {
                                             fontFamily={'Ubuntu, serif'}
                                             textAlign={'justify'}
                                         >
-                                            Created back-end side application over the same landing page using NodeJS and Google SMTP services for
+                                            Created micro back-end service for the same landing page using NodeJS and Google SMTP services for
                                             email sending, containing QR codes for assistance registration based on assistants’ preferences.
                                         </Typography>
                                     </li>
@@ -102,9 +102,18 @@ export const Curriculum = () => {
                                             fontFamily={'Ubuntu, serif'}
                                             textAlign={'justify'}
                                         >
-                                            Developed and maintained many modules for different departments (Human Resources, Teaching, Financial
+                                            Developed and maintained many microservices for different departments (Human Resources, Teaching, Financial
                                             Resources) over the main Administrative Clinical Integral System using NodeJS, Express, React, Redux, MUI
                                             Material, Socket IO, Prisma ORM and MySQL.
+                                        </Typography>
+                                    </li>
+                                    <li>
+                                        <Typography
+                                            fontFamily={'Ubuntu, serif'}
+                                            textAlign={'justify'}
+                                            ref={ref}
+                                        >
+                                            Processed, built and optimized employee's data to generate statistics reports' of developed modules through REST API implementations.
                                         </Typography>
                                     </li>
                                     <li>
@@ -169,7 +178,7 @@ export const Curriculum = () => {
                         </Grid>
                         <Grid size={12} sx={{ pl: 1, display: 'flex', textJustify: 'justify', pr: 4 }}>
                             <ul style={{ marginTop: 5 }}>
-                                <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                                <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.7 }}>
                                     <li>
                                         <Typography
                                             fontFamily={'Ubuntu, serif'}
@@ -254,7 +263,7 @@ export const Curriculum = () => {
                         </Grid>
                         <Grid size={12} sx={{ pl: 1, display: 'flex', textJustify: 'justify', pr: 4 }}>
                             <ul style={{ marginTop: 5 }}>
-                                <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                                <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.7 }}>
                                     <li>
                                         <Typography
                                             fontFamily={'Ubuntu, serif'}
