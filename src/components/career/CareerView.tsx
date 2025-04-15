@@ -77,7 +77,7 @@ export const CareerView = () => {
                                 <Grid size={12} sx={{ width: '100%' }}>
                                     <Divider sx={{ backgroundColor: 'gray' }} />
                                 </Grid>
-                                <Grid container sx={{ gap: 2 }}>
+                                <Grid container sx={{ gap: 2 }} size={12}>
                                     <Curriculum />
                                 </Grid>
                             </Grid>
@@ -100,7 +100,7 @@ export const CareerView = () => {
                                 <Grid size={12} sx={{ width: '100%' }}>
                                     <Divider sx={{ backgroundColor: 'gray' }} />
                                 </Grid>
-                                <Grid container sx={{ gap: 2 }}>
+                                <Grid container sx={{ minWidth: '100%' }}>
                                     <Projects />
                                 </Grid>
                             </Grid>
