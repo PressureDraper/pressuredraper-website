@@ -1,19 +1,19 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography, useMediaQuery } from "@mui/material"
+import { Button, CardActions, CardContent, CardMedia, Typography, useMediaQuery } from "@mui/material"
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FindInPageIcon from '@mui/icons-material/FindInPage';
 import Masonry from '@mui/lab/Masonry';
 import { projectsInfo } from '../../helpers/projects/data';
-import { useState } from "react";
 import { motion } from 'framer-motion';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import { keyframes } from '@mui/system';
+import { useState } from "react";
 
 export const Projects = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const [showAll, setShowAll] = useState<boolean>(false);
-    const MotionCard = motion(Card);
     const visibleProjects = projectsInfo.filter((_, index) => showAll || index < 4);
+    const [renderKey, setRenderKey] = useState<number>(0);
 
     const fadeArrow = keyframes`
         0% {
@@ -30,19 +30,24 @@ export const Projects = () => {
         }
         `;
 
+    const handleToggle = () => {
+        setShowAll(prev => !prev);
+        setRenderKey(prevKey => prevKey + 1);
+    };
+
     return (
         <>
             <Masonry columns={responsive ? 1 : 2} spacing={3} sx={{ pt: 2, pb: 1, width: '110%' }}>
                 {visibleProjects.map((item, index) => (
-                    <MotionCard
-                        key={item.title}
+                    <motion.div
+                        key={`${renderKey}-${item.title}`}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.05 }}
+                        style={{ backgroundColor: '#ffffff', borderRadius: 10, boxShadow: '0 1px 0px 0 rgba(0, 0, 0, 0.4)' }}
                     >
                         <CardMedia
-                            sx={{ height: 'auto' }}
+                            sx={{ height: 'auto', borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
                             image={item.img}
                             title="Portfolio"
                             component="img"
@@ -59,60 +64,57 @@ export const Projects = () => {
                                 {item.desc}
                             </Typography>
                         </CardContent>
+
                         <CardActions>
                             <Button startIcon={<GitHubIcon />} sx={{ width: '100%' }} size="small">Code</Button>
                             <Button startIcon={<FindInPageIcon />} sx={{ width: '100%' }} size="small">Documentation</Button>
                         </CardActions>
-                    </MotionCard>
+                    </motion.div>
                 ))}
             </Masonry>
 
             {/* Show more / less button */}
-            {
-                projectsInfo.length > 4 && (
-                    <Button
-                        startIcon={
-                            showAll &&
-                            <KeyboardDoubleArrowUpIcon
-                                sx={{
-                                    width: 'auto',
-                                    height: '27px',
-                                    mr: '-15px',
-                                    mb: '-5px',
-                                    animation: `${fadeArrow} 1.5s ease-in-out infinite`,
-                                }}
-                            />
-                        }
-                        endIcon={
-                            !showAll &&
-                            <KeyboardDoubleArrowDownIcon
-                                sx={{
-                                    width: 'auto',
-                                    height: '27px',
-                                    ml: '-13px',
-                                    animation: `${fadeArrow} 1.5s ease-in-out infinite`,
-                                }}
-                            />}
-                        onClick={() => setShowAll(prev => !prev)}
+            <Button
+                startIcon={
+                    showAll &&
+                    <KeyboardDoubleArrowUpIcon
                         sx={{
-                            mt: 2,
-                            mx: 'auto',
-                            display: 'block',
-                            backgroundColor: 'transparent',
-                            color: 'primary.dark',
-                            fontStyle: 'italic',
-                            transition: 'color 0.4s ease',
-                            '&:hover': {
-                                color: 'primary.400',
-                            },
-                            width: '120px'
+                            width: 'auto',
+                            height: '27px',
+                            mr: '-15px',
+                            mb: '-5px',
+                            animation: `${fadeArrow} 1.5s ease-in-out infinite`,
                         }}
-                        variant="text"
-                    >
-                        {showAll ? 'Show Less' : 'Show More'}
-                    </Button>
-                )
-            }
+                    />
+                }
+                endIcon={
+                    !showAll &&
+                    <KeyboardDoubleArrowDownIcon
+                        sx={{
+                            width: 'auto',
+                            height: '27px',
+                            ml: '-13px',
+                            animation: `${fadeArrow} 1.5s ease-in-out infinite`,
+                        }}
+                    />}
+                onClick={handleToggle}
+                sx={{
+                    mt: 2,
+                    mx: 'auto',
+                    display: 'block',
+                    backgroundColor: 'transparent',
+                    color: 'primary.dark',
+                    fontStyle: 'italic',
+                    transition: 'color 0.4s ease',
+                    '&:hover': {
+                        color: 'primary.400',
+                    },
+                    width: '120px'
+                }}
+                variant="text"
+            >
+                {showAll ? 'Show Less' : 'Show More'}
+            </Button>
         </>
     )
 }

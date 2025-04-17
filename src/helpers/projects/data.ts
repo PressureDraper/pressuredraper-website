@@ -34,5 +34,5 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
         title: 'Resident Medical Evaluation System',
         date: 'Jan 2024 — Present',
         desc: "Full microservice "
-    },
+    }
 ]

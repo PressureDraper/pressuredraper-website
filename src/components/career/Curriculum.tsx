@@ -26,6 +26,7 @@ export const Curriculum = () => {
             {
                 curriculumInfo.map((item, index) => (
                     <motion.div
+                        key={index}
                         initial={{ opacity: 0, y: -50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: (index + 1) * 0.3 }}
@@ -75,7 +76,7 @@ export const Curriculum = () => {
                                         <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.7 }}>
                                             {item.responsabilities.map((item, index2) => (
                                                 index === 0 && index2 === 4 ?
-                                                    <li>
+                                                    <li key={index2}>
                                                         <Typography
                                                             fontFamily={'Ubuntu, serif'}
                                                             textAlign={'justify'}
@@ -85,7 +86,7 @@ export const Curriculum = () => {
                                                         </Typography>
                                                     </li>
                                                     :
-                                                    <li>
+                                                    <li key={index2}>
                                                         <Typography
                                                             fontFamily={'Ubuntu, serif'}
                                                             textAlign={'justify'}
