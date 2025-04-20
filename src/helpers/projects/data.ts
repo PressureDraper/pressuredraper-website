@@ -140,7 +140,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        code_url: 'https://github.com/PressureDraper/Lotus',
+        code_url: 'https://github.com/PressureDraper/mp3-Glass-Player',
         demo_url: 'https://pressuredraper.github.io/mp3-Glass-Player/'
     },
     {
