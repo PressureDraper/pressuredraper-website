@@ -6,6 +6,7 @@ import { projectsInfo } from '../../helpers/projects/data';
 import { motion } from 'framer-motion';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import { keyframes } from '@mui/system';
 import { useState } from "react";
 
@@ -66,8 +67,21 @@ export const Projects = () => {
                         </CardContent>
 
                         <CardActions>
-                            <Button startIcon={<GitHubIcon />} sx={{ width: '100%' }} size="small">Code</Button>
-                            <Button startIcon={<FindInPageIcon />} sx={{ width: '100%' }} size="small">Documentation</Button>
+                            {
+                                item.buttons.map((buttonItem) => {
+                                    if (buttonItem.name === 'code' && buttonItem.active) {
+                                        return <Button href={item.code_url} target="_blank" startIcon={<GitHubIcon />} sx={{ width: '100%' }} size="small">Code</Button>
+                                    }
+
+                                    if (buttonItem.name === 'docs' && buttonItem.active) {
+                                        return <Button startIcon={<FindInPageIcon />} sx={{ width: '100%' }} size="small">{responsive ? 'Docs' : 'Documentation'}</Button>
+                                    }
+
+                                    if (buttonItem.name === 'demo' && buttonItem.active) {
+                                        return <Button href={item.demo_url} target="_blank" startIcon={<VisibilityIcon />} sx={{ width: '100%' }} size="small">Demo</Button>
+                                    }
+                                })
+                            }
                         </CardActions>
                     </motion.div>
                 ))}
