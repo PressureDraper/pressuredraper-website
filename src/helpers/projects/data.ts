@@ -1,4 +1,6 @@
-export const projectsInfo: { img: string, title: string, date: string, desc: string, buttons: { name: string, active: boolean}[], code_url: string, demo_url: string }[] = [
+import { PropsProjectsInfo } from "../../interfaces/projects/IProjectsInfo";
+
+export const projectsInfo: PropsProjectsInfo[] = [
     {
         img: '/pressuredraper-website/projects/signsModule/cover.webp',
         title: 'Digital Signature',
@@ -9,6 +11,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
+        icons: ['nodejs', 'react', 'mui', 'typescript', 'express', 'prisma', 'mysql', 'canvas', 'npm', 'gitlab'],
         code_url: '',
         demo_url: ''
     },
@@ -22,6 +25,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
+        icons: [],
         code_url: 'https://github.com/PressureDraper/pressuredraper-website',
         demo_url: 'https://pressuredraper.github.io/pressuredraper-website/#/'
     },
@@ -35,6 +39,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
+        icons: [],
         code_url: '',
         demo_url: ''
 
@@ -49,6 +54,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: true },
             { name: 'demo', active: true }
         ],
+        icons: [],
         code_url: 'https://github.com/JornadasMedicas?tab=repositories',
         demo_url: 'https://jornadasmedicascae.com'
     },
@@ -62,6 +68,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
+        icons: [],
         code_url: 'https://github.com/PressureDraper/socket-io-04-tickets',
         demo_url: ''
     },
@@ -75,6 +82,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
+        icons: [],
         code_url: '',
         demo_url: ''
     },
@@ -88,6 +96,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
+        icons: [],
         code_url: 'https://github.com/JornadasMedicas/form',
         demo_url: 'https://jornadasmedicas.github.io/form/#/home'
     },
@@ -101,6 +110,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
+        icons: [],
         code_url: 'https://github.com/PressureDraper/react-heroesApp',
         demo_url: 'https://pressuredraper.github.io/react-heroesApp/#/login'
     },
@@ -114,6 +124,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
+        icons: [],
         code_url: 'https://github.com/PressureDraper/CurrencyConverter-JavaG4',
         demo_url: ''
     },
@@ -127,6 +138,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
+        icons: [],
         code_url: 'https://github.com/PressureDraper/Sprint01-ChallengeONE',
         demo_url: 'https://pressuredraper.github.io/Sprint01-ChallengeONE/'
     },
@@ -140,6 +152,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
+        icons: [],
         code_url: 'https://github.com/PressureDraper/mp3-Glass-Player',
         demo_url: 'https://pressuredraper.github.io/mp3-Glass-Player/'
     },
@@ -153,6 +166,7 @@ export const projectsInfo: { img: string, title: string, date: string, desc: str
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
+        icons: [],
         code_url: 'https://github.com/PressureDraper/Lotus',
         demo_url: ''
     },

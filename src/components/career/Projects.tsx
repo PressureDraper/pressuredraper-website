@@ -1,4 +1,4 @@
-import { Button, CardActions, CardContent, CardMedia, Typography, useMediaQuery } from "@mui/material"
+import { Button, CardActions, CardContent, CardMedia, Chip, Typography, useMediaQuery } from "@mui/material"
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FindInPageIcon from '@mui/icons-material/FindInPage';
 import Masonry from '@mui/lab/Masonry';
@@ -7,8 +7,9 @@ import { motion } from 'framer-motion';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { keyframes } from '@mui/system';
+import { Box, keyframes } from '@mui/system';
 import { useState } from "react";
+import { PropsProjectsButtons, PropsProjectsInfo } from "../../interfaces/projects/IProjectsInfo";
 
 export const Projects = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
@@ -39,7 +40,7 @@ export const Projects = () => {
     return (
         <>
             <Masonry columns={responsive ? 1 : 2} spacing={3} sx={{ pt: 2, pb: 1, width: '110%' }}>
-                {visibleProjects.map((item, index) => (
+                {visibleProjects.map((item: PropsProjectsInfo, index) => (
                     <motion.div
                         key={`${renderKey}-${item.title}`}
                         initial={{ opacity: 0, y: 20 }}
@@ -64,21 +65,41 @@ export const Projects = () => {
                             <Typography style={{ textAlign: 'justify' }} fontFamily="Ubuntu, serif" variant="body2" color="gray">
                                 {item.desc}
                             </Typography>
+                            <Box sx={{ pt: 2, display: 'flex', justifyContent: 'center', width: '100%' }}>
+                                <Masonry columns={responsive ? 3 : 4} spacing={1} sx={{ width: responsive ? '95%' : '90%' }}>
+                                    {
+                                        item.icons.map((tech: string) => (
+                                            <Chip
+                                                icon={
+                                                    <img
+                                                        loading="lazy"
+                                                        src={`/pressuredraper-website/icons/${tech}.svg`}
+                                                        alt={tech}
+                                                        style={{ width: 23, height: 23 }}
+                                                    />
+                                                }
+                                                label={tech}
+                                                variant="outlined"
+                                            />
+                                        ))
+                                    }
+                                </Masonry>
+                            </Box>
                         </CardContent>
 
-                        <CardActions>
+                        <CardActions sx={{ mt: -1 }}>
                             {
-                                item.buttons.map((buttonItem) => {
+                                item.buttons.map((buttonItem: PropsProjectsButtons) => {
                                     if (buttonItem.name === 'code' && buttonItem.active) {
-                                        return <Button href={item.code_url} target="_blank" startIcon={<GitHubIcon />} sx={{ width: '100%' }} size="small">Code</Button>
+                                        return <Button key={buttonItem.name} href={item.code_url} target="_blank" startIcon={<GitHubIcon />} sx={{ width: '100%' }} size="small">Code</Button>
                                     }
 
                                     if (buttonItem.name === 'docs' && buttonItem.active) {
-                                        return <Button startIcon={<FindInPageIcon />} sx={{ width: '100%' }} size="small">{responsive ? 'Docs' : 'Documentation'}</Button>
+                                        return <Button key={buttonItem.name} startIcon={<FindInPageIcon />} sx={{ width: '100%' }} size="small">{responsive ? 'Docs' : 'Documentation'}</Button>
                                     }
 
                                     if (buttonItem.name === 'demo' && buttonItem.active) {
-                                        return <Button href={item.demo_url} target="_blank" startIcon={<VisibilityIcon />} sx={{ width: '100%' }} size="small">Demo</Button>
+                                        return <Button key={buttonItem.name} href={item.demo_url} target="_blank" startIcon={<VisibilityIcon />} sx={{ width: '100%' }} size="small">Demo</Button>
                                     }
                                 })
                             }
