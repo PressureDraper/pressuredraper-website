@@ -11,7 +11,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'react', 'mui', 'typescript', 'express', 'prisma', 'mysql', 'canvas', 'npm', 'gitlab'],
+        icons: ['nodejs', 'react', 'mui', 'typescript', 'express', 'socketio', 'prisma-ORM', 'mysql', 'canvas', 'npm', 'gitlab'],
         code_url: '',
         demo_url: ''
     },
@@ -25,7 +25,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: [],
+        icons: ['nodejs', 'vite', 'react', 'router-DOM', 'mui', 'motion', 'typescript', 'yarn', 'github', 'pages'],
         code_url: 'https://github.com/PressureDraper/pressuredraper-website',
         demo_url: 'https://pressuredraper.github.io/pressuredraper-website/#/'
     },
@@ -39,7 +39,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: [],
+        icons: ['nodejs', 'react', 'redux', 'mui', 'typescript', 'express', 'prisma-ORM', 'mysql', 'npm', 'gitlab'],
         code_url: '',
         demo_url: ''
 
@@ -54,7 +54,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: true }
         ],
-        icons: [],
+        icons: ['nodejs', 'react', 'redux', 'router-DOM', 'mui', 'html', 'css', 'typescript', 'express', 'prisma-ORM', 'mysql', 'aws', 'pages', 'squarespace', 'yarn', 'python', 'canvas', 'smtp', 'markdown' ],
         code_url: 'https://github.com/JornadasMedicas?tab=repositories',
         demo_url: 'https://jornadasmedicascae.com'
     },
@@ -68,7 +68,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
-        icons: [],
+        icons: ['nodejs', 'react', 'redux', 'mui'],
         code_url: 'https://github.com/PressureDraper/socket-io-04-tickets',
         demo_url: ''
     },

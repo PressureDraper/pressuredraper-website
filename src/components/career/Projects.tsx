@@ -1,4 +1,4 @@
-import { Button, CardActions, CardContent, CardMedia, Chip, Typography, useMediaQuery } from "@mui/material"
+import { Button, CardActions, CardContent, CardMedia, Chip, Typography, useMediaQuery } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FindInPageIcon from '@mui/icons-material/FindInPage';
 import Masonry from '@mui/lab/Masonry';
@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Box, keyframes } from '@mui/system';
+import { Box, Grid, keyframes } from '@mui/system';
 import { useState } from "react";
 import { PropsProjectsButtons, PropsProjectsInfo } from "../../interfaces/projects/IProjectsInfo";
 
@@ -66,24 +66,31 @@ export const Projects = () => {
                                 {item.desc}
                             </Typography>
                             <Box sx={{ pt: 2, display: 'flex', justifyContent: 'center', width: '100%' }}>
-                                <Masonry columns={responsive ? 3 : 4} spacing={1} sx={{ width: responsive ? '95%' : '90%' }}>
+                                <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                                     {
-                                        item.icons.map((tech: string) => (
-                                            <Chip
-                                                icon={
-                                                    <img
-                                                        loading="lazy"
-                                                        src={`/pressuredraper-website/icons/${tech}.svg`}
-                                                        alt={tech}
-                                                        style={{ width: 23, height: 23 }}
+                                        item.icons.map((tech: string) => {
+                                            let techName: string[] = tech.split('-');
+                                            let newTechName = techName.join(' ');
+                                            return (
+                                                <Grid>
+                                                    <Chip
+                                                        icon={
+                                                            <img
+                                                                loading="lazy"
+                                                                src={`/pressuredraper-website/icons/${tech}.svg`}
+                                                                alt={newTechName}
+                                                                style={{ width: 23, height: 23, borderRadius: tech === 'typescript' ? 5 : 0 }}
+                                                            />
+                                                        }
+                                                        sx={{ borderColor: 'primary.300', width: 'auto', p: 0.5 }}
+                                                        label={newTechName}
+                                                        variant="outlined"
                                                     />
-                                                }
-                                                label={tech}
-                                                variant="outlined"
-                                            />
-                                        ))
+                                                </Grid>
+                                            )
+                                        })
                                     }
-                                </Masonry>
+                                </Grid>
                             </Box>
                         </CardContent>
 
