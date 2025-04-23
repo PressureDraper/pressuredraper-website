@@ -18,12 +18,15 @@ export const CareerView = () => {
                 backgroundColor: 'primary.100',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                height: `calc(auto - ${responsive ? navBarHeigthResponsive : navBarHeigth}px)`,
+                minHeight: `calc(100vh - ${responsive ? navBarHeigthResponsive : navBarHeigth}px)`,
                 transition: 'background 0.5s ease',
                 flexDirection: 'row',
-                overflow: 'visible',
+                overflow: 'hidden',
+                position: 'relative',
+                zIndex: 0
             }}>
-                <Grid container>
+                <img src="/pressuredraper-website/dots.svg" style={{ minWidth: '95%', height: '100%', position: 'absolute', zIndex: -1, marginLeft: '30px' }}></img>
+                <Grid container sx={{ zIndex: 5 }}>
                     <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '7vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
