@@ -11,7 +11,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'react', 'mui', 'typescript', 'express', 'socketio', 'prisma-ORM', 'mysql', 'canvas', 'npm', 'gitlab'],
+        icons: ['nodejs', 'react', 'mui', 'typescript', 'express', 'socketio', 'prisma-ORM', 'mysql', 'canvas', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
     },
@@ -39,7 +39,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'react', 'redux', 'mui', 'typescript', 'express', 'prisma-ORM', 'mysql', 'npm', 'gitlab'],
+        icons: ['nodejs', 'react', 'redux', 'mui', 'typescript', 'express', 'prisma-ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
 
@@ -54,7 +54,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: true }
         ],
-        icons: ['nodejs', 'react', 'redux', 'router-DOM', 'mui', 'html', 'css', 'typescript', 'express', 'prisma-ORM', 'mysql', 'aws', 'pages', 'squarespace', 'yarn', 'python', 'canvas', 'smtp', 'markdown' ],
+        icons: ['nodejs', 'react', 'redux', 'router-DOM', 'mui', 'html', 'css', 'typescript', 'python', 'canvas', 'express', 'prisma-ORM', 'mysql', 'aws', 'github', 'pages', 'squarespace', 'smtp', 'yarn', 'markdown' ],
         code_url: 'https://github.com/JornadasMedicas?tab=repositories',
         demo_url: 'https://jornadasmedicascae.com'
     },
@@ -68,7 +68,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'react', 'redux', 'mui'],
+        icons: ['nodejs', 'react', 'ant-design', 'html', 'css', 'express', 'socketio', 'github', 'yarn'],
         code_url: 'https://github.com/PressureDraper/socket-io-04-tickets',
         demo_url: ''
     },
@@ -82,7 +82,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: [],
+        icons: ['nodejs', 'react', 'redux', 'mui', 'typescript', 'express', 'smtp', 'prisma-ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
     },
@@ -96,7 +96,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: [],
+        icons: ['nodejs', 'react', 'router-DOM', 'mui', 'html', 'css', 'javascript', 'python', 'canvas', 'firestore', 'aws', 'github', 'pages', 'domains', 'workspace', 'smtp', 'yarn' ],
         code_url: 'https://github.com/JornadasMedicas/form',
         demo_url: 'https://jornadasmedicas.github.io/form/#/home'
     },
@@ -110,7 +110,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: [],
+        icons: ['nodejs', 'react', 'router-DOM', 'local-storage', 'html', 'css', 'mui', 'javascript', 'github', 'pages', 'yarn'],
         code_url: 'https://github.com/PressureDraper/react-heroesApp',
         demo_url: 'https://pressuredraper.github.io/react-heroesApp/#/login'
     },
@@ -124,7 +124,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
-        icons: [],
+        icons: ['java', 'javax-swing', 'netbeans'],
         code_url: 'https://github.com/PressureDraper/CurrencyConverter-JavaG4',
         demo_url: ''
     },
@@ -138,7 +138,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: [],
+        icons: ['bootstrap', 'javascript', 'html', 'jquery', 'css', 'github', 'pages'],
         code_url: 'https://github.com/PressureDraper/Sprint01-ChallengeONE',
         demo_url: 'https://pressuredraper.github.io/Sprint01-ChallengeONE/'
     },
@@ -152,7 +152,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: [],
+        icons: ['bootstrap', 'javascript', 'html', 'jquery', 'css', 'github'],
         code_url: 'https://github.com/PressureDraper/mp3-Glass-Player',
         demo_url: 'https://pressuredraper.github.io/mp3-Glass-Player/'
     },
@@ -166,7 +166,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
-        icons: [],
+        icons: ['nodejs', 'javascript', 'discord-api', 'distube', 'github', 'npm', 'markdown'],
         code_url: 'https://github.com/PressureDraper/Lotus',
         demo_url: ''
     },
