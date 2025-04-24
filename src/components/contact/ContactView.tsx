@@ -1,14 +1,28 @@
 import { Box, Button, Grid, TextField, Typography, useMediaQuery } from "@mui/material"
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
-import { motion } from 'framer-motion';
-import { useContext } from "react";
+import { motion, useInView } from 'framer-motion';
+import { useContext, useEffect, useRef } from "react";
 import { UIContext } from "../../context/UIContext";
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import { NavigateFunction, useNavigate } from "react-router-dom";
+import { PropsUIContext } from "../../interfaces/context/IUIContext";
 
 export const ContactView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
+    const { setActiveSection, setDynamic } = useContext<PropsUIContext>(UIContext);
     const { selectedUI } = useContext(UIContext);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false });
+    const navigate: NavigateFunction = useNavigate();
+
+    useEffect(() => {
+        if (isInView) {
+            setActiveSection('Contact');
+            navigate(`/?section=Contact`, { replace: true });
+            setDynamic(0);
+        }
+    }, [isInView]);
 
     return (
         <>
@@ -63,7 +77,7 @@ export const ContactView = () => {
                             /* alignItems: 'center', */
                             justifyContent: 'center',
                         }}> {/* complete area box */}
-                            <Box sx={{ ml: responsive ? 0 : 5, mr: responsive ? 0 : 5, mb: 2, height: '100%', borderRadius: 2, p: 5, boxShadow: responsive ? '0px 10px 10px 0px rgba(101, 81, 67, 0.2)' : '0px 10px 10px 0px rgba(101, 81, 67, 0.2)', width: responsive ? '100%' : '50%', m: 'auto',  borderStyle: 'solid', borderWidth: 1, borderColor: 'primary.400' }}> {/* form card box */}
+                            <Box sx={{ ml: responsive ? 0 : 5, mr: responsive ? 0 : 5, mb: '20px', height: '100%', borderRadius: 2, p: 5, boxShadow: responsive ? '0px 10px 10px 0px rgba(101, 81, 67, 0.2)' : '0px 10px 10px 0px rgba(101, 81, 67, 0.2)', width: responsive ? '100%' : '50%', m: 'auto', borderStyle: 'solid', borderWidth: 1, borderColor: 'primary.100' }}> {/* form card box */}
                                 <Grid container columns={12} spacing={5} sx={{ height: '93%' }}>
                                     <Grid size={12} sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                                         <AutoAwesomeOutlinedIcon sx={{ fontSize: responsive ? '30px' : '1.7vw', color: '#887e6e', mr: 1.3 }} />
@@ -72,7 +86,14 @@ export const ContactView = () => {
                                             fontWeight={'bold'}
                                             fontSize={responsive ? '30px' : '1.7vw'}
                                             fontStyle={'normal'}
-                                            letterSpacing={'.1rem'}>
+                                            letterSpacing={'.1rem'}
+                                            ref={ref}
+                                            sx={{
+                                                backgroundImage: 'linear-gradient(45deg, #d1c9b7, #655143)',
+                                                backgroundClip: 'text',
+                                                color: 'transparent',
+                                            }}
+                                        >
                                             Let's Talk!
                                         </Typography>
                                     </Grid>
