@@ -9,10 +9,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
 const navItem = [
-    { name: 'Selection', width: '79%' },
-    { name: 'About', width: '70%' },
+    { name: 'Selection', width: '81%' },
+    { name: 'About', width: '72%' },
     { name: 'Career', width: '72%' },
-    { name: 'Contact', width: '75%' },
+    { name: 'Contact', width: '77%' },
 ]
 
 export const Navbar = () => {

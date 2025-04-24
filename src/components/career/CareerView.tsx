@@ -16,23 +16,21 @@ export const CareerView = () => {
         <>
             <Grid sx={{
                 backgroundColor: 'primary.100',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
                 minHeight: `calc(100vh - ${responsive ? navBarHeigthResponsive : navBarHeigth}px)`,
                 transition: 'background 0.5s ease',
                 flexDirection: 'row',
-                overflow: 'hidden',
+                overflow: 'visible',
                 position: 'relative',
                 zIndex: 0
             }}>
-                <img src="/pressuredraper-website/dots.svg" style={{ minWidth: '95%', height: '100%', position: 'absolute', zIndex: -1, marginLeft: '30px' }}></img>
+                {/* <img loading="lazy" src="/pressuredraper-website/background.svg" style={{ minWidth: '95%', height: '100%', position: 'absolute', marginLeft: '30px', zIndex: -1 }}></img> */}
                 <Grid container sx={{ zIndex: 5 }}>
                     <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '7vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1 }}
-                            style={{ marginTop: responsive ? '5vh' : '7vh' }}
+                            style={{ marginTop: responsive ? '5vh' : '4vh', position: 'relative' }}
                             viewport={{ once: true }}
                         >
                             <Typography
@@ -43,7 +41,19 @@ export const CareerView = () => {
                                 fontStyle={'normal'}
                                 letterSpacing={'.1rem'}
                                 textAlign={responsive ? 'center' : 'left'}
-                                sx={{ transition: 'color 0.5s ease' }}
+                                sx={{
+                                    transition: 'color 0.5s ease',
+                                    '&::after': {
+                                        content: '""',
+                                        position: 'absolute',
+                                        bottom: responsive ? 0 : 3,
+                                        left: 0,
+                                        width: '20%',
+                                        height: '5px',
+                                        backgroundColor: 'primary.300', // line color
+                                        transition: 'all 0.5s ease', // expand animation
+                                    }
+                                }}
                             >
                                 Career
                             </Typography>
@@ -59,7 +69,7 @@ export const CareerView = () => {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            justifyContent: responsive ? 'left' : 'left'
+                            justifyContent: 'left'
                         }}>
                             <Grid container size={12} spacing={1.5} sx={{ width: '100%', overflow: 'visible' }}>
                                 <Grid size={12} sx={{ backgroundColor: 'primary.dark', borderRadius: 5, width: 'fit-content', display: 'flex', flexDirection: 'row' }}>

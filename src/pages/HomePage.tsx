@@ -6,6 +6,7 @@ import { CareerView } from "../components/career/CareerView";
 import AboutView from "../components/about/AboutView";
 import { PropsUIContext } from "../interfaces/context/IUIContext";
 import { UIContext } from "../context/UIContext";
+import { ContactView } from "../components/contact/ContactView";
 
 export const navBarHeigth: number = 64;
 export const navBarHeigthResponsive: number = 54;
@@ -41,7 +42,7 @@ export const HomePage = () => {
                 <CareerView />
             </Box>
             <Box component="section" id="Contact">
-
+                <ContactView />
             </Box>
         </Stack>
     )
