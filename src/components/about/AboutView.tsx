@@ -157,6 +157,8 @@ const AboutView = () => {
                                 overflow: 'hidden',
                                 display: 'flex',
                                 alignItems: 'center',
+                                background: 'transparent',
+                                backdropFilter: 'blur(2px)',
                             }}>
                                 <Grid container>
                                     <Grid size={responsive ? 12 : 8.5} sx={{ display: 'flex', flexDirection: 'column', gap: 3.7, textAlign: 'justify', pl: responsive ? 3 : 7, pr: responsive ? 3 : 7 }}>

@@ -28,15 +28,18 @@ export const ContactView = () => {
         <>
             <Grid sx={{
                 background: 'linear-gradient(180deg,rgba(231, 228, 218, 1) 0%, rgba(209, 201, 183, 1) 50%, rgba(182, 169, 142, 1) 100%)',
-                minHeight: `calc(100vh - ${responsive ? navBarHeigthResponsive : navBarHeigth}px)`
+                minHeight: `calc(100vh - ${responsive ? navBarHeigthResponsive : navBarHeigth}px)`,
+                position: 'relative',
+                zIndex: 0
             }}>
                 <Grid container>
-                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
+                    <img loading="lazy" src="/pressuredraper-website/background.svg" style={{ minWidth: '95%', height: '100%', position: 'absolute', marginLeft: '30px', zIndex: -1, opacity: 0.5 }}></img>
+                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '7vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1 }}
-                            style={{ marginTop: responsive ? '5vh' : '4vh', position: 'relative', width: 'fit-content' }}
+                            style={{ marginTop: '4vh', position: 'relative', width: 'fit-content' }}
                             viewport={{ once: true }}
                         >
                             <Typography
@@ -65,7 +68,7 @@ export const ContactView = () => {
                             </Typography>
                         </motion.div>
                         <Box sx={{
-                            mt: 2,
+                            mt: responsive ? 2 : 0,
                             pt: responsive ? 3 : 4,
                             pl: responsive ? 2 : 0,
                             pr: responsive ? 2 : 0,
@@ -74,74 +77,98 @@ export const ContactView = () => {
                             overflow: 'visible',
                             display: 'flex',
                             flexDirection: 'column',
-                            /* alignItems: 'center', */
                             justifyContent: 'center',
                         }}> {/* complete area box */}
-                            <Box sx={{ ml: responsive ? 0 : 5, mr: responsive ? 0 : 5, mb: '20px', height: '100%', borderRadius: 2, p: 5, boxShadow: responsive ? '0px 10px 10px 0px rgba(101, 81, 67, 0.2)' : '0px 10px 10px 0px rgba(101, 81, 67, 0.2)', width: responsive ? '100%' : '50%', m: 'auto', borderStyle: 'solid', borderWidth: 1, borderColor: 'primary.100' }}> {/* form card box */}
-                                <Grid container columns={12} spacing={5} sx={{ height: '93%' }}>
-                                    <Grid size={12} sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                                        <AutoAwesomeOutlinedIcon sx={{ fontSize: responsive ? '30px' : '1.7vw', color: '#887e6e', mr: 1.3 }} />
-                                        <Typography
-                                            fontFamily={'Ubuntu, serif'}
-                                            fontWeight={'bold'}
-                                            fontSize={responsive ? '30px' : '1.7vw'}
-                                            fontStyle={'normal'}
-                                            letterSpacing={'.1rem'}
-                                            ref={ref}
-                                            sx={{
-                                                backgroundImage: 'linear-gradient(45deg, #d1c9b7, #655143)',
-                                                backgroundClip: 'text',
-                                                color: 'transparent',
-                                            }}
-                                        >
-                                            Let's Talk!
-                                        </Typography>
+                            <motion.div
+                                initial={{ opacity: 0, z: 50 }}
+                                whileInView={{ opacity: 1, z: 0 }}
+                                transition={{ duration: 1, delay: 1 }}
+                                viewport={{ once: true }}
+                                style={{ overflow: 'visible', height: responsive ? 'auto' : '100%' }}
+                            >
+                                <Box sx={{
+                                    ml: responsive ? 0 : 5,
+                                    mr: responsive ? 0 : 5,
+                                    mb: '20px',
+                                    height: responsive ? 'auto' : '100%', 
+                                    borderRadius: 2,
+                                    p: 5,
+                                    boxShadow: responsive ? '0px 10px 10px 0px rgba(101, 81, 67, 0.2)' : '0px 10px 10px 0px rgba(101, 81, 67, 0.2)',
+                                    width: responsive ? '100%' : '50%',
+                                    m: 'auto',
+                                    borderStyle: 'solid',
+                                    borderWidth: 1,
+                                    borderColor: 'primary.300',
+                                    background: 'transparent',
+                                    backdropFilter: 'blur(2px)',
+                                    position: 'relative',
+                                    zIndex: 0
+                                }}> {/* form card box */}
+                                    <Grid container columns={12} spacing={5} sx={{ height: '93%' }}>
+                                        <Grid size={12} sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                            <AutoAwesomeOutlinedIcon sx={{ fontSize: responsive ? '30px' : '1.7vw', color: '#887e6e', mr: 1.3 }} />
+                                            <Typography
+                                                fontFamily={'Ubuntu, serif'}
+                                                fontWeight={'bold'}
+                                                fontSize={responsive ? '30px' : '1.7vw'}
+                                                fontStyle={'normal'}
+                                                letterSpacing={'.1rem'}
+                                                ref={ref}
+                                                sx={{
+                                                    backgroundImage: 'linear-gradient(45deg, #d1c9b7, #655143)',
+                                                    backgroundClip: 'text',
+                                                    color: 'transparent',
+                                                }}
+                                            >
+                                                Let's Talk!
+                                            </Typography>
+                                        </Grid>
+                                        <Grid size={12}>
+                                            <TextField
+                                                label="Name"
+                                                variant="filled"
+                                                sx={{
+                                                    width: '100%'
+                                                }}
+                                            />
+                                        </Grid>
+                                        <Grid size={12}>
+                                            <TextField
+                                                label="Email"
+                                                variant="filled"
+                                                sx={{
+                                                    width: '100%'
+                                                }}
+                                            />
+                                        </Grid>
+                                        <Grid size={12}>
+                                            <TextField
+                                                label="Topic"
+                                                variant="filled"
+                                                sx={{
+                                                    width: '100%'
+                                                }}
+                                            />
+                                        </Grid>
+                                        <Grid size={12}>
+                                            <TextField
+                                                label="message..."
+                                                variant="filled"
+                                                multiline
+                                                minRows={3}
+                                                sx={{
+                                                    width: '100%',
+                                                }}
+                                            />
+                                        </Grid>
+                                        <Grid size={12}>
+                                            <Button sx={{ width: '100%', borderStyle: 'solid', borderWidth: 1, borderColor: 'primary.400', transition: 'all 0.3s ease', ':hover': { transform: 'scale(1.05)', transition: 'all 0.3s ease' } }} startIcon={<SendOutlinedIcon />}>
+                                                Send
+                                            </Button>
+                                        </Grid>
                                     </Grid>
-                                    <Grid size={12}>
-                                        <TextField
-                                            label="Name"
-                                            variant="filled"
-                                            sx={{
-                                                width: '100%'
-                                            }}
-                                        />
-                                    </Grid>
-                                    <Grid size={12}>
-                                        <TextField
-                                            label="Email"
-                                            variant="filled"
-                                            sx={{
-                                                width: '100%'
-                                            }}
-                                        />
-                                    </Grid>
-                                    <Grid size={12}>
-                                        <TextField
-                                            label="Topic"
-                                            variant="filled"
-                                            sx={{
-                                                width: '100%'
-                                            }}
-                                        />
-                                    </Grid>
-                                    <Grid size={12}>
-                                        <TextField
-                                            label="message..."
-                                            variant="filled"
-                                            multiline
-                                            minRows={3}
-                                            sx={{
-                                                width: '100%',
-                                            }}
-                                        />
-                                    </Grid>
-                                    <Grid size={12}>
-                                        <Button sx={{ width: '100%', borderStyle: 'solid', borderWidth: 1, borderColor: 'primary.400' }} startIcon={<SendOutlinedIcon />}>
-                                            Send
-                                        </Button>
-                                    </Grid>
-                                </Grid>
-                            </Box>
+                                </Box>
+                            </motion.div>
                         </Box>
                     </Grid>
                 </Grid>
