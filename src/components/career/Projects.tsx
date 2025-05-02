@@ -72,7 +72,7 @@ export const Projects = () => {
                                             let techName: string[] = tech.split('-');
                                             let newTechName = techName.join(' ');
                                             return (
-                                                <Grid>
+                                                <Grid key={tech}>
                                                     <Chip
                                                         icon={
                                                             <img

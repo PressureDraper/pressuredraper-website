@@ -5,7 +5,6 @@ import { useContext, useEffect } from "react";
 import { UIContext } from "../context/UIContext";
 import { PropsUIContext } from "../interfaces/context/IUIContext";
 
-
 export const AppRouter = () => {
     const { selectedUI } = useContext<PropsUIContext>(UIContext);
 

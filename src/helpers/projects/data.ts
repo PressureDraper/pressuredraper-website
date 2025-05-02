@@ -152,7 +152,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: ['bootstrap', 'javascript', 'html', 'jquery', 'css', 'github'],
+        icons: ['bootstrap', 'javascript', 'html', 'jquery', 'css', 'github', 'pages'],
         code_url: 'https://github.com/PressureDraper/mp3-Glass-Player',
         demo_url: 'https://pressuredraper.github.io/mp3-Glass-Player/'
     },
@@ -166,7 +166,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'javascript', 'discord-api', 'distube', 'github', 'npm', 'markdown'],
+        icons: ['nodejs', 'javascript', 'discord-api', 'distube', 'aws', 'github', 'npm', 'markdown'],
         code_url: 'https://github.com/PressureDraper/Lotus',
         demo_url: ''
     },

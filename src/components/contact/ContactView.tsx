@@ -1,12 +1,16 @@
 import { Box, Button, Grid, TextField, Typography, useMediaQuery } from "@mui/material"
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
 import { motion, useInView } from 'framer-motion';
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { UIContext } from "../../context/UIContext";
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import { PropsUIContext } from "../../interfaces/context/IUIContext";
+import { defaultErrors, formValidator } from "../../helpers/contact/formValidator";
+import { PropsContactForm } from "../../interfaces/contact/IForm";
+
+const defautlPayload = { name: '', email: '', topic: '', message: '' };
 
 export const ContactView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
@@ -15,6 +19,9 @@ export const ContactView = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false });
     const navigate: NavigateFunction = useNavigate();
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [payload, setPayload] = useState<PropsContactForm>({ name: '', email: '', topic: '', message: '' });
+    const [errors, setErrors] = useState(defaultErrors);
 
     useEffect(() => {
         if (isInView) {
@@ -23,6 +30,21 @@ export const ContactView = () => {
             setDynamic(0);
         }
     }, [isInView]);
+
+    const handleSubmit = () => {
+        const isOk = formValidator(payload, setErrors);
+
+        if (isOk) {
+            setIsLoading(true);
+
+            setPayload(defautlPayload);
+            setErrors(defaultErrors);
+
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 1000);
+        }
+    }
 
     return (
         <>
@@ -90,7 +112,7 @@ export const ContactView = () => {
                                     ml: responsive ? 0 : 5,
                                     mr: responsive ? 0 : 5,
                                     mb: '20px',
-                                    height: responsive ? 'auto' : '100%', 
+                                    height: responsive ? 'auto' : '100%',
                                     borderRadius: 2,
                                     p: 5,
                                     boxShadow: responsive ? '0px 10px 10px 0px rgba(101, 81, 67, 0.2)' : '0px 10px 10px 0px rgba(101, 81, 67, 0.2)',
@@ -127,42 +149,86 @@ export const ContactView = () => {
                                             <TextField
                                                 label="Name"
                                                 variant="filled"
+                                                value={payload.name}
                                                 sx={{
-                                                    width: '100%'
+                                                    width: '100%',
+                                                    '& .MuiFilledInput-root.Mui-focused': {
+                                                        backgroundColor: 'primary.200', // Cambia el color de fondo cuando está enfocado
+                                                    },
+                                                    '& .MuiInputLabel-root.Mui-focused': {
+                                                        color: 'primary.main', // Cambia el color del label cuando está enfocado
+                                                    },
                                                 }}
+                                                onChange={(e) => setPayload({ ...payload, name: e.target.value })}
+                                                error={payload.name === '' && errors.name.error}
+                                                helperText={payload.name === '' && errors.name.error ? 'Please enter your name' : ''}
+                                            /* onFocus={() => setErrors({ ...errors, name: false })} */
                                             />
                                         </Grid>
                                         <Grid size={12}>
                                             <TextField
                                                 label="Email"
                                                 variant="filled"
+                                                value={payload.email}
                                                 sx={{
-                                                    width: '100%'
+                                                    width: '100%',
+                                                    '& .MuiFilledInput-root.Mui-focused': {
+                                                        backgroundColor: 'primary.200', // Cambia el color de fondo cuando está enfocado
+                                                    },
+                                                    '& .MuiInputLabel-root.Mui-focused': {
+                                                        color: 'primary.main', // Cambia el color del label cuando está enfocado
+                                                    },
                                                 }}
+                                                onChange={(e) => setPayload({ ...payload, email: e.target.value })}
+                                                error={(payload.email === '' || (payload.email === '' || !/\S+@\S+\.\S+/.test(payload.email))) && errors.email.error}
+                                                helperText={(payload.email === '' || !/\S+@\S+\.\S+/.test(payload.email)) && errors.email.error ? errors.email.message : ''}
                                             />
                                         </Grid>
                                         <Grid size={12}>
                                             <TextField
                                                 label="Topic"
                                                 variant="filled"
+                                                value={payload.topic}
                                                 sx={{
-                                                    width: '100%'
+                                                    width: '100%',
+                                                    '& .MuiFilledInput-root.Mui-focused': {
+                                                        backgroundColor: 'primary.200', // Cambia el color de fondo cuando está enfocado
+                                                    },
+                                                    '& .MuiInputLabel-root.Mui-focused': {
+                                                        color: 'primary.main', // Cambia el color del label cuando está enfocado
+                                                    },
                                                 }}
+                                                onChange={(e) => setPayload({ ...payload, topic: e.target.value })}
+                                                error={payload.topic === '' && errors.topic.error}
+                                                helperText={payload.topic === '' && errors.topic.error ? errors.topic.message : ''}
                                             />
                                         </Grid>
                                         <Grid size={12}>
                                             <TextField
                                                 label="message..."
                                                 variant="filled"
+                                                value={payload.message}
                                                 multiline
                                                 minRows={3}
                                                 sx={{
                                                     width: '100%',
+                                                    '& .MuiFilledInput-root.Mui-focused': {
+                                                        backgroundColor: 'primary.200', // Cambia el color de fondo cuando está enfocado
+                                                    },
+                                                    '& .MuiInputLabel-root.Mui-focused': {
+                                                        color: 'primary.main', // Cambia el color del label cuando está enfocado
+                                                    },
                                                 }}
+                                                onChange={(e) => setPayload({ ...payload, message: e.target.value })}
+                                                error={payload.message === '' && errors.message.error}
+                                                helperText={payload.message === '' && errors.message.error ? errors.message.message : ''}
                                             />
                                         </Grid>
                                         <Grid size={12}>
-                                            <Button sx={{ width: '100%', borderStyle: 'solid', borderWidth: 1, borderColor: 'primary.400', transition: 'all 0.3s ease', ':hover': { transform: 'scale(1.05)', transition: 'all 0.3s ease' } }} startIcon={<SendOutlinedIcon />}>
+                                            <Button sx={{ width: '100%', borderStyle: 'solid', borderWidth: 1, borderColor: 'primary.400', transition: 'all 0.3s ease', ':hover': { transform: 'scale(1.05)', transition: 'all 0.3s ease' } }} startIcon={<SendOutlinedIcon />}
+                                                onClick={handleSubmit}
+                                                loading={isLoading}
+                                            >
                                                 Send
                                             </Button>
                                         </Grid>
@@ -173,6 +239,9 @@ export const ContactView = () => {
                     </Grid>
                 </Grid>
             </Grid>
+            <Box sx={{ position: 'relative' }}>
+                <img loading="lazy" src="/pressuredraper-website/triangle2.svg" style={{ width: '100%', height: '50px', position: 'absolute', bottom: -8, zIndex: 0 }}></img>
+            </Box>
         </>
     )
 }
