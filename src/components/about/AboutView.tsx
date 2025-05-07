@@ -460,7 +460,7 @@ const AboutView = () => {
                     </Grid>
                 </Grid >
                 <Grid sx={{ position: 'absolute', bottom: -8, width: '100%', mb: 0 }}>
-                    <img loading="lazy" src="/pressuredraper-website/triangle2.svg" style={{ width: '100%', height: '50px' }}></img>
+                    <img loading="lazy" src="/pressuredraper-website/upperTriangle.svg" style={{ width: '100%', height: '50px' }}></img>
                 </Grid>
             </Grid >
         </>

@@ -1,5 +1,4 @@
 import { Box, Button, Grid, TextField, Typography, useMediaQuery } from "@mui/material"
-import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
 import { motion, useInView } from 'framer-motion';
 import { useContext, useEffect, useRef, useState } from "react";
 import { UIContext } from "../../context/UIContext";
@@ -50,7 +49,7 @@ export const ContactView = () => {
         <>
             <Grid sx={{
                 background: 'linear-gradient(180deg,rgba(231, 228, 218, 1) 0%, rgba(209, 201, 183, 1) 50%, rgba(182, 169, 142, 1) 100%)',
-                minHeight: `calc(100vh - ${responsive ? navBarHeigthResponsive : navBarHeigth}px)`,
+                height: `auto`,
                 position: 'relative',
                 zIndex: 0
             }}>
@@ -94,12 +93,12 @@ export const ContactView = () => {
                             pt: responsive ? 3 : 4,
                             pl: responsive ? 2 : 0,
                             pr: responsive ? 2 : 0,
-                            height: '75vh',
+                            height: 'fit-content',
                             width: '100%',
                             overflow: 'visible',
                             display: 'flex',
                             flexDirection: 'column',
-                            justifyContent: 'center',
+                            justifyContent: 'center'
                         }}> {/* complete area box */}
                             <motion.div
                                 initial={{ opacity: 0, z: 50 }}
@@ -112,7 +111,7 @@ export const ContactView = () => {
                                     ml: responsive ? 0 : 5,
                                     mr: responsive ? 0 : 5,
                                     mb: '20px',
-                                    height: responsive ? 'auto' : '100%',
+                                    height: responsive ? 'auto' : 'auto',
                                     borderRadius: 2,
                                     p: 5,
                                     boxShadow: responsive ? '0px 10px 10px 0px rgba(101, 81, 67, 0.2)' : '0px 10px 10px 0px rgba(101, 81, 67, 0.2)',
@@ -239,8 +238,8 @@ export const ContactView = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Box sx={{ position: 'relative' }}>
-                <img loading="lazy" src="/pressuredraper-website/triangle2.svg" style={{ width: '100%', height: '50px', position: 'absolute', bottom: -8, zIndex: 0 }}></img>
+            <Box sx={{ position: 'relative', backgroundColor: 'primary.light' }}>
+                <img loading="lazy" src="/pressuredraper-website/bottomTriangle.svg" style={{ width: '100%', height: '50px', bottom: -8, transform: 'rotate(180deg)', marginBottom: '-0.35%' }}></img>
             </Box>
         </>
     )
