@@ -101,7 +101,7 @@ const AboutView = () => {
                 flexDirection: 'row',
                 position: 'relative'
             }}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#010100"><path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path></svg>
+                <svg style={{ marginTop: '-1px' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#010100"><path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path></svg>
                 <Grid container>
                     <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh', display: 'flex', flexDirection: 'column', alignItems: responsive ? 'center' : 'left' }}>
                         <motion.div
@@ -460,7 +460,7 @@ const AboutView = () => {
                     </Grid>
                 </Grid >
                 <Grid sx={{ position: 'absolute', bottom: -8, width: '100%', mb: 0 }}>
-                    <img loading="lazy" src="/pressuredraper-website/upperTriangle.svg" style={{ width: '100%', height: '50px' }}></img>
+                    <img loading="lazy" src="/pressuredraper-website/upperTriangle.svg" style={{ width: '100%', height: '50px', marginBottom: '-1px' }}></img>
                 </Grid>
             </Grid >
         </>

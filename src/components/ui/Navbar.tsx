@@ -132,7 +132,7 @@ export const Navbar = () => {
                             ))}
                         </Box>
                         {/* responsive */}
-                        <Box sx={{ flexGrow: 1, display: responsive ? 'flex' : 'none' }}>
+                        <Box sx={{ display: responsive ? 'flex' : 'none' }}>
                             <IconButton
                                 size="small"
                                 onClick={handleOpenNavMenu}
@@ -144,7 +144,7 @@ export const Navbar = () => {
                                 anchorEl={anchorElNav}
                                 open={Boolean(anchorElNav)}
                                 onClose={handleCloseNavMenu}
-                                sx={{ display: responsive ? 'block' : 'none' }}
+                                sx={{ display: responsive ? 'flex' : 'none', width: '100%' }}
                             >
                                 {navItem.map((page) => (
                                     <MenuItem key={page.name} onClick={() => goToSection(page.name)}>
