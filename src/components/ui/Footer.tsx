@@ -5,7 +5,7 @@ export const Footer = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
 
     return (
-        <Grid container sx={{ backgroundColor: 'primary.light', height: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: 4, position: 'relative', flexDirection: 'column' }}>
+        <Grid container sx={{ backgroundColor: 'primary.light', height: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: 4, position: 'relative', flexDirection: 'column', zIndex: -1 }}>
             <Box sx={{ display: 'flex', width: 'fit-content' }}>
                 <Box>
                     <Box sx={{
@@ -14,7 +14,7 @@ export const Footer = () => {
                         backgroundColor: 'primary.100',
                         borderRadius: '100%',
                         position: 'relative',
-                        zIndex: 25,
+                        zIndex: 1,
                         '&::after': {
                             content: '""',
                             width: responsive ? '30px' : '70px', // Tamaño del círculo interno
@@ -38,7 +38,7 @@ export const Footer = () => {
                                 marginLeft: responsive ? '-15px' : '-25px',
                                 borderRadius: '100%',
                                 position: 'relative',
-                                zIndex: 25,
+                                zIndex: 1,
                                 '&::after': {
                                     content: '""',
                                     width: responsive ? '30px' : '70px', // Tamaño del círculo interno

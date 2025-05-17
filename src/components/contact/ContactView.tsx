@@ -1,4 +1,4 @@
-import { Box, Button, Grid, TextField, Typography, useMediaQuery } from "@mui/material"
+import { Alert, Box, Button, Grid, Snackbar, SnackbarCloseReason, TextField, Typography, useMediaQuery } from "@mui/material"
 import { motion, useInView } from 'framer-motion';
 import { useContext, useEffect, useRef, useState } from "react";
 import { UIContext } from "../../context/UIContext";
@@ -7,7 +7,11 @@ import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import { PropsUIContext } from "../../interfaces/context/IUIContext";
 import { defaultErrors, formValidator } from "../../helpers/contact/formValidator";
+import ErrorIcon from '@mui/icons-material/Error';
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import { PropsContactForm } from "../../interfaces/contact/IForm";
+import { sendMail } from "../../services/mailService";
+import { AxiosError } from "axios";
 
 const defautlPayload = { name: '', email: '', topic: '', message: '' };
 
@@ -21,6 +25,7 @@ export const ContactView = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [payload, setPayload] = useState<PropsContactForm>({ name: '', email: '', topic: '', message: '' });
     const [errors, setErrors] = useState(defaultErrors);
+    const [snackbarOptions, setSnackbarOptions] = useState({ open: false, message: '', error: false })
 
     useEffect(() => {
         if (isInView) {
@@ -36,14 +41,35 @@ export const ContactView = () => {
         if (isOk) {
             setIsLoading(true);
 
-            setPayload(defautlPayload);
-            setErrors(defaultErrors);
+            sendMail(payload).then(res => {
+                const successMessage = (res.data as { message: string })?.message;
 
-            setTimeout(() => {
+                setSnackbarOptions({ open: true, message: successMessage, error: false });
+                setPayload(defautlPayload);
+                setErrors(defaultErrors);
                 setIsLoading(false);
-            }, 1000);
+            }).catch((err: AxiosError) => {
+
+                const errorMessage = (err.response?.data as { error: string })?.error;
+                setSnackbarOptions({ open: true, message: errorMessage, error: true });
+                setIsLoading(false);
+            });
         }
     }
+
+    const handleSnackbarClose = (
+        event?: React.SyntheticEvent | Event,
+        reason?: SnackbarCloseReason,
+    ) => {
+        console.log(event);
+        
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setSnackbarOptions({ ...snackbarOptions, open: false });
+    };
+
 
     return (
         <>
@@ -238,9 +264,25 @@ export const ContactView = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Box sx={{ position: 'relative', backgroundColor: 'primary.light' }}>
+            <Box sx={{ position: 'relative', backgroundColor: 'primary.light', zIndex: 1 }}>
                 <img loading="lazy" src="/pressuredraper-website/bottomTriangle.svg" style={{ width: '100%', height: '50px', bottom: -8, transform: 'rotate(180deg)', marginBottom: '-0.35%', marginTop: '-1px' }}></img>
             </Box>
+            <Snackbar sx={{ zIndex: 10 }} transitionDuration={400} open={snackbarOptions.open} autoHideDuration={6000} onClose={handleSnackbarClose}>
+                <Alert
+                    onClose={handleSnackbarClose}
+                    variant="filled"
+                    icon={snackbarOptions.error ? <ErrorIcon /> : <TaskAltIcon />}
+                    sx={{
+                        width: '100%',
+                        backgroundColor: 'transparent',
+                        border: '1px solid #f5f4f1',
+                        backdropFilter: 'blur(10px)',
+                        color: 'primary.dark'
+                    }}
+                >
+                    {snackbarOptions.message}
+                </Alert>
+            </Snackbar>
         </>
     )
 }
