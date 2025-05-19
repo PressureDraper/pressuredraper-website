@@ -107,9 +107,9 @@ const AboutView = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 1, delay: 0.1 }}
                             viewport={{ once: true }}
-                            style={{ position: 'relative', width: 'fit-content' }}
+                            style={{ position: 'relative', width: 'fit-content', willChange: 'transform, opacity', }}
                         >
                             <Typography
                                 color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
@@ -130,7 +130,7 @@ const AboutView = () => {
                                         width: '15%',
                                         height: '5px',
                                         backgroundColor: responsive ? 'primary.200' : 'primary.light', // line color
-                                        transition: 'all 0.5s ease', // expand animation
+                                        transition: 'background-color 0.5s ease',
                                     }
                                 }}
                             >
@@ -140,7 +140,7 @@ const AboutView = () => {
                         <motion.div
                             initial={{ opacity: 0, y: -50 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 1, delay: 0.1 }}
                             viewport={{ once: true }}
                         >
                             <Box sx={{
@@ -157,8 +157,7 @@ const AboutView = () => {
                                 overflow: 'hidden',
                                 display: 'flex',
                                 alignItems: 'center',
-                                background: 'transparent',
-                                backdropFilter: 'blur(2px)',
+                                background: 'transparent'
                             }}>
                                 <Grid container>
                                     <Grid size={responsive ? 12 : 8.5} sx={{ display: 'flex', flexDirection: 'column', gap: 3.7, textAlign: 'justify', pl: responsive ? 3 : 7, pr: responsive ? 3 : 7 }}>

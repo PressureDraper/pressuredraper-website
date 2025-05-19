@@ -4,7 +4,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
     return (
         <>
             <video
-                src='/pressuredraper-website/background2.webm'
+                src={ '/pressuredraper-website/background2.webm' }
                 autoPlay
                 loop
                 muted
@@ -15,7 +15,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    visibility: viewData.videoSource === '2' ? 'visible' : 'hidden',
+                    visibility: 'visible',
                     transform: 'translate3d(0, 0, 0)'
                 }}
             />

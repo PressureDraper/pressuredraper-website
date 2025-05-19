@@ -147,7 +147,6 @@ export const ContactView = () => {
                                     borderWidth: 1,
                                     borderColor: 'primary.300',
                                     background: 'transparent',
-                                    backdropFilter: 'blur(2px)',
                                     position: 'relative',
                                     zIndex: 0
                                 }}> {/* form card box */}
