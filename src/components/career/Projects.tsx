@@ -77,7 +77,7 @@ export const Projects = () => {
                                                         icon={
                                                             <img
                                                                 loading="lazy"
-                                                                src={`/pressuredraper-website/icons/${tech}.svg`}
+                                                                src={`${import.meta.env.VITE_APP_BASE_ROUTE}/icons/${tech}.svg`}
                                                                 alt={newTechName}
                                                                 style={{ width: 23, height: 23, borderRadius: tech === 'typescript' ? 5 : 0 }}
                                                             />
