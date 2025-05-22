@@ -72,30 +72,28 @@ export const Curriculum = () => {
                                     </Typography>
                                 </Grid>
                                 <Grid size={12} sx={{ pl: 1, display: 'flex', textJustify: 'justify', pr: 4 }}>
-                                    <ul style={{ marginTop: 5 }}>
-                                        <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 0.7 }}>
-                                            {item.responsabilities.map((item, index2) => (
-                                                index === 0 && index2 === 4 ?
-                                                    <li key={index2}>
-                                                        <Typography
-                                                            fontFamily={'Ubuntu, serif'}
-                                                            textAlign={'justify'}
-                                                            ref={ref}
-                                                        >
-                                                            {item.desc}
-                                                        </Typography>
-                                                    </li>
-                                                    :
-                                                    <li key={index2}>
-                                                        <Typography
-                                                            fontFamily={'Ubuntu, serif'}
-                                                            textAlign={'justify'}
-                                                        >
-                                                            {item.desc}
-                                                        </Typography>
-                                                    </li>
-                                            ))}
-                                        </Grid>
+                                    <ul style={{ marginTop: 5, display: 'flex', flexDirection: 'column', gap: 5.5 }}>
+                                        {item.responsabilities.map((item, index2) => (
+                                            index === 0 && index2 === 4 ?
+                                                <li key={index2}>
+                                                    <Typography
+                                                        fontFamily={'Ubuntu, serif'}
+                                                        textAlign={'justify'}
+                                                        ref={ref}
+                                                    >
+                                                        {item.desc}
+                                                    </Typography>
+                                                </li>
+                                                :
+                                                <li key={index2}>
+                                                    <Typography
+                                                        fontFamily={'Ubuntu, serif'}
+                                                        textAlign={'justify'}
+                                                    >
+                                                        {item.desc}
+                                                    </Typography>
+                                                </li>
+                                        ))}
                                     </ul>
                                 </Grid>
                             </Grid>

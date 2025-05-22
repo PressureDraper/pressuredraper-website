@@ -262,7 +262,7 @@ export const ContactView = () => {
                 </Grid>
             </Grid>
             <Box sx={{ position: 'relative', backgroundColor: 'primary.light', zIndex: 1 }}>
-                <img loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/bottomTriangle.svg`} style={{ width: '100%', height: '50px', bottom: -8, transform: 'rotate(180deg)', marginBottom: '-0.35%', marginTop: '-1px' }}></img>
+                <img alt="bottomTriangle.svg" loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/bottomTriangle.svg`} style={{ width: '100%', height: '50px', bottom: -8, transform: 'rotate(180deg)', marginBottom: '-0.35%', marginTop: '-1px' }}></img>
             </Box>
             <Snackbar sx={{ zIndex: 10 }} transitionDuration={400} open={snackbarOptions.open} autoHideDuration={6000} onClose={handleSnackbarClose}>
                 <Alert

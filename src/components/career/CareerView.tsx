@@ -24,7 +24,7 @@ export const CareerView = () => {
                 zIndex: 0
             }}>
                 <Grid container sx={{ zIndex: 5, overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', height: 'auto', position: 'relative' }}>
-                    <img loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/background.svg`} style={{ minWidth: '95%', height: '100%', position: 'absolute', zIndex: -1, opacity: 0.5 }}></img>
+                    <img alt="background.svg" loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/background.svg`} style={{ minWidth: '95%', height: '100%', position: 'absolute', zIndex: -1, opacity: 0.5 }}></img>
                     <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '7vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
