@@ -20,7 +20,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
                 }}
             />
             <video
-                src={`${import.meta.env.VITE_APP_BASE_ROUTE}/background1.webm`}
+                src={`${import.meta.env.VITE_APP_BASE_ROUTE}/background1.mp4`}
                 autoPlay
                 loop
                 muted
