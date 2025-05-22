@@ -58,11 +58,9 @@ export const ContactView = () => {
     }
 
     const handleSnackbarClose = (
-        event?: React.SyntheticEvent | Event,
+        _event?: React.SyntheticEvent | Event,
         reason?: SnackbarCloseReason,
     ) => {
-        console.log(event);
-        
         if (reason === 'clickaway') {
             return;
         }

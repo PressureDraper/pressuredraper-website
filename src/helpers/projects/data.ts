@@ -11,7 +11,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'react', 'mui', 'typescript', 'express', 'socketio', 'prisma-ORM', 'mysql', 'canvas', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'mui', 'typescript', 'express', 'socketio', 'prisma-ORM', 'mysql', 'canvas', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
     },
@@ -25,7 +25,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: ['nodejs', 'vite', 'react', 'router-DOM', 'mui', 'motion', 'typescript', 'yarn', 'github', 'pages'],
+        icons: ['nodejs', 'vite', 'docker', 'react', 'router-DOM', 'mui', 'motion', 'typescript', 'php', 'yarn', 'github', 'pages', 'railway'],
         code_url: 'https://github.com/PressureDraper/pressuredraper-website',
         demo_url: 'https://pressuredraper.github.io/pressuredraper-website/#/'
     },
@@ -39,7 +39,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'react', 'redux', 'mui', 'typescript', 'express', 'prisma-ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'prisma-ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
 
@@ -82,7 +82,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'react', 'redux', 'mui', 'typescript', 'express', 'smtp', 'prisma-ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'smtp', 'prisma-ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
     },
