@@ -25,7 +25,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: ['nodejs', 'vite', 'docker', 'react', 'router-DOM', 'mui', 'motion', 'typescript', 'php', 'yarn', 'github', 'pages', 'railway'],
+        icons: ['nodejs', 'vite', 'docker', 'react', 'router-DOM', 'mui', 'motion', 'typescript', 'php', 'yarn', 'github', 'pages', 'cloudflare', 'railway'],
         code_url: 'https://github.com/PressureDraper/pressuredraper-website',
         demo_url: 'https://pressuredraper.github.io/pressuredraper-website/#/'
     },
