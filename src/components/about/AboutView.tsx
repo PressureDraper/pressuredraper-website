@@ -459,7 +459,7 @@ const AboutView = () => {
                     </Grid>
                 </Grid >
                 <Grid sx={{ position: 'absolute', bottom: -8, width: '100%', mb: 0 }}>
-                    <img alt="upperTriangle.svg" loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/upperTriangle.svg`} style={{ width: '100%', height: '50px', marginBottom: '-1px' }}></img>
+                    <img width={'100%'} height={'50px'} alt="upperTriangle.svg" loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/upperTriangle.svg`} style={{ marginBottom: '-1px' }}></img>
                 </Grid>
             </Grid >
         </>

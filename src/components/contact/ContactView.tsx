@@ -78,7 +78,7 @@ export const ContactView = () => {
                 zIndex: 0
             }}>
                 <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <img loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/background.svg`} style={{ minWidth: '95%', height: '100%', position: 'absolute', zIndex: -1, opacity: 0.5 }}></img>
+                    <img width={'95%'} height={'100%'} alt="background.svg" loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/background.svg`} style={{ position: 'absolute', zIndex: -1, opacity: 0.5 }}></img>
                     <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '7vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
@@ -262,7 +262,7 @@ export const ContactView = () => {
                 </Grid>
             </Grid>
             <Box sx={{ position: 'relative', backgroundColor: 'primary.light', zIndex: 1 }}>
-                <img alt="bottomTriangle.svg" loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/bottomTriangle.svg`} style={{ width: '100%', height: '50px', bottom: -8, transform: 'rotate(180deg)', marginBottom: '-0.35%', marginTop: '-1px' }}></img>
+                <img width={'100%'} height={'50px'} alt="bottomTriangle.svg" loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/bottomTriangle.svg`} style={{ bottom: -8, transform: 'rotate(180deg)', marginBottom: '-0.35%', marginTop: '-1px' }}></img>
             </Box>
             <Snackbar sx={{ zIndex: 10 }} transitionDuration={400} open={snackbarOptions.open} autoHideDuration={6000} onClose={handleSnackbarClose}>
                 <Alert

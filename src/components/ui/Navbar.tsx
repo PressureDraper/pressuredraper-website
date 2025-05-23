@@ -137,6 +137,7 @@ export const Navbar = () => {
                                 size="small"
                                 onClick={handleOpenNavMenu}
                                 color='primary'
+                                aria-label='Menu Button'
                             >
                                 <MenuIcon />
                             </IconButton>
