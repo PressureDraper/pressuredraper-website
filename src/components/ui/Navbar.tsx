@@ -60,7 +60,7 @@ export const Navbar = () => {
                 <Container maxWidth={'xl'}>
                     <Toolbar sx={{ display: 'flex', justifyContent: 'space-around' }}>
                         <Box sx={{ display: responsive ? 'none' : 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                            <NavLink to={'/'} style={{ marginBottom: -7 }}>
+                            <NavLink aria-label='Home Page' to={'/'} style={{ marginBottom: -7 }}>
                                 {
                                     selectedUI === 'Sahib'
                                         ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '35px' }} className="animate__animated animate__fadeIn" />
@@ -68,7 +68,7 @@ export const Navbar = () => {
                                 }
                             </NavLink>
                             <Divider orientation="vertical" variant='middle' flexItem sx={{ ml: 1.5, mr: 0.6, backgroundColor: 'primary.main' }} />
-                            <NavLink className={animations.headerTitle} to={'/'} style={{ textDecoration: 'none' }}>
+                            <NavLink aria-label='Home Page' className={animations.headerTitle} to={'/'} style={{ textDecoration: 'none' }}>
                                 <Typography
                                     variant="h5"
                                     noWrap
@@ -156,7 +156,7 @@ export const Navbar = () => {
                         </Box>
                         <Box sx={{ display: responsive ? 'flex' : 'none', flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'center' }}>
                             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                <NavLink to={'/'} style={{ display: responsive ? 'flex' : 'none' }}>
+                                <NavLink aria-label='Home Page' to={'/'} style={{ display: responsive ? 'flex' : 'none' }}>
                                     {
                                         selectedUI === 'Sahib'
                                             ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '32px' }} className="animate__animated animate__swing" />
@@ -164,7 +164,7 @@ export const Navbar = () => {
                                     }
                                 </NavLink>
                                 <Divider orientation="vertical" variant='middle' flexItem sx={{ ml: 1.5, display: responsive ? 'flex' : 'none', backgroundColor: 'primary.main' }} />
-                                <NavLink className={animations.headerTitle} to={'/'} style={{ textDecoration: 'none' }}>
+                                <NavLink aria-label='Home Page' className={animations.headerTitle} to={'/'} style={{ textDecoration: 'none' }}>
                                     <Typography
                                         variant="h5"
                                         noWrap

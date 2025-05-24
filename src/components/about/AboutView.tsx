@@ -1,5 +1,4 @@
 import { Box, Button, Grid, Link, Typography, useMediaQuery } from "@mui/material"
-import { HidelineUI, SahibUI } from "../../helpers/about/backgroundPatterns";
 import { useContext, useEffect, useRef, useState } from "react";
 import { UIContext } from "../../context/UIContext";
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
@@ -93,7 +92,7 @@ const AboutView = () => {
     return (
         <>
             <Grid sx={{
-                backgroundImage: selectedUI === 'Sahib' ? SahibUI : HidelineUI,
+                backgroundImage: selectedUI === 'Sahib' ? 'url("./sahibUI.svg")' : 'url("./hidelineUI.svg")',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 height: `auto`,
