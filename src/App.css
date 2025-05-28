@@ -19,3 +19,17 @@
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
+
+@keyframes breathingFade {
+    0% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}

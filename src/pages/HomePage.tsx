@@ -31,7 +31,7 @@ export const HomePage = () => {
     }, [location.search, responsive, dynamic]);
 
     return (
-        <Stack sx={{ backgroundColor: 'primary.dark' }}>
+        <Stack>
             <Box component="section" id="Selection">
                 <SelectView />
             </Box>

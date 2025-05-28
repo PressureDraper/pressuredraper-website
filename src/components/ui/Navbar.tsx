@@ -44,7 +44,7 @@ export const Navbar = () => {
     }, [selectedUI]);
 
     return (
-        <AppBar position="fixed" sx={{ backgroundColor: 'rgba(255,255,255,0)' }}>
+        <AppBar position="fixed" sx={{ backgroundColor: 'rgba(255,255,255,0)', zIndex: 5 }}>
             <motion.div
                 style={{
                     background: 'linear-gradient(135deg, #f5f4f1, #927d60, #2b201d)',
