@@ -41,7 +41,7 @@ export const Footer = () => {
                     />
                     {
                         sahibUIPalette.map((item: { color: string }) => (
-                            <Box>
+                            <Box key={item.color}>
                                 <Box sx={{
                                     width: responsive ? '40px' : '80px',
                                     height: responsive ? '40px' : '80px',

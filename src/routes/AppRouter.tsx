@@ -6,11 +6,10 @@ import {
   Routes
 } from "react-router-dom";
 import { TemplateRoute } from "./TemplateRoute"
-import { lazy, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { UIContext } from "../context/UIContext";
 import { PropsUIContext } from "../interfaces/context/IUIContext";
-
-const LazyHomePage = lazy(() => import('../pages/HomePage'));
+import HomePage from "../pages/HomePage";
 
 export const AppRouter = () => {
   const { selectedUI } = useContext<PropsUIContext>(UIContext);
@@ -67,7 +66,7 @@ export const AppRouter = () => {
         <Route path='/' element={<TemplateRoute />}>
           <Route
             index
-            element={<LazyHomePage />}
+            element={<HomePage />}
           />
 
           <Route path="*" element={<Navigate to="/" />} />

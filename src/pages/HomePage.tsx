@@ -20,7 +20,7 @@ const HomePage = () => {
         const section: string | null = new URLSearchParams(location.search).get('section');
         if (section) {
             const sectionElement: HTMLElement | null = document.getElementById(section);
-            
+
             if (sectionElement && dynamic === 1) {
                 window.scrollTo({
                     top: sectionElement.offsetTop - (responsive ? navBarHeigthResponsive : navBarHeigth),

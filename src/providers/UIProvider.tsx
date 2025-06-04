@@ -5,6 +5,7 @@ import { UIContext } from "../context/UIContext"
 export const UIProvider = ({ children: Component }: { children: ReactNode }) => {
     const [activeSection, setActiveSection] = useState<string>('Selection');
     const [selectedUI, setSelectedUI] = useState<string>('Sahib');
+    const [pageLoading, setPageLoading] = useState<boolean>(true);
     const [dynamic, setDynamic] = useState<number>(0);
 
     return (
@@ -13,6 +14,8 @@ export const UIProvider = ({ children: Component }: { children: ReactNode }) => 
             setActiveSection,
             selectedUI,
             setSelectedUI,
+            pageLoading,
+            setPageLoading,
             dynamic,
             setDynamic
         }}>
