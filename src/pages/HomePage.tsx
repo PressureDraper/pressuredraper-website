@@ -11,7 +11,7 @@ import { ContactView } from "../components/contact/ContactView";
 export const navBarHeigth: number = 64;
 export const navBarHeigthResponsive: number = 54;
 
-export const HomePage = () => {
+const HomePage = () => {
     const location = useLocation();
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const { dynamic } = useContext<PropsUIContext>(UIContext);
@@ -47,3 +47,5 @@ export const HomePage = () => {
         </Stack>
     )
 }
+
+export default HomePage;
