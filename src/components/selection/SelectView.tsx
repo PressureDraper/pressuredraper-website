@@ -1,14 +1,12 @@
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UIContext } from "../../context/UIContext";
 import { PropsViewData } from "../../interfaces/selection/IViewData";
 import { BannerVideos } from "./BannerVideos";
 import 'animate.css';
 import { UIProfileSelect } from "./UIProfileSelect";
-import { PropsUIContext } from "../../interfaces/context/IUIContext";
-import { useInView } from "framer-motion";
-import { NavigateFunction, useNavigate } from "react-router-dom";
+import { SectionObserver } from "../ui/SectionObserver";
 
 export const SelectView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
@@ -21,10 +19,6 @@ export const SelectView = () => {
         quoteAnimation: '',
         videoSource: '2'
     });
-    const { setActiveSection, setDynamic } = useContext<PropsUIContext>(UIContext);
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: false });
-    const navigate: NavigateFunction = useNavigate();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -34,14 +28,6 @@ export const SelectView = () => {
         //clear Timeout on component unmount
         return () => clearTimeout(timer);
     }, [selectedUI]);
-
-    useEffect(() => {
-        if (isInView) {
-            navigate(`/?section=Selection`, { replace: true });
-            setActiveSection('Selection');
-            setDynamic(0);
-        }
-    }, [isInView]);
 
     return (
         <Box
@@ -72,7 +58,8 @@ export const SelectView = () => {
         >
             <BannerVideos {...viewData} />
             <Grid container columns={12} direction={'column'}>
-                <Grid ref={ref} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: 'auto', height: '30%' }}>
+                <Grid sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: 'auto', height: '30%', position: 'relative' }}>
+                    <SectionObserver sectionId="Selection" />
                     <Typography
                         color={selectedUI === 'Sahib' ? "primary.light" : "secondary.light"}
                         fontFamily={'Ubuntu, serif'}

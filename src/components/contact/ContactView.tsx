@@ -1,39 +1,26 @@
 import { Alert, Box, Button, Grid, Snackbar, SnackbarCloseReason, TextField, Typography, useMediaQuery } from "@mui/material"
-import { motion, useInView } from 'framer-motion';
-import { useContext, useEffect, useRef, useState } from "react";
+import { motion } from 'framer-motion';
+import { useContext, useState } from "react";
 import { UIContext } from "../../context/UIContext";
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-import { NavigateFunction, useNavigate } from "react-router-dom";
-import { PropsUIContext } from "../../interfaces/context/IUIContext";
 import { defaultErrors, formValidator } from "../../helpers/contact/formValidator";
 import ErrorIcon from '@mui/icons-material/Error';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import { PropsContactForm } from "../../interfaces/contact/IForm";
 import { sendMail } from "../../services/mailService";
 import { AxiosError } from "axios";
+import { SectionObserver } from "../ui/SectionObserver";
 
 const defautlPayload = { name: '', email: '', topic: '', message: '' };
 
 export const ContactView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
-    const { setActiveSection, setDynamic } = useContext<PropsUIContext>(UIContext);
     const { selectedUI } = useContext(UIContext);
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: false });
-    const navigate: NavigateFunction = useNavigate();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [payload, setPayload] = useState<PropsContactForm>({ name: '', email: '', topic: '', message: '' });
     const [errors, setErrors] = useState(defaultErrors);
     const [snackbarOptions, setSnackbarOptions] = useState({ open: false, message: '', error: false })
-
-    useEffect(() => {
-        if (isInView) {
-            setActiveSection('Contact');
-            navigate(`/?section=Contact`, { replace: true });
-            setDynamic(0);
-        }
-    }, [isInView]);
 
     const handleSubmit = () => {
         const isOk = formValidator(payload, setErrors);
@@ -149,15 +136,15 @@ export const ContactView = () => {
                                     zIndex: 0
                                 }}> {/* form card box */}
                                     <Grid container columns={12} spacing={5} sx={{ height: '93%' }}>
-                                        <Grid size={12} sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                        <Grid size={12} sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', position: 'relative' }}>
                                             <AutoAwesomeOutlinedIcon sx={{ fontSize: responsive ? '30px' : '1.7vw', color: '#887e6e', mr: 1.3 }} />
+                                            <SectionObserver sectionId="Contact" />
                                             <Typography
                                                 fontFamily={'Ubuntu, serif'}
                                                 fontWeight={'bold'}
                                                 fontSize={responsive ? '30px' : '1.7vw'}
                                                 fontStyle={'normal'}
                                                 letterSpacing={'.1rem'}
-                                                ref={ref}
                                                 sx={{
                                                     backgroundImage: 'linear-gradient(45deg, #d1c9b7, #655143)',
                                                     backgroundClip: 'text',

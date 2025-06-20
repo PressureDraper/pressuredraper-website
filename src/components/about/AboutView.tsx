@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Link, Typography, useMediaQuery } from "@mui/material"
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UIContext } from "../../context/UIContext";
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -14,9 +14,8 @@ import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import DownloadIcon from '@mui/icons-material/Download';
 import 'animate.css';
-import { motion, useInView } from 'framer-motion';
-import { PropsUIContext } from "../../interfaces/context/IUIContext";
-import { NavigateFunction, useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { SectionObserver } from "../ui/SectionObserver";
 
 const performance = ['Enhancing loading times', 'Improving user experience', 'Applying SSR'];
 const coding = ['Clean coding', 'Serving security', 'Troubleshooting'];
@@ -27,11 +26,7 @@ const AboutView = () => {
     const { selectedUI } = useContext(UIContext);
     const [index, setIndex] = useState({ performance: 0, coding: 0, learning: 0 });
     const [focus, setFocus] = useState({ performance: 'Enhancing loading times', coding: 'Clean coding', learning: 'Digging new tech' });
-    const { setActiveSection, setDynamic } = useContext<PropsUIContext>(UIContext);
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const paragraph = useRef(null);
-    const isInView = useInView(paragraph, { once: false });
-    const navigate: NavigateFunction = useNavigate();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -80,14 +75,6 @@ const AboutView = () => {
             setIsLoading(false);
         }, 1500);
     };
-
-    useEffect(() => {
-        if (isInView) {
-            setActiveSection('About');
-            navigate(`/?section=About`, { replace: true });
-            setDynamic(0);
-        }
-    }, [isInView]);
 
     return (
         <>
@@ -160,7 +147,7 @@ const AboutView = () => {
                             }}>
                                 <Grid container>
                                     <Grid size={responsive ? 12 : 8.5} sx={{ display: 'flex', flexDirection: 'column', gap: 3.7, textAlign: 'justify', pl: responsive ? 3 : 7, pr: responsive ? 3 : 7 }}>
-                                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, position: 'relative' }}>
                                             <Typography
                                                 fontFamily={'Ubuntu, serif'}
                                                 fontSize={responsive ? '16px' : '1vw'}
@@ -169,8 +156,8 @@ const AboutView = () => {
                                             >
                                                 <b style={{ fontSize: responsive ? '20px' : '1.5vw' }}>S</b>ahib is a Computer Science graduate with 4+ years of experience within the field. He resides in Veracruz, Mexico and is currently working as a Full-Stack developer.
                                             </Typography>
+                                            <SectionObserver sectionId="About" />
                                             <Typography
-                                                ref={paragraph}
                                                 fontFamily={'Ubuntu, serif'}
                                                 fontSize={responsive ? '16px' : '1vw'}
                                                 color="primary.dark"

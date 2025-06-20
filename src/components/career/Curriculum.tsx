@@ -1,25 +1,10 @@
 import { Grid, Typography, useMediaQuery } from "@mui/material"
-import { useContext, useEffect, useRef } from "react";
-import { PropsUIContext } from "../../interfaces/context/IUIContext";
-import { UIContext } from "../../context/UIContext";
-import { motion, useInView } from 'framer-motion';
-import { NavigateFunction, useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion';
 import { curriculumInfo } from "../../helpers/curriculum/data";
+import { SectionObserver } from "../ui/SectionObserver";
 
 export const Curriculum = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
-    const { setActiveSection, setDynamic } = useContext<PropsUIContext>(UIContext);
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: false });
-    const navigate: NavigateFunction = useNavigate();
-
-    useEffect(() => {
-        if (isInView) {
-            setActiveSection('Career');
-            navigate(`/?section=Career`, { replace: true });
-            setDynamic(0);
-        }
-    }, [isInView]);
 
     return (
         <>
@@ -71,7 +56,8 @@ export const Curriculum = () => {
                                         {item.date}
                                     </Typography>
                                 </Grid>
-                                <Grid size={12} sx={{ pl: 1, display: 'flex', textJustify: 'justify', pr: 4 }}>
+                                <Grid size={12} sx={{ pl: 1, display: 'flex', textJustify: 'justify', pr: 4, position: 'relative' }}>
+                                    <SectionObserver sectionId="Career" />
                                     <ul style={{ marginTop: 5, display: 'flex', flexDirection: 'column', gap: 5.5 }}>
                                         {item.responsabilities.map((item, index2) => (
                                             index === 0 && index2 === 4 ?
@@ -79,7 +65,6 @@ export const Curriculum = () => {
                                                     <Typography
                                                         fontFamily={'Ubuntu, serif'}
                                                         textAlign={'justify'}
-                                                        ref={ref}
                                                     >
                                                         {item.desc}
                                                     </Typography>

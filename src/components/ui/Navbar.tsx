@@ -1,6 +1,6 @@
 import { AppBar, Box, Button, Container, Divider, IconButton, Menu, MenuItem, Toolbar, Typography, useMediaQuery } from '@mui/material'
 import React, { useContext, useEffect, useState } from 'react'
-import { NavLink, NavigateFunction, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import CodeOffIcon from '@mui/icons-material/CodeOff';
 import { UIContext } from '../../context/UIContext';
 import { PropsUIContext } from '../../interfaces/context/IUIContext';
@@ -20,7 +20,6 @@ export const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const { activeSection, setActiveSection, setDynamic } = useContext<PropsUIContext>(UIContext);
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
-    const navigate: NavigateFunction = useNavigate();
     const [animations, setAnimations] = useState({ headerTitle: 'animate__animated animate__fadeIn' });
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -34,7 +33,6 @@ export const Navbar = () => {
     const goToSection = (pathTo: string) => {
         setAnchorElNav(null);
         setActiveSection(pathTo);
-        navigate(`/?section=${pathTo}`, { replace: true });
         setDynamic(1);
     };
 
