@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { TemplateRoute } from "./TemplateRoute"
 import { useContext, useEffect } from "react";
-import { UIContext } from "../context/UIContext";
+import UIContext from "../context/UIContext";
 import { PropsUIContext } from "../interfaces/context/IUIContext";
 import HomePage from "../pages/HomePage";
 

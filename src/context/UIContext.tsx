@@ -1,6 +1,16 @@
-import { ReactNode, useState } from "react"
-import { UIContext } from "../context/UIContext"
+import { createContext, ReactNode, useState } from "react";
+import { PropsUIContext } from "../interfaces/context/IUIContext";
 
+const UIContext = createContext<PropsUIContext>({
+    activeSection: 'Selection',
+    setActiveSection: () => { },
+    selectedUI: 'Sahib',
+    setSelectedUI: () => { },
+    pageLoading: true,
+    setPageLoading: () => { },
+    dynamic: 0,
+    setDynamic: () => { }
+});
 
 export const UIProvider = ({ children: Component }: { children: ReactNode }) => {
     const [activeSection, setActiveSection] = useState<string>('Selection');
@@ -23,3 +33,5 @@ export const UIProvider = ({ children: Component }: { children: ReactNode }) => 
         </UIContext.Provider>
     )
 }
+
+export default UIContext;

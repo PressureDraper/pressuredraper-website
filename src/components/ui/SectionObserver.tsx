@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef } from "react";
 import { PropsUIContext } from "../../interfaces/context/IUIContext";
 import { Box } from "@mui/material";
 import { useInView } from "framer-motion";
-import { UIContext } from "../../context/UIContext";
+import UIContext from "../../context/UIContext";
 
 interface Props {
     sectionId: string;

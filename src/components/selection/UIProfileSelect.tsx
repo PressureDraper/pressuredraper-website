@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 /* import CustomTooltip from '../ui/CustomTooltip'; */
 import { useContext, useState } from 'react';
 import { PropsViewData } from '../../interfaces/selection/IViewData';
-import { UIContext } from '../../context/UIContext';
+import UIContext from '../../context/UIContext';
 import { Avatar, /* Zoom */ } from '@mui/material';
 
 interface ChildProps {

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { PropsViewData } from '../../interfaces/selection/IViewData';
-import { UIContext } from '../../context/UIContext';
+import UIContext from '../../context/UIContext';
 import { PropsUIContext } from '../../interfaces/context/IUIContext';
 
 export const BannerVideos = ({ ...viewData }: PropsViewData) => {

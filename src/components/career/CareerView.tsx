@@ -2,7 +2,7 @@ import { Box, Divider, Grid, Typography, useMediaQuery } from "@mui/material"
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
 import { motion } from 'framer-motion';
 import { useContext } from "react";
-import { UIContext } from "../../context/UIContext";
+import UIContext from "../../context/UIContext";
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
 import { Curriculum } from "./Curriculum";

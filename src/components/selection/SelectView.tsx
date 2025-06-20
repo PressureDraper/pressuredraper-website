@@ -1,7 +1,7 @@
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import { navBarHeigth, navBarHeigthResponsive } from "../../pages/HomePage";
 import { useContext, useEffect, useState } from "react";
-import { UIContext } from "../../context/UIContext";
+import UIContext from "../../context/UIContext";
 import { PropsViewData } from "../../interfaces/selection/IViewData";
 import { BannerVideos } from "./BannerVideos";
 import 'animate.css';

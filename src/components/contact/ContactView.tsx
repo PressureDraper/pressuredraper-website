@@ -1,7 +1,7 @@
 import { Alert, Box, Button, Grid, Snackbar, SnackbarCloseReason, TextField, Typography, useMediaQuery } from "@mui/material"
 import { motion } from 'framer-motion';
 import { useContext, useState } from "react";
-import { UIContext } from "../../context/UIContext";
+import UIContext from "../../context/UIContext";
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import { defaultErrors, formValidator } from "../../helpers/contact/formValidator";
@@ -18,9 +18,9 @@ export const ContactView = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const { selectedUI } = useContext(UIContext);
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [payload, setPayload] = useState<PropsContactForm>({ name: '', email: '', topic: '', message: '' });
+    const [payload, setPayload] = useState<PropsContactForm>(defautlPayload);
     const [errors, setErrors] = useState(defaultErrors);
-    const [snackbarOptions, setSnackbarOptions] = useState({ open: false, message: '', error: false })
+    const [snackbarOptions, setSnackbarOptions] = useState({ open: false, message: '', error: false });
 
     const handleSubmit = () => {
         const isOk = formValidator(payload, setErrors);

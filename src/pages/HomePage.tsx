@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { CareerView } from "../components/career/CareerView";
 import AboutView from "../components/about/AboutView";
 import { PropsUIContext } from "../interfaces/context/IUIContext";
-import { UIContext } from "../context/UIContext";
+import UIContext from "../context/UIContext";
 import { ContactView } from "../components/contact/ContactView";
 
 export const navBarHeigth: number = 64;
