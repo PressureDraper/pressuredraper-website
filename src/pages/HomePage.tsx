@@ -1,11 +1,13 @@
 import { Box, Stack, useMediaQuery } from "@mui/material"
 import { SelectView } from "../components/selection/SelectView"
 import { useContext, useEffect } from "react";
-import { CareerView } from "../components/career/CareerView";
-import AboutView from "../components/about/AboutView";
+import AboutView from "../components/about/sahib/AboutView";
 import { PropsUIContext } from "../interfaces/context/IUIContext";
 import UIContext from "../context/UIContext";
 import { ContactView } from "../components/contact/ContactView";
+import { AboutViewH } from "../components/about/hideline/AboutViewH";
+import { CarrerViewH } from "../components/career/hideline/CarrerViewH";
+import { CareerView } from "../components/career/sahib/CareerView";
 
 export const navBarHeigth: number = 64;
 export const navBarHeigthResponsive: number = 54;
@@ -13,6 +15,7 @@ export const navBarHeigthResponsive: number = 54;
 const HomePage = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const { dynamic, activeSection } = useContext<PropsUIContext>(UIContext);
+    const { selectedUI } = useContext(UIContext);
 
     useEffect(() => {
         if (activeSection) {
@@ -33,10 +36,14 @@ const HomePage = () => {
                 <SelectView />
             </Box>
             <Box component="section" id="About">
-                <AboutView />
+                {
+                    selectedUI === 'Sahib' ? <AboutView /> : <AboutViewH />
+                }
             </Box>
             <Box component="section" id="Career">
-                <CareerView />
+                {
+                    selectedUI === 'Sahib' ? <CareerView /> : <CarrerViewH /> 
+                }
             </Box>
             <Box component="section" id="Contact">
                 <ContactView />

@@ -10,3 +10,16 @@ export const sahibUIPalette = [
     { color: '#4c3d37' },
     { color: '#2b201d' }
 ]
+
+export const hidelineUIPalette = [
+    { color: '#f9f8fc' },
+    { color: '#f2eff8' },
+    { color: '#e7e1f3' },
+    { color: '#d4c9e9' },
+    { color: '#b8a6da' },
+    { color: '#9c83c9' },
+    { color: '#8367b6' },
+    { color: '#7155a0' },
+    { color: '#5e4881' },
+    { color: '#4d3b68' }
+]

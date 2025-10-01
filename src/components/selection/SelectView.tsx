@@ -51,8 +51,8 @@ export const SelectView = () => {
                     left: 0,
                     right: 0,
                     height: '100%',
-                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))',
-                    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
+                    background: selectedUI === 'Sahib' ? 'linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))' : 'linear-gradient(to top, rgba(8, 11, 18, 1), rgba(0, 0, 0, 0))',
+                    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)'
                 }
             }}
         >

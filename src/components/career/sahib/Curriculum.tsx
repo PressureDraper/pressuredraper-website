@@ -1,7 +1,7 @@
 import { Grid, Typography, useMediaQuery } from "@mui/material"
 import { motion } from 'framer-motion';
-import { curriculumInfo } from "../../helpers/curriculum/data";
-import { SectionObserver } from "../ui/SectionObserver";
+import { curriculumInfo } from "../../../helpers/curriculum/data";
+import { SectionObserver } from "../../ui/SectionObserver";
 
 export const Curriculum = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");

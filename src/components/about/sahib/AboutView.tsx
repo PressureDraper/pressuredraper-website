@@ -1,6 +1,6 @@
 import { Box, Button, Grid, Link, Typography, useMediaQuery } from "@mui/material"
 import { useContext, useEffect, useState } from "react";
-import UIContext from "../../context/UIContext";
+import UIContext from "../../../context/UIContext";
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -15,7 +15,7 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import DownloadIcon from '@mui/icons-material/Download';
 import 'animate.css';
 import { motion } from 'framer-motion';
-import { SectionObserver } from "../ui/SectionObserver";
+import { SectionObserver } from "../../ui/SectionObserver";
 
 const performance = ['Enhancing loading times', 'Improving user experience', 'Applying SSR'];
 const coding = ['Clean coding', 'Serving security', 'Troubleshooting'];

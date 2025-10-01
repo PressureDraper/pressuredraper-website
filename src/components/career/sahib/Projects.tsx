@@ -1,5 +1,5 @@
 import { Button, useMediaQuery } from '@mui/material';
-import { projectsInfo } from '../../helpers/projects/data';
+import { projectsInfo } from '../../../helpers/projects/data';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import { keyframes } from '@mui/system';
