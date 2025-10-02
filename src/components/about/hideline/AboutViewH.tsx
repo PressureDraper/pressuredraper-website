@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material"
+import { Box, Chip, Divider, Grid, Typography, useMediaQuery } from "@mui/material"
 import { motion } from 'framer-motion';
 import { navBarHeigth, navBarHeigthResponsive } from "../../../pages/HomePage";
 import { Star } from "./Star";
@@ -9,8 +9,8 @@ const generateStars = (count: number) => {
     for (let i = 0; i < count; i++) {
         stars.push({
             id: i,
-            top: Math.random() * 100,
-            left: Math.random() * 100,
+            top: Math.random() * 98,
+            left: Math.random() * 98,
             size: Math.random() * 2 + 1, // 1px to 3px
             delay: Math.random() * 5, // 0s to 5s
             duration: Math.random() * 3 + 2 // 2s to 5s
@@ -54,33 +54,130 @@ export const AboutViewH = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.1 }}
                         viewport={{ once: true }}
-                        style={{ position: 'relative', width: 'fit-content', willChange: 'transform, opacity', }}
+                        style={{ width: '100%', willChange: 'transform, opacity', display: 'flex', justifyContent: 'center', marginBottom: responsive ? '20px' : '40px' }}
                     >
-                        <Typography
-                            color={'secondary.300'}
-                            fontFamily={'Ubuntu, serif'}
-                            fontWeight={'bold'}
-                            fontSize={responsive ? '30px' : '2.5vw'}
-                            fontStyle={'normal'}
-                            letterSpacing={'.1rem'}
-                            textAlign={responsive ? 'center' : 'left'}
+                        <Box sx={{ width: 'fit-content', position: 'relative' }}>
+                            <Typography
+                                color={'secondary.300'}
+                                fontFamily={'Ubuntu, serif'}
+                                fontWeight={'bold'}
+                                fontSize={responsive ? '30px' : '2.5vw'}
+                                fontStyle={'normal'}
+                                letterSpacing={'.1rem'}
+                                textAlign={responsive ? 'center' : 'center'}
+                                sx={{
+                                    transition: 'color 0.5s ease',
+                                    mt: 2,
+                                    '&::after': {
+                                        content: '""',
+                                        position: 'absolute',
+                                        bottom: responsive ? 0 : 3,
+                                        left: 0,
+                                        width: '15%',
+                                        height: '5px',
+                                        backgroundColor: responsive ? 'secondary.200' : 'secondary.200', // line color
+                                        transition: 'background-color 0.5s ease',
+                                    }
+                                }}
+                            >
+                                About Me
+                            </Typography>
+                        </Box>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.1 }}
+                        viewport={{ once: true }}
+                    >
+                        <Box
                             sx={{
-                                transition: 'color 0.5s ease',
-                                mt: responsive ? 2 : 2,
-                                '&::after': {
-                                    content: '""',
-                                    position: 'absolute',
-                                    bottom: responsive ? 0 : 3,
-                                    left: 0,
-                                    width: '15%',
-                                    height: '5px',
-                                    backgroundColor: responsive ? 'secondary.200' : 'secondary.light', // line color
-                                    transition: 'background-color 0.5s ease',
-                                }
+                                ml: responsive ? 3 : 0,
+                                mr: responsive ? 3 : 0,
+                                mt: 2,
+                                mb: 3,
+                                p: 4,
+                                boxShadow: '0px 15px 50px 0px rgba(249, 248, 252, 0.3)',
+                                borderRadius: 2,
+                                height: 'auto',
+                                width: 'auto',
+                                overflow: 'hidden',
+                                display: 'flex',
+                                alignItems: 'center',
+                                background: 'rgba(249, 248, 252, 0.25)',
+                                color: 'secondary.light',
+                                flexDirection: 'column',
+                                gap: 1
                             }}
                         >
-                            About Me
-                        </Typography>
+                            <Typography fontFamily={'Ubuntu, serif'} sx={{ textAlign: 'center', fontFamily: '' }}>I'm Sahib, just a 24 years old producer. I try to focus my heart on every song i make through the melody in my songs. Even knowing that i have to improve much more, i'll be trying my best to some day take my music where i want it to be. I'm mainly over Melodic Dubstep and Chillstep genres, but i could try some other EDM stuff on the way...</Typography>
+                            <Divider variant="fullWidth" sx={{ borderColor: 'green'}}>
+                                <Chip label="Chip" size="small" />
+                            </Divider>
+                            <Divider orientation="vertical" variant="middle">
+                                <Typography>Some questions related to me</Typography>
+                            </Divider>
+                            <Typography fontFamily={'Ubuntu, serif'} sx={{ width: '100%', textAlign: 'center', fontWeight: 'bold' }}>
+                                What does your logo mean ⁉️
+                            </Typography>
+                            <Typography fontFamily={'Ubuntu, serif'} sx={{ textAlign: 'center' }}>
+                                When i was trying to design my logo, i wanted to reflect one of the most important aspects in my life on it, and yeah, it's a girl surrounded by two wings but, the main point here is that you can always see the life so different when you have someone who could be really good for you by your side. And i think there's nothing out there that could compare to this feeling. Money could buy happiness but, not an honest love.
+                            </Typography>
+                            <Typography fontFamily={'Ubuntu, serif'} sx={{ width: '100%', textAlign: 'center', fontWeight: 'bold' }}>
+                                How did you start in this music production world ⁉️
+                            </Typography>
+                            <Typography fontFamily={'Ubuntu, serif'} sx={{ textAlign: 'center' }}>
+                                I started to listen to EDM music so hard when i was just starting high school in 2015, i used to hear genres like Melodic Dubstep, Chillstep, Drum & Bass, Tropical House, Hardstyle, Future Bass, between others that i usually discovered from a YT channel formerly named "AirwavemusicTV". In company of one of my best friends (who by the way i met him there) we used to spend breaks listening to this music, looking at the sun wondering how would be our life in the future and thinking about the aspect I've described in the previous question. In that moments i knew that Melodic Dubstep was going to be one of my most favorite genres, until now. Some time later, when i get college in 2018 i started to learn music production with a desire of creating my own songs. 🎶
+                            </Typography>
+                            <Typography fontFamily={'Ubuntu, serif'} sx={{ textAlign: 'center' }}>
+                                I began making trap beats, lo-fi songs and other genres not as hard to produce as electronic music just for getting experience and to be familiarized with the things i was doing there over the DAW i'm currently using. After some some time i decided to make my first Melodic Dubstep song that although it had a good melody, the song was really poorly talking about production, mixing and mastering stuff, i kept practicing until i got something that i knew finally was decent and here i am. I'm thinking about the possibility of make a rework of that song, using the main melody but with a total different ambience and, maybe i could show how it was at the beginning and after.
+                            </Typography>
+                            <Typography fontFamily={'Ubuntu, serif'} sx={{ width: '100%', textAlign: 'center', fontWeight: 'bold' }}>
+                                Who were some of the artist that have inspired you and you like the most ⁉️
+                            </Typography>
+                            <Typography fontFamily={'Ubuntu, serif'} sx={{ textAlign: 'center' }}>
+                                Avicii |
+                                Mendum |
+                                Skrux |
+                                Dimatis |
+                                Soar |
+                                Krys Talk |
+                                T-Mass |
+                                Seven Lions |
+                                Foria |
+                                Sex Whales |
+                                Beatcore |
+                                Culture Code |
+                                Adventure Club
+                            </Typography>
+
+
+                            {/* Some questions related to me:
+
+                            What does your logo mean⁉️
+                            When i was trying to design my logo, i wanted to reflect one of the most important aspects in my life on it, and yeah, it's a girl surrounded by two wings but, the main point here is that you can always see the life so different when you have someone who could be really good for you by your side. And i think there's nothing out there that could compare to this feeling. Money could buy happiness but, not an honest love.
+
+                            How did you start in this music production world⁉️
+                            I started to listen to EDM music so hard when i was just starting high school in 2015, i used to hear genres like Melodic Dubstep, Chillstep, Drum & Bass, Tropical House, Hardstyle, Future Bass, between others that i usually discovered from a YT channel formerly named "AirwavemusicTV". In company of one of my best friends (who by the way i met him there) we used to spend breaks listening to this music, looking at the sun wondering how would be our life in the future and thinking about the aspect I've described in the previous question. In that moments i knew that Melodic Dubstep was going to be one of my most favorite genres, until now. Some time later, when i get college in 2018 i started to learn music production with a desire of creating my own songs. 🎶
+
+                            I began making trap beats, lo-fi songs and other genres not to hard to produce as electronic music just for getting experience and to be familiarized with the things i was doing there over the DAW i'm currently using. After some some time i decided to make my first Melodic Dubstep song that although it had a good melody, the song was really poorly talking about production, mixing and mastering stuff, i kept practicing until i got something that i knew finally was decent and here i am. I'm thinking about the possibility of make a rework of that song, using the main melody but with a total different ambience and, maybe i could show how it was at the beginning and after. 🤣😂
+Who were some of the artist that have inspired you and you like the most⁉️
+                            Avicii
+                            Mendum
+                            Skrux
+                            Dimatis
+                            Soar
+                            Krys Talk
+                            T-Mass
+                            Seven Lions
+                            Foria
+                            Sex Whales
+                            Beatcore
+                            Culture Code
+                            Adventure Club
+                            And this list could go on...
+                             */}
+                        </Box>
                     </motion.div>
                 </Grid>
             </Grid>

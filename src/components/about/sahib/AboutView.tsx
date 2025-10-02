@@ -136,7 +136,7 @@ const AboutView = () => {
                                 mb: 3,
                                 pt: 4,
                                 pb: 4,
-                                boxShadow: responsive ? '0px 15px 20px 0px rgba(101, 81, 67, 0.2)' : '0px 15px 20px 0px rgba(101, 81, 67, 0.2)',
+                                boxShadow: '0px 15px 20px 0px rgba(101, 81, 67, 0.2)',
                                 borderRadius: 5,
                                 height: 'auto',
                                 width: 'auto',
