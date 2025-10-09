@@ -40,7 +40,7 @@ const HomePage = () => {
                     selectedUI === 'Sahib' ? <AboutView /> : <AboutViewH />
                 }
             </Box>
-            <Box component="section" id="Career">
+            <Box component="section" id={selectedUI === 'Sahib' ? "Career" : "Tracks"}>
                 {
                     selectedUI === 'Sahib' ? <CareerView /> : <CarrerViewH /> 
                 }

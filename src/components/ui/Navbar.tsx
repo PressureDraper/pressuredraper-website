@@ -8,19 +8,19 @@ import { motion } from 'framer-motion';
 import MenuIcon from '@mui/icons-material/Menu';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
-const navItem = [
-    { name: 'Selection', width: '81%' },
-    { name: 'About', width: '72%' },
-    { name: 'Career', width: '72%' },
-    { name: 'Contact', width: '77%' },
-]
-
 export const Navbar = () => {
     const { selectedUI } = useContext(UIContext);
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const { activeSection, setActiveSection, setDynamic } = useContext<PropsUIContext>(UIContext);
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const [animations, setAnimations] = useState({ headerTitle: 'animate__animated animate__fadeIn' });
+
+    const navItem = [
+        { name: 'Selection', width: '81%' },
+        { name: 'About', width: '72%' },
+        { name: selectedUI === 'Sahib' ? 'Career' : 'Tracks', width: '72%' },
+        { name: 'Contact', width: '77%' },
+    ]
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);

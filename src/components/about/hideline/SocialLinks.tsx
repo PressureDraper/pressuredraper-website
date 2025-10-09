@@ -1,12 +1,19 @@
-import { Box, Grid, Link, Typography } from "@mui/material";
+import { Box, Grid, Link, Typography, useMediaQuery } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 export const SocialLinks = ({ link, index }: { link: any; index: number }) => {
     const [isHovering, setIsHovering] = useState(false);
+    const responsive: boolean = useMediaQuery("(max-width : 1050px)");
 
     return (
         <Grid
+            component={motion.div}
+            initial={{ x: 0, y: 50, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: (0.1 * (index + 1)) }}
+            viewport={{ once: true }}
+            size={responsive ? 12 : 'auto'}
             sx={{
                 height: '70px',
                 borderRadius: 1,
@@ -15,7 +22,7 @@ export const SocialLinks = ({ link, index }: { link: any; index: number }) => {
                 background: 'rgba(249, 248, 252, 0.1)'
             }}
         >
-            <Link href={link.url} target="_blank">
+            <Link href={link.url} target="_blank" sx={{ textDecoration: 'none' }}>
                 <Grid
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
@@ -77,7 +84,20 @@ export const SocialLinks = ({ link, index }: { link: any; index: number }) => {
                         <Typography
                             letterSpacing={'.05rem'}
                             fontFamily={'Ubuntu, serif'}
-                            sx={{ color: 'secondary.light', fontWeight: 'bold', fontSize: '18px' }}>
+                            sx={{
+                                fontWeight: 'bold',
+                                fontSize: '18px',
+                                color: 'red',
+                                background: link.linearBackground,
+                                backgroundSize: isHovering ? '100% 100%' : '0% 100%',
+                                backgroundRepeat: 'no-repeat',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: isHovering ? 'transparent' : '#f9f8fc',
+                                width: '120%',
+                                transition: 'all 0.8s ease',
+                                cursor: 'pointer',
+                            }}
+                        >
                             {link.name}
                         </Typography>
                     </Box>

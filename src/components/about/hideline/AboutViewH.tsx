@@ -4,6 +4,7 @@ import { navBarHeigth, navBarHeigthResponsive } from "../../../pages/HomePage";
 import { Star } from "./Star";
 import { SocialLinks } from "./SocialLinks";
 import { links } from "../../../helpers/about/hideline/socialLinks";
+import { SectionObserver } from "../../ui/SectionObserver";
 
 const generateStars = (count: number) => {
     const stars = [];
@@ -77,7 +78,7 @@ export const AboutViewH = () => {
                                         left: 0,
                                         width: '15%',
                                         height: '5px',
-                                        backgroundColor: responsive ? 'secondary.200' : 'secondary.200', // line color
+                                        backgroundColor: 'secondary.100', // line color
                                         transition: 'background-color 0.5s ease',
                                     }
                                 }}
@@ -110,6 +111,7 @@ export const AboutViewH = () => {
                                 gap: 1
                             }}
                         >
+                            <SectionObserver sectionId="About" />
                             <Typography letterSpacing={'.03rem'} fontFamily={'Ubuntu, serif'} sx={{ textAlign: 'center', fontFamily: '' }}>I'm Sahib, just a 24 years old producer. I try to focus my heart on every song i make through the melody in my songs. Even knowing that i have to improve much more, i'll be trying my best to some day take my music where i want it to be. I'm mainly over Melodic Dubstep and Chillstep genres, but i could try some other EDM stuff on the way...</Typography>
                             <Divider orientation="horizontal" variant="fullWidth" flexItem>
                                 <Typography letterSpacing={'.03rem'} fontFamily={'Ubuntu, serif'} fontSize={18} fontWeight={'bold'}>Some FAQ</Typography>

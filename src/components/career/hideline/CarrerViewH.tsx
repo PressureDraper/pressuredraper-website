@@ -1,5 +1,7 @@
-import { Grid, useMediaQuery } from "@mui/material"
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material"
 import { navBarHeigth, navBarHeigthResponsive } from "../../../pages/HomePage";
+import { motion } from 'framer-motion';
+import { SectionObserver } from "../../ui/SectionObserver";
 
 export const CarrerViewH = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
@@ -27,9 +29,45 @@ export const CarrerViewH = () => {
                 height: '15%',
                 background: 'linear-gradient(to bottom, rgba(116, 88, 163, 1), rgba(116, 88, 163, 0.1))',
                 boxShadow: '0 4px 10px rgba(118, 88, 162, 0.1)',
+                zIndex: -1
             }
         }}>
-
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.1 }}
+                viewport={{ once: true }}
+                style={{ width: '100%', willChange: 'transform, opacity', display: 'flex', justifyContent: 'center', marginBottom: responsive ? '20px' : '25px' }}
+            >
+                <Box sx={{ width: 'fit-content', position: 'relative' }}>
+                    <SectionObserver sectionId="Tracks" />
+                    <Typography
+                        color={'secondary.300'}
+                        fontFamily={'Ubuntu, serif'}
+                        fontWeight={'bold'}
+                        fontSize={responsive ? '30px' : '2.5vw'}
+                        fontStyle={'normal'}
+                        letterSpacing={'.1rem'}
+                        textAlign={responsive ? 'center' : 'center'}
+                        sx={{
+                            transition: 'color 0.5s ease',
+                            mt: 2,
+                            '&::after': {
+                                content: '""',
+                                position: 'absolute',
+                                bottom: responsive ? 0 : 3,
+                                left: 0,
+                                width: '15%',
+                                height: '5px',
+                                backgroundColor: responsive ? 'secondary.200' : 'secondary.light', // line color
+                                transition: 'background-color 0.5s ease',
+                            }
+                        }}
+                    >
+                        Tracks
+                    </Typography>
+                </Box>
+            </motion.div>
         </Grid>
     )
 }
