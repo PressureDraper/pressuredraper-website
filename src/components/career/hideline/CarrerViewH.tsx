@@ -68,6 +68,21 @@ export const CarrerViewH = () => {
                     </Typography>
                 </Box>
             </motion.div>
+            <Grid container sx={{ pl: responsive ? 3 : '18.5%', pr: responsive ? 3 : '18.5%', height: 'auto', mb: responsive ? '20px' : '25px', display: 'flex', flexDirection: 'column', alignItems: responsive ? 'center' : 'left' }}>
+                <Grid size={responsive ? 12 : 6} sx={{ display: 'flex', justifyContent: 'center', height: '100%', minHeight: '77vh',  verticalAlign: 'middle', alignItems: 'center' }}>
+                    <Box sx={{ 
+                        height: responsive ? '70vh' : '55vh',
+                        width: responsive ? '100%' : '18vw',
+                        borderRadius: '15px',
+                        boxShadow: '0 8px 32px 0 rgba(100, 32, 135, 0.54)',
+                        backdropFilter: 'blur( 6px )',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        justifyContent: 'center'
+                    }}>
+
+                    </Box>
+                </Grid>
+            </Grid>
         </Grid>
     )
 }
