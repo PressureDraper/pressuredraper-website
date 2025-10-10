@@ -1,9 +1,9 @@
 import { Box, Button, CardActions, CardContent, CardMedia, Chip, Grid, Typography, useMediaQuery } from '@mui/material';
-import { PropsProjectsButtons, PropsProjectsInfo } from '../../interfaces/projects/IProjectsInfo';
 import FindInPageIcon from '@mui/icons-material/FindInPage';
 import { motion } from 'framer-motion';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import { PropsProjectsButtons, PropsProjectsInfo } from '../../../interfaces/projects/IProjectsInfo';
 
 export const PhoneCardsView = ({ visibleProjects, renderKey }: { visibleProjects: PropsProjectsInfo[], renderKey: number }) => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
