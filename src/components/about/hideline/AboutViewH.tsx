@@ -67,7 +67,7 @@ export const AboutViewH = () => {
                                 fontSize={responsive ? '30px' : '2.5vw'}
                                 fontStyle={'normal'}
                                 letterSpacing={'.1rem'}
-                                textAlign={responsive ? 'center' : 'center'}
+                                textAlign={'center'}
                                 sx={{
                                     transition: 'color 0.5s ease',
                                     mt: 2,
