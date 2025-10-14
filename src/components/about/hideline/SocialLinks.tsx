@@ -19,14 +19,21 @@ export const SocialLinks = ({ link, index }: { link: any; index: number }) => {
                 borderRadius: 1,
                 p: 1,
                 boxShadow: '0px 5px 15px 0px rgba(249, 248, 252, 0.3)',
-                background: 'rgba(249, 248, 252, 0.1)'
+                background: 'rgba(249, 248, 252, 0.1)',
+                outline: 'none',
+                WebkitTapHighlightColor: 'transparent',
+                userSelect: 'none'
             }}
         >
             <Link href={link.url} target="_blank" sx={{ textDecoration: 'none' }}>
                 <Grid
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
-                    sx={{ display: 'flex', height: '100%', ':hover': { cursor: 'pointer' } }}
+                    sx={{
+                        display: 'flex',
+                        height: '100%',
+                        ':hover': { cursor: 'pointer' }
+                    }}
                 >
                     <Box
                         sx={{
