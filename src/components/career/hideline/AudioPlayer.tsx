@@ -1,6 +1,6 @@
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material"
 import { PlayerControls } from "./PlayerControls"
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const getTimeCodeFromNum = (num: string) => {
     let seconds: number = parseInt(num);
@@ -16,9 +16,21 @@ const getTimeCodeFromNum = (num: string) => {
 export const AudioPlayer = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    if (!audioRef.current) {
-        audioRef.current = new Audio(`${import.meta.env.VITE_APP_BASE_ROUTE}/tracks/wonders.mp3`);
-    }
+
+    useEffect(() => {
+        if (!audioRef.current) {
+            audioRef.current = new Audio('https://pub-4a4d714916ec400eb238be8047e509bf.r2.dev/wonders.mp3');
+            audioRef.current.volume = 0.10;
+        }
+
+        // Optional cleanup if you want to remove the event listener
+        return () => {
+            if (audioRef.current) {
+                audioRef.current.removeEventListener('canplaythrough', () => { });
+            }
+        };
+        
+    }, []);
 
     const handleTimeline = () => {
 
