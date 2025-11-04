@@ -47,7 +47,7 @@
   dependencies:
     "@babel/types" "^7.27.0"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.26.10", "@babel/runtime@^7.27.0", "@babel/runtime@^7.28.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.26.10", "@babel/runtime@^7.28.3", "@babel/runtime@^7.28.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
   version "7.28.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.28.4.tgz#a70226016fabe25c5783b2f22d3e1c9bc5ca3326"
   integrity sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==
@@ -466,15 +466,15 @@
   dependencies:
     "@babel/runtime" "^7.26.10"
 
-"@mui/lab@^7.0.0-beta.11":
-  version "7.0.0-beta.11"
-  resolved "https://registry.npmjs.org/@mui/lab/-/lab-7.0.0-beta.11.tgz"
-  integrity sha512-VJDEUgiRsjo8V2xDvBEE9Cfs1cSlwzp9UFmD3KzIg6emFMqz9BfYh+9cFI4iQWaoz3Agm3q6bVKlhlX6xw6sVQ==
+"@mui/lab@^7.0.0-beta.17":
+  version "7.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@mui/lab/-/lab-7.0.0-beta.17.tgz#0629b4388d16520ed95712bc2995679c2af849be"
+  integrity sha512-H8tSINm6Xgbi7o49MplAwks4tAEE6SpFNd9l7n4NURl0GSpOv0CZvgXKSJt4+6TmquDhE7pomHpHWJiVh/2aCg==
   dependencies:
-    "@babel/runtime" "^7.27.0"
-    "@mui/system" "^7.0.2"
-    "@mui/types" "^7.4.1"
-    "@mui/utils" "^7.0.2"
+    "@babel/runtime" "^7.28.3"
+    "@mui/system" "^7.3.2"
+    "@mui/types" "^7.4.6"
+    "@mui/utils" "^7.3.2"
     clsx "^2.1.1"
     prop-types "^15.8.1"
 
@@ -517,7 +517,7 @@
     csstype "^3.1.3"
     prop-types "^15.8.1"
 
-"@mui/system@^7.0.2", "@mui/system@^7.3.5":
+"@mui/system@^7.3.2", "@mui/system@^7.3.5":
   version "7.3.5"
   resolved "https://registry.yarnpkg.com/@mui/system/-/system-7.3.5.tgz#ea077787ba9e9efc00a6df4db55a833de6a530fc"
   integrity sha512-yPaf5+gY3v80HNkJcPi6WT+r9ebeM4eJzrREXPxMt7pNTV/1eahyODO4fbH3Qvd8irNxDFYn5RQ3idHW55rA6g==
@@ -531,14 +531,14 @@
     csstype "^3.1.3"
     prop-types "^15.8.1"
 
-"@mui/types@^7.4.1", "@mui/types@^7.4.8":
+"@mui/types@^7.4.6", "@mui/types@^7.4.8":
   version "7.4.8"
   resolved "https://registry.yarnpkg.com/@mui/types/-/types-7.4.8.tgz#0c1829353cd7d196be9ac0332a30cdd2792f3558"
   integrity sha512-ZNXLBjkPV6ftLCmmRCafak3XmSn8YV0tKE/ZOhzKys7TZXUiE0mZxlH8zKDo6j6TTUaDnuij68gIG+0Ucm7Xhw==
   dependencies:
     "@babel/runtime" "^7.28.4"
 
-"@mui/utils@^7.0.2", "@mui/utils@^7.3.5":
+"@mui/utils@^7.3.2", "@mui/utils@^7.3.5":
   version "7.3.5"
   resolved "https://registry.yarnpkg.com/@mui/utils/-/utils-7.3.5.tgz#77f3e2b83454bbd47877c73b04cd804f490bf028"
   integrity sha512-jisvFsEC3sgjUjcPnR4mYfhzjCDIudttSGSbe1o/IXFNu0kZuR+7vqQI0jg8qtcVZBHWrwTfvAZj9MNMumcq1g==
