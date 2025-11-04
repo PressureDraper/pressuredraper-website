@@ -1,6 +1,8 @@
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material"
 import { PlayerControls } from "./PlayerControls"
+import { parseWebStream } from 'music-metadata';
 import { useEffect, useRef, useState } from "react";
+import { IAudioPlayerProps } from "../../../interfaces/tracks/ITrackList";
 
 const getTimeCodeFromNum = (num: number) => {
     const minutes = Math.floor(num / 60);
@@ -9,17 +11,22 @@ const getTimeCodeFromNum = (num: number) => {
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
 
-export const AudioPlayer = () => {
+export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [currentTime, setCurrentTime] = useState<string>('0:00');
     const [audioLength, setAudioLength] = useState<string>('0:00');
     const [audioProgress, setAudioProgress] = useState<string>('0');
     const [isAudioEnding, setIsAudioEnding] = useState<boolean>(false);
+    const [audioData, setAudioData] = useState({
+        artist: '',
+        title: '',
+        picture: ''
+    });
 
     useEffect(() => {
         if (!audioRef.current) {
-            audioRef.current = new Audio('https://pub-4a4d714916ec400eb238be8047e509bf.r2.dev/wonders.mp3');
+            audioRef.current = new Audio(currentSong.url);
             audioRef.current.volume = 0.10;
 
             // Wait for metadata to load before reading duration
@@ -49,6 +56,29 @@ export const AudioPlayer = () => {
             }
         };
     }, []);
+
+    useEffect(() => {
+        const getMetadata = async () => {
+            const response = await fetch(currentSong.url);
+
+            const metadata = await parseWebStream(response.body, {
+                mimeType: response.headers.get('Content-Type') || 'audio/mpeg',
+            });
+
+            const picture = metadata.common.picture?.[0];
+            const blob = picture?.data ? new Blob([picture.data], { type: picture.format }) : null;
+            const imageUrl = URL.createObjectURL(blob !== null ? blob : new Blob());
+
+            setAudioData({
+                artist: metadata.common.artist || 'Unknown Artist',
+                title: metadata.common.title || 'Unknown Title',
+                picture: imageUrl
+            });
+        }
+
+        getMetadata();
+    }, []);
+
 
     const handleTimeline = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         const rect = (e.target as HTMLDivElement).getBoundingClientRect();
@@ -80,15 +110,15 @@ export const AudioPlayer = () => {
                     <img
                         alt="wonders.webp"
                         loading="lazy"
-                        src={`${import.meta.env.VITE_APP_BASE_ROUTE}/covers/wonders.webp`}
+                        src={audioData.picture}
                         style={{
                             width: 'auto',
                             height: '95%',
                             objectFit: 'cover',
                             borderRadius: '15px',
                             marginTop: responsive ? '-7px' : 0,
-                            border: '5px solid rgba(4, 117, 210, 0.2)',
-                            boxShadow: '0 0 15px 5px rgba(4, 117, 210, 0.3)'
+                            border: currentSong.borderShadow,
+                            boxShadow: currentSong.boxShadow
                         }}
                     />
                 </Box>
@@ -100,7 +130,7 @@ export const AudioPlayer = () => {
                             fontSize={'20px'}
                             letterSpacing={'.05rem'}
                         >
-                            Hideline
+                            {audioData.artist}
                         </Typography>
                     </Box>
                     <Box>
@@ -108,7 +138,7 @@ export const AudioPlayer = () => {
                             fontFamily={'Ubuntu, serif'}
                             fontSize={'18px'}
                         >
-                            Wonders
+                            {audioData.title}
                         </Typography>
                     </Box>
                 </Box>

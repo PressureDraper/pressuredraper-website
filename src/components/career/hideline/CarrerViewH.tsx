@@ -3,9 +3,13 @@ import { navBarHeigth, navBarHeigthResponsive } from "../../../pages/HomePage";
 import { motion } from 'framer-motion';
 import { SectionObserver } from "../../ui/SectionObserver";
 import { AudioPlayer } from "./AudioPlayer";
+import { useState } from "react";
+import trackList from "../../../helpers/tracks/trackList";
+import { ITrackList } from "../../../interfaces/tracks/ITrackList";
 
 export const CarrerViewH = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
+    const [currentSong, setCurrentSong] = useState<ITrackList>(trackList[0]);
 
     return (
         <Grid sx={{
@@ -70,7 +74,9 @@ export const CarrerViewH = () => {
                 </Box>
             </motion.div>
             <Grid container sx={{ pl: responsive ? 3 : '18.5%', pr: responsive ? 3 : '18.5%', height: 'auto', mb: responsive ? '20px' : '25px', display: 'flex', flexDirection: 'row', alignItems: responsive ? 'center' : 'left' }}>
-                <AudioPlayer />
+                <Grid size={responsive ? 12 : 5.5} sx={{ display: 'flex', justifyContent: 'center', verticalAlign: 'middle', alignItems: 'center' }}>
+                    <AudioPlayer currentSong={currentSong} setCurrentSong={setCurrentSong} />
+                </Grid>
                 {
                     !responsive &&
                     <Grid size={1} sx={{ display: 'flex', justifyContent: 'center', verticalAlign: 'middle', alignItems: 'center' }}>
