@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { PropsViewData } from '../../interfaces/selection/IViewData';
 import UIContext from '../../context/UIContext';
 import { Avatar, Zoom } from '@mui/material';
@@ -13,6 +13,8 @@ interface ChildProps {
 export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData }) => {
     const [hover, setHover] = useState<boolean>(false);
     const { selectedUI, setSelectedUI } = useContext(UIContext);
+    const [img, setImg] = useState<string>(viewData.imageUser);
+    const [gradient, setGradient] = useState(viewData.gradient);
 
     const handleMouseEnter = () => {
         setHover(true);
@@ -41,6 +43,7 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
                 quoteAnimation: 'animate__animated animate__fadeInUp animate__delay-2s',
                 videoSource: '1'
             });
+            localStorage.setItem('selectedUI', 'Hideline');
         } else {
             setSelectedUI('Sahib');
             setViewData({
@@ -51,8 +54,24 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
                 quoteAnimation: 'animate__animated animate__fadeInDown animate__delay-2s',
                 videoSource: '2'
             });
+            localStorage.setItem('selectedUI', 'Sahib');
         }
     }
+
+    useEffect(() => {
+        setSelectedUI(localStorage.getItem('selectedUI') || 'Sahib');
+    }, []);
+
+    useEffect(() => {
+        if (selectedUI === 'Sahib') {
+            setImg(`${import.meta.env.VITE_APP_BASE_ROUTE}/sahib.webp`);
+            setGradient('linear-gradient(135deg, #f5f4f1, #b6a98e, #7d6751)');
+        } else {
+            setImg(`${import.meta.env.VITE_APP_BASE_ROUTE}/logo_500.webp`);
+            setGradient('linear-gradient(135deg, #f9f8fc, #d4c9e9, #8367b6)');
+        }
+    }, [selectedUI]);
+
 
     return (
         <motion.div
@@ -61,7 +80,7 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
                 zIndex: 10,
                 marginTop: 'auto',
                 marginBottom: 'auto',
-                background: viewData.gradient,
+                background: gradient,
                 height: 'auto',
                 width: 'auto',
                 padding: 12,
@@ -69,7 +88,7 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
                 cursor: 'pointer'
             }}
             animate={{
-                background: viewData.gradient,
+                background: gradient,
                 padding: hover ? 14 : 12
             }}
             transition={{
@@ -113,7 +132,7 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
                 >
                     <Avatar
                         alt="Me"
-                        src={viewData.imageUser}
+                        src={img}
                         sx={{
                             zIndex: 11,
                             mt: 'auto',

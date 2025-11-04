@@ -1,14 +1,23 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { PropsViewData } from '../../interfaces/selection/IViewData';
 import UIContext from '../../context/UIContext';
 import { PropsUIContext } from '../../interfaces/context/IUIContext';
 
 export const BannerVideos = ({ ...viewData }: PropsViewData) => {
-    const { setPageLoading } = useContext<PropsUIContext>(UIContext);
+    const { setPageLoading, selectedUI } = useContext<PropsUIContext>(UIContext);
+    const [video, setVideo] = useState(viewData.videoSource)
 
     useEffect(() => {
         setPageLoading(false);
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        if (selectedUI === 'Sahib') {
+            setVideo('2');
+        } else {
+            setVideo('1');
+        }
+    }, [selectedUI]);
 
     return (
         <>
@@ -24,7 +33,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    visibility: viewData.videoSource === '2' ? 'visible' : 'hidden'
+                    visibility: video === '2' ? 'visible' : 'hidden'
                 }}
             />
             <video
@@ -39,7 +48,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    visibility: viewData.videoSource === '1' ? 'visible' : 'hidden'
+                    visibility: video === '1' ? 'visible' : 'hidden'
                 }}
             />
         </>

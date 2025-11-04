@@ -1,6 +1,6 @@
 import { Box, Grid, Typography, useMediaQuery } from "@mui/material"
 import { PlayerControls } from "./PlayerControls"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const getTimeCodeFromNum = (num: string) => {
     let seconds: number = parseInt(num);
@@ -16,11 +16,15 @@ const getTimeCodeFromNum = (num: string) => {
 export const AudioPlayer = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    const [audioLength, setaudioLength] = useState<any>();
 
     useEffect(() => {
         if (!audioRef.current) {
             audioRef.current = new Audio('https://pub-4a4d714916ec400eb238be8047e509bf.r2.dev/wonders.mp3');
             audioRef.current.volume = 0.10;
+            console.log('audioRef.current', audioRef.current);
+
+            /* setaudioLength(getTimeCodeFromNum(audioRef.current.duration.toString())); */
         }
 
         // Optional cleanup if you want to remove the event listener
@@ -29,7 +33,7 @@ export const AudioPlayer = () => {
                 audioRef.current.removeEventListener('canplaythrough', () => { });
             }
         };
-        
+
     }, []);
 
     const handleTimeline = () => {
@@ -135,7 +139,7 @@ export const AudioPlayer = () => {
                 <Box sx={{ marginTop: responsive ? '25px' : '20px', display: 'flex', justifyContent: 'center', gap: 1 }}>
                     <Typography className="current" fontSize={'17px'}>0:00</Typography>
                     <Typography className="divider" fontSize={'17px'}>/</Typography>
-                    <Typography className="length" fontSize={'17px'}>0:00</Typography>
+                    <Typography className="length" fontSize={'17px'}>{audioLength}</Typography>
                 </Box>
             </Box>
         </Grid>
