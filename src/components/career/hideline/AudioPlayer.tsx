@@ -12,9 +12,10 @@ const getTimeCodeFromNum = (num: number) => {
 export const AudioPlayer = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const [currentTime, setCurrentTime] = useState<string>('0:00')
+    const [currentTime, setCurrentTime] = useState<string>('0:00');
     const [audioLength, setAudioLength] = useState<string>('0:00');
-    const [audioProgress, setAudioProgress] = useState<string>('0')
+    const [audioProgress, setAudioProgress] = useState<string>('0');
+    const [isAudioEnding, setIsAudioEnding] = useState<boolean>(false);
 
     useEffect(() => {
         if (!audioRef.current) {
@@ -23,16 +24,21 @@ export const AudioPlayer = () => {
 
             // Wait for metadata to load before reading duration
             audioRef.current.addEventListener('loadedmetadata', () => {
-                console.log('Duration:', audioRef.current?.duration);
                 getTimeCodeFromNum(audioRef.current!.duration);
                 setAudioLength(getTimeCodeFromNum(audioRef.current?.duration !== undefined ? audioRef.current!.duration : 0));
             });
-
         }
 
         const audioProgressInterval = setInterval(() => {
             setAudioProgress((audioRef.current!.currentTime / audioRef.current!.duration * 100).toString());
             setCurrentTime(getTimeCodeFromNum(audioRef.current!.currentTime));
+
+            if (audioRef.current?.currentTime === audioRef.current?.duration) {
+                setIsAudioEnding(true);
+                setAudioProgress('0');
+                setCurrentTime('0:00');
+                audioRef.current!.currentTime = 0;
+            }
         }, 500);
 
         // Cleanup function for removing event listener and interval
@@ -108,7 +114,7 @@ export const AudioPlayer = () => {
                 </Box>
                 <Box sx={{ marginTop: '15px', display: 'flex', justifyContent: 'space-around' }}>
                     <PlayerControls img={'previous.png'} alt_text={'previous-track'} heigth="27px" mt="14px" ml="13px" />
-                    <PlayerControls img={'play.png'} alt_text={'pause-track'} heigth="60px" mt="-3px" ml="0px" audioRef={audioRef} />
+                    <PlayerControls img={'play.png'} alt_text={'play-pause-track'} heigth="60px" mt="-3px" ml="0px" audioRef={audioRef} isAudioEnding={isAudioEnding} setIsAudioEnding={setIsAudioEnding} />
                     <PlayerControls img={'next.png'} alt_text={'next-track'} heigth="27px" mt="14px" ml="13px" />
                 </Box>
                 <Box

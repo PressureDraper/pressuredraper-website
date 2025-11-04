@@ -1,7 +1,7 @@
 import { Box } from "@mui/material"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export const PlayerControls = ({ img, alt_text, heigth, mt, ml, audioRef }: { img: string, alt_text: string, heigth: string, mt: string, ml: string, audioRef?: any }) => {
+export const PlayerControls = ({ img, alt_text, heigth, mt, ml, audioRef, isAudioEnding, setIsAudioEnding }: { img: string, alt_text: string, heigth: string, mt: string, ml: string, audioRef?: any, isAudioEnding?: boolean, setIsAudioEnding?: any }) => {
     const [icon, setIcon] = useState(img);
     const [iconPosition, setIconPosition] = useState({ heigth, mt, ml });
 
@@ -20,6 +20,14 @@ export const PlayerControls = ({ img, alt_text, heigth, mt, ml, audioRef }: { im
             audioRef.current.pause();
         }
     }
+
+    useEffect(() => {
+        if (isAudioEnding) {
+            setIcon('play.png');
+            setIsAudioEnding(false);
+        }
+    }, [isAudioEnding]);
+
 
     return (
         <Box
