@@ -12,7 +12,9 @@ const getTimeCodeFromNum = (num: number) => {
 export const AudioPlayer = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const [audioLength, setaudioLength] = useState<string>('');
+    const [currentTime, setCurrentTime] = useState<string>('0:00')
+    const [audioLength, setAudioLength] = useState<string>('0:00');
+    const [audioProgress, setAudioProgress] = useState<string>('0')
 
     useEffect(() => {
         if (!audioRef.current) {
@@ -23,21 +25,29 @@ export const AudioPlayer = () => {
             audioRef.current.addEventListener('loadedmetadata', () => {
                 console.log('Duration:', audioRef.current?.duration);
                 getTimeCodeFromNum(audioRef.current!.duration);
-                setaudioLength(getTimeCodeFromNum(audioRef.current?.duration !== undefined ? audioRef.current!.duration : 0));
+                setAudioLength(getTimeCodeFromNum(audioRef.current?.duration !== undefined ? audioRef.current!.duration : 0));
             });
+
         }
 
-        // Optional cleanup if you want to remove the event listener
+        const audioProgressInterval = setInterval(() => {
+            setAudioProgress((audioRef.current!.currentTime / audioRef.current!.duration * 100).toString());
+            setCurrentTime(getTimeCodeFromNum(audioRef.current!.currentTime));
+        }, 500);
+
+        // Cleanup function for removing event listener and interval
         return () => {
             if (audioRef.current) {
                 audioRef.current.removeEventListener('loadedmetadata', () => { });
+                clearInterval(audioProgressInterval);
             }
         };
-
     }, []);
 
-    const handleTimeline = () => {
-
+    const handleTimeline = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        const rect = (e.target as HTMLDivElement).getBoundingClientRect();
+        const offsetX = e.clientX - rect.left;
+        audioRef.current!.currentTime = (offsetX / rect.width) * audioRef.current!.duration;
     }
 
     return (
@@ -98,8 +108,8 @@ export const AudioPlayer = () => {
                 </Box>
                 <Box sx={{ marginTop: '15px', display: 'flex', justifyContent: 'space-around' }}>
                     <PlayerControls img={'previous.png'} alt_text={'previous-track'} heigth="27px" mt="14px" ml="13px" />
-                    <PlayerControls img={'play.png'} alt_text={'previous-track'} heigth="60px" mt="-3px" ml="0px" audioRef={audioRef} />
-                    <PlayerControls img={'next.png'} alt_text={'previous-track'} heigth="27px" mt="14px" ml="13px" />
+                    <PlayerControls img={'play.png'} alt_text={'pause-track'} heigth="60px" mt="-3px" ml="0px" audioRef={audioRef} />
+                    <PlayerControls img={'next.png'} alt_text={'next-track'} heigth="27px" mt="14px" ml="13px" />
                 </Box>
                 <Box
                     className='audio-player'
@@ -111,7 +121,7 @@ export const AudioPlayer = () => {
                         mr: 4
                     }}>
                     <Box
-                        onClick={handleTimeline}
+                        onClick={(e) => handleTimeline(e)}
                         className='timeline'
                         sx={{
                             width: '100%',
@@ -128,7 +138,7 @@ export const AudioPlayer = () => {
                             sx={{
                                 background: 'rgba(255, 255, 255, 0.9)',
                                 borderRadius: '15px',
-                                width: '50%',
+                                width: `${audioProgress}%`,
                                 height: '100%',
                                 transition: '0.6s'
                             }}>
@@ -137,7 +147,7 @@ export const AudioPlayer = () => {
                     </Box>
                 </Box>
                 <Box sx={{ marginTop: responsive ? '25px' : '20px', display: 'flex', justifyContent: 'center', gap: 1 }}>
-                    <Typography className="current" fontSize={'17px'}>0:00</Typography>
+                    <Typography className="current" fontSize={'17px'}>{currentTime}</Typography>
                     <Typography className="divider" fontSize={'17px'}>/</Typography>
                     <Typography className="length" fontSize={'17px'}>{audioLength}</Typography>
                 </Box>
