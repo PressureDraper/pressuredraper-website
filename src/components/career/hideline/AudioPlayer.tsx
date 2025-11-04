@@ -2,35 +2,35 @@ import { Box, Grid, Typography, useMediaQuery } from "@mui/material"
 import { PlayerControls } from "./PlayerControls"
 import { useEffect, useRef, useState } from "react";
 
-const getTimeCodeFromNum = (num: string) => {
-    let seconds: number = parseInt(num);
-    let minutes = seconds / 60;
-    seconds -= minutes * 60;
-    const hours = minutes / 60;
-    minutes -= hours * 60;
+const getTimeCodeFromNum = (num: number) => {
+    const minutes = Math.floor(num / 60);
+    const seconds = Math.floor(num % 60);
 
-    if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, '0')}`;
-    return `${String(hours).padStart(2, '0')}:${minutes}:${String(seconds % 60).padStart(2, '0')}`;
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
 
 export const AudioPlayer = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const [audioLength, setaudioLength] = useState<any>();
+    const [audioLength, setaudioLength] = useState<string>('');
 
     useEffect(() => {
         if (!audioRef.current) {
             audioRef.current = new Audio('https://pub-4a4d714916ec400eb238be8047e509bf.r2.dev/wonders.mp3');
             audioRef.current.volume = 0.10;
-            console.log('audioRef.current', audioRef.current);
 
-            /* setaudioLength(getTimeCodeFromNum(audioRef.current.duration.toString())); */
+            // Wait for metadata to load before reading duration
+            audioRef.current.addEventListener('loadedmetadata', () => {
+                console.log('Duration:', audioRef.current?.duration);
+                getTimeCodeFromNum(audioRef.current!.duration);
+                setaudioLength(getTimeCodeFromNum(audioRef.current?.duration !== undefined ? audioRef.current!.duration : 0));
+            });
         }
 
         // Optional cleanup if you want to remove the event listener
         return () => {
             if (audioRef.current) {
-                audioRef.current.removeEventListener('canplaythrough', () => { });
+                audioRef.current.removeEventListener('loadedmetadata', () => { });
             }
         };
 
