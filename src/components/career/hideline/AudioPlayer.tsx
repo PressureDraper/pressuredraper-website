@@ -3,6 +3,7 @@ import { PlayerControls } from "./PlayerControls"
 import { parseWebStream } from 'music-metadata';
 import { useEffect, useRef, useState } from "react";
 import { IAudioPlayerProps } from "../../../interfaces/tracks/ITrackList";
+import { motion } from "framer-motion";
 
 const getTimeCodeFromNum = (num: number) => {
     const minutes = Math.floor(num / 60);
@@ -119,7 +120,12 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
                     justifyContent: 'center',
                     mb: -4
                 }}>
-                    <img
+                    <Box
+                        key={currentSong.url}
+                        component={motion.img}
+                        initial={{ scale: 1, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.8 }}
                         alt="wonders.webp"
                         loading="lazy"
                         src={audioData.picture}
@@ -132,11 +138,16 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
                             border: currentSong.borderShadow,
                             boxShadow: currentSong.boxShadow
                         }}
-                    />
+                    ></Box>
                 </Box>
                 <Box sx={{ marginTop: responsive ? '10px' : '15px', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
                     <Box>
                         <Typography
+                            key={currentSong.url}
+                            component={motion.div}
+                            initial={{ y: 0, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.8 }}
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
                             fontSize={'20px'}
@@ -147,6 +158,11 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
                     </Box>
                     <Box>
                         <Typography
+                            key={currentSong.url}
+                            component={motion.div}
+                            initial={{ y: 0, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.8 }}
                             fontFamily={'Ubuntu, serif'}
                             fontSize={'18px'}
                         >
