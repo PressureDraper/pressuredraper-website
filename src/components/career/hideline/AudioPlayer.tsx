@@ -13,8 +13,9 @@ const getTimeCodeFromNum = (num: number) => {
 
 export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
-    const audioRef = useRef<HTMLAudioElement | null>(null);
+    let audioRef = useRef<HTMLAudioElement | null>(null);
     const [isAudioEnding, setIsAudioEnding] = useState<boolean>(false);
+    const [isPlaying, setIsPlaying] = useState(false);
     const [audioData, setAudioData] = useState({
         artist: '',
         title: '',
@@ -26,18 +27,17 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
     });
 
     useEffect(() => {
-        if (!audioRef.current) {
-            audioRef.current = new Audio(currentSong.url);
-            audioRef.current.volume = 0.10;
+        audioRef.current = new Audio(currentSong.url);
 
-            // Wait for metadata to load before reading duration
-            audioRef.current.addEventListener('loadedmetadata', () => {
-                setAudioData(prevState => ({
-                    ...prevState,
-                    audioLength: getTimeCodeFromNum(audioRef.current!.duration)
-                }));
-            });
-        }
+        audioRef.current.volume = 0.10;
+
+        // Wait for metadata to load before reading duration
+        audioRef.current.addEventListener('loadedmetadata', () => {
+            setAudioData(prevState => ({
+                ...prevState,
+                audioLength: getTimeCodeFromNum(audioRef.current!.duration)
+            }));
+        });
 
         const audioProgressInterval = setInterval(() => {
             setAudioData(prevState => ({
@@ -60,11 +60,13 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
         // Cleanup function for removing event listener and interval
         return () => {
             if (audioRef.current) {
+                audioRef.current.pause();
+                audioRef.current.src = '';
                 audioRef.current.removeEventListener('loadedmetadata', () => { });
                 clearInterval(audioProgressInterval);
             }
         };
-    }, []);
+    }, [currentSong]);
 
     useEffect(() => {
         const getMetadata = async () => {
@@ -87,7 +89,7 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
         }
 
         getMetadata();
-    }, []);
+    }, [currentSong]);
 
 
     const handleTimeline = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -153,9 +155,38 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
                     </Box>
                 </Box>
                 <Box sx={{ marginTop: '15px', display: 'flex', justifyContent: 'space-around' }}>
-                    <PlayerControls img={'previous.png'} alt_text={'previous-track'} heigth="27px" mt="14px" ml="13px" />
-                    <PlayerControls img={'play.png'} alt_text={'play-pause-track'} heigth="60px" mt="-3px" ml="0px" audioRef={audioRef} isAudioEnding={isAudioEnding} setIsAudioEnding={setIsAudioEnding} />
-                    <PlayerControls img={'next.png'} alt_text={'next-track'} heigth="27px" mt="14px" ml="13px" />
+                    <PlayerControls
+                        img="previous.png"
+                        alt_text="previous-track"
+                        heigth="27px"
+                        mt="14px"
+                        ml="13px"
+                        currentSong={currentSong}
+                        setCurrentSong={setCurrentSong}
+                        setIsPlaying={setIsPlaying}
+                    />
+                    <PlayerControls
+                        img="play.png"
+                        alt_text="play-pause-track"
+                        heigth="60px"
+                        mt="-3px"
+                        ml="0px"
+                        audioRef={audioRef}
+                        isAudioEnding={isAudioEnding}
+                        setIsAudioEnding={setIsAudioEnding}
+                        isPlaying={isPlaying}
+                        setIsPlaying={setIsPlaying}
+                    />
+                    <PlayerControls
+                        img="next.png"
+                        alt_text="next-track"
+                        heigth="27px"
+                        mt="14px"
+                        ml="13px"
+                        currentSong={currentSong}
+                        setCurrentSong={setCurrentSong}
+                        setIsPlaying={setIsPlaying}
+                    />
                 </Box>
                 <Box
                     className='audio-player'
