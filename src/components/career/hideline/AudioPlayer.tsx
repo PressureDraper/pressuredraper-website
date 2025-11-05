@@ -14,14 +14,15 @@ const getTimeCodeFromNum = (num: number) => {
 export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const [currentTime, setCurrentTime] = useState<string>('0:00');
-    const [audioLength, setAudioLength] = useState<string>('0:00');
-    const [audioProgress, setAudioProgress] = useState<string>('0');
     const [isAudioEnding, setIsAudioEnding] = useState<boolean>(false);
     const [audioData, setAudioData] = useState({
         artist: '',
         title: '',
-        picture: ''
+        picture: '',
+        currentTime: '0:00',
+        audioLength: '0:00',
+        audioProgress: '0',
+        isAudioEnding: false
     });
 
     useEffect(() => {
@@ -31,19 +32,27 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
 
             // Wait for metadata to load before reading duration
             audioRef.current.addEventListener('loadedmetadata', () => {
-                getTimeCodeFromNum(audioRef.current!.duration);
-                setAudioLength(getTimeCodeFromNum(audioRef.current?.duration !== undefined ? audioRef.current!.duration : 0));
+                setAudioData(prevState => ({
+                    ...prevState,
+                    audioLength: getTimeCodeFromNum(audioRef.current!.duration)
+                }));
             });
         }
 
         const audioProgressInterval = setInterval(() => {
-            setAudioProgress((audioRef.current!.currentTime / audioRef.current!.duration * 100).toString());
-            setCurrentTime(getTimeCodeFromNum(audioRef.current!.currentTime));
+            setAudioData(prevState => ({
+                ...prevState,
+                audioProgress: ((audioRef.current!.currentTime / audioRef.current!.duration) * 100).toString(),
+                currentTime: getTimeCodeFromNum(audioRef.current!.currentTime)
+            }));
 
             if (audioRef.current?.currentTime === audioRef.current?.duration) {
                 setIsAudioEnding(true);
-                setAudioProgress('0');
-                setCurrentTime('0:00');
+                setAudioData(prevState => ({
+                    ...prevState,
+                    audioProgress: '0',
+                    currentTime: '0:00'
+                }));
                 audioRef.current!.currentTime = 0;
             }
         }, 500);
@@ -70,6 +79,7 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
             const imageUrl = URL.createObjectURL(blob !== null ? blob : new Blob());
 
             setAudioData({
+                ...audioData,
                 artist: metadata.common.artist || 'Unknown Artist',
                 title: metadata.common.title || 'Unknown Title',
                 picture: imageUrl
@@ -174,7 +184,7 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
                             sx={{
                                 background: 'rgba(255, 255, 255, 0.9)',
                                 borderRadius: '15px',
-                                width: `${audioProgress}%`,
+                                width: `${audioData.audioProgress}%`,
                                 height: '100%',
                                 transition: '0.6s'
                             }}>
@@ -183,9 +193,9 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
                     </Box>
                 </Box>
                 <Box sx={{ marginTop: responsive ? '25px' : '20px', display: 'flex', justifyContent: 'center', gap: 1 }}>
-                    <Typography className="current" fontSize={'17px'}>{currentTime}</Typography>
+                    <Typography className="current" fontSize={'17px'}>{audioData.currentTime}</Typography>
                     <Typography className="divider" fontSize={'17px'}>/</Typography>
-                    <Typography className="length" fontSize={'17px'}>{audioLength}</Typography>
+                    <Typography className="length" fontSize={'17px'}>{audioData.audioLength}</Typography>
                 </Box>
             </Box>
         </Grid>
