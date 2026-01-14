@@ -73,3 +73,36 @@ export const curriculumInfo = [
         ]
     }
 ]
+
+export const freelanceInfo = [
+    {
+        charge: 'Software Engineer',
+        location: 'Xalapa, Veracruz',
+        company: 'Open Government Subdirectorate',
+        date: 'Nov 2025 — Jan 2026',
+        responsabilities: [
+            {
+                desc: `Developed the “Xalapa Móvil” mobile application for Android and iOS using React Native, TypeScript,
+                TailwindCSS, Zustand, Expo, and PNPM.
+                `
+            },
+            {
+                desc: `Implemented screens, navigation, and state management logic.`
+            },
+            {
+                desc: `Integrated backend services through RESTful APIs.`
+            },
+            {
+                desc: `Fixed bugs, improved performance, and optimized user experience.`
+            },
+            {
+                desc: `Provided technical mentoring to junior developers, offering guidance on best practices, code reviews and
+                problem solving.`
+            },
+            {
+                desc: `Collaborated with a multidisciplinary team throughout the project, from initial to final development stages.`
+            }
+        ]
+    }
+]
+
