@@ -10,7 +10,7 @@ export const Footer = () => {
     return (
         <>
             <Grid container sx={{
-                backgroundColor: selectedUI === 'Sahib' ? 'primary.light' : 'secondary.light', height: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: 4, flexDirection: 'column', zIndex: -1
+                backgroundColor: selectedUI === 'Sahib' ? 'primary.light' : 'secondary.light', height: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: 4, flexDirection: 'column', zIndex: 4, position: 'relative'
             }}>
                 <Box sx={{ display: 'flex', width: 'fit-content' }}>
                     <Box
