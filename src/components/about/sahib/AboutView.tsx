@@ -69,7 +69,7 @@ const AboutView = () => {
         setTimeout(() => {
             const link = document.createElement("a");
             link.download = `CV_SAHIB_HERNANDEZ_EN.pdf`;
-            link.href = 'https://www.dropbox.com/scl/fi/yjktjqdkimmmoyzqm48eg/CV_SAHIB_HERNANDEZ_EN.pdf?rlkey=xxynshf4ftbgmlvehunyx6cw2&st=66aio35c&dl=1';
+            link.href = 'https://www.dropbox.com/scl/fi/yjktjqdkimmmoyzqm48eg/CV_SAHIB_HERNANDEZ_EN.pdf?rlkey=xxynshf4ftbgmlvehunyx6cw2&st=q4gme8a4&dl=1';
             link.click();
 
             setIsLoading(false);
