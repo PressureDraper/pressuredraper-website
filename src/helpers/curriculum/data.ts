@@ -78,7 +78,7 @@ export const freelanceInfo = [
     {
         charge: 'Software Engineer',
         location: 'Xalapa, Veracruz',
-        company: 'Open Government Subdirectorate',
+        company: 'Electronic Government Subdirectorate',
         date: 'Nov 2025 — Jan 2026',
         responsabilities: [
             {
