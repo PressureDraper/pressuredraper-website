@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { useContext, useEffect, useState } from 'react';
 import { PropsViewData } from '../../interfaces/selection/IViewData';
 import UIContext from '../../context/UIContext';
-import { Avatar, Zoom } from '@mui/material';
-import CustomTooltip from '../ui/CustomTooltip';
+import { Avatar, /* Zoom */ } from '@mui/material';
+/* import CustomTooltip from '../ui/CustomTooltip'; */
 
 interface ChildProps {
     viewData: PropsViewData,
@@ -32,7 +32,7 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
         );
     }
 
-    const handleSelectUI = () => {
+    /* const handleSelectUI = () => {
         if (selectedUI === 'Sahib') {
             setSelectedUI('Hideline');
             setViewData({
@@ -56,7 +56,7 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
             });
             localStorage.setItem('selectedUI', 'Sahib');
         }
-    }
+    } */
 
     useEffect(() => {
         setSelectedUI(localStorage.getItem('selectedUI') || 'Sahib');

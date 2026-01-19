@@ -1,9 +1,9 @@
 import { useContext, useEffect, useRef, useState } from 'react';
-import { PropsViewData } from '../../interfaces/selection/IViewData';
+/* import { PropsViewData } from '../../interfaces/selection/IViewData'; */
 import UIContext from '../../context/UIContext';
 import { PropsUIContext } from '../../interfaces/context/IUIContext';
 
-export const BannerVideos = ({ ...viewData }: PropsViewData) => {
+export const BannerVideos = () => {
     const { setPageLoading, selectedUI, activeSection } = useContext<PropsUIContext>(UIContext);
     const [videoType, setVideoType] = useState(selectedUI === 'Sahib' ? '2' : '1');
     
