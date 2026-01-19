@@ -74,7 +74,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
         <>
             <video
                 ref={videoRef2}
-                src={`${import.meta.env.VITE_APP_BASE_ROUTE}/background2.webm`}
+                src={`${import.meta.env.VITE_APP_BASE_ROUTE}/city.webm`}
                 className='sahibVideo'
                 loop
                 muted
@@ -86,7 +86,7 @@ export const BannerVideos = ({ ...viewData }: PropsViewData) => {
             />
             <video
                 ref={videoRef1}
-                src={`${import.meta.env.VITE_APP_BASE_ROUTE}/background1.mp4`}
+                src={`${import.meta.env.VITE_APP_BASE_ROUTE}/space.webm`}
                 className='hidelineVideo'
                 loop
                 muted
