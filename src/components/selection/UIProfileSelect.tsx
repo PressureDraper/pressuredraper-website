@@ -97,7 +97,7 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
             }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            onClick={handleSelectUI}
+            /* onClick={handleSelectUI} */
         >
             <motion.div
                 className={viewData.imageAnimation}
@@ -109,7 +109,19 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
                     default: { duration: 1 }
                 }}
             >
-                <CustomTooltip
+                <Avatar
+                    alt="Me"
+                    src={img}
+                    sx={{
+                        zIndex: 11,
+                        mt: 'auto',
+                        mb: 'auto',
+                        width: 'auto',
+                        height: '23.5vh',
+                        transition: 'all 0.5s ease'
+                    }}
+                />
+                {/* <CustomTooltip
                     title="Click Me!"
                     arrow
                     placement="left"
@@ -130,19 +142,8 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
                         transition: Zoom,
                     }}
                 >
-                    <Avatar
-                        alt="Me"
-                        src={img}
-                        sx={{
-                            zIndex: 11,
-                            mt: 'auto',
-                            mb: 'auto',
-                            width: 'auto',
-                            height: '23.5vh',
-                            transition: 'all 0.5s ease'
-                        }}
-                    />
-                </CustomTooltip>
+                    
+                </CustomTooltip> */}
             </motion.div>
         </motion.div>
     )
