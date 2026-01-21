@@ -40,21 +40,20 @@ export const PhoneCardsView = ({ visibleProjects, renderKey }: { visibleProjects
                                 <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                                     {
                                         item.icons.map((tech: string) => {
-                                            let techName: string[] = tech.split('-');
-                                            let newTechName = techName.join(' ');
+                                            const [techName, desc] = tech.split(':');
                                             return (
                                                 <Grid key={tech}>
                                                     <Chip
                                                         icon={
                                                             <img
                                                                 loading="lazy"
-                                                                src={`${import.meta.env.VITE_APP_BASE_ROUTE}/icons/${tech}.svg`}
-                                                                alt={newTechName}
+                                                                src={`${import.meta.env.VITE_APP_BASE_ROUTE}/icons/${techName}.svg`}
+                                                                alt={techName}
                                                                 style={{ width: 23, height: 23, borderRadius: tech === 'typescript' ? 5 : 0 }}
                                                             />
                                                         }
                                                         sx={{ borderColor: 'primary.300', width: 'auto', p: 0.5 }}
-                                                        label={newTechName}
+                                                        label={desc ? desc : techName}
                                                         variant="outlined"
                                                     />
                                                 </Grid>

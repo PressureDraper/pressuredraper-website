@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Typography, useMediaQuery } from "@mui/material"
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material"
 import { navBarHeigth, navBarHeigthResponsive } from "../../../pages/HomePage";
 import { motion } from 'framer-motion';
 import { SectionObserver } from "../../ui/SectionObserver";
@@ -81,7 +81,7 @@ export const CarrerViewH = () => {
                     <Box
                         sx={{
                             width: "1.3px",
-                            height: "24rem", // h-96
+                            height: "24rem",
                             alignSelf: "center",
                             background: "linear-gradient(to bottom, transparent, rgba(13,15,62, 0.55), transparent)",
                         }}
