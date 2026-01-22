@@ -27,6 +27,13 @@ jobs:
 
       - name: Build
         run: yarn build
+      
+      - name: Debug docs output
+        run: |
+          echo "=== docs content ==="
+          ls -la docs
+          echo "=== assets ==="
+          ls -la docs/assets || echo "NO ASSETS"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
