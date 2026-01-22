@@ -154,7 +154,7 @@ const AboutView = () => {
                                                 color="primary.dark"
                                                 letterSpacing={'.05rem'}
                                             >
-                                                <b style={{ fontSize: responsive ? '20px' : '1.5vw' }}>S</b>ahib is a Computer Science graduate with 4+ years of experience within the field. He resides in Veracruz, Mexico and is currently working as a Full-Stack developer.
+                                                <b style={{ fontSize: responsive ? '20px' : '1.5vw' }}>S</b>ahib is a Compute Science graduate with 4+ years of experience within the field. He resides in Veracruz, Mexico and is currently working as a Full-Stack developer.
                                             </Typography>
                                             <SectionObserver sectionId="About" />
                                             <Typography
