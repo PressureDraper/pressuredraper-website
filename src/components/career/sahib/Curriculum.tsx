@@ -60,24 +60,14 @@ export const Curriculum = () => {
                                     <SectionObserver sectionId="Career" />
                                     <ul style={{ marginTop: 5, display: 'flex', flexDirection: 'column', gap: 5.5 }}>
                                         {item.responsabilities.map((item, index2) => (
-                                            index === 0 && index2 === 4 ?
-                                                <li key={index2}>
-                                                    <Typography
-                                                        fontFamily={'Ubuntu, serif'}
-                                                        textAlign={'justify'}
-                                                    >
-                                                        {item.desc}
-                                                    </Typography>
-                                                </li>
-                                                :
-                                                <li key={index2}>
-                                                    <Typography
-                                                        fontFamily={'Ubuntu, serif'}
-                                                        textAlign={'justify'}
-                                                    >
-                                                        {item.desc}
-                                                    </Typography>
-                                                </li>
+                                            <li key={index2}>
+                                                <Typography
+                                                    fontFamily={'Ubuntu, serif'}
+                                                    textAlign={'justify'}
+                                                >
+                                                    {item.desc}
+                                                </Typography>
+                                            </li>
                                         ))}
                                     </ul>
                                 </Grid>

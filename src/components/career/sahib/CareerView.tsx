@@ -7,6 +7,8 @@ import UIContext from "../../../context/UIContext";
 import { navBarHeigth, navBarHeigthResponsive } from "../../../pages/HomePage";
 import { Curriculum } from "./Curriculum";
 import { Projects } from "./Projects";
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import { Freelance } from "./Freelance";
 
 export const CareerView = () => {
     const { selectedUI } = useContext(UIContext);
@@ -106,8 +108,31 @@ export const CareerView = () => {
                                         textAlign={responsive ? 'center' : 'left'}
                                         sx={{ transition: 'color 0.5s ease', pl: 2, pr: 2 }}
                                     >
+                                        <PeopleAltIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
+                                        Freelance & Contract Work
+                                    </Typography>
+                                </Grid>
+                                <Grid size={12} sx={{ width: '100%' }}>
+                                    <Divider sx={{ backgroundColor: 'gray' }} />
+                                </Grid>
+                                <Grid container sx={{ gap: 2 }} size={12}>
+                                    <Freelance />
+                                </Grid>
+                            </Grid>
+                            <Grid container size={12} spacing={1.5} sx={{ width: '100%', overflow: 'visible', mt: 5 }}>
+                                <Grid size={12} sx={{ backgroundColor: 'primary.dark', borderRadius: 5, width: 'fit-content', display: 'flex', flexDirection: 'row' }}>
+                                    <Typography
+                                        color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
+                                        fontFamily={'Ubuntu, serif'}
+                                        fontWeight={'bold'}
+                                        fontSize={responsive ? '18px' : '1.3vw'}
+                                        fontStyle={'normal'}
+                                        letterSpacing={'.1rem'}
+                                        textAlign={responsive ? 'center' : 'left'}
+                                        sx={{ transition: 'color 0.5s ease', pl: 2, pr: 2 }}
+                                    >
                                         <FolderSpecialIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
-                                        Projects
+                                        Portfolio
                                     </Typography>
                                 </Grid>
                                 <Grid size={12} sx={{ width: '100%' }}>

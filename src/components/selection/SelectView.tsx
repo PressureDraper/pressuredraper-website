@@ -56,7 +56,7 @@ export const SelectView = () => {
                 }
             }}
         >
-            <BannerVideos {...viewData} />
+            <BannerVideos />
             <Grid container columns={12} direction={'column'}>
                 <Grid sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: 'auto', height: '30%', position: 'relative' }}>
                     <SectionObserver sectionId="Selection" />

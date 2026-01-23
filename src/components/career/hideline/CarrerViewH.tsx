@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Typography, useMediaQuery } from "@mui/material"
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material"
 import { navBarHeigth, navBarHeigthResponsive } from "../../../pages/HomePage";
 import { motion } from 'framer-motion';
 import { SectionObserver } from "../../ui/SectionObserver";
@@ -77,12 +77,16 @@ export const CarrerViewH = () => {
                 <Grid size={responsive ? 12 : 5.5} sx={{ display: 'flex', justifyContent: 'center', verticalAlign: 'middle', alignItems: 'center' }}>
                     <AudioPlayer currentSong={currentSong} setCurrentSong={setCurrentSong} />
                 </Grid>
-                {
-                    !responsive &&
-                    <Grid size={1} sx={{ display: 'flex', justifyContent: 'center', verticalAlign: 'middle', alignItems: 'center' }}>
-                        <Divider orientation="vertical" flexItem sx={{ height: '50%', width: '1px', backgroundColor: 'secondary.main', m: 'auto' }} />
-                    </Grid>
-                }
+                <Grid size={1} sx={{ display: { xs: "none", lg: "flex" }, justifyContent: 'center', verticalAlign: 'middle', alignItems: 'center' }}>
+                    <Box
+                        sx={{
+                            width: "1.3px",
+                            height: "24rem",
+                            alignSelf: "center",
+                            background: "linear-gradient(to bottom, transparent, rgba(13,15,62, 0.55), transparent)",
+                        }}
+                    />
+                </Grid>
                 {/* <Grid size={responsive ? 12 : 5.5} sx={{ display: 'flex', justifyContent: 'center', minHeight: '77vh', verticalAlign: 'middle', alignItems: 'center' }}>
                     <Box sx={{
                         height: responsive ? '70vh' : '55vh',

@@ -69,7 +69,7 @@ const AboutView = () => {
         setTimeout(() => {
             const link = document.createElement("a");
             link.download = `CV_SAHIB_HERNANDEZ_EN.pdf`;
-            link.href = 'https://www.dropbox.com/scl/fi/yjktjqdkimmmoyzqm48eg/CV_SAHIB_HERNANDEZ_EN.pdf?rlkey=xxynshf4ftbgmlvehunyx6cw2&st=bpwh5n10&dl=1';
+            link.href = 'https://www.dropbox.com/scl/fi/yjktjqdkimmmoyzqm48eg/CV_SAHIB_HERNANDEZ_EN.pdf?rlkey=xxynshf4ftbgmlvehunyx6cw2&st=q4gme8a4&dl=1';
             link.click();
 
             setIsLoading(false);
@@ -154,7 +154,7 @@ const AboutView = () => {
                                                 color="primary.dark"
                                                 letterSpacing={'.05rem'}
                                             >
-                                                <b style={{ fontSize: responsive ? '20px' : '1.5vw' }}>S</b>ahib is a Computer Science graduate with 4+ years of experience within the field. He resides in Veracruz, Mexico and is currently working as a Full-Stack developer.
+                                                <b style={{ fontSize: responsive ? '20px' : '1.5vw' }}>S</b>ahib is a Compute Science graduate with 4+ years of experience within the field. He resides in Veracruz, Mexico and is currently working as a Full-Stack developer.
                                             </Typography>
                                             <SectionObserver sectionId="About" />
                                             <Typography

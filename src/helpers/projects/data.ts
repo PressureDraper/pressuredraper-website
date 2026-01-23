@@ -2,6 +2,20 @@ import { PropsProjectsInfo } from "../../interfaces/projects/IProjectsInfo";
 
 export const projectsInfo: PropsProjectsInfo[] = [
     {
+        img: `${import.meta.env.VITE_APP_BASE_ROUTE}/projects/xalapaMovil/cover.png`,
+        title: 'Xalapa Móvil',
+        date: 'Nov 2025 — Jan 2026',
+        desc: 'Mobile application developed for the Xalapa City Council to provide citizens with a digital tool to send improvement proposals for the city, accessing municipal services and staying informed about local news and events. The app aims to enhance community engagement and streamline communication between residents and local authorities.',
+        buttons: [
+            { name: 'code', active: false },
+            { name: 'docs', active: true },
+            { name: 'demo', active: false }
+        ],
+        icons: ['nodejs', 'expo', 'react:react native', 'zustand', 'typescript', 'tailwind', 'pnpm', 'github', 'android:android studio', 'apple:xcode'],
+        code_url: '',
+        demo_url: ''
+    },
+    {
         img: `${import.meta.env.VITE_APP_BASE_ROUTE}/projects/signsModule/cover.webp`,
         title: 'Digital Signature',
         date: ' Feb 2025 — Present',
@@ -11,7 +25,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'docker', 'react', 'mui', 'typescript', 'express', 'socketio', 'prisma-ORM', 'mysql', 'canvas', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'mui', 'typescript', 'express', 'socketio', 'prisma-ORM:prisma ORM', 'mysql', 'canvas', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
     },
@@ -25,7 +39,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: ['nodejs', 'vite', 'docker', 'react', 'router-DOM', 'mui', 'motion', 'typescript', 'php', 'yarn', 'github', 'pages', 'cloudflare', 'railway'],
+        icons: ['nodejs', 'vite', 'docker', 'react', 'router-DOM:router DOM', 'mui', 'motion:framer motion', 'typescript', 'php', 'yarn', 'github', 'pages', 'cloudflare', 'railway'],
         code_url: 'https://github.com/PressureDraper/pressuredraper-website',
         demo_url: 'https://pressuredraper.github.io/pressuredraper-website/#/'
     },
@@ -33,13 +47,13 @@ export const projectsInfo: PropsProjectsInfo[] = [
         img: `${import.meta.env.VITE_APP_BASE_ROUTE}/projects/hresourcesSystem/cover.webp`,
         title: 'Human Resources System',
         date: 'Apr 2024 — Present',
-        desc: "System application built as a microservice inside the Administrative Clinical Integral System platform as a need of human resources department for displaying employee's attendances, incidences, permissions, vacations and holidays with a sub-module created for every functionality.",
+        desc: "System application built as a microservice inside the Administrative Clinical Integral System platform as a need of human resources department for displaying employee's attendances, incidences, permissions, vacations and holidays with a sub-module created for every module.",
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'prisma-ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'prisma-ORM:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
 
@@ -54,7 +68,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: true }
         ],
-        icons: ['nodejs', 'react', 'redux', 'router-DOM', 'mui', 'html', 'css', 'typescript', 'python', 'canvas', 'express', 'prisma-ORM', 'mysql', 'aws', 'github', 'pages', 'squarespace', 'smtp', 'yarn', 'markdown' ],
+        icons: ['nodejs', 'react', 'redux', 'router-DOM:router DOM', 'mui', 'html', 'css', 'typescript', 'python', 'canvas', 'express', 'prisma-ORM:prisma ORM', 'mysql', 'aws', 'github', 'pages', 'squarespace', 'smtp', 'yarn', 'markdown' ],
         code_url: 'https://github.com/JornadasMedicas?tab=repositories',
         demo_url: 'https://jornadasmedicascae.com'
     },
@@ -68,7 +82,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'react', 'ant-design', 'html', 'css', 'express', 'socketio', 'github', 'yarn'],
+        icons: ['nodejs', 'react', 'ant-design:ant design', 'html', 'css', 'express', 'socketio', 'github', 'yarn'],
         code_url: 'https://github.com/PressureDraper/socket-io-04-tickets',
         demo_url: ''
     },
@@ -82,7 +96,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'smtp', 'prisma-ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'smtp', 'prisma-ORM:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
     },
@@ -96,7 +110,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: ['nodejs', 'react', 'router-DOM', 'mui', 'html', 'css', 'javascript', 'python', 'canvas', 'firestore', 'aws', 'github', 'pages', 'domains', 'workspace', 'smtp', 'yarn' ],
+        icons: ['nodejs', 'react', 'router-DOM:router DOM', 'mui', 'html', 'css', 'javascript', 'python', 'canvas', 'firestore', 'aws', 'github', 'pages', 'domains', 'workspace', 'smtp', 'yarn' ],
         code_url: 'https://github.com/JornadasMedicas/form',
         demo_url: 'https://jornadasmedicas.github.io/form/#/home'
     },
@@ -110,7 +124,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: ['nodejs', 'react', 'router-DOM', 'local-storage', 'html', 'css', 'mui', 'javascript', 'github', 'pages', 'yarn'],
+        icons: ['nodejs', 'react', 'router-DOM:router DOM', 'local-storage:local storage', 'html', 'css', 'mui', 'javascript', 'github', 'pages', 'yarn'],
         code_url: 'https://github.com/PressureDraper/react-heroesApp',
         demo_url: 'https://pressuredraper.github.io/react-heroesApp/#/login'
     },
@@ -124,7 +138,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
-        icons: ['java', 'javax-swing', 'netbeans'],
+        icons: ['java', 'javax-swing:java swing', 'netbeans'],
         code_url: 'https://github.com/PressureDraper/CurrencyConverter-JavaG4',
         demo_url: ''
     },
@@ -166,7 +180,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: false },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'javascript', 'discord-api', 'distube', 'aws', 'github', 'npm', 'markdown'],
+        icons: ['nodejs', 'javascript', 'discord-api:discord api', 'distube', 'aws', 'github', 'npm', 'markdown'],
         code_url: 'https://github.com/PressureDraper/Lotus',
         demo_url: ''
     },
