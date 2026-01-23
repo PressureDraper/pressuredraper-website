@@ -15,7 +15,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.5",
     "@mui/lab": "^7.0.0-beta.17",
-    "@mui/material": "^7.3.5",
+    "@mui/material": "^7.3.7",
     "animate.css": "^4.1.1",
     "axios": "^1.13.2",
     "dotenv": "^17.2.3",
