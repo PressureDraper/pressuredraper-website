@@ -102,7 +102,7 @@ export const AboutViewH = () => {
                                 background: 'rgba(249, 248, 252, 0.25)',
                                 borderRadius: 2,
                                 height: 'auto',
-                                width: 'auto',
+                                width: '100%',
                                 overflow: 'hidden',
                                 display: 'flex',
                                 alignItems: 'center',

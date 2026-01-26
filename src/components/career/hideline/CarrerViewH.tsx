@@ -1,15 +1,69 @@
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material"
+import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, useMediaQuery } from "@mui/material"
 import { navBarHeigth, navBarHeigthResponsive } from "../../../pages/HomePage";
 import { motion } from 'framer-motion';
 import { SectionObserver } from "../../ui/SectionObserver";
-import { AudioPlayer } from "./AudioPlayer";
-import { useState } from "react";
+import { AudioPlayer, getTimeCodeFromNum } from "./AudioPlayer";
+import { useEffect, useState } from "react";
 import trackList from "../../../helpers/tracks/trackList";
 import { ITrackList } from "../../../interfaces/tracks/ITrackList";
+import { parseWebStream } from "music-metadata";
+
+const getAudioDuration = (url: string) =>
+    new Promise((resolve, reject) => {
+        const audio = new Audio(url);
+        audio.preload = 'metadata';
+
+        audio.onloadedmetadata = () => {
+            resolve(getTimeCodeFromNum(audio.duration));
+        };
+
+        audio.onerror = () => {
+            reject(new Error('Error loading audio'));
+        };
+    });
+
 
 export const CarrerViewH = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
     const [currentSong, setCurrentSong] = useState<ITrackList>(trackList[0]);
+    const [trackInfo, setTracksInfo] = useState<any>([]);
+
+    useEffect(() => {
+        const fetchTracksInfo = async () => {
+            const infoArray = await Promise.all(
+                trackList.map(async (track) => {
+                    try {
+                        const response = await fetch(track.url);
+
+                        const duration = await getAudioDuration(track.url);
+
+                        const metadata = await parseWebStream(response.body!, {
+                            mimeType: response.headers.get('Content-Type') || 'audio/mpeg',
+                        });
+
+                        const picture = metadata.common.picture?.[0];
+                        const blob = picture?.data ? new Blob([picture.data], { type: picture.format }) : null;
+
+                        return {
+                            url: track.url,
+                            duration,
+                            title: metadata.common.title,
+                            artist: metadata.common.artist,
+                            picture: URL.createObjectURL(blob !== null ? blob : new Blob()),
+                        };
+                    } catch (err) {
+                        console.error(err);
+                        return null;
+                    }
+                })
+            );
+
+            setTracksInfo(infoArray.filter(Boolean));
+        };
+
+        fetchTracksInfo();
+    }, []);
+
 
     return (
         <Grid sx={{
@@ -42,7 +96,7 @@ export const CarrerViewH = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.1 }}
                 viewport={{ once: true }}
-                style={{ width: '100%', willChange: 'transform, opacity', display: 'flex', justifyContent: 'center', marginBottom: responsive ? '20px' : '25px' }}
+                style={{ width: '100%', willChange: 'transform, opacity', display: 'flex', justifyContent: 'center', marginBottom: responsive ? '20px' : '0px' }}
             >
                 <Box sx={{ width: 'fit-content', position: 'relative' }}>
                     <SectionObserver sectionId="Tracks" />
@@ -61,7 +115,7 @@ export const CarrerViewH = () => {
                                 content: '""',
                                 position: 'absolute',
                                 bottom: responsive ? 0 : 3,
-                                left: 0,
+                                left: 3,
                                 width: '15%',
                                 height: '5px',
                                 backgroundColor: responsive ? 'secondary.200' : 'secondary.light', // line color
@@ -74,32 +128,95 @@ export const CarrerViewH = () => {
                 </Box>
             </motion.div>
             <Grid container sx={{ pl: responsive ? 3 : '18.5%', pr: responsive ? 3 : '18.5%', height: 'auto', mb: responsive ? '20px' : '25px', display: 'flex', flexDirection: 'row', alignItems: responsive ? 'center' : 'left' }}>
-                <Grid size={responsive ? 12 : 5.5} sx={{ display: 'flex', justifyContent: 'center', verticalAlign: 'middle', alignItems: 'center' }}>
+                <Grid size={responsive ? 12 : 5} sx={{ display: 'flex', justifyContent: 'center', verticalAlign: 'middle', alignItems: 'center' }}>
                     <AudioPlayer currentSong={currentSong} setCurrentSong={setCurrentSong} />
                 </Grid>
-                <Grid size={1} sx={{ display: { xs: "none", lg: "flex" }, justifyContent: 'center', verticalAlign: 'middle', alignItems: 'center' }}>
+                <Grid size={0.5} sx={{ display: { xs: "none", lg: "flex" }, justifyContent: 'left', verticalAlign: 'middle', alignItems: 'center' }}>
                     <Box
                         sx={{
-                            width: "1.3px",
+                            width: "2px",
                             height: "24rem",
                             alignSelf: "center",
-                            background: "linear-gradient(to bottom, transparent, rgba(13,15,62, 0.55), transparent)",
+                            background: "linear-gradient(to bottom, transparent, rgba(13,15,62, 0.35), transparent)",
                         }}
                     />
                 </Grid>
-                {/* <Grid size={responsive ? 12 : 5.5} sx={{ display: 'flex', justifyContent: 'center', minHeight: '77vh', verticalAlign: 'middle', alignItems: 'center' }}>
-                    <Box sx={{
-                        height: responsive ? '70vh' : '55vh',
-                        width: responsive ? '100%' : '18vw',
-                        borderRadius: '15px',
-                        boxShadow: '0 8px 32px 0 rgba(100, 32, 135, 0.54)',
-                        backdropFilter: 'blur( 6px )',
-                        border: '1px solid rgba(255, 255, 255, 0.2)',
-                        justifyContent: 'center'
-                    }}>
-
-                    </Box>
-                </Grid> */}
+                <Grid size={responsive ? 12 : 6.5} sx={{ display: 'flex', justifyContent: 'right', minHeight: '77vh', verticalAlign: 'middle', alignItems: 'center' }}>
+                    <TableContainer component={Paper} sx={{ backgroundColor: 'transparent', width: responsive ? '100%' : '95%' }}>
+                        <Table aria-label="tracks table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>
+                                        <Typography
+                                            fontFamily={'Ubuntu, serif'}
+                                            fontSize={24}
+                                            fontWeight={'bold'}
+                                            sx={{ color: 'secondary.light' }}
+                                        >
+                                            All Songs
+                                        </Typography>
+                                    </TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {trackInfo.map((track: any, index: number) => (
+                                    <TableRow
+                                        key={index}
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 }, cursor: 'pointer', backgroundColor: 'transparent', backdropFilter: 'blur( 6px )', height: '20px' }}
+                                        /* onClick={() => setCurrentSong(track)} */
+                                        selected={currentSong.url === track.url}
+                                    >
+                                        <TableCell component="th" scope="row">
+                                            <Grid container>
+                                                <Grid size={1.1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: 'center', p: 0.8 }}>
+                                                    <Box
+                                                        key={track.url}
+                                                        component={motion.img}
+                                                        initial={{ scale: 1, opacity: 0 }}
+                                                        animate={{ scale: 1, opacity: 1 }}
+                                                        transition={{ duration: 0.8 }}
+                                                        alt="cover-art"
+                                                        loading="lazy"
+                                                        src={track.picture}
+                                                        style={{
+                                                            width: '100%',
+                                                            height: '100%',
+                                                            objectFit: 'cover',
+                                                            display: 'flex',
+                                                            justifyContent: 'center',
+                                                            alignItems: 'center',
+                                                        }}
+                                                    ></Box>
+                                                </Grid>
+                                                <Grid size={9.9} sx={{ display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'left', alignContent: 'center', }}>
+                                                    <Typography
+                                                        fontFamily={'Ubuntu, serif'}
+                                                        fontSize={16}
+                                                        fontWeight={'bold'}
+                                                        color="secondary.500"
+                                                    >
+                                                        {track.title}
+                                                    </Typography>
+                                                    <Typography
+                                                        fontFamily={'Ubuntu, serif'}
+                                                        fontSize={14}
+                                                        fontWeight={'bold'}
+                                                        color="secondary.900"
+                                                    >
+                                                        {track.artist}
+                                                    </Typography>
+                                                </Grid>
+                                                <Grid size={1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                                    <Typography fontFamily={'Ubuntu, serif'}>{track.duration}</Typography>
+                                                </Grid>
+                                            </Grid>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Grid>
             </Grid>
         </Grid>
     )

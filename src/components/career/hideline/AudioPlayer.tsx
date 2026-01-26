@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { IAudioPlayerProps } from "../../../interfaces/tracks/ITrackList";
 import { motion } from "framer-motion";
 
-const getTimeCodeFromNum = (num: number) => {
+export const getTimeCodeFromNum = (num: number) => {
     const minutes = Math.floor(num / 60);
     const seconds = Math.floor(num % 60);
 
@@ -61,7 +61,6 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
         // Cleanup function for removing event listener and interval
         return () => {
             if (audioRef.current) {
-                audioRef.current.pause();
                 audioRef.current.src = '';
                 audioRef.current.removeEventListener('loadedmetadata', () => { });
                 clearInterval(audioProgressInterval);
@@ -100,7 +99,7 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
     }
 
     return (
-        <Grid size={responsive ? 12 : 5.5} sx={{ display: 'flex', justifyContent: 'center', minHeight: responsive ? 'auto' : '77vh', verticalAlign: 'middle', alignItems: 'center' }}>
+        <Grid size={responsive ? 12 : 5.5} sx={{ display: 'flex', justifyContent: 'center', minHeight: responsive ? 'auto' : '65vh', verticalAlign: 'middle', alignItems: 'center' }}>
             <Box sx={{
                 height: responsive ? '620px' : '550px',
                 width: responsive ? '350px' : '330px',
@@ -126,7 +125,7 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
                         initial={{ scale: 1, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.8 }}
-                        alt="wonders.webp"
+                        alt="cover-art"
                         loading="lazy"
                         src={audioData.picture}
                         style={{
