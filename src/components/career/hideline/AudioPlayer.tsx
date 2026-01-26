@@ -105,14 +105,15 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
                 width: responsive ? '350px' : '330px',
                 borderRadius: '15px',
                 boxShadow: '0 8px 32px 0 rgba(100, 32, 135, 0.54)',
-                backdropFilter: 'blur( 6px )',
+                backgroundColor: 'rgba(255,255,255,0.06)',
+                WebkitBackdropFilter: 'blur( 10px )',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 flexDirection: 'column',
                 pb: 0
             }}>
                 <Box sx={{
-                    width: '100%', // o un ancho específico
-                    height: '63%', // o lo que necesites
+                    width: '100%',
+                    height: '63%',
                     overflow: 'hidden',
                     p: responsive ? 3 : 1.5,
                     display: 'flex',
@@ -134,8 +135,7 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
                             objectFit: 'cover',
                             borderRadius: '15px',
                             marginTop: responsive ? '-7px' : 0,
-                            border: currentSong.borderShadow,
-                            boxShadow: currentSong.boxShadow
+                            padding: 2
                         }}
                     ></Box>
                 </Box>

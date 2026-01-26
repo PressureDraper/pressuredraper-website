@@ -8,20 +8,15 @@ import trackList from "../../../helpers/tracks/trackList";
 import { ITrackList } from "../../../interfaces/tracks/ITrackList";
 import { parseWebStream } from "music-metadata";
 
-const getAudioDuration = (url: string) =>
-    new Promise((resolve, reject) => {
-        const audio = new Audio(url);
-        audio.preload = 'metadata';
+const getAudioDuration = async (url: string) => {
+    const res = await fetch(url);
+    const arrayBuffer = await res.arrayBuffer();
 
-        audio.onloadedmetadata = () => {
-            resolve(getTimeCodeFromNum(audio.duration));
-        };
+    const audioCtx = new AudioContext();
+    const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
 
-        audio.onerror = () => {
-            reject(new Error('Error loading audio'));
-        };
-    });
-
+    return getTimeCodeFromNum(audioBuffer.duration);
+}
 
 export const CarrerViewH = () => {
     const responsive: boolean = useMediaQuery("(max-width : 1050px)");
@@ -120,14 +115,14 @@ export const CarrerViewH = () => {
                                 height: '5px',
                                 backgroundColor: responsive ? 'secondary.200' : 'secondary.light', // line color
                                 transition: 'background-color 0.5s ease',
-                            }
+                            },
                         }}
                     >
                         Tracks
                     </Typography>
                 </Box>
             </motion.div>
-            <Grid container sx={{ pl: responsive ? 3 : '18.5%', pr: responsive ? 3 : '18.5%', height: 'auto', mb: responsive ? '20px' : '25px', display: 'flex', flexDirection: 'row', alignItems: responsive ? 'center' : 'left' }}>
+            <Grid container sx={{ pl: responsive ? 3 : '18.5%', pr: responsive ? 3 : '18.5%', height: 'auto', display: 'flex', flexDirection: 'row', alignItems: responsive ? 'center' : 'left', mt: responsive ? 5 : 0, }}>
                 <Grid size={responsive ? 12 : 5} sx={{ display: 'flex', justifyContent: 'center', verticalAlign: 'middle', alignItems: 'center' }}>
                     <AudioPlayer currentSong={currentSong} setCurrentSong={setCurrentSong} />
                 </Grid>
@@ -141,7 +136,7 @@ export const CarrerViewH = () => {
                         }}
                     />
                 </Grid>
-                <Grid size={responsive ? 12 : 6.5} sx={{ display: 'flex', justifyContent: 'right', minHeight: '77vh', verticalAlign: 'middle', alignItems: 'center' }}>
+                <Grid size={responsive ? 12 : 6.5} sx={{ display: 'flex', justifyContent: 'right', minHeight: responsive ? '70vh' : '77vh', verticalAlign: 'middle', alignItems: 'center' }}>
                     <TableContainer component={Paper} sx={{ backgroundColor: 'transparent', width: responsive ? '100%' : '95%' }}>
                         <Table aria-label="tracks table">
                             <TableHead>
@@ -162,13 +157,13 @@ export const CarrerViewH = () => {
                                 {trackInfo.map((track: any, index: number) => (
                                     <TableRow
                                         key={index}
-                                        sx={{ '&:last-child td, &:last-child th': { border: 0 }, cursor: 'pointer', backgroundColor: 'transparent', backdropFilter: 'blur( 6px )', height: '20px' }}
-                                        /* onClick={() => setCurrentSong(track)} */
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 }, cursor: 'pointer', height: '20px', backgroundColor: 'rgba(249,248,252,0.1)', '&:hover': { backgroundColor: 'rgba(255,255,255,0.05)' } }}
+                                        onClick={() => setCurrentSong(track)}
                                         selected={currentSong.url === track.url}
                                     >
                                         <TableCell component="th" scope="row">
                                             <Grid container>
-                                                <Grid size={1.1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: 'center', p: 0.8 }}>
+                                                <Grid size={responsive ? 2 : 1.1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: 'center', p: 0.8 }}>
                                                     <Box
                                                         key={track.url}
                                                         component={motion.img}
@@ -188,7 +183,7 @@ export const CarrerViewH = () => {
                                                         }}
                                                     ></Box>
                                                 </Grid>
-                                                <Grid size={9.9} sx={{ display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'left', alignContent: 'center', }}>
+                                                <Grid size={responsive ? 9 : 9.9} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', alignContent: 'center', }}>
                                                     <Typography
                                                         fontFamily={'Ubuntu, serif'}
                                                         fontSize={16}

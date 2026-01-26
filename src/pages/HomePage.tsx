@@ -42,11 +42,13 @@ const HomePage = () => {
             </Box>
             <Box component="section" id={selectedUI === 'Sahib' ? "Career" : "Tracks"}>
                 {
-                    selectedUI === 'Sahib' ? <CareerView /> : <CarrerViewH /> 
+                    selectedUI === 'Sahib' ? <CareerView /> : <CarrerViewH />
                 }
             </Box>
             <Box component="section" id="Contact">
-                <ContactView />
+                {
+                    selectedUI === 'Sahib' && <ContactView />
+                }
             </Box>
         </Stack>
     )
