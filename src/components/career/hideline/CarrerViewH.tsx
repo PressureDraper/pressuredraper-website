@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import trackList from "../../../helpers/tracks/trackList";
 import { ITrackList } from "../../../interfaces/tracks/ITrackList";
 import { parseWebStream } from "music-metadata";
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 const getAudioDuration = async (url: string) => {
     const res = await fetch(url);
@@ -53,7 +54,7 @@ export const CarrerViewH = () => {
                 })
             );
 
-            setTracksInfo(infoArray.filter(Boolean));
+            setTracksInfo(infoArray);
         };
 
         fetchTracksInfo();
@@ -136,12 +137,15 @@ export const CarrerViewH = () => {
                         }}
                     />
                 </Grid>
-                <Grid size={responsive ? 12 : 6.5} sx={{ display: 'flex', justifyContent: 'right', minHeight: responsive ? '70vh' : '77vh', verticalAlign: 'middle', alignItems: 'center' }}>
+                <Grid size={responsive ? 12 : 6.5} sx={{ backgroundColor: 'transparent', display: 'flex', justifyContent: 'right', minHeight: responsive ? '70vh' : '77vh', verticalAlign: 'middle', alignItems: 'center' }}>
                     <TableContainer component={Paper} sx={{ backgroundColor: 'transparent', width: responsive ? '100%' : '95%' }}>
-                        <Table aria-label="tracks table">
+                        <Table aria-label="tracks table" stickyHeader>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>
+                                    <TableCell sx={{
+                                        backgroundColor: 'transparent',
+                                        color: 'secondary.light'
+                                    }}>
                                         <Typography
                                             fontFamily={'Ubuntu, serif'}
                                             fontSize={24}
@@ -157,7 +161,7 @@ export const CarrerViewH = () => {
                                 {trackInfo.map((track: any, index: number) => (
                                     <TableRow
                                         key={index}
-                                        sx={{ '&:last-child td, &:last-child th': { border: 0 }, cursor: 'pointer', height: '20px', backgroundColor: 'rgba(249,248,252,0.1)', '&:hover': { backgroundColor: 'rgba(255,255,255,0.05)' } }}
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 }, cursor: 'pointer', height: '20px', backgroundColor: 'rgba(249,248,252,0.1)', '&:hover': { backgroundColor: 'rgba(255,255,255,0.01)' } }}
                                         onClick={() => setCurrentSong(track)}
                                         selected={currentSong.url === track.url}
                                     >
@@ -165,6 +169,7 @@ export const CarrerViewH = () => {
                                             <Grid container>
                                                 <Grid size={responsive ? 2 : 1.1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: 'center', p: 0.8 }}>
                                                     <Box
+                                                        className="playOverlay"
                                                         key={track.url}
                                                         component={motion.img}
                                                         initial={{ scale: 1, opacity: 0 }}
@@ -180,8 +185,17 @@ export const CarrerViewH = () => {
                                                             display: 'flex',
                                                             justifyContent: 'center',
                                                             alignItems: 'center',
+                                                            position: 'relative'
                                                         }}
-                                                    ></Box>
+                                                    >
+                                                        <PlayArrowIcon
+                                                        sx={{
+                                                            fontSize: responsive ? 30 : 40,
+                                                            color: 'rgba(255, 255, 255, 0.8)',
+                                                            position: 'absolute'
+                                                        }}
+                                                        />
+                                                    </Box>
                                                 </Grid>
                                                 <Grid size={responsive ? 9 : 9.9} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', alignContent: 'center', }}>
                                                     <Typography
