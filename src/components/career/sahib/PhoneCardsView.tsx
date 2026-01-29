@@ -6,7 +6,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { PropsProjectsButtons, PropsProjectsInfo } from '../../../interfaces/projects/IProjectsInfo';
 
 export const PhoneCardsView = ({ visibleProjects, renderKey }: { visibleProjects: PropsProjectsInfo[], renderKey: number }) => {
-    const responsive: boolean = useMediaQuery("(max-width : 1050px)");
+    const responsive: boolean = useMediaQuery("(max-width : 880px)");
 
     return (
         <>
