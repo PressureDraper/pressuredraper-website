@@ -78,7 +78,7 @@ export const Navbar = () => {
                                         fontWeight: 'bold',
                                         fontOpticalSizing: 'auto',
                                         fontStyle: 'normal',
-                                        letterSpacing: '.2rem',
+                                        letterSpacing: '.1rem',
                                         color: selectedUI === 'Sahib' ? 'primary.light' : 'secondary.light',
                                         textDecoration: 'none',
                                         transition: 'all 0.5s ease'

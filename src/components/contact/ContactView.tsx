@@ -15,7 +15,7 @@ import { SectionObserver } from "../ui/SectionObserver";
 const defautlPayload = { name: '', email: '', topic: '', message: '' };
 
 export const ContactView = () => {
-    const responsive: boolean = useMediaQuery("(max-width : 1050px)");
+    const responsive: boolean = useMediaQuery("(max-width : 880px)");
     const { selectedUI } = useContext(UIContext);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [payload, setPayload] = useState<PropsContactForm>(defautlPayload);
@@ -66,7 +66,7 @@ export const ContactView = () => {
             }}>
                 <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
                     <img width={'95%'} height={'100%'} alt="background.svg" loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/background.svg`} style={{ position: 'absolute', zIndex: -1, opacity: 0.5 }}></img>
-                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '7vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
+                    <Grid size={12} sx={{ width: responsive ? '100%' : '80%', maxWidth: '1280px', mx: responsive ? '1%' : '2%', height: 'auto', mb: '7vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
