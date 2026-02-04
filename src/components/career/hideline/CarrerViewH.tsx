@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import trackList from "../../../helpers/tracks/trackList";
 import { ITrackList } from "../../../interfaces/tracks/ITrackList";
 import { parseWebStream } from "music-metadata";
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+// import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 const getAudioDuration = async (url: string) => {
     const res = await fetch(url);
@@ -188,13 +188,13 @@ export const CarrerViewH = () => {
                                                             position: 'relative'
                                                         }}
                                                     >
-                                                        <PlayArrowIcon
+                                                        {/* <PlayArrowIcon
                                                         sx={{
                                                             fontSize: responsive ? 30 : 40,
                                                             color: 'rgba(255, 255, 255, 0.8)',
                                                             position: 'absolute'
                                                         }}
-                                                        />
+                                                        /> */}
                                                     </Box>
                                                 </Grid>
                                                 <Grid size={responsive ? 9 : 9.9} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', alignContent: 'center', }}>

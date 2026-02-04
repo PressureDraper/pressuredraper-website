@@ -22,11 +22,12 @@ const coding = ['Clean coding', 'Serving security', 'Troubleshooting'];
 const learning = ['Digging new tools', 'Innovating', 'Cutting-edge Tech'];
 
 const AboutView = () => {
-    const responsive: boolean = useMediaQuery("(max-width : 1050px)");
+    const responsive: boolean = useMediaQuery("(max-width : 880px)");
     const { selectedUI } = useContext(UIContext);
     const [index, setIndex] = useState({ performance: 0, coding: 0, learning: 0 });
     const [focus, setFocus] = useState({ performance: 'Enhancing loading times', coding: 'Clean coding', learning: 'Digging new tech' });
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const currentExperience = new Date().getFullYear() - 2022;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -88,8 +89,8 @@ const AboutView = () => {
                 position: 'relative'
             }}>
                 <svg style={{ marginTop: '-1px' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#010100"><path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path></svg>
-                <Grid container>
-                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '13vh', display: 'flex', flexDirection: 'column', alignItems: responsive ? 'center' : 'left' }}>
+                <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <Grid size={12} sx={{  width: responsive ? '100%' : '90%', maxWidth: '1280px', mx: responsive ? '1%' : '2%', height: 'auto', mb: '13vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -147,34 +148,34 @@ const AboutView = () => {
                             }}>
                                 <Grid container>
                                     <Grid size={responsive ? 12 : 8.5} sx={{ display: 'flex', flexDirection: 'column', gap: 3.7, textAlign: 'justify', pl: responsive ? 3 : 7, pr: responsive ? 3 : 7 }}>
-                                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, position: 'relative' }}>
+                                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, position: 'relative', height: '100%' }}>
                                             <Typography
                                                 fontFamily={'Ubuntu, serif'}
-                                                fontSize={responsive ? '16px' : '1vw'}
+                                                fontSize={responsive ? '16px' : '1.3vw'}
                                                 color="primary.dark"
                                                 letterSpacing={'.05rem'}
                                             >
-                                                <b style={{ fontSize: responsive ? '20px' : '1.5vw' }}>S</b>ahib is a Compute Science graduate with 4+ years of experience within the field. He resides in Veracruz, Mexico and is currently working as a Full-Stack developer.
+                                                <b style={{ fontSize: responsive ? '20px' : '1.4vw' }}>S</b>ahib is a Computer Science graduate with { currentExperience }+ years of experience within the field. He resides in Veracruz, Mexico and is currently working as a Full-Stack developer.
                                             </Typography>
                                             <SectionObserver sectionId="About" />
                                             <Typography
                                                 fontFamily={'Ubuntu, serif'}
-                                                fontSize={responsive ? '16px' : '1vw'}
+                                                fontSize={responsive ? '16px' : '1.3vw'}
                                                 color="primary.dark"
                                                 letterSpacing={'.05rem'}
                                             >
-                                                <b style={{ fontSize: responsive ? '20px' : '1.5vw' }}>T</b>hanks to his ability as a fast learner, he is always active contributing with quality software solutions that could be scalable and maintainable through the time using emerging technologies.
+                                                <b style={{ fontSize: responsive ? '20px' : '1.4vw' }}>T</b>hanks to his ability as a fast learner, he is always active contributing with quality software solutions that could be scalable and maintainable through the time using emerging technologies.
                                             </Typography>
                                             <Typography
                                                 fontFamily={'Ubuntu, serif'}
-                                                fontSize={responsive ? '16px' : '1vw'}
+                                                fontSize={responsive ? '16px' : '1.3vw'}
                                                 color="primary.dark"
                                                 letterSpacing={'.05rem'}
                                             >
-                                                <b style={{ fontSize: responsive ? '20px' : '1.5vw' }}>H</b>is interests and experience spans over Cloud Computing, Database and Server Administration, Front-end and Back-end development and automation tasks.
+                                                <b style={{ fontSize: responsive ? '20px' : '1.4vw' }}>H</b>is interests and experience spans over Cloud Computing, Database and Server Administration, Front-end and Back-end development and automation tasks.
                                             </Typography>
                                         </Box>
-                                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: 'fit-content', justifyContent: 'flex-end' }}>
                                             <Typography
                                                 color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
                                                 fontFamily={'Ubuntu, serif'}
@@ -185,7 +186,7 @@ const AboutView = () => {
                                                 textAlign={responsive ? 'center' : 'left'}
                                                 sx={{ transition: 'color 0.5s ease', textAlign: "left" }}
                                             >
-                                                <TipsAndUpdatesIcon sx={{ fontSize: responsive ? '5vw' : '1.3vw', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
+                                                <TipsAndUpdatesIcon sx={{ fontSize: responsive ? '5vw' : '100%', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
                                                 Current Focus
                                             </Typography>
                                             <Grid container sx={{ display: 'flex', gap: 3 }}>
@@ -265,7 +266,7 @@ const AboutView = () => {
                                                         <Box sx={{ height: '100%', width: 'fit-content' }}>
                                                             <Typography
                                                                 fontWeight={'bold'}
-                                                                fontFamily={'Ubuntu, serif'}
+                                                                fontFamily={'Ubuntu, serif'}    
                                                                 letterSpacing={'.05rem'}
                                                                 sx={{ ml: 1, mt: -0.5 }}
                                                             >
@@ -291,91 +292,93 @@ const AboutView = () => {
                                             </Grid>
                                         </Box>
                                     </Grid>
-                                    <Grid size={responsive ? 12 : 3.5} sx={{ pl: responsive ? 3 : 2, pr: responsive ? 3 : 2, mt: responsive ? 3 : 1, display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'left' }}>
-                                        <Typography
-                                            color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
-                                            fontFamily={'Ubuntu, serif'}
-                                            fontWeight={'bold'}
-                                            fontSize={responsive ? '25px' : '1.5vw'}
-                                            fontStyle={'normal'}
-                                            letterSpacing={'.1rem'}
-                                            textAlign={responsive ? 'center' : 'left'}
-                                            sx={{ transition: 'color 0.5s ease', textAlign: "left" }}
-                                        >
-                                            <AlternateEmailIcon sx={{ fontSize: responsive ? '5vw' : '1.3vw', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
-                                            Social Media
-                                        </Typography>
-                                        <Box sx={{ display: 'flex' }}>
-                                            <LinkedInIcon className='linkdin' sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.light' }} />
-                                            <Link href="https://www.linkedin.com/in/pressuredraper/" target="_blank">
-                                                <Typography
-                                                    color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
-                                                    fontFamily={'Ubuntu, serif'}
-                                                    fontWeight={'bold'}
-                                                    fontSize={responsive ? '19px' : '1vw'}
-                                                    fontStyle={'normal'}
-                                                    letterSpacing={'.1rem'}
-                                                    textAlign={responsive ? 'center' : 'left'}
-                                                    sx={{
-                                                        transition: 'color 0.5s ease', textAlign: "left", '&:hover': {
-                                                            cursor: 'pointer', color: 'primary.main',
-                                                        }, mt: responsive ? 0 : -0.3
-                                                    }}
-                                                >
-                                                    in/pressuredraper
-                                                </Typography>
-                                            </Link>
-                                        </Box>
-                                        <Box sx={{ display: 'flex' }}>
-                                            <GitHubIcon sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.light' }} />
-                                            <Link href="https://github.com/PressureDraper" target="_blank">
-                                                <Typography
-                                                    color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
-                                                    fontFamily={'Ubuntu, serif'}
-                                                    fontWeight={'bold'}
-                                                    fontSize={responsive ? '19px' : '1vw'}
-                                                    fontStyle={'normal'}
-                                                    letterSpacing={'.1rem'}
-                                                    textAlign={responsive ? 'center' : 'left'}
-                                                    sx={{ transition: 'color 0.5s ease', textAlign: "left", '&:hover': { cursor: 'pointer', color: 'primary.main' }, mt: responsive ? 0 : -0.1 }}
-                                                >
-                                                    @pressuredraper
-                                                </Typography>
-                                            </Link>
-                                        </Box>
-                                        <Box sx={{ display: 'flex' }}>
-                                            <InstagramIcon sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.light' }} />
-                                            <Link href="https://www.instagram.com/pressure_draper/" target="_blank">
-                                                <Typography
-                                                    color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
-                                                    fontFamily={'Ubuntu, serif'}
-                                                    fontWeight={'bold'}
-                                                    fontSize={responsive ? '19px' : '1vw'}
-                                                    fontStyle={'normal'}
-                                                    letterSpacing={'.1rem'}
-                                                    textAlign={responsive ? 'center' : 'left'}
-                                                    sx={{ transition: 'color 0.5s ease', textAlign: "left", '&:hover': { cursor: 'pointer', color: 'primary.main' }, mt: responsive ? 0 : -0.3 }}
-                                                >
-                                                    pressure_draper
-                                                </Typography>
-                                            </Link>
-                                        </Box>
-                                        <Box sx={{ display: 'flex' }}>
-                                            <FacebookIcon sx={{ fontSize: responsive ? '7vw' : '1.3vw', mr: 1, color: 'primary.light' }} />
-                                            <Link href="https://www.facebook.com/PressureDraper/" target="_blank">
-                                                <Typography
-                                                    color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
-                                                    fontFamily={'Ubuntu, serif'}
-                                                    fontWeight={'bold'}
-                                                    fontSize={responsive ? '19px' : '1vw'}
-                                                    fontStyle={'normal'}
-                                                    letterSpacing={'.1rem'}
-                                                    textAlign={responsive ? 'center' : 'left'}
-                                                    sx={{ transition: 'color 0.5s ease', textAlign: "left", '&:hover': { cursor: 'pointer', color: 'primary.main' }, mt: responsive ? 0 : -0.1 }}
-                                                >
-                                                    pressuredraper
-                                                </Typography>
-                                            </Link>
+                                    <Grid size={responsive ? 12 : 3.5} sx={{ pl: responsive ? 3 : 2, pr: responsive ? 3 : 2, mt: responsive ? 3 : 1, display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'left', justifyContent: 'space-between' }}>
+                                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                                            <Typography
+                                                color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
+                                                fontFamily={'Ubuntu, serif'}
+                                                fontWeight={'bold'}
+                                                fontSize={responsive ? '25px' : '1.5vw'}
+                                                fontStyle={'normal'}
+                                                letterSpacing={'.1rem'}
+                                                textAlign={responsive ? 'center' : 'left'}
+                                                sx={{ transition: 'color 0.5s ease', textAlign: "left" }}
+                                            >
+                                                <AlternateEmailIcon sx={{ fontSize: responsive ? '5vw' : '100%', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
+                                                Social Media
+                                            </Typography>
+                                            <Box sx={{ display: 'flex' }}>
+                                                <LinkedInIcon className='linkdin' sx={{ fontSize: responsive ? '7vw' : '1.4vw', mr: 1, color: 'primary.light' }} />
+                                                <Link href="https://www.linkedin.com/in/pressuredraper/" target="_blank">
+                                                    <Typography
+                                                        color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
+                                                        fontFamily={'Ubuntu, serif'}
+                                                        fontWeight={'bold'}
+                                                        fontSize={responsive ? '19px' : '1.15vw'}
+                                                        fontStyle={'normal'}
+                                                        letterSpacing={'.1rem'}
+                                                        textAlign={responsive ? 'center' : 'left'}
+                                                        sx={{
+                                                            transition: 'color 0.5s ease', textAlign: "left", '&:hover': {
+                                                                cursor: 'pointer', color: 'primary.main',
+                                                            }, mt: responsive ? 0 : -0.3
+                                                        }}
+                                                    >
+                                                        in/pressuredraper
+                                                    </Typography>
+                                                </Link>
+                                            </Box>
+                                            <Box sx={{ display: 'flex' }}>
+                                                <GitHubIcon sx={{ fontSize: responsive ? '7vw' : '1.4vw', mr: 1, color: 'primary.light' }} />
+                                                <Link href="https://github.com/PressureDraper" target="_blank">
+                                                    <Typography
+                                                        color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
+                                                        fontFamily={'Ubuntu, serif'}
+                                                        fontWeight={'bold'}
+                                                        fontSize={responsive ? '19px' : '1.15vw'}
+                                                        fontStyle={'normal'}
+                                                        letterSpacing={'.1rem'}
+                                                        textAlign={responsive ? 'center' : 'left'}
+                                                        sx={{ transition: 'color 0.5s ease', textAlign: "left", '&:hover': { cursor: 'pointer', color: 'primary.main' }, mt: responsive ? 0 : -0.1 }}
+                                                    >
+                                                        @pressuredraper
+                                                    </Typography>
+                                                </Link>
+                                            </Box>
+                                            <Box sx={{ display: 'flex' }}>
+                                                <InstagramIcon sx={{ fontSize: responsive ? '7vw' : '1.4vw', mr: 1, color: 'primary.light' }} />
+                                                <Link href="https://www.instagram.com/pressure_draper/" target="_blank">
+                                                    <Typography
+                                                        color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
+                                                        fontFamily={'Ubuntu, serif'}
+                                                        fontWeight={'bold'}
+                                                        fontSize={responsive ? '19px' : '1.15vw'}
+                                                        fontStyle={'normal'}
+                                                        letterSpacing={'.1rem'}
+                                                        textAlign={responsive ? 'center' : 'left'}
+                                                        sx={{ transition: 'color 0.5s ease', textAlign: "left", '&:hover': { cursor: 'pointer', color: 'primary.main' }, mt: responsive ? 0 : -0.3 }}
+                                                    >
+                                                        pressure_draper
+                                                    </Typography>
+                                                </Link>
+                                            </Box>
+                                            <Box sx={{ display: 'flex' }}>
+                                                <FacebookIcon sx={{ fontSize: responsive ? '7vw' : '1.4vw', mr: 1, color: 'primary.light' }} />
+                                                <Link href="https://www.facebook.com/PressureDraper/" target="_blank">
+                                                    <Typography
+                                                        color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
+                                                        fontFamily={'Ubuntu, serif'}
+                                                        fontWeight={'bold'}
+                                                        fontSize={responsive ? '19px' : '1.15vw'}
+                                                        fontStyle={'normal'}
+                                                        letterSpacing={'.1rem'}
+                                                        textAlign={responsive ? 'center' : 'left'}
+                                                        sx={{ transition: 'color 0.5s ease', textAlign: "left", '&:hover': { cursor: 'pointer', color: 'primary.main' }, mt: responsive ? 0 : -0.1 }}
+                                                    >
+                                                        pressuredraper
+                                                    </Typography>
+                                                </Link>
+                                            </Box>
                                         </Box>
                                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                                             <Typography
@@ -388,33 +391,33 @@ const AboutView = () => {
                                                 textAlign={responsive ? 'center' : 'left'}
                                                 sx={{ transition: 'color 0.5s ease', textAlign: "left" }}
                                             >
-                                                <TranslateIcon sx={{ fontSize: responsive ? '5vw' : '1.3vw', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
+                                                <TranslateIcon sx={{ fontSize: responsive ? '5vw' : '100%', mr: 0.8, mb: -0.2, color: 'primary.dark' }} />
                                                 Languages
                                             </Typography>
                                             <Typography
                                                 color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
                                                 fontFamily={'Ubuntu, serif'}
                                                 fontWeight={'bold'}
-                                                fontSize={responsive ? '19px' : '1vw'}
+                                                fontSize={responsive ? '19px' : '1.15vw'}
                                                 fontStyle={'normal'}
                                                 letterSpacing={'.1rem'}
                                                 textAlign={responsive ? 'center' : 'left'}
                                                 sx={{ transition: 'color 0.5s ease', textAlign: "left" }}
                                             >
-                                                <LanguageIcon sx={{ fontSize: responsive ? '6vw' : '1.2vw', mr: 0.8, mb: -0.6, color: 'primary.light' }} />
+                                                <LanguageIcon sx={{ fontSize: responsive ? '6vw' : '1.4vw', mr: 0.8, mb: -0.6, color: 'primary.light' }} />
                                                 Spanish - Native
                                             </Typography>
                                             <Typography
                                                 color={selectedUI === 'Sahib' ? "primary.dark" : "secondary.300"}
                                                 fontFamily={'Ubuntu, serif'}
                                                 fontWeight={'bold'}
-                                                fontSize={responsive ? '19px' : '1vw'}
+                                                fontSize={responsive ? '19px' : '1.15vw'}
                                                 fontStyle={'normal'}
                                                 letterSpacing={'.1rem'}
                                                 textAlign={responsive ? 'center' : 'left'}
                                                 sx={{ transition: 'color 0.5s ease', textAlign: "left" }}
                                             >
-                                                <LanguageIcon sx={{ fontSize: responsive ? '6vw' : '1.2vw', mr: 0.8, mb: -0.6, color: 'primary.light' }} />
+                                                <LanguageIcon sx={{ fontSize: responsive ? '6vw' : '1.4vw', mr: 0.8, mb: -0.6, color: 'primary.light' }} />
                                                 English - Advanced
                                             </Typography>
                                         </Box>

@@ -109,7 +109,7 @@ export const CareerView = () => {
                                         sx={{ transition: 'color 0.5s ease', pl: 2, pr: 2 }}
                                     >
                                         <PeopleAltIcon sx={{ fontSize: responsive ? '25px' : '100%', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
-                                        Freelance & Contract Work
+                                        Contract Work
                                     </Typography>
                                 </Grid>
                                 <Grid size={12} sx={{ width: '100%' }}>

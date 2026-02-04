@@ -12,7 +12,8 @@ export const Navbar = () => {
     const { selectedUI } = useContext(UIContext);
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const { activeSection, setActiveSection, setDynamic } = useContext<PropsUIContext>(UIContext);
-    const responsive: boolean = useMediaQuery("(max-width : 1050px)");
+    const responsive: boolean = useMediaQuery("(max-width : 880px)");
+    const responsiveIcon: boolean = useMediaQuery("(max-width : 1280px)");
     const [animations, setAnimations] = useState({ headerTitle: 'animate__animated animate__fadeIn' });
 
     const navItem = [
@@ -61,8 +62,8 @@ export const Navbar = () => {
                             <NavLink aria-label='Home Page' to={'/'} style={{ marginBottom: -7 }}>
                                 {
                                     selectedUI === 'Sahib'
-                                        ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '35px' }} className="animate__animated animate__fadeIn" />
-                                        : <MusicNoteIcon sx={{ color: 'secondary.900', fontSize: '35px' }} className="animate__animated animate__fadeIn" />
+                                        ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: responsiveIcon ? '2vw' : '1.7vw' }} className="animate__animated animate__fadeIn" />
+                                        : <MusicNoteIcon sx={{ color: 'secondary.900', fontSize: responsiveIcon ? '2vw' : '1.7vw' }} className="animate__animated animate__fadeIn" />
                                 }
                             </NavLink>
                             <Divider orientation="vertical" variant='middle' flexItem sx={{ ml: 1.5, mr: 0.6, backgroundColor: 'primary.main' }} />
@@ -71,9 +72,8 @@ export const Navbar = () => {
                                     variant="h5"
                                     noWrap
                                     sx={{
-                                        mr: 1,
+                                        mr: 1, 
                                         ml: 1.5,
-                                        fontSize: '28px',
                                         fontFamily: "Ubuntu, serif",
                                         fontWeight: 'bold',
                                         fontOpticalSizing: 'auto',
@@ -157,8 +157,8 @@ export const Navbar = () => {
                                 <NavLink aria-label='Home Page' to={'/'} style={{ display: responsive ? 'flex' : 'none' }}>
                                     {
                                         selectedUI === 'Sahib'
-                                            ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '32px' }} className="animate__animated animate__swing" />
-                                            : <MusicNoteIcon sx={{ color: 'secondary.900', fontSize: '32px' }} className="animate__animated animate__swing" />
+                                            ? <CodeOffIcon sx={{ color: 'primary.900', fontSize: '28px' }} className="animate__animated animate__swing" />
+                                            : <MusicNoteIcon sx={{ color: 'secondary.900', fontSize: '28px' }} className="animate__animated animate__swing" />
                                     }
                                 </NavLink>
                                 <Divider orientation="vertical" variant='middle' flexItem sx={{ ml: 1.5, display: responsive ? 'flex' : 'none', backgroundColor: 'primary.main' }} />

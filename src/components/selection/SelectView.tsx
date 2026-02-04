@@ -64,7 +64,7 @@ export const SelectView = () => {
                         color={selectedUI === 'Sahib' ? "primary.light" : "secondary.light"}
                         fontFamily={'Ubuntu, serif'}
                         fontWeight={'bold'}
-                        fontSize={responsive ? '16vw' : '5vw'}
+                        fontSize={responsive ? '16vw' : '4.5vw'}
                         fontStyle={'oblique'}
                         letterSpacing={'.3rem'}
                         sx={{ transition: 'all 0.5s ease' }}
@@ -82,7 +82,7 @@ export const SelectView = () => {
                             className="animate__animated animate__fadeIn"
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
-                            fontSize={responsive ? '5vw' : '2vw'}
+                            fontSize={responsive ? '5vw' : '2.2vw'}
                             fontStyle={'normal'}
                             letterSpacing={'.15rem'}
                             textAlign={'center'}
@@ -98,7 +98,7 @@ export const SelectView = () => {
                             color={selectedUI === 'Sahib' ? "primary.300" : "secondary.300"}
                             fontFamily={'Ubuntu, serif'}
                             fontWeight={'bold'}
-                            fontSize={responsive ? '4vw' : '1.3vw'}
+                            fontSize={responsive ? '4vw' : '1.4vw'}
                             fontStyle={'normal'}
                             letterSpacing={'.05rem'}
                             textAlign={'center'}
