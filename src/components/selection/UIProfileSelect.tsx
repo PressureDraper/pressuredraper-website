@@ -32,31 +32,31 @@ export const UIProfileSelect: React.FC<ChildProps> = ({ viewData, setViewData })
         );
     }
 
-    const handleSelectUI = () => {
-        if (selectedUI === 'Sahib') {
-            setSelectedUI('Hideline');
-            setViewData({
-                imageUser: `${import.meta.env.VITE_APP_BASE_ROUTE}/logo_500.webp`,
-                gradient: 'linear-gradient(135deg, #8367b6, #d4c9e9, #f9f8fc)',
-                imageAnimation: 'animate__animated animate__fadeIn',
-                nameAnimation: 'animate__animated animate__fadeInUp animate__delay-1s',
-                quoteAnimation: 'animate__animated animate__fadeInUp animate__delay-2s',
-                videoSource: '1'
-            });
-            localStorage.setItem('selectedUI', 'Hideline');
-        } else {
-            setSelectedUI('Sahib');
-            setViewData({
-                imageUser: `${import.meta.env.VITE_APP_BASE_ROUTE}/sahib.webp`,
-                gradient: 'linear-gradient(135deg, #7d6751, #b6a98e, #f5f4f1)',
-                imageAnimation: 'animate__animated animate__fadeIn',
-                nameAnimation: 'animate__animated animate__fadeInDown animate__delay-1s',
-                quoteAnimation: 'animate__animated animate__fadeInDown animate__delay-2s',
-                videoSource: '2'
-            });
-            localStorage.setItem('selectedUI', 'Sahib');
-        }
-    }
+    // const handleSelectUI = () => {
+    //     if (selectedUI === 'Sahib') {
+    //         setSelectedUI('Hideline');
+    //         setViewData({
+    //             imageUser: `${import.meta.env.VITE_APP_BASE_ROUTE}/logo_500.webp`,
+    //             gradient: 'linear-gradient(135deg, #8367b6, #d4c9e9, #f9f8fc)',
+    //             imageAnimation: 'animate__animated animate__fadeIn',
+    //             nameAnimation: 'animate__animated animate__fadeInUp animate__delay-1s',
+    //             quoteAnimation: 'animate__animated animate__fadeInUp animate__delay-2s',
+    //             videoSource: '1'
+    //         });
+    //         localStorage.setItem('selectedUI', 'Hideline');
+    //     } else {
+    //         setSelectedUI('Sahib');
+    //         setViewData({
+    //             imageUser: `${import.meta.env.VITE_APP_BASE_ROUTE}/sahib.webp`,
+    //             gradient: 'linear-gradient(135deg, #7d6751, #b6a98e, #f5f4f1)',
+    //             imageAnimation: 'animate__animated animate__fadeIn',
+    //             nameAnimation: 'animate__animated animate__fadeInDown animate__delay-1s',
+    //             quoteAnimation: 'animate__animated animate__fadeInDown animate__delay-2s',
+    //             videoSource: '2'
+    //         });
+    //         localStorage.setItem('selectedUI', 'Sahib');
+    //     }
+    // }
 
     useEffect(() => {
         setSelectedUI(localStorage.getItem('selectedUI') || 'Sahib');
