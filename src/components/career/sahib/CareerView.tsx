@@ -12,7 +12,7 @@ import { Freelance } from "./Freelance";
 
 export const CareerView = () => {
     const { selectedUI } = useContext(UIContext);
-    const responsive: boolean = useMediaQuery("(max-width : 1050px)");
+    const responsive: boolean = useMediaQuery("(max-width : 1280px)");
 
     return (
         <>
@@ -27,7 +27,7 @@ export const CareerView = () => {
             }}>
                 <Grid container sx={{ zIndex: 5, overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', height: 'auto', position: 'relative' }}>
                     <img width={'95%'} height={'100%'} alt="background.svg" loading="lazy" src={`${import.meta.env.VITE_APP_BASE_ROUTE}/background.svg`} style={{ position: 'absolute', zIndex: -1, opacity: 0.5 }}></img>
-                    <Grid size={12} sx={{ pl: responsive ? 0 : '18.5%', pr: responsive ? 0 : '18.5%', height: 'auto', mb: '3vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <Grid size={12} sx={{ width: '100%', maxWidth: '1280px', mx: responsive ? '1%' : '2%', height: 'auto', mb: '3vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -79,13 +79,13 @@ export const CareerView = () => {
                                         color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
                                         fontFamily={'Ubuntu, serif'}
                                         fontWeight={'bold'}
-                                        fontSize={responsive ? '18px' : '1.3vw'}
+                                        fontSize={responsive ? '21px' : '1.3vw'}
                                         fontStyle={'normal'}
                                         letterSpacing={'.1rem'}
                                         textAlign={responsive ? 'center' : 'left'}
                                         sx={{ transition: 'color 0.5s ease', pl: 2, pr: 2 }}
                                     >
-                                        <AddTaskIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
+                                        <AddTaskIcon sx={{ fontSize: responsive ? '25px' : '100%', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
                                         Professional Background
                                     </Typography>
                                 </Grid>
@@ -102,13 +102,13 @@ export const CareerView = () => {
                                         color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
                                         fontFamily={'Ubuntu, serif'}
                                         fontWeight={'bold'}
-                                        fontSize={responsive ? '18px' : '1.3vw'}
+                                        fontSize={responsive ? '21px' : '1.3vw'}
                                         fontStyle={'normal'}
                                         letterSpacing={'.1rem'}
                                         textAlign={responsive ? 'center' : 'left'}
                                         sx={{ transition: 'color 0.5s ease', pl: 2, pr: 2 }}
                                     >
-                                        <PeopleAltIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
+                                        <PeopleAltIcon sx={{ fontSize: responsive ? '25px' : '100%', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
                                         Freelance & Contract Work
                                     </Typography>
                                 </Grid>
@@ -125,13 +125,13 @@ export const CareerView = () => {
                                         color={selectedUI === 'Sahib' ? "primary.light" : "secondary.300"}
                                         fontFamily={'Ubuntu, serif'}
                                         fontWeight={'bold'}
-                                        fontSize={responsive ? '18px' : '1.3vw'}
+                                        fontSize={responsive ? '21px' : '1.3vw'}
                                         fontStyle={'normal'}
                                         letterSpacing={'.1rem'}
                                         textAlign={responsive ? 'center' : 'left'}
                                         sx={{ transition: 'color 0.5s ease', pl: 2, pr: 2 }}
                                     >
-                                        <FolderSpecialIcon sx={{ fontSize: responsive ? '5vw' : '1.2vw', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
+                                        <FolderSpecialIcon sx={{ fontSize: responsive ? '25px' : '100%', mr: 0.8, mb: responsive ? -0.5 : -0.3, color: 'primary.light' }} />
                                         Portfolio
                                     </Typography>
                                 </Grid>

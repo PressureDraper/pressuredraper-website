@@ -8,7 +8,7 @@ import { PhoneCardsView } from './PhoneCardsView';
 import { DesktopCardsView } from './DesktopCardsView';
 
 export const Projects = () => {
-    const responsive: boolean = useMediaQuery("(max-width : 1050px)");
+    const responsive: boolean = useMediaQuery("(max-width : 880px)");
     const [showAll, setShowAll] = useState<boolean>(false);
     const visibleProjects = projectsInfo.filter((_, index) => showAll || index < 4);
     const [renderKey, setRenderKey] = useState<number>(0);

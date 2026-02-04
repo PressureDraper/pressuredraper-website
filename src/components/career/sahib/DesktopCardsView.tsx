@@ -7,10 +7,10 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { PropsProjectsButtons, PropsProjectsInfo } from "../../../interfaces/projects/IProjectsInfo";
 
 export const DesktopCardsView = ({ visibleProjects, renderKey }: { visibleProjects: PropsProjectsInfo[], renderKey: number }) => {
-    const responsive: boolean = useMediaQuery("(max-width : 1050px)");
+    const responsive: boolean = useMediaQuery("(max-width : 880px)");
 
     return (
-        <Masonry columns={responsive ? 1 : 2} spacing={3} sx={{ pt: 2, pb: 1, width: '110%' }}>
+        <Masonry columns={responsive ? 1 : 2} spacing={3} sx={{ pt: 2, pb: 1, width: 'auto' }}>
             {visibleProjects.map((item: PropsProjectsInfo, index) => (
                 <motion.div
                     key={`${renderKey}-${item.title}`}
