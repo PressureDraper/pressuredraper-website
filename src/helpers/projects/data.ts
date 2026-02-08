@@ -25,7 +25,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'docker', 'react', 'mui', 'typescript', 'express', 'socketio', 'prisma-ORM:prisma ORM', 'mysql', 'canvas', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'socketio', 'prisma-ORM:prisma ORM', 'mysql', 'canvas', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
     },
@@ -53,7 +53,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'prisma-ORM:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'prisma-ORM:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
 
@@ -96,7 +96,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'smtp', 'prisma-ORM:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'smtp', 'prisma-ORM:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
     },
