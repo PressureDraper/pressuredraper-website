@@ -6,9 +6,9 @@ export const curriculumInfo = [
         date: 'Apr 2023 — Present',
         responsabilities: [
             {
-                desc: `Developed and deployed a landing page for the hospital annual congress hosting 6000 people in 2023 and
-            2024 editions through a serverless solution using Firebase and MySQL for data transactions, GitHub Pages and
-            AWS for hosting purposes and Google Domains (Squarespace) for DNS services.`
+                desc: `Developed and deployed a landing page for the hospital annual congress hosting 8000 people from 2023 —
+                2025 editions through a serverless solution using Firebase and MySQL for data transactions, GitHub Pages,
+                AWS for hosting purposes and Google Domains (Squarespace) for DNS services.`
             },
             {
                 desc: `Created micro back-end service for the same landing page using NodeJS and Google SMTP services for
@@ -24,11 +24,10 @@ export const curriculumInfo = [
             Material, Socket IO, Prisma ORM and MySQL.`
             },
             {
-                desc: `Processed, built and optimized employee's data to generate statistics reports' of developed modules through REST API implementations.`
+                desc: `Processed, built and optimized workflows to generate statistics reports of developed modules through RESTful API implementations.`
             },
             {
-                desc: `Restructuring, entity relationship diagraming and obsolete database migrations using Python to improve the
-            implementation of new modules.`
+                desc: `Restructuring, entity relationship diagraming and obsolete database migrations using Python to improve the implementation of new modules.`
             }
         ]
     },
