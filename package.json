@@ -19,7 +19,7 @@
     "animate.css": "^4.1.1",
     "axios": "^1.13.5",
     "dotenv": "^17.2.3",
-    "framer-motion": "^11.15.0",
+    "framer-motion": "^12.35.2",
     "music-metadata": "^11.12.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
