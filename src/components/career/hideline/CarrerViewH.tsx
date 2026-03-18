@@ -38,7 +38,7 @@ export const CarrerViewH = () => {
                         });
 
                         const picture = metadata.common.picture?.[0];
-                        const blob = picture?.data ? new Blob([picture.data], { type: picture.format }) : null;
+                        const blob = picture?.data ? new Blob([new Uint8Array(picture.data)], { type: picture.format }) : null;
 
                         return {
                             url: track.url,

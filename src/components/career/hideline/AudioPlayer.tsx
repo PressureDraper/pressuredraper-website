@@ -77,7 +77,7 @@ export const AudioPlayer = ({ currentSong, setCurrentSong }: IAudioPlayerProps) 
             });
 
             const picture = metadata.common.picture?.[0];
-            const blob = picture?.data ? new Blob([picture.data], { type: picture.format }) : null;
+            const blob = picture?.data ? new Blob([new Uint8Array(picture.data)], { type: picture.format }) : null;
             const imageUrl = URL.createObjectURL(blob !== null ? blob : new Blob());
 
             setAudioData({
