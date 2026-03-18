@@ -18,7 +18,7 @@
     "@mui/material": "^7.3.7",
     "animate.css": "^4.1.1",
     "axios": "^1.13.5",
-    "dotenv": "^17.2.3",
+    "dotenv": "^17.3.1",
     "framer-motion": "^11.15.0",
     "music-metadata": "^11.12.1",
     "react": "^19.2.4",
