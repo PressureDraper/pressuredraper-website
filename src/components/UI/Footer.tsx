@@ -1,6 +1,6 @@
 
 export const Footer = () => {
     return (
-        <div>Footer</div>
+        <div className="text-neutral-400">Footer</div>
     )
 }

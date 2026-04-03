@@ -1,6 +1,6 @@
 
 export const Navbar = () => {
     return (
-        <div>Navbar</div>
+        <div className="text-neutral-400">Navbar</div>
     )
 }
