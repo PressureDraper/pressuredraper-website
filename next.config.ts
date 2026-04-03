@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  /* basePath: '/pressuredraper-website-v2',
+  assetPrefix: '/pressuredraper-website-v2', */
 };
 
 export default nextConfig;
