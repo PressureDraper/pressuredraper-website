@@ -36,4 +36,40 @@
     --color-accent-800: #155E75;
     --color-accent-900: #164E63;
     --color-accent-950: #083344;
+
+    --font-dm-sans: var(--font-dm-sans);
+}
+
+nav.nav-link {
+    font-family: var(--font-dm-sans);
+}
+
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            color-mix(in srgb, var(--color-primary-500) 40%, transparent),
+            color-mix(in srgb, var(--color-accent-400) 40%, transparent),
+            transparent);
+}
+
+a.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: var(--line-width, 100%);
+    height: 1px;
+    background-color: var(--color-accent-300);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+a.nav-link:hover::after {
+    transform: scaleX(1);
 }
