@@ -36,12 +36,6 @@
     --color-accent-800: #155E75;
     --color-accent-900: #164E63;
     --color-accent-950: #083344;
-
-    --font-dm-sans: var(--font-dm-sans);
-}
-
-nav.nav-link {
-    font-family: var(--font-dm-sans);
 }
 
 nav::after {

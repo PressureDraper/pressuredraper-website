@@ -11,9 +11,10 @@ export const Navbar = () => {
         <div className="text-neutral-400 w-full mx-auto px-4 h-16 bg-neutral-500/10 backdrop-blur-sm border-b border-neutral-700/20">
             <nav className="relative max-w-6xl mx-auto h-full flex items-center justify-between px-4">
                 <div className="w-3/12">
-                    <span>presoftCore</span>
+                    <span className="text-lg font-bold gradient-text bg-linear-to-br from-primary-500 from-0% to-accent-400 bg-clip-text text-transparent">preSoft</span>
+                    <span className="text-lg font-bold">Core</span>
                 </div>
-                <div className="w-7/12 flex items-center justify-end gap-8">
+                <div className="w-7/12 flex items-center justify-end gap-10">
                     {navItems.map((item) => (
                         <a key={item.name} href={item.href} className="nav-link relative text-sm font-dm-sans text-neutral-400 hover:text-neutral-200 transition-colors" style={{ '--line-width': item.lineWidth } as React.CSSProperties}> {item.name} </a>
                     ))}
