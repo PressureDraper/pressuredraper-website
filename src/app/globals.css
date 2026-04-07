@@ -36,6 +36,9 @@
     --color-accent-800: #155E75;
     --color-accent-900: #164E63;
     --color-accent-950: #083344;
+
+    --font-display: 'Cabinet Grotesk', sans-serif;
+    --font-body: 'Satoshi', sans-serif;
 }
 
 nav::after {

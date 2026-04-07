@@ -37,6 +37,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <link rel="preconnect" href="https://api.fontshare.com" />
+                <link
+                    rel="stylesheet"
+                    href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400&f[]=satoshi@700,500,400&display=swap"
+                />
+            </head>
             <body className="flex flex-col min-h-screen bg-neutral-950">
                 {/* <div className="fixed inset-0 -z-10 bg-neutral-950">
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-[120px]" />
