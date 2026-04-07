@@ -3,7 +3,7 @@ import { MenuButton } from "./MenuButton"
 
 export const Navbar = () => {
     return (
-        <div className="text-neutral-400 w-full mx-auto px-4 h-16 bg-neutral-500/10 backdrop-blur-sm border-b border-neutral-700/20 select-none">
+        <header className="text-neutral-400 w-full mx-auto px-4 h-16 bg-neutral-500/10 backdrop-blur-sm border-b border-neutral-700/20 select-none">
             <nav className="relative max-w-6xl mx-auto h-full flex items-center justify-between">
                 <div className="w-5/12 font-display text-xl">
                     <span className="gradient-text bg-linear-to-br from-primary-500 from-0% to-accent-400 bg-clip-text text-transparent">preSoft</span>
@@ -16,6 +16,6 @@ export const Navbar = () => {
                 </div>
                 <MenuButton />
             </nav>
-        </div>
+        </header>
     )
 }
