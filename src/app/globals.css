@@ -48,11 +48,7 @@ nav::after {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg,
-            transparent,
-            color-mix(in srgb, var(--color-primary-500) 40%, transparent),
-            color-mix(in srgb, var(--color-accent-400) 40%, transparent),
-            transparent);
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-primary-500) 40%, transparent), color-mix(in srgb, var(--color-accent-400) 40%, transparent), transparent);
 }
 
 a.nav-link::after {

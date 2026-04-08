@@ -53,7 +53,7 @@ export default function RootLayout({
                             "name": "Sahib Hernández",
                             "url": "https://presoftcore.com",
                             "jobTitle": "Software Engineer",
-                            "knowsAbout": ["Node.js", "TypeScript", "React", "Redux", "Zustand", "Vite", "Next.js", "Tailwind CSS", "MUI Material", "Express.js", "Biome", "Prisma ORM","Redis", "Jest", "JWT", "MariaDB", "SQLite", "Firebase", "Full Stack Development"],
+                            "knowsAbout": ["Node.js", "TypeScript", "React", "Redux", "Zustand", "Vite", "Next.js", "Tailwind CSS", "MUI Material", "Express.js", "Biome", "Prisma ORM", "Redis", "Jest", "JWT", "MariaDB", "SQLite", "Firebase", "Full Stack Development"],
                             "sameAs": [
                                 "https://github.com/PressureDraper",
                                 "https://linkedin.com/in/pressuredraper"
