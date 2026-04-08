@@ -17,8 +17,8 @@ export const Navbar = () => {
     }, []);
 
     return (
-        <header className={`text-neutral-400 w-full mx-auto px-4 h-16 border-b border-neutral-700/20 select-none transition-colors duration-300 fixed ${scrolled ? 'bg-neutral-600/10 backdrop-blur-sm' : 'bg-transparent'}`}>
-            <nav className="relative z-10 max-w-6xl mx-auto h-full flex items-center justify-between">
+        <header className={`text-neutral-400 w-full mx-auto px-4 h-16 border-b border-neutral-700/20 select-none transition-colors duration-300 fixed z-50 ${scrolled ? 'bg-neutral-600/10 backdrop-blur-sm' : 'bg-transparent'}`}>
+            <nav className="relative max-w-6xl mx-auto h-full flex items-center justify-between">
                 <div className="w-5/12 font-display text-xl">
                     <span className="gradient-text bg-linear-to-br from-primary-500 from-0% to-accent-400 bg-clip-text text-transparent font-bold">preSoft</span>
                     <span className="font-bold">Core</span>
