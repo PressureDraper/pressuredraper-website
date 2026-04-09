@@ -7,14 +7,13 @@
     },
     "files": {
         "ignoreUnknown": true,
-        "includes": [
-            "**",
-            "!node_modules",
-            "!.next",
-            "!dist",
-            "!build",
-            "!public"
-        ]
+        "includes": [ "**", "!node_modules", "!.next", "!dist", "!build", "!public" ]
+    },
+    "css": {
+        "parser": {
+            "cssModules": false,
+            "tailwindDirectives": true
+        }
     },
     "formatter": {
         "enabled": true,
