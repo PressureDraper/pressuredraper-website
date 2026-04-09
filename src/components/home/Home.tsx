@@ -14,13 +14,12 @@ export const Home = () => {
                     <span className="gradient-text bg-linear-to-br from-primary-500 to-accent-400 to-85% bg-clip-text text-transparent ml-2 md:ml-3">
                         design
                     </span>
-                    .
                 </h1>
                 <h2 className="text-neutral-200 text-3xl md:text-6xl font-extrabold font-display">
                     <span className="gradient-text bg-linear-to-br from-primary-500 to-accent-400 to-85% bg-clip-text text-transparent mr-2 md:mr-3">
                         Depth
                     </span>
-                    in every layer.
+                    in every layer
                 </h2>
                 <p className="text-neutral-400 text-lg md:text-xl max-w-2xl font-body">
                     Software Engineer with +4 years of experience specialized in full-stack development — where precision meets design in a seamless blend of performance, security and aesthetics.
