@@ -1,34 +1,45 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Navbar } from "@/components/UI/Navbar";
-import { Footer } from "@/components/UI/Footer";
+import type { Metadata } from 'next';
+import './globals.css';
+import { Navbar } from '@/components/UI/Navbar';
+import { Footer } from '@/components/UI/Footer';
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://presoftcore.com'),
-    title: "Sahib Hernández – Software Engineer",
-    description: "Personal website created as a portfolio showcasing Sahib Hernandez's career as a software engineer, including projects, skills, and contact information.",
-    keywords: ["Sahib Hernández", "Software Engineer", "Portfolio", "Node.js", "Typescript", "React", "Full stack", "Developer"],
-    authors: [{ name: "Sahib Hernández" }],
+    title: 'Sahib Hernández – Software Engineer',
+    description:
+        "Personal website created as a portfolio showcasing Sahib Hernandez's career as a software engineer, including projects, skills, and contact information.",
+    keywords: [
+        'Sahib Hernández',
+        'Software Engineer',
+        'Portfolio',
+        'Node.js',
+        'Typescript',
+        'React',
+        'Full stack',
+        'Developer',
+    ],
+    authors: [{ name: 'Sahib Hernández' }],
     openGraph: {
-        title: "Sahib Hernández – Software Engineer",
-        description: "Personal website created as a portfolio showcasing Sahib Hernandez's career as a software engineer, including projects, skills, and contact information.",
-        url: "https://presoftcore.com",
-        siteName: "presoftcore",
+        title: 'Sahib Hernández – Software Engineer',
+        description:
+            "Personal website created as a portfolio showcasing Sahib Hernandez's career as a software engineer, including projects, skills, and contact information.",
+        url: 'https://presoftcore.com',
+        siteName: 'presoftcore',
         images: [
             {
-                url: "https://presoftcore.com/cover.webp",
+                url: 'https://presoftcore.com/cover.webp',
                 width: 1200,
                 height: 630,
-                alt: "Sahib Hernández Portfolio Open Graph Image",
+                alt: 'Sahib Hernández Portfolio Open Graph Image',
             },
         ],
-        locale: "en_US",
-        type: "website",
+        locale: 'en_US',
+        type: 'website',
     },
     robots: {
         index: true,
         follow: true,
-    }
+    },
 };
 
 export default function RootLayout({
@@ -48,17 +59,37 @@ export default function RootLayout({
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "Person",
-                            "name": "Sahib Hernández",
-                            "url": "https://presoftcore.com",
-                            "jobTitle": "Software Engineer",
-                            "knowsAbout": ["Node.js", "TypeScript", "React", "Redux", "Zustand", "Vite", "Next.js", "Tailwind CSS", "MUI Material", "Express.js", "Biome", "Prisma ORM", "Redis", "Jest", "JWT", "MariaDB", "SQLite", "Firebase", "Full Stack Development"],
-                            "sameAs": [
-                                "https://github.com/PressureDraper",
-                                "https://linkedin.com/in/pressuredraper"
-                            ]
-                        })
+                            '@context': 'https://schema.org',
+                            '@type': 'Person',
+                            name: 'Sahib Hernández',
+                            url: 'https://presoftcore.com',
+                            jobTitle: 'Software Engineer',
+                            knowsAbout: [
+                                'Node.js',
+                                'TypeScript',
+                                'React',
+                                'Redux',
+                                'Zustand',
+                                'Vite',
+                                'Next.js',
+                                'Tailwind CSS',
+                                'MUI Material',
+                                'Express.js',
+                                'Biome',
+                                'Prisma ORM',
+                                'Redis',
+                                'Jest',
+                                'JWT',
+                                'MariaDB',
+                                'SQLite',
+                                'Firebase',
+                                'Full Stack Development',
+                            ],
+                            sameAs: [
+                                'https://github.com/PressureDraper',
+                                'https://linkedin.com/in/pressuredraper',
+                            ],
+                        }),
                     }}
                 />
             </head>
@@ -68,9 +99,7 @@ export default function RootLayout({
                     <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent-500/10 rounded-full blur-[120px]" />
                 </div> */}
                 <Navbar />
-                <main className="flex-1">
-                    {children}
-                </main>
+                <main className="flex-1">{children}</main>
                 <Footer />
             </body>
         </html>

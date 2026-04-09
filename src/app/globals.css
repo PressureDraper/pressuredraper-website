@@ -1,46 +1,46 @@
 @import "tailwindcss";
 
 @theme {
-    --color-neutral-50: #F8FAFC;
-    --color-neutral-100: #F1F5F9;
-    --color-neutral-200: #E2E8F0;
-    --color-neutral-300: #CBD5F5;
-    --color-neutral-400: #94A3B8;
-    --color-neutral-500: #64748B;
+    --color-neutral-50: #f8fafc;
+    --color-neutral-100: #f1f5f9;
+    --color-neutral-200: #e2e8f0;
+    --color-neutral-300: #cbd5f5;
+    --color-neutral-400: #94a3b8;
+    --color-neutral-500: #64748b;
     --color-neutral-600: #475569;
     --color-neutral-700: #334155;
-    --color-neutral-800: #1E293B;
-    --color-neutral-900: #0F172A;
+    --color-neutral-800: #1e293b;
+    --color-neutral-900: #0f172a;
     --color-neutral-950: #020617;
 
-    --color-primary-50: #EEF2FF;
-    --color-primary-100: #E0E7FF;
-    --color-primary-200: #C7D2FE;
-    --color-primary-300: #A5B4FC;
-    --color-primary-400: #818CF8;
-    --color-primary-500: #6366F1;
-    --color-primary-600: #4F46E5;
-    --color-primary-700: #4338CA;
-    --color-primary-800: #3730A3;
-    --color-primary-900: #312E81;
-    --color-primary-950: #1E1B4B;
+    --color-primary-50: #eef2ff;
+    --color-primary-100: #e0e7ff;
+    --color-primary-200: #c7d2fe;
+    --color-primary-300: #a5b4fc;
+    --color-primary-400: #818cf8;
+    --color-primary-500: #6366f1;
+    --color-primary-600: #4f46e5;
+    --color-primary-700: #4338ca;
+    --color-primary-800: #3730a3;
+    --color-primary-900: #312e81;
+    --color-primary-950: #1e1b4b;
 
-    --color-accent-50: #ECFEFF;
-    --color-accent-100: #CFFAFE;
-    --color-accent-200: #A5F3FC;
-    --color-accent-300: #67E8F9;
-    --color-accent-400: #22D3EE;
-    --color-accent-500: #06B6D4;
-    --color-accent-600: #0891B2;
-    --color-accent-700: #0E7490;
-    --color-accent-800: #155E75;
-    --color-accent-900: #164E63;
+    --color-accent-50: #ecfeff;
+    --color-accent-100: #cffafe;
+    --color-accent-200: #a5f3fc;
+    --color-accent-300: #67e8f9;
+    --color-accent-400: #22d3ee;
+    --color-accent-500: #06b6d4;
+    --color-accent-600: #0891b2;
+    --color-accent-700: #0e7490;
+    --color-accent-800: #155e75;
+    --color-accent-900: #164e63;
     --color-accent-950: #083344;
 
     --color-video-bg: #01030f;
 
-    --font-display: 'Cabinet Grotesk', sans-serif;
-    --font-body: 'Satoshi', sans-serif;
+    --font-display: "Cabinet Grotesk", sans-serif;
+    --font-body: "Satoshi", sans-serif;
 }
 
 ::selection {
@@ -69,17 +69,23 @@
 }
 
 nav::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-primary-500) 40%, transparent), color-mix(in srgb, var(--color-accent-400) 40%, transparent), transparent);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        color-mix(in srgb, var(--color-primary-500) 40%, transparent),
+        color-mix(in srgb, var(--color-accent-400) 40%, transparent),
+        transparent
+    );
 }
 
 a.nav-link::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: -4px;
