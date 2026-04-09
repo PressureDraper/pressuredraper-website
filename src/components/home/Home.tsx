@@ -1,3 +1,5 @@
+import { HomeButtons } from './HomeButtons';
+
 export const Home = () => {
     return (
         <>
@@ -13,7 +15,7 @@ export const Home = () => {
 
             <div className="absolute inset-0 bg-neutral-950/55 z-0" />
 
-            <div className="relative z-10 flex flex-col h-full justify-center max-w-6xl mx-auto gap-6 md:gap-8 px-8 md:px-0">
+            <div className="relative z-10 min-h-[calc(100vh-4rem)] flex flex-col justify-center max-w-6xl mx-auto gap-6 md:gap-8 px-8 md:px-10 lg:px-10 xl:px-0 py-10 xxs:py-0 xsl:py-10 xs:py-10 sm:py-10 md:py-10 lg:py-0 xl:py-0">
                 <h1 className="text-neutral-200 text-4xl md:text-7xl font-extrabold font-display">
                     Precision, by
                     <span className="gradient-text bg-linear-to-br from-primary-500 to-accent-400 to-85% bg-clip-text text-transparent ml-2 md:ml-3">
@@ -30,14 +32,7 @@ export const Home = () => {
                     Software Engineer with +4 years of experience specialized in full-stack
                     development — building a seamless blend of performance, security and aesthetics.
                 </p>
-                <div className="flex flex-row gap-4">
-                    <button className="rounded-xl px-3.5 py-2.5 bg-transparent border-b border-accent-500 text-sm text-neutral-200 font-medium font-body hover:bg-accent-950/30 transition-colors duration-300 hover:cursor-pointer">
-                        View Projects <span className="ml-1 font-bold">→</span>
-                    </button>
-                    <button className="rounded-xl px-3.5 py-2.5 bg-transparent text-sm text-neutral-200 font-medium font-body hover:bg-neutral-900 transition-colors duration-300 hover:cursor-pointer border-b border-neutral-500">
-                        <span className="mr-1 font-bold">↓</span> Download Resume
-                    </button>
-                </div>
+                <HomeButtons />
                 <div className="flex flex-row gap-8 mt-5">
                     <a href="https://github.com/PressureDraper" target="_blank">
                         <svg
