@@ -94,10 +94,6 @@ export default function RootLayout({
                 />
             </head>
             <body className="flex flex-col min-h-screen bg-neutral-950">
-                {/* <div className="fixed inset-0 -z-10 bg-neutral-950">
-                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-[120px]" />
-                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent-500/10 rounded-full blur-[120px]" />
-                </div> */}
                 <Navbar />
                 <main className="flex-1">{children}</main>
                 <Footer />
