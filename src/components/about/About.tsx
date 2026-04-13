@@ -17,7 +17,7 @@ export const About = () => {
                 ref={refBackground}
                 className="absolute inset-0 -z-10 bg-transparent w-full overflow-y-visible xxs:overflow-x-hidden sm:overflow-x-visible lg:overflow-x-visible"
             >
-                <div className="absolute top-0 right-0 w-150 h-150 xxs:bg-primary-500/10 lg:bg-primary-500/20 rounded-full blur-[120px]" />
+                <div className="absolute top-0 right-0 w-150 h-150 xxs:bg-primary-500/15 lg:bg-primary-500/20 rounded-full blur-[120px]" />
                 <div className="absolute bottom-0 left-0 w-150 h-150 bg-accent-500/15 rounded-full blur-[120px]" />
             </div>
             <div
@@ -32,28 +32,28 @@ export const About = () => {
                             team
                         </span>
                     </h2>
-                    <p className="grid grid-cols-1 md:grid-cols-2 text-neutral-400 text-lg font-body leading-relaxed">
+                    <p className="md:w-2/3 text-neutral-400 text-lg font-body leading-relaxed text-justify">
                         I don't just write code — I solve problems. With a strong foundation in both
-                        frontend and backend, I bring a product-oriented mindset to anywhere I go. I
+                        frontend and backend, I bring a product-oriented mindset to any project. I
                         focus on building things that are fast, maintainable, and genuinely useful.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                     {[
-                        { label: 'Years of experience', value: '4+' },
-                        { label: 'Projects shipped', value: '20+' },
-                        { label: 'Technologies', value: '15+' },
-                        { label: 'Coffee per day', value: '3' },
+                        { title: 'Performance-First', description: 'I care about loading times and runtime efficiency. Every millisecond matters for giving your clients the best experience and staying competitive.' },
+                        { title: 'Full-stack Depth', description: 'From database design to pixel-perfect UIs. I bridge the gap between backend systems and frontend polish.' },
+                        { title: 'Reliability at Scale', description: 'Building systems that handle growth gracefully — through caching, project architectures, and thoughtful error handling.' },
+                        { title: 'Clean Architecture', description: "Maintainable code isn't optional. I write systems that future engineers will thank me for." },
                     ].map((stat) => (
                         <div
-                            key={stat.label}
-                            className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6 flex flex-col gap-2"
+                            key={stat.title}
+                            className="rounded-xl border border-neutral-800 bg-neutral-900/20 p-6 flex flex-col gap-2"
                         >
-                            <span className="text-3xl font-extrabold font-display text-neutral-100">
-                                {stat.value}
+                            <span className="text-xl font-extrabold font-display text-neutral-100">
+                                {stat.title}
                             </span>
-                            <span className="text-neutral-500 text-sm font-body">{stat.label}</span>
+                            <span className="text-neutral-400/90 text-sm font-body">{stat.description}</span>
                         </div>
                     ))}
                 </div>
