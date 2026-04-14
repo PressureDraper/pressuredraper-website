@@ -1,6 +1,7 @@
 import { About } from '@/components/about/About';
 import { Home as HomePage } from '@/components/home/Home';
 import { Projects } from '@/components/projects/Projects';
+import { GSapBackground } from '@/components/UI/GSapBackground';
 
 export default function Home() {
     return (
@@ -9,12 +10,15 @@ export default function Home() {
                 <HomePage />
             </section>
             <div className="w-full h-px bg-linear-to-r from-transparent via-accent-400/40 to-transparent" />
-            <section id="about" className="relative w-full min-h-screen">
-                <About />
-            </section>
-            <section id="projects" className="relative w-full min-h-screen">
-                <Projects />
-            </section>
+            <div className="relative w-full">
+                <GSapBackground />
+                <section id="about" className="relative w-full min-h-screen">
+                    <About />
+                </section>
+                <section id="projects" className="relative w-full min-h-screen">
+                    <Projects />
+                </section>
+            </div>
         </>
     );
 }

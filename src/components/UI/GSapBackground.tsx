@@ -16,26 +16,33 @@ export const GSapBackground = () => {
         const mm = gsap.matchMedia();
 
         mm.add("(max-width: 768px)", () => {
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: container,
-                    markers: true,
-                    start: 'top 70%',
-                    end: 'bottom 80%',
-                    scrub: 1,
-                    invalidateOnRefresh: true,
-                },
-            }).fromTo(
+            gsap.fromTo(
                 container,
-                { opacity: 0, y: 0, z: 50 },
+                { opacity: 0, y: 0 },
                 {
                     opacity: 1,
                     y: 0,
-                    z: 0,
                     ease: 'power2.out',
-                    duration: 2,
-                },
+                    scrollTrigger: {
+                        trigger: '#about',
+                        start: 'top 70%',
+                        end: 'bottom 80%',
+                        scrub: 1,
+                    },
+                }
             );
+
+            gsap.to([leftCircle, rightCircle], {
+                y: (i) => (i === 0 ? '30vh' : '210vh'),
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '#about',
+                    start: '+=73% 70%',
+                    end: '+=120%',
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                },
+            });
         });
 
         mm.add("(min-width: 769px)", () => {
@@ -47,27 +54,26 @@ export const GSapBackground = () => {
                     y: 0,
                     ease: 'power2.out',
                     scrollTrigger: {
-                        trigger: container,
+                        trigger: '#about',
                         start: 'top 70%',
-                        end: '+=68%',
+                        end: '+=73%',
                         scrub: 1,
-                        markers: false,
                     },
                 }
             );
 
-           /*  gsap.to(leftCircle, {
-                y: -500,
+            gsap.to([leftCircle, rightCircle], {
+                y: (i) => (i === 0 ? '100%' : '210%'),
                 ease: 'power2.out',
                 scrollTrigger: {
-                    trigger: leftCircle,
-                    start: 'top 80%',
-                    end: '+=50%',
+                    trigger: '#about',
+                    start: '+=73% 70%',
+                    end: '+=100%',
                     scrub: 1,
-                    markers: true,
+                    pin: true,
+                    pinSpacing: false
                 },
-            }); */
-
+            });
         });
 
         return () => mm.revert();
@@ -76,10 +82,10 @@ export const GSapBackground = () => {
     return (
         <div
             ref={refBackground}
-            className="absolute inset-0 -z-10 w-full overflow-y-visible xxs:overflow-x-hidden sm:overflow-x-visible lg:overflow-x-visible"
+            className="absolute inset-0 z-0 w-full overflow-y-visible xxs:overflow-x-hidden sm:overflow-x-visible lg:overflow-x-visible"
         >
-            <div ref={refLeftCircle} className="absolute bottom-1/10 md:bottom-0 left-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-accent-500/20 xxs:bg-accent-500/15 md:bg-accent-500/15 rounded-full blur-[120px]" />
-            <div ref={refRightCircle} className="absolute top-1/10 right-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 xxs:bg-primary-500/25 md:bg-primary-500/15 rounded-full blur-[120px]" />
+            <div ref={refLeftCircle} className="absolute top-5/10 md:top-2/10 md:bottom-0 left-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-accent-500/20 xxs:bg-accent-500/25 md:bg-accent-500/15 rounded-full blur-[120px]" />
+            <div ref={refRightCircle} className="absolute top-1/10 2xl:top-0 right-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 xxs:bg-primary-500/25 md:bg-primary-500/15 rounded-full blur-[120px]" />
         </div>
     )
 }
