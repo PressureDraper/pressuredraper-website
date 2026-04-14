@@ -56,17 +56,17 @@ export const GSapBackground = () => {
                 }
             );
 
-            gsap.to(leftCircle, {
+           /*  gsap.to(leftCircle, {
                 y: -500,
                 ease: 'power2.out',
                 scrollTrigger: {
-                    trigger: leftCircle, // or container if you prefer
-                    start: 'top 80%',     // 👈 starts later
+                    trigger: leftCircle,
+                    start: 'top 80%',
                     end: '+=50%',
                     scrub: 1,
                     markers: true,
                 },
-            });
+            }); */
 
         });
 
@@ -78,8 +78,8 @@ export const GSapBackground = () => {
             ref={refBackground}
             className="absolute inset-0 -z-10 w-full overflow-y-visible xxs:overflow-x-hidden sm:overflow-x-visible lg:overflow-x-visible"
         >
-            <div ref={refLeftCircle} className="absolute bottom-0 left-0 w-150 h-150 bg-accent-500/40 rounded-full blur-[120px]" />
-            <div ref={refRightCircle} className="absolute top-0 right-0 w-150 h-150 xxs:bg-primary-500/15 lg:bg-primary-500/20 rounded-full blur-[120px]" />
+            <div ref={refLeftCircle} className="absolute bottom-1/10 md:bottom-0 left-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-accent-500/20 xxs:bg-accent-500/15 md:bg-accent-500/15 rounded-full blur-[120px]" />
+            <div ref={refRightCircle} className="absolute top-1/10 right-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 xxs:bg-primary-500/25 md:bg-primary-500/15 rounded-full blur-[120px]" />
         </div>
     )
 }

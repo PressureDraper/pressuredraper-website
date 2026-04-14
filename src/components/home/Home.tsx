@@ -16,19 +16,19 @@ export const Home = () => {
             <div className="absolute inset-0 bg-neutral-950/55 z-0" />
 
             <div className="relative z-10 min-h-[calc(100vh-4rem)] flex flex-col justify-center max-w-6xl mx-auto gap-6 md:gap-8 px-8 md:px-10 lg:px-10 xl:px-0 py-10 xxs:py-0 xsl:py-10 xs:py-10 sm:py-10 md:py-10 lg:py-0 xl:py-0">
-                <h1 className="text-neutral-200 text-4xl md:text-7xl font-extrabold font-display">
+                <h1 className="text-neutral-200 text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-display">
                     Precision, by{' '}
                     <span className="gradient-text bg-linear-to-br from-primary-500 to-accent-400 to-85% bg-clip-text text-transparent">
                         design
                     </span>
                 </h1>
-                <h2 className="text-neutral-200 text-3xl md:text-6xl font-extrabold font-display">
+                <h2 className="text-neutral-200 text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold font-display">
                     <span className="gradient-text bg-linear-to-br from-primary-500 to-accent-400 to-85% bg-clip-text text-transparent">
                         Depth{' '}
                     </span>
                     in every layer
                 </h2>
-                <p className="text-neutral-400 text-lg md:text-xl max-w-2xl font-body">
+                <p className="text-neutral-400 text-lg md:text-lg 2xl:text-xl max-w-2xl font-body">
                     Software Engineer with +4 years of experience specialized in full-stack
                     development — building a seamless blend of performance, security and aesthetics.
                 </p>
