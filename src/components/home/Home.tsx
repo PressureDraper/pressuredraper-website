@@ -2,7 +2,7 @@ import { HomeButtons } from './HomeButtons';
 
 export const Home = () => {
     return (
-        <>
+        <section id="home" className="relative z-0 min-h-[calc(100vh-4rem)] mt-16 w-full">
             <video
                 className="absolute inset-0 h-full w-full object-cover z-0"
                 autoPlay
@@ -78,6 +78,6 @@ export const Home = () => {
                     </a>
                 </div>
             </div>
-        </>
+        </section>
     );
 };

@@ -1,6 +1,7 @@
 'use client';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { aboutStats } from '@/utils/about.utils';
+import { GSapBackground } from '../UI/GSapBackground';
 
 export const About = () => {
     const refInfo = useScrollReveal<HTMLDivElement>({
@@ -13,7 +14,8 @@ export const About = () => {
     });
 
     return (
-        <>
+        <section id="about" className="relative w-full min-h-screen overflow-x-hidden">
+            <GSapBackground />
             <div className="min-h-screen flex items-center mx-auto lg:px-0 xxs:py-40 lg:py-24">
                 <div
                     ref={refInfo}
@@ -52,6 +54,6 @@ export const About = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     );
 };
