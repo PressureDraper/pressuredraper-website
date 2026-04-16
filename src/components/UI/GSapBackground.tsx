@@ -1,7 +1,6 @@
 'use client';
 
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import { useLayoutEffect, useRef } from "react";
 
 export const GSapBackground = () => {
@@ -41,7 +40,6 @@ export const GSapBackground = () => {
                     endTrigger: '#projects',
                     end: 'bottom 70%',
                     scrub: 1,
-                    markers: true,
                     pin: container,
                     pinSpacing: false,
                     invalidateOnRefresh: true
@@ -74,7 +72,6 @@ export const GSapBackground = () => {
                     endTrigger: '#projects',
                     end: 'bottom 70%',
                     scrub: 1,
-                    markers: true,
                     pin: container,
                     pinSpacing: false,
                     invalidateOnRefresh: true,

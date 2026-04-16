@@ -22,7 +22,8 @@ export const About = () => {
                     className="flex flex-col gap-10 max-w-5xl md:max-w-5xl lg:max-w-6xl xl:max-w-6xl mx-auto justify-items-start px-8 md:px-10 lg:px-10 xl:px-0"
                 >
                     <div className="flex flex-col gap-6">
-                        <span className="text-primary-400 text-sm font-body tracking-widest">About</span>
+                        <span className="gradient-text bg-linear-to-r from-primary-500 to-accent-400 to-4% bg-clip-text text-transparent">About</span>
+                        {/* <span className="text-primary-400 text-sm font-body tracking-widest">About</span> */}
                         <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold font-display">
                             What I bring to a team
                         </h2>
