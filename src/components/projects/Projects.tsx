@@ -15,6 +15,9 @@ export const Projects = () => {
                             A few projects that showcase how I think — from problem identification to architecture decisions and trade-offs.
                         </p>
                     </div>
+                    <div className="flex flex-col gap-6">
+                        {/* <ProjectsList /> */}
+                    </div>
                 </div>
             </div>
         </section>
