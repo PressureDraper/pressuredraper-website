@@ -19,7 +19,8 @@ export const Projects = () => {
                     </div>
                     <div className="grid grid-cols-2 xxs:grid-cols-1 md:grid-cols-2 gap-6">
                         {projectsInfo.map((item, index) => (
-                            <div key={item.title}>
+                            /* scale-70 origin-top hover:scale-100 */
+                            <div key={item.title} className='transition-transform duration-300'>
                                 <div className='relative w-full aspect-video'>
                                     <Image
                                         src={item.img}
@@ -30,10 +31,10 @@ export const Projects = () => {
                                     />
                                 </div>
                                 <div
-                                    className="group rounded-b-xl border border-neutral-800 border-t-0 bg-neutral-900/20 p-6 flex flex-col gap-2 hover:border-primary-500/70 transition-colors duration-400"
+                                    className="group rounded-b-xl border border-neutral-800 border-t-0 bg-neutral-900/20 p-6 flex flex-col gap-4 hover:border-primary-500/70 transition-colors duration-400"
                                 >
-                                    <div className="w-full rounded-md mb-3 flex justify-between">
-                                        <span className="text-neutral-100 font-display text-sm">{(index + 1).toString().padStart(2, '0')}</span>
+                                    <div className="w-full rounded-md flex justify-between">
+                                        <span className="text-neutral-100 font-display tracking-[0.2em] text-xs opacity-60">{(index + 1).toString().padStart(2, '0')}</span>
                                         <div className="flex gap-4">
                                             <a href="https://github.com/PressureDraper" target="_blank">
                                                 <svg
@@ -64,22 +65,42 @@ export const Projects = () => {
                                             </a>
                                         </div>
                                     </div>
-                                    <span className="text-xl font-bold font-display text-neutral-300">
-                                        { item.title }
+                                    <span className="text-xl font-bold font-display text-neutral-300 flex justify-between items-center">
+                                        {item.title}
+                                        <span className='text-sm font-light'>{item.date}</span>
+                                    </span>
+                                    <span className='text-neutral-400 text-sm font-body text-justify'>
+                                        <ul className='list-disc xxs:pl-3 md:pl-4 space-y-1 text-neutral-400 marker:text-primary-300'>
+                                            {item.desc.map((bullet: string, index: number) => (
+                                                <li key={index}>{bullet}</li>
+                                            ))}
+                                        </ul>
                                     </span>
                                     <div className="grid grid-cols-3 xxs:grid-cols-1 md:grid-cols-3 xxs:gap-4">
                                         <div className="flex flex-col gap-2">
-                                            <span className="text-primary-400 text-xs font-body tracking-widest">PROBLEM</span>
-                                            <span className="text-neutral-400/90 text-sm font-body">A real-time analytics dashboard for monitoring and visualizing data insights.</span>
+                                            <span className="text-accent-400 text-xs font-body tracking-widest">PROBLEM</span>
+                                            <span className="text-neutral-400/90 text-sm font-body">{item.problem}</span>
                                         </div>
                                         <div className="flex flex-col gap-2">
-                                            <span className="text-primary-400 text-xs font-body tracking-widest">SOLUTION</span>
-                                            <span className="text-neutral-400/90 text-sm font-body">A real-time analytics dashboard for monitoring and visualizing data insights.</span>
+                                            <span className="text-accent-400 text-xs font-body tracking-widest">SOLUTION</span>
+                                            <span className="text-neutral-400/90 text-sm font-body">{item.solution}</span>
                                         </div>
                                         <div className="flex flex-col gap-2">
-                                            <span className="text-primary-400 text-xs font-body tracking-widest">KEY DECISIONS</span>
-                                            <span className="text-neutral-400/90 text-sm font-body">A real-time analytics dashboard for monitoring and visualizing data insights.</span>
+                                            <span className="text-accent-400 text-xs font-body tracking-widest">KEY DECISIONS</span>
+                                            <span className="text-neutral-400/90 text-sm font-body">{item.key_decisions}</span>
                                         </div>
+                                    </div>
+                                    <div className='flex flex-wrap justify-center gap-1.5'>
+                                        {item.icons.map((tech: string) => {
+                                            const [techName, desc] = tech.split(':');
+
+                                            return (
+                                                <span key={tech} className="flex items-center gap-1.5 px-3 py-1 text-sm border-b border-primary-700 bg-neutral-300/35 rounded-full">
+                                                    <img src={`/icons/${techName}.svg`} className="xxs:w-3 xxs:h-3 md:w-5 md:h-5" />
+                                                    <span className='text-body text-neutral-300'>{desc ? desc : techName}</span>
+                                                </span>
+                                            )
+                                        })}
                                     </div>
                                 </div>
                             </div>

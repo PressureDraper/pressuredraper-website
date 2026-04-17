@@ -5,7 +5,10 @@ export const projectsInfo: PropsProjectsInfo[] = [
         img: `/projects/xalapaMovil/cover.png`,
         title: 'Xalapa Móvil',
         date: 'Nov 2025 — Jan 2026',
-        desc: 'Mobile application developed for the Xalapa City Council to provide citizens with a digital tool to send improvement proposals for the city, accessing municipal services and staying informed about local news and events. The app aims to enhance community engagement and streamline communication between residents and local authorities.',
+        desc: ["Built a mobile app for the Xalapa City Council to enhance citizen interaction", "Implemented features for submitting proposals, accessing services, and viewing local news", "Centralized communication between residents and government entities", "Improved accessibility and engagement with municipal services"],
+        problem: "Government needed a cross-platform mobile application to gather citizen proposals for city improvements and to expand the reach of website's services.",
+        solution: 'Designed and developed a mobile application ready for running on Android and iOS.',
+        key_decisions: 'Chose figma for wireframing screens and feature-based project architecture guaranteeing scalability over time.',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
@@ -19,7 +22,10 @@ export const projectsInfo: PropsProjectsInfo[] = [
         img: `/projects/signsModule/cover.webp`,
         title: 'Digital Signature',
         date: ' Feb 2025 — Present',
-        desc: 'Module developed for the Administrative Clinical Integral System platform to allow qualified personal to digitalize their signatures and make way easier the generation of mass reports that must be send to the government every often to validate data.',
+        desc: ["Built a digital signature module for a clinical administrative system", "Automated mass report generation for government compliance and validation", "Reduced manual processing time and improved operational efficiency", "Integrated doctor signatures directly into medical notes to streamline care workflows", "Improved data integrity and ensured regulatory compliance"],
+        problem: "Managers were spending almost 1/3 of their working time manually signing and medical consultations were overlapping.",
+        solution: "Created a sub-module for HR system capturing employee's digital signature increasing productivity up to 90%.",
+        key_decisions: 'Picked a symmetrical aes-256-cbc encrypt algorithm for keeping sensitive data safe and prevent stream manipulation.',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
@@ -33,13 +39,16 @@ export const projectsInfo: PropsProjectsInfo[] = [
         img: `/projects/personalWebsite/cover.webp`,
         title: 'Personal Website',
         date: 'Jan 2025 — Present',
-        desc: 'Personal project created as a portfolio to display all my professional path as a software engineer as well as a music producer as a hobby.',
+        desc: ["Built a personal portfolio platform to present my software engineering work", "Created a cohesive experience combining technical and creative disciplines", "Emphasized performance, responsive design, and modern UI/UX practices"],
+        problem: 'There were no personal website for showcasing my professional path as software engineer, limitating growth and global presence.',
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
             { name: 'demo', active: true }
         ],
-        icons: ['nodejs', 'vite', 'docker', 'react', 'router-DOM:router DOM', 'mui', 'motion:framer motion', 'typescript', 'php', 'yarn', 'github', 'pages', 'cloudflare', 'railway'],
+        icons: ['nodejs', 'vite', 'react', 'router-DOM:router DOM', 'mui', 'motion:framer motion', 'typescript', 'php', 'yarn', 'github', 'pages', 'cloudflare', 'railway'],
         code_url: 'https://github.com/PressureDraper/pressuredraper-website',
         demo_url: 'https://pressuredraper.github.io/pressuredraper-website/#/'
     },
@@ -47,7 +56,10 @@ export const projectsInfo: PropsProjectsInfo[] = [
         img: `/projects/hresourcesSystem/cover.webp`,
         title: 'Human Resources System',
         date: 'Apr 2024 — Present',
-        desc: "System application built as a microservice inside the Administrative Clinical Integral System platform as a need of human resources department for displaying employee's attendances, incidences, permissions, vacations and holidays with a sub-module created for every module.",
+        desc: ["Engineered a microservice for an administrative clinical platform to manage HR operations", "Implemented modules for attendance, incidents, permissions, vacations, and holidays", "Designed a modular architecture with dedicated sub-modules for each HR function", "Enhanced HR efficiency by centralizing and streamlining employee data management"],
+        problem: "Old HR system wasn't covering all current needs",
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
@@ -58,11 +70,14 @@ export const projectsInfo: PropsProjectsInfo[] = [
         demo_url: ''
 
     },
-    {
+    /* {
         img: `/projects/medicalCongressv2/cover.webp`,
         title: 'Medical Congress Landing Page v2.0.0',
         date: 'Sep 2024 — Present',
         desc: 'Website developed for hosting the medical congress since 2024, remodeling UI/UX design as well as implementing new features for assistance registration and assistants data display over an admin view. Event carried out every year by the High Specialty Medical Center Dr. Rafael Lucio.',
+        problem: '',
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
@@ -77,6 +92,9 @@ export const projectsInfo: PropsProjectsInfo[] = [
         title: 'Tickets App',
         date: 'Dec 2023',
         desc: "Web app project created as a bank tickets system under bidirectional communication architecture using Socket.IO to mantain real-time actions.",
+        problem: '',
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
@@ -91,6 +109,9 @@ export const projectsInfo: PropsProjectsInfo[] = [
         title: 'Resident Medical Evaluation System',
         date: 'Jan 2024 — Present',
         desc: "Full microservice developed as a need of the teaching department for an evaluation system for the medical residents that arrives to the hospital every year to perform their residency.",
+        problem: '',
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
@@ -105,6 +126,9 @@ export const projectsInfo: PropsProjectsInfo[] = [
         title: 'Medical Congress Landing Page v1.0.0',
         date: 'Oct 2023 — Nov 2023',
         desc: "Simple Single-Page Application created for hosting the medical congress in 2023 by the High Specialty Medical Center Dr. Rafael Lucio. Displaying only information about the scheduled talks and a form for attendaces' record.",
+        problem: '',
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
@@ -119,6 +143,9 @@ export const projectsInfo: PropsProjectsInfo[] = [
         title: 'Heroes App',
         date: 'Nov 2023',
         desc: "Simple informative web page about comic book heroes using local storage items to store login status, last visited page and dark mode options along react context and reducers, public and private route protection for logged and non-logged users and button search field and onkeyDown search.",
+        problem: '',
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
@@ -133,6 +160,9 @@ export const projectsInfo: PropsProjectsInfo[] = [
         title: 'Currency Converter Challenge',
         date: 'March 2023',
         desc: "Project performed for the Oracle Next Education Program. Using the Exchange Rate API from scratch to obtain currency values in real time about the exchange ratio of every currency specified in documentation. A graphic interface was built over javax.swing to provide an intuitive experience.",
+        problem: '',
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
@@ -147,6 +177,9 @@ export const projectsInfo: PropsProjectsInfo[] = [
         title: 'Cipher Challenge',
         date: 'Jan 2023',
         desc: "Project performed for the Oracle Next Education Program where were requested to built a web encryptor - decryptor application under certain rules. ",
+        problem: '',
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
@@ -161,6 +194,9 @@ export const projectsInfo: PropsProjectsInfo[] = [
         title: 'MP3 Glass Player',
         date: 'Dec 2022',
         desc: "MP3 web player inspired in a clean glassmorphism trend design.",
+        problem: '',
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
@@ -175,6 +211,9 @@ export const projectsInfo: PropsProjectsInfo[] = [
         title: 'Lotus Discord Bot',
         date: 'Feb 2022',
         desc: "Lotus is a simple but powerful Discord bot made over Node.js that plays music from Youtube and Spotify immersed into Warframe game thematic. ❤️",
+        problem: '',
+        solution: '',
+        key_decisions: '',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
@@ -183,5 +222,5 @@ export const projectsInfo: PropsProjectsInfo[] = [
         icons: ['nodejs', 'javascript', 'discord-api:discord api', 'distube', 'aws', 'github', 'npm', 'markdown'],
         code_url: 'https://github.com/PressureDraper/Lotus',
         demo_url: ''
-    },
+    }, */
 ]
