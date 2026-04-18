@@ -34,7 +34,6 @@ export const useScrollReveal = <T extends HTMLElement = HTMLElement>(
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: el,
-                        // markers: true,
                         start,           // fade-in starts here
                         end, // fade-out ends here
                         scrub: 1,
