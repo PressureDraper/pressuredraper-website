@@ -95,7 +95,7 @@ export const Projects = () => {
                                             const [techName, desc] = tech.split(':');
 
                                             return (
-                                                <span key={tech} className="flex items-center gap-1.5 px-3 py-1 text-sm border-b border-primary-700 bg-neutral-300/35 rounded-full">
+                                                <span key={tech} className="flex items-center gap-1.5 px-3 py-1 text-sm border-b border-primary-700 bg-neutral-300/25 rounded-full">
                                                     <img src={`/icons/${techName}.svg`} className="xxs:w-3 xxs:h-3 md:w-5 md:h-5" />
                                                     <span className='text-body text-neutral-300'>{desc ? desc : techName}</span>
                                                 </span>
