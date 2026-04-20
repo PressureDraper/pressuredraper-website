@@ -70,14 +70,14 @@ export const projectsInfo: PropsProjectsInfo[] = [
         demo_url: ''
 
     },
-    /* {
+    {
         img: `/projects/medicalCongressv2/cover.webp`,
         title: 'Medical Congress Landing Page v2.0.0',
-        date: 'Sep 2024 — Present',
-        desc: 'Website developed for hosting the medical congress since 2024, remodeling UI/UX design as well as implementing new features for assistance registration and assistants data display over an admin view. Event carried out every year by the High Specialty Medical Center Dr. Rafael Lucio.',
-        problem: '',
-        solution: '',
-        key_decisions: '',
+        date: 'Sep 2023 — Present',
+        desc: ["Built a web platform for hosting an annual medical congress since 2023", "Led UI/UX redesign to enhance usability and modernize the interface", "Developed attendee registration workflows and data management features", "Created an admin dashboard for real-time access to participant information"],
+        problem: 'Assistants were required to register in person due to the absence of a digital platform, limiting attendance and reducing event reach',
+        solution: 'Designed a landing page for online registration increasing reach and growth by 72%',
+        key_decisions: 'Focused on reducing user friction through a simplified UX and ensured scalability for recurring annual events through AWS hosting and Google Workspace features',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
@@ -91,10 +91,10 @@ export const projectsInfo: PropsProjectsInfo[] = [
         img: `/projects/ticketsApp/cover.webp`,
         title: 'Tickets App',
         date: 'Dec 2023',
-        desc: "Web app project created as a bank tickets system under bidirectional communication architecture using Socket.IO to mantain real-time actions.",
-        problem: '',
-        solution: '',
-        key_decisions: '',
+        desc: ["Developed a real-time bank ticketing system using Socket.IO", "Enabled bidirectional communication for live queue and ticket updates", "Improved responsiveness and user interaction"],
+        problem: 'Traditional ticketing and queue systems lack real-time updates, causing delays, poor synchronization, and inefficient user experience',
+        solution: 'Developed a real-time bank ticketing system using Socket.IO to enable bidirectional communication and instant queue updates',
+        key_decisions: 'Adopted a WebSocket-based architecture for low-latency communication, designed event-driven interactions for real-time updates, and ensured synchronization between clients and server',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
@@ -104,7 +104,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
         code_url: 'https://github.com/PressureDraper/socket-io-04-tickets',
         demo_url: ''
     },
-    {
+    /* {
         img: `/projects/medicalEvaluation/cover.webp`,
         title: 'Resident Medical Evaluation System',
         date: 'Jan 2024 — Present',

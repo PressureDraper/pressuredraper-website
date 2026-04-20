@@ -36,33 +36,38 @@ export const Projects = () => {
                                     <div className="w-full rounded-md flex justify-between">
                                         <span className="text-neutral-100 font-display tracking-[0.2em] text-xs opacity-60">{(index + 1).toString().padStart(2, '0')}</span>
                                         <div className="flex gap-4">
-                                            <a href="https://github.com/PressureDraper" target="_blank">
-                                                <svg
-                                                    viewBox="0 0 27 27"
-                                                    fill="none"
-                                                    stroke={'var(--color-neutral-400)'}
-                                                    strokeWidth="1.5"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    className="hover:cursor-pointer hover:stroke-neutral-200 transition-colors duration-300 w-5 h-5 md:w-5.5 md:5.5"
-                                                >
-                                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                                                </svg>
-                                            </a>
-                                            <a href="https://github.com/PressureDraper" target="_blank">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 27 27"
-                                                    fill="none"
-                                                    stroke={'var(--color-neutral-400)'}
-                                                    strokeWidth="1.5"
-                                                    className="hover:cursor-pointer hover:stroke-neutral-200 transition-colors duration-300 w-5 h-5 md:w-5.5 md:5.5"
-                                                >
-                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                                    <polyline points="15 3 21 3 21 9" />
-                                                    <line x1="10" y1="14" x2="21" y2="3" />
-                                                </svg>
-                                            </a>
+                                            {item.buttons[0].active &&
+                                                <a href="https://github.com/PressureDraper" target="_blank">
+                                                    <svg
+                                                        viewBox="0 0 27 27"
+                                                        fill="none"
+                                                        stroke={'var(--color-neutral-400)'}
+                                                        strokeWidth="1.5"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        className="hover:cursor-pointer hover:stroke-neutral-200 transition-colors duration-300 w-5 h-5 md:w-5.5 md:5.5"
+                                                    >
+                                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                                    </svg>
+                                                </a>
+                                            }
+                                            {
+                                                item.buttons[2].active &&
+                                                <a href="https://github.com/PressureDraper" target="_blank">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 27 27"
+                                                        fill="none"
+                                                        stroke={'var(--color-neutral-400)'}
+                                                        strokeWidth="1.5"
+                                                        className="hover:cursor-pointer hover:stroke-neutral-200 transition-colors duration-300 w-5 h-5 md:w-5.5 md:5.5"
+                                                    >
+                                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                                        <polyline points="15 3 21 3 21 9" />
+                                                        <line x1="10" y1="14" x2="21" y2="3" />
+                                                    </svg>
+                                                </a>
+                                            }
                                         </div>
                                     </div>
                                     <span className="text-xl font-bold font-display text-neutral-300 flex justify-between items-center">
