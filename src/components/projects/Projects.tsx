@@ -37,7 +37,7 @@ export const Projects = () => {
                                         <span className="text-neutral-100 font-display tracking-[0.2em] text-xs opacity-60">{(index + 1).toString().padStart(2, '0')}</span>
                                         <div className="flex gap-4">
                                             {item.buttons[0].active &&
-                                                <a href="https://github.com/PressureDraper" target="_blank">
+                                                <a href={item.code_url} target="_blank">
                                                     <svg
                                                         viewBox="0 0 27 27"
                                                         fill="none"
@@ -53,7 +53,7 @@ export const Projects = () => {
                                             }
                                             {
                                                 item.buttons[2].active &&
-                                                <a href="https://github.com/PressureDraper" target="_blank">
+                                                <a href={item.demo_url} target="_blank">
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         viewBox="0 0 27 27"
