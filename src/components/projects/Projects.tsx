@@ -29,11 +29,11 @@ interface SlotDef {
 const N = projectsInfo.length
 
 const SLOT_DESKTOP: Record<number, SlotDef> = {
-    [-2]: { x: -107, z: -320, ry: 42,  scale: 0.52, opacity: 0.55, w: 180, h: 240 },
-    [-1]: { x: -53,  z: -160, ry: 28,  scale: 0.75, opacity: 0.85, w: 210, h: 290 },
-    [0]:  { x: 0,    z: 0,    ry: 0,   scale: 1.00, opacity: 1.00, w: 260, h: 350 },
-    [1]:  { x: 53,   z: -160, ry: -28, scale: 0.75, opacity: 0.85, w: 210, h: 290 },
-    [2]:  { x: 107,  z: -320, ry: -42, scale: 0.52, opacity: 0.55, w: 180, h: 240 },
+    [-2]: { x: -300, z: -320, ry: 0,  scale: 0.82, opacity: 0.55, w: 180, h: 240 },
+    [-1]: { x: -150,  z: -160, ry: 0,  scale: 1.05, opacity: 0.85, w: 210, h: 290 },
+    [0]:  { x: 0,    z: 0,    ry: 0,   scale: 1.30, opacity: 1.00, w: 260, h: 350 },
+    [1]:  { x: 150,   z: -160, ry: 0, scale: 1.05, opacity: 0.85, w: 210, h: 290 },
+    [2]:  { x: 300,  z: -320, ry: 0, scale: 0.82, opacity: 0.55, w: 180, h: 240 },
 }
 
 const SLOT_MOBILE: Record<number, SlotDef> = {
@@ -42,7 +42,7 @@ const SLOT_MOBILE: Record<number, SlotDef> = {
     [1]:  { x: 51,  z: -160, ry: -28, scale: 0.72, opacity: 0.75, w: 200, h: 270 },
 }
 
-const AUTO_SPEED  = 0.00018
+const AUTO_SPEED  = 0
 const LERP_FACTOR = 0.07
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -79,23 +79,6 @@ function resolveSlot(effOff: number, isMobile: boolean): SlotDef | null {
     if (!sHi) return sLo
     return lerpSlot(sLo, sHi, t)
 }
-
-// Accent color per project (index-matched to projectsInfo order)
-const PROJECT_COLORS: string[] = [
-    '#60a5fa', // Xalapa Móvil        – blue
-    '#a78bfa', // Digital Signature   – violet
-    '#00c6ff', // Personal Website    – cyan
-    '#34d399', // HR System           – emerald
-    '#fb7185', // Medical Congress v2 – rose
-    '#fbbf24', // Tickets App         – amber
-    '#c084fc', // Medical Evaluation  – purple
-    '#f472b6', // Medical Congress v1 – pink
-    '#38bdf8', // Heroes App          – sky
-    '#f97316', // Currency Converter  – orange
-    '#4ade80', // Cipher Challenge    – green
-    '#e879f9', // MP3 Glass Player    – fuchsia
-    '#818cf8', // Lotus Bot           – indigo
-]
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -177,7 +160,6 @@ export const Projects = () => {
             const bright   = lerp(0.4, 1.0, colorAmt)
             const projIdx  = mod(centerIdx + off)
             const proj     = projectsInfo[projIdx]
-            const color    = PROJECT_COLORS[projIdx] ?? '#60a5fa'
             const glowHex  = Math.round(colorAmt * 68).toString(16).padStart(2, '0')
 
             el.style.width         = `${sl.w}px`
@@ -193,8 +175,7 @@ export const Projects = () => {
             glow.style.cssText = `
                 position:absolute; inset:-3px; border-radius:17px; z-index:0;
                 opacity:${colorAmt.toFixed(2)};
-                background:radial-gradient(ellipse at 50% 85%, ${color}55 0%, transparent 65%);
-                box-shadow: 0 0 50px 12px ${color}${glowHex};
+                box-shadow: 0 0 50px 12px ${glowHex};
             `
 
             // Background image — reuse existing img if same project
@@ -234,8 +215,6 @@ export const Projects = () => {
                             font-size:9px; font-weight:500; letter-spacing:0.1em;
                             text-transform:uppercase; padding:3px 8px; border-radius:4px;
                             display:inline-block; text-decoration:none;
-                            background:${color}22; color:${color};
-                            border:1px solid ${color}44;
                             font-family:inherit;
                             pointer-events:${isCenter ? 'auto' : 'none'};
                         "
@@ -251,8 +230,6 @@ export const Projects = () => {
                     <span style="
                         font-size:9px; font-weight:500; letter-spacing:0.13em;
                         text-transform:uppercase; padding:3px 8px; border-radius:4px;
-                        background:${color}22; color:${color};
-                        border:1px solid ${color}44;
                         font-family:inherit;
                     ">${proj.date.split('—')[0].trim()}</span>
                     ${isCenter ? activeButtons : ''}
@@ -397,7 +374,7 @@ export const Projects = () => {
                 </div>
 
                 {/* Carousel */}
-                <div className="max-w-7xl w-full mt-10">
+                <div className="max-w-7xl w-full mt-10 p-10">
                     <div className="relative">
                         <div
                             ref={sceneRef}
@@ -436,7 +413,7 @@ export const Projects = () => {
                     </div>
 
                     {/* Dots */}
-                    <div className="mt-6 flex justify-center gap-2">
+                    <div className="mt-20 flex justify-center gap-2">
                         {projectsInfo.map((_, i) => (
                             <button
                                 key={i}
