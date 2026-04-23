@@ -193,12 +193,12 @@ export const Projects = () => {
 
     return (
         <section id="projects" className="relative w-full min-h-screen">
-            <div className="min-h-screen flex flex-col items-center justify-center mx-auto lg:px-0 lg:py-24">
+            <div className="min-h-screen flex flex-col items-center justify-center mx-auto xxs:py-24 lg:px-0 lg:py-24">
 
                 {/* Header */}
                 <div className="flex flex-col gap-10 max-w-5xl md:max-w-5xl lg:max-w-6xl xl:max-w-6xl mx-auto justify-items-start px-8 md:px-10 lg:px-10 xl:px-0 w-full">
                     <div className="flex flex-col gap-4">
-                        <span className="text-accent-500 font-display tracking-wide">Projects</span>
+                        <span className="text-accent-500 font-display tracking-widest">Projects</span>
                         <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold font-display">
                             Selected Work
                         </h2>

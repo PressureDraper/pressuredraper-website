@@ -1,7 +1,7 @@
 import { projectsInfo } from "@/utils/projects.utils";
 import Image from "next/image";
 
-export const Carousel = () => {
+export const CarouselBackupCmp = () => {
     return (
         <div className="grid grid-cols-2 xxs:grid-cols-1 md:grid-cols-2 gap-6">
             {projectsInfo.map((item, index) => (
