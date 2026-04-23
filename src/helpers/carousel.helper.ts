@@ -12,26 +12,28 @@ export const lerp = (from: number, to: number, factor: number) => {
 
 export const lerpSlot = (slotA: SlotDef, slotB: SlotDef, factor: number): SlotDef => {
     return {
-        x:        lerp(slotA.x,        slotB.x,        factor),
-        z:        lerp(slotA.z,        slotB.z,        factor),
-        rotateY:  lerp(slotA.rotateY,  slotB.rotateY,  factor),
-        scale:    lerp(slotA.scale,    slotB.scale,    factor),
-        opacity:  lerp(slotA.opacity,  slotB.opacity,  factor),
-        width:    lerp(slotA.width,    slotB.width,    factor),
-        height:   lerp(slotA.height,   slotB.height,   factor),
+        x: lerp(slotA.x, slotB.x, factor),
+        z: lerp(slotA.z, slotB.z, factor),
+        rotateY: lerp(slotA.rotateY, slotB.rotateY, factor),
+        scale: lerp(slotA.scale, slotB.scale, factor),
+        opacity: lerp(slotA.opacity, slotB.opacity, factor),
+        width: lerp(slotA.width, slotB.width, factor),
+        height: typeof slotA.height === 'number' && typeof slotB.height === 'number'
+            ? lerp(slotA.height, slotB.height, factor)
+            : slotA.height,
     }
 }
 
 export const resolveSlotAtOffset = (fractionalOffset: number, isMobile: boolean): SlotDef | null => {
-    const slotMap   = isMobile ? SLOT_MOBILE : SLOT_DESKTOP
+    const slotMap = isMobile ? SLOT_MOBILE : SLOT_DESKTOP
     const lowerSlot = Math.floor(fractionalOffset)
     const upperSlot = Math.ceil(fractionalOffset)
-    const blendT    = fractionalOffset - lowerSlot
-    const slotLow   = slotMap[lowerSlot] ?? null
-    const slotHigh  = slotMap[upperSlot] ?? null
+    const blendT = fractionalOffset - lowerSlot
+    const slotLow = slotMap[lowerSlot] ?? null
+    const slotHigh = slotMap[upperSlot] ?? null
 
     if (!slotLow && !slotHigh) return null
-    if (!slotLow)  return slotHigh!
+    if (!slotLow) return slotHigh!
     if (!slotHigh) return slotLow
     return lerpSlot(slotLow, slotHigh, blendT)
 }
@@ -42,7 +44,7 @@ type Project = (typeof projectsInfo)[number]
 // No React, no async scheduling — innerHTML is set synchronously for avoiding flickering on item change
 // paints the correct content in the exact same frame the index changes.
 
-export const renderCardHTML = (project: Project, index: number): string => {
+export const renderCardHTML = (project: Project, index: number, isMobile: boolean): string => {
     const bullets = project.desc
         .map(b => `<li>${b}</li>`)
         .join('')
@@ -67,7 +69,7 @@ export const renderCardHTML = (project: Project, index: number): string => {
         : ''
 
     return `
-        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+        <div style="width:100%;height:fit-content;display:flex;flex-direction:column;">
             <div style="position:relative;width:100%;overflow:hidden;">
                 <img
                     src="${project.img}"
@@ -86,39 +88,42 @@ export const renderCardHTML = (project: Project, index: number): string => {
                 flex:1;
                 border-radius:0 0 14px 14px;
                 overflow-x:hidden;
+                overflow-y:auto;
+                ${isMobile ? '' : 'max-height:295px;'}
             ">
                 <div style="display:flex;justify-content:space-between;align-items:center;">
-                    <span style="color:var(--color-neutral-100);letter-spacing:0.2em;font-size:11px;opacity:0.6;">
+                    <span style="color:var(--color-neutral-100);letter-spacing:0.2em;font-size:11px;font-family:var(--font-body);font-weight:bold;opacity:0.6;">
                         ${(index + 1).toString().padStart(2, '0')}
                     </span>
                     <div style="display:flex;gap:16px;">${codeBtn}${demoBtn}</div>
                 </div>
                 <div style="display:flex;justify-content:space-between;align-items:center;">
-                    <span style="font-size:18px;font-weight:700;color:var(--color-neutral-300);">${project.title}</span>
-                    <span style="font-size:12px;font-weight:300;color:var(--color-neutral-300);">${project.date}</span>
+                    <span style="font-size:20px;font-family:var(--font-display);font-weight:700;color:var(--color-neutral-300);">${project.title}</span>
+                    <span style="font-size:13px;font-family:var(--font-body);font-weight:100;color:var(--color-neutral-400);">${project.date}</span>
                 </div>
                 <ul style="
                     margin:0;padding-left:16px;
                     list-style:disc;
-                    color:var(--color-neutral-400);
-                    font-size:13px;
+                    color:var(--color-neutral-300);
+                    font-size:14px;
+                    font-family:var(--font-body);
                     line-height:1.6;
                     display:flex;flex-direction:column;gap:4px;
                 ">
                     ${bullets}
                 </ul>
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+                <div style="display:grid;grid-template-columns:1;gap:12px;">
                     <div style="display:flex;flex-direction:column;gap:6px;">
-                        <span style="color:var(--color-accent-400);font-size:10px;letter-spacing:0.1em;">PROBLEM</span>
-                        <span style="color:rgba(163,163,163,0.9);font-size:12px;">${project.problem}</span>
+                        <span style="color:var(--color-accent-400);font-size:12px;font-family:var(--font-display);letter-spacing:0.1em;">PROBLEM</span>
+                        <span style="color:var(--color-neutral-300);font-size:14px;font-family:var(--font-body);">${project.problem}</span>
                     </div>
                     <div style="display:flex;flex-direction:column;gap:6px;">
-                        <span style="color:var(--color-accent-400);font-size:10px;letter-spacing:0.1em;">SOLUTION</span>
-                        <span style="color:rgba(163,163,163,0.9);font-size:12px;">${project.solution}</span>
+                        <span style="color:var(--color-accent-400);font-size:12px;font-family:var(--font-display);letter-spacing:0.1em;">SOLUTION</span>
+                        <span style="color:var(--color-neutral-300);font-size:14px;font-family:var(--font-body);">${project.solution}</span>
                     </div>
                     <div style="display:flex;flex-direction:column;gap:6px;">
-                        <span style="color:var(--color-accent-400);font-size:10px;letter-spacing:0.1em;">KEY DECISIONS</span>
-                        <span style="color:rgba(163,163,163,0.9);font-size:12px;">${project.key_decisions}</span>
+                        <span style="color:var(--color-accent-400);font-size:12px;font-family:var(--font-display);letter-spacing:0.1em;">KEY DECISIONS</span>
+                        <span style="color:var(--color-neutral-300);font-size:14px;font-family:var(--font-body);">${project.key_decisions}</span>
                     </div>
                 </div>
                 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px;">

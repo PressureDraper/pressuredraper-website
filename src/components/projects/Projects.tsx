@@ -66,7 +66,7 @@ export const Projects = () => {
 
             if (poolNode.renderedIndex !== projectIndex) {
                 poolNode.renderedIndex = projectIndex
-                el.innerHTML = renderCardHTML(projectsInfo[projectIndex], projectIndex)
+                el.innerHTML = renderCardHTML(projectsInfo[projectIndex], projectIndex, isMobile)
             }
 
             if (!slot) {
@@ -80,7 +80,7 @@ export const Projects = () => {
             const brightnessAmt = lerp(0.4, 1.0, colorBlend)
 
             el.style.width = `${slot.width}px`
-            el.style.height = `${slot.height}px`
+            el.style.height = slot.height === 'auto' ? 'auto' : `${slot.height}px`
             el.style.opacity = `${slot.opacity}`
             el.style.zIndex = `${Math.round(10 - Math.abs(effectiveOffset) * 3)}`
             el.style.filter = `grayscale(${grayscaleAmt}%) brightness(${brightnessAmt.toFixed(2)})`
@@ -208,11 +208,11 @@ export const Projects = () => {
                     </div>
                 </div>
 
-                <div className="max-w-7xl w-full mt-10 pt-15 overflow-hidden">
+                <div className="max-w-7xl w-full xxs:mt-0 xl:mt-12 xl:pt-15 overflow-hidden">
                     <div className="relative">
                         <div
                             ref={sceneRef}
-                            className="relative flex h-100 items-center justify-center"
+                            className="relative flex xxs:h-215 md:h-180 xxs:pt-8 lg:h-115 xxs:items-start md:items-center justify-center"
                             style={{ perspective: '2000px', perspectiveOrigin: '50% 40%' }}
                             onTouchStart={onTouchStart}
                             onTouchEnd={onTouchEnd}
@@ -232,18 +232,18 @@ export const Projects = () => {
                         >
                             →
                         </button>
-                    </div>
 
-                    <div className="mt-22 flex justify-center gap-2">
-                        {projectsInfo.map((_, dotIndex) => (
-                            <button
-                                key={dotIndex}
-                                ref={el => { if (el) dotsRef.current[dotIndex] = el }}
-                                onClick={() => onDotClick(dotIndex)}
-                                className="h-1.5 rounded-full transition-all duration-300 cursor-pointer"
-                                style={{ width: '6px', background: 'rgba(255,255,255,0.2)' }}
-                            />
-                        ))}
+                        <div className="xxs:mt-60 sm:mt-0 md:mt-0 lg:mt-37 xl:mt-31 flex justify-center gap-2">
+                            {projectsInfo.map((_, dotIndex) => (
+                                <button
+                                    key={dotIndex}
+                                    ref={el => { if (el) dotsRef.current[dotIndex] = el }}
+                                    onClick={() => onDotClick(dotIndex)}
+                                    className="h-1.5 rounded-full transition-all duration-300 cursor-pointer"
+                                    style={{ width: '6px', background: 'rgba(255,255,255,0.2)' }}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

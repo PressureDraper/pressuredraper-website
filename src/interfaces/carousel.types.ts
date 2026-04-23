@@ -15,5 +15,5 @@ export interface SlotDef {
     scale: number
     opacity: number
     width: number
-    height: number
+    height: number | 'auto'
 }

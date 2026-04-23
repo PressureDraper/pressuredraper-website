@@ -8,17 +8,17 @@ export const EXTERNAL_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 
 export const SLOT_DESKTOP: Record<number, SlotDef> = {
     [-2]: { x: -300, z: -320, rotateY: 50, scale: 0.82, opacity: 0.55, width: 180, height: 240 },
     [-1]: { x: -170, z: -160, rotateY: 50, scale: 1.05, opacity: 0.85, width: 210, height: 290 },
-    [0]: { x: 0, z: 0, rotateY: 0, scale: 1.10, opacity: 1.00, width: 450, height: 450 },
+    [0]: { x: 0, z: 0, rotateY: 0, scale: 1.10, opacity: 1.00, width: 450, height: 550 },
     [1]: { x: 170, z: -160, rotateY: -50, scale: 1.05, opacity: 0.85, width: 210, height: 290 },
     [2]: { x: 300, z: -320, rotateY: -50, scale: 0.82, opacity: 0.55, width: 180, height: 240 },
 }
 
 export const SLOT_MOBILE: Record<number, SlotDef> = {
-    [-1]: { x: -51, z: -160, rotateY: 28, scale: 0.72, opacity: 0.75, width: 200, height: 270 },
-    [0]: { x: 0, z: 0, rotateY: 0, scale: 1.00, opacity: 1.00, width: 240, height: 320 },
-    [1]: { x: 51, z: -160, rotateY: -28, scale: 0.72, opacity: 0.75, width: 200, height: 270 },
+    [-1]: { x: -51, z: -160, rotateY: 28, scale: 0.72, opacity: 0.75, width: 350, height: 'auto' },
+    [0]: { x: 0, z: 0, rotateY: 0, scale: 1.00, opacity: 1.00, width: 350, height: 'auto' },
+    [1]: { x: 51, z: -160, rotateY: -28, scale: 0.72, opacity: 0.75, width: 350, height: 'auto' },
 }
 
 export const TOTAL_CARDS = projectsInfo.length;
-export const AUTO_ADVANCE_SPEED = 0.003;
-export const LERP_FACTOR = 0.07;
+export const AUTO_ADVANCE_SPEED = 0;
+export const LERP_FACTOR = 0.1;
