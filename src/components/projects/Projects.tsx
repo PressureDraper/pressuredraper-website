@@ -5,6 +5,7 @@ import { projectsInfo } from '../../utils/projects.utils'
 import { PoolNode } from '@/interfaces/carousel.types'
 import { AUTO_ADVANCE_SPEED, LERP_FACTOR, TOTAL_CARDS } from '@/utils/carousel.utils'
 import { lerp, renderCardHTML, resolveSlotAtOffset, wrapIndex } from '@/helpers/carousel.helper'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 export const Projects = () => {
     const sceneRef = useRef<HTMLDivElement>(null)
@@ -191,58 +192,71 @@ export const Projects = () => {
         else if (effectiveOffset > 0.3) navigate(1)
     }
 
+    const refProjects = useScrollReveal<HTMLDivElement>({
+        fadeOut: true,
+        y: 40,
+        z: 0,
+        duration: 1,
+        start: 'top 60%',
+        end: 'bottom 50%',
+    });
+
     return (
         <section id="projects" className="relative w-full min-h-screen">
             <div className="min-h-screen flex flex-col items-center justify-center mx-auto xxs:py-24 lg:px-0 lg:py-24">
-
-                {/* Header */}
-                <div className="flex flex-col gap-10 max-w-5xl md:max-w-5xl lg:max-w-6xl xl:max-w-6xl mx-auto justify-items-start px-8 md:px-10 lg:px-10 xl:px-0 w-full">
-                    <div className="flex flex-col gap-4">
-                        <span className="text-accent-500 font-display tracking-widest">Projects</span>
-                        <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold font-display">
-                            Selected Work
-                        </h2>
-                        <p className="md:w-2/3 text-neutral-400 text-lg font-body leading-relaxed text-justify">
-                            A few projects that showcase how I think — from problem identification to architecture decisions and trade-offs.
-                        </p>
+                <div
+                    ref={refProjects}
+                    className="flex flex-col gap-10 max-w-5xl md:max-w-5xl lg:max-w-6xl xl:max-w-6xl mx-auto justify-items-start px-8 md:px-10 lg:px-10 xl:px-0 w-full overflow-hidden"
+                >
+                    {/* Header */}
+                    <div className="max-w-7xl w-full overflow-visible">
+                        <div className="flex flex-col gap-4">
+                            <span className="text-accent-500 font-display tracking-widest">Projects</span>
+                            <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold font-display">
+                                Selected Work
+                            </h2>
+                            <p className="md:w-2/3 text-neutral-400 text-lg font-body leading-relaxed text-justify">
+                                A few projects that showcase how I think — from problem identification to architecture decisions and trade-offs.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div className="max-w-7xl w-full xxs:mt-0 xl:mt-12 xl:pt-15 overflow-hidden">
-                    <div className="relative">
-                        <div
-                            ref={sceneRef}
-                            className="relative flex xxs:h-215 md:h-180 xxs:pt-8 lg:h-115 xxs:items-start md:items-center justify-center"
-                            style={{ perspective: '2000px', perspectiveOrigin: '50% 40%' }}
-                            onTouchStart={onTouchStart}
-                            onTouchEnd={onTouchEnd}
-                            onClick={onSceneClick}
-                        />
+                    <div className="max-w-7xl w-full xxs:mt-0 md:pt-17 xl:mt-4 xl:pt-15 overflow-visible">
+                        <div className="relative">
+                            <div
+                                ref={sceneRef}
+                                className="relative flex xxs:h-215 md:h-180 xxs:pt-8 lg:h-115 xxs:items-start md:items-center justify-center"
+                                style={{ perspective: '2000px', perspectiveOrigin: '50% 40%' }}
+                                onTouchStart={onTouchStart}
+                                onTouchEnd={onTouchEnd}
+                                onClick={onSceneClick}
+                            />
 
-                        <button
-                            onClick={() => navigate(-1)}
-                            className="absolute left-3 top-1/2 z-30 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.07] text-white/70 text-sm transition hover:bg-white/15 hover:text-white"
-                        >
-                            ←
-                        </button>
+                            <button
+                                onClick={() => navigate(-1)}
+                                className="absolute left-0 top-1/2 z-30 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-neutral-500/30 bg-neutral-500/15 text-neutral-300/90 text-sm transition hover:bg-neutral-500/30 hover:text-neutral-100"
+                            >
+                                ←
+                            </button>
 
-                        <button
-                            onClick={() => navigate(1)}
-                            className="absolute right-3 top-1/2 z-30 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.07] text-white/70 text-sm transition hover:bg-white/15 hover:text-white"
-                        >
-                            →
-                        </button>
+                            <button
+                                onClick={() => navigate(1)}
+                                className="absolute right-0 top-1/2 z-30 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-neutral-500/30 bg-neutral-500/15 text-neutral-300/90 text-sm transition hover:bg-neutral-500/30 hover:text-neutral-100"
+                            >
+                                →
+                            </button>
 
-                        <div className="xxs:mt-60 sm:mt-0 md:mt-0 lg:mt-37 xl:mt-31 flex justify-center gap-2">
-                            {projectsInfo.map((_, dotIndex) => (
-                                <button
-                                    key={dotIndex}
-                                    ref={el => { if (el) dotsRef.current[dotIndex] = el }}
-                                    onClick={() => onDotClick(dotIndex)}
-                                    className="h-1.5 rounded-full transition-all duration-300 cursor-pointer"
-                                    style={{ width: '6px', background: 'rgba(255,255,255,0.2)' }}
-                                />
-                            ))}
+                            <div className="xxs:mt-60 sm:mt-0 md:mt-0 lg:mt-37 xl:mt-31 flex justify-center gap-2">
+                                {projectsInfo.map((_, dotIndex) => (
+                                    <button
+                                        key={dotIndex}
+                                        ref={el => { if (el) dotsRef.current[dotIndex] = el }}
+                                        onClick={() => onDotClick(dotIndex)}
+                                        className="h-1.5 rounded-full transition-all duration-300 cursor-pointer"
+                                        style={{ width: '6px', background: 'rgba(255,255,255,0.2)' }}
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

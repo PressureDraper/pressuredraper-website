@@ -31,7 +31,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'docker', 'react', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'socketio', 'prisma-ORM:prisma ORM', 'mysql', 'canvas', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'socketio', 'prisma-orm:prisma ORM', 'mysql', 'canvas', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
     },
@@ -65,7 +65,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'prisma-ORM:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'prisma-orm:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
 
@@ -83,7 +83,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: true }
         ],
-        icons: ['nodejs', 'react', 'redux', 'router-DOM:router DOM', 'mui', 'html', 'css', 'typescript', 'python', 'canvas', 'express', 'prisma-ORM:prisma ORM', 'mysql', 'aws', 'github', 'pages', 'squarespace', 'smtp', 'yarn', 'markdown'],
+        icons: ['nodejs', 'react', 'redux', 'router-DOM:router DOM', 'mui', 'html', 'css', 'typescript', 'python', 'canvas', 'express', 'prisma-orm:prisma ORM', 'mysql', 'aws', 'github', 'pages', 'squarespace', 'smtp', 'yarn', 'markdown'],
         code_url: 'https://github.com/JornadasMedicas?tab=repositories',
         demo_url: 'https://jornadasmedicascae.com'
     },
@@ -117,7 +117,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             { name: 'docs', active: true },
             { name: 'demo', active: false }
         ],
-        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'smtp', 'prisma-ORM:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
+        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'smtp', 'prisma-orm:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
         code_url: '',
         demo_url: ''
     },
