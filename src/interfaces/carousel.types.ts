@@ -1,19 +1,19 @@
 export interface PoolItem {
-    el: HTMLDivElement
-    content: HTMLDivElement
-    off: number
+    el: HTMLDivElement;
+    content: HTMLDivElement;
+    off: number;
 }
 
 export interface PoolNode extends PoolItem {
-    renderedIndex: number | null
+    renderedIndex: number | null;
 }
 
 export interface SlotDef {
-    x: number
-    z: number
-    rotateY: number
-    scale: number
-    opacity: number
-    width: number
-    height: number | 'auto'
+    x: number;
+    z: number;
+    rotateY: number;
+    scale: number;
+    opacity: number;
+    width: number;
+    height: number | 'auto';
 }

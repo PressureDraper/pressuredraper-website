@@ -1,32 +1,86 @@
 export const skills = [
     {
         title: 'FRONTEND',
-        badges: ['React', 'react:React Native', 'Vite', 'Typescript', 'tailwind:TailwindCSS', 'GSAP', 'motion:Framer Motion', 'Zustand', 'Redux', 'react:Context API', 'mui:Material UI', 'Bootstrap', 'JQuery', 'HTML', 'CSS'],
-        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-icon lucide-code"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>'
+        badges: [
+            'React',
+            'react:React Native',
+            'Vite',
+            'Typescript',
+            'tailwind:TailwindCSS',
+            'GSAP',
+            'motion:Framer Motion',
+            'Zustand',
+            'Redux',
+            'react:Context API',
+            'mui:Material UI',
+            'Bootstrap',
+            'JQuery',
+            'HTML',
+            'CSS',
+        ],
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-icon lucide-code"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>',
     },
     {
         title: 'BACKEND',
-        badges: ['nodejs:Node.js', 'express:Express.js', 'django:Django', 'prisma-ORM:Prisma ORM', 'Redis', 'socketio:Socket.IO', 'JWT', 'rest:REST APIs', 'webhook:Webhooks'],
-        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-webhook-icon lucide-webhook"><path d="M18 16.98h-5.99c-1.1 0-1.95.94-2.48 1.9A4 4 0 0 1 2 17c.01-.7.2-1.4.57-2"/><path d="m6 17 3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06"/><path d="m12 6 3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8"/></svg>'
+        badges: [
+            'nodejs:Node.js',
+            'express:Express.js',
+            'django:Django',
+            'prisma-ORM:Prisma ORM',
+            'Redis',
+            'socketio:Socket.IO',
+            'JWT',
+            'rest:REST APIs',
+            'webhook:Webhooks',
+        ],
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-webhook-icon lucide-webhook"><path d="M18 16.98h-5.99c-1.1 0-1.95.94-2.48 1.9A4 4 0 0 1 2 17c.01-.7.2-1.4.57-2"/><path d="m6 17 3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06"/><path d="m12 6 3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8"/></svg>',
     },
     {
         title: 'DATABASES',
         badges: ['MySQL', 'MariaDB', 'SQLite', 'Firebase'],
-        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database-zap-icon lucide-database-zap"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 15 21.84"/><path d="M21 5V8"/><path d="M21 12L18 17H22L19 22"/><path d="M3 12A9 3 0 0 0 14.59 14.87"/></svg>'
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database-zap-icon lucide-database-zap"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 15 21.84"/><path d="M21 5V8"/><path d="M21 12L18 17H22L19 22"/><path d="M3 12A9 3 0 0 0 14.59 14.87"/></svg>',
     },
     {
         title: 'CLOUD & DEVOPS',
-        badges: ['Docker', 'AWS', 'Cloudflare', 'Railway', 'github:Github Actions', 'GitLab', 'github:Github Pages', 'workspace:Google Workspace', 'Squarespace'],
-        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-workflow-icon lucide-workflow"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>'
+        badges: [
+            'Docker',
+            'AWS',
+            'Cloudflare',
+            'Railway',
+            'github:Github Actions',
+            'GitLab',
+            'github:Github Pages',
+            'workspace:Google Workspace',
+            'Squarespace',
+        ],
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-workflow-icon lucide-workflow"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>',
     },
     {
         title: 'TOOLS',
-        badges: ['Git', 'pages:Github', 'VSCode', 'Postman', 'Jest', 'jest:Supertest', 'biome:Biome.js', 'pnpm', 'npm', 'yarn', 'Figma', 'Miro', 'Expo', 'Copilot', 'ESLint', 'Prettier', 'Markdown'],
-        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench-icon lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/></svg>'
+        badges: [
+            'Git',
+            'pages:Github',
+            'VSCode',
+            'Postman',
+            'Jest',
+            'jest:Supertest',
+            'biome:Biome.js',
+            'pnpm',
+            'npm',
+            'yarn',
+            'Figma',
+            'Miro',
+            'Expo',
+            'Copilot',
+            'ESLint',
+            'Prettier',
+            'Markdown',
+        ],
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench-icon lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/></svg>',
     },
     {
         title: 'LANGUAGES',
         badges: ['Javascript', 'Typescript', 'Python', 'PHP'],
-        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages-icon lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>'
-    }
-]
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages-icon lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>',
+    },
+];

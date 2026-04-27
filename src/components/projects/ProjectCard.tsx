@@ -1,13 +1,13 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import { projectsInfo } from '../../utils/projects.utils'
+import Image from 'next/image';
+import { projectsInfo } from '../../utils/projects.utils';
 
-type Project = (typeof projectsInfo)[number]
+type Project = (typeof projectsInfo)[number];
 
 interface ProjectCardProps {
-    project: Project
-    index: number
+    project: Project;
+    index: number;
 }
 
 export const ProjectCard = ({ project, index }: ProjectCardProps) => {
@@ -74,33 +74,51 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 </span>
                 <div className="grid grid-cols-3 xxs:grid-cols-1 md:grid-cols-3 xxs:gap-4">
                     <div className="flex flex-col gap-2">
-                        <span className="text-accent-400 text-xs font-body tracking-widest">PROBLEM</span>
-                        <span className="text-neutral-400/90 text-sm font-body">{project.problem}</span>
+                        <span className="text-accent-400 text-xs font-body tracking-widest">
+                            PROBLEM
+                        </span>
+                        <span className="text-neutral-400/90 text-sm font-body">
+                            {project.problem}
+                        </span>
                     </div>
                     <div className="flex flex-col gap-2">
-                        <span className="text-accent-400 text-xs font-body tracking-widest">SOLUTION</span>
-                        <span className="text-neutral-400/90 text-sm font-body">{project.solution}</span>
+                        <span className="text-accent-400 text-xs font-body tracking-widest">
+                            SOLUTION
+                        </span>
+                        <span className="text-neutral-400/90 text-sm font-body">
+                            {project.solution}
+                        </span>
                     </div>
                     <div className="flex flex-col gap-2">
-                        <span className="text-accent-400 text-xs font-body tracking-widest">KEY DECISIONS</span>
-                        <span className="text-neutral-400/90 text-sm font-body">{project.key_decisions}</span>
+                        <span className="text-accent-400 text-xs font-body tracking-widest">
+                            KEY DECISIONS
+                        </span>
+                        <span className="text-neutral-400/90 text-sm font-body">
+                            {project.key_decisions}
+                        </span>
                     </div>
                 </div>
                 <div className="flex flex-wrap justify-center gap-1.5">
                     {project.icons.map((tech: string) => {
-                        const [techName, desc] = tech.split(':')
+                        const [techName, desc] = tech.split(':');
                         return (
                             <span
                                 key={tech}
                                 className="flex items-center gap-1.5 px-3 py-1 text-sm border-b border-primary-700 bg-neutral-300/25 rounded-full"
                             >
-                                <img src={`/icons/${techName}.svg`} className="xxs:w-3 xxs:h-3 md:w-5 md:h-5" alt={techName} />
-                                <span className="text-body text-neutral-300">{desc ?? techName}</span>
+                                <img
+                                    src={`/icons/${techName}.svg`}
+                                    className="xxs:w-3 xxs:h-3 md:w-5 md:h-5"
+                                    alt={techName}
+                                />
+                                <span className="text-body text-neutral-300">
+                                    {desc ?? techName}
+                                </span>
                             </span>
-                        )
+                        );
                     })}
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};

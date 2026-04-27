@@ -1,14 +1,20 @@
-import { SlotDef } from "@/interfaces/carousel.types"
-import { EXTERNAL_SVG, GITHUB_SVG, SLOT_DESKTOP, SLOT_MOBILE, TOTAL_CARDS } from "@/utils/carousel.utils"
-import { projectsInfo } from "@/utils/projects.utils"
+import { SlotDef } from '@/interfaces/carousel.types';
+import {
+    EXTERNAL_SVG,
+    GITHUB_SVG,
+    SLOT_DESKTOP,
+    SLOT_MOBILE,
+    TOTAL_CARDS,
+} from '@/utils/carousel.utils';
+import { projectsInfo } from '@/utils/projects.utils';
 
 export const wrapIndex = (rawIndex: number) => {
-    return ((rawIndex % TOTAL_CARDS) + TOTAL_CARDS) % TOTAL_CARDS
-}
+    return ((rawIndex % TOTAL_CARDS) + TOTAL_CARDS) % TOTAL_CARDS;
+};
 
 export const lerp = (from: number, to: number, factor: number) => {
-    return from + (to - from) * factor
-}
+    return from + (to - from) * factor;
+};
 
 export const lerpSlot = (slotA: SlotDef, slotB: SlotDef, factor: number): SlotDef => {
     return {
@@ -18,55 +24,57 @@ export const lerpSlot = (slotA: SlotDef, slotB: SlotDef, factor: number): SlotDe
         scale: lerp(slotA.scale, slotB.scale, factor),
         opacity: lerp(slotA.opacity, slotB.opacity, factor),
         width: lerp(slotA.width, slotB.width, factor),
-        height: typeof slotA.height === 'number' && typeof slotB.height === 'number'
-            ? lerp(slotA.height, slotB.height, factor)
-            : slotA.height,
-    }
-}
+        height:
+            typeof slotA.height === 'number' && typeof slotB.height === 'number'
+                ? lerp(slotA.height, slotB.height, factor)
+                : slotA.height,
+    };
+};
 
-export const resolveSlotAtOffset = (fractionalOffset: number, isMobile: boolean): SlotDef | null => {
-    const slotMap = isMobile ? SLOT_MOBILE : SLOT_DESKTOP
-    const lowerSlot = Math.floor(fractionalOffset)
-    const upperSlot = Math.ceil(fractionalOffset)
-    const blendT = fractionalOffset - lowerSlot
-    const slotLow = slotMap[lowerSlot] ?? null
-    const slotHigh = slotMap[upperSlot] ?? null
+export const resolveSlotAtOffset = (
+    fractionalOffset: number,
+    isMobile: boolean,
+): SlotDef | null => {
+    const slotMap = isMobile ? SLOT_MOBILE : SLOT_DESKTOP;
+    const lowerSlot = Math.floor(fractionalOffset);
+    const upperSlot = Math.ceil(fractionalOffset);
+    const blendT = fractionalOffset - lowerSlot;
+    const slotLow = slotMap[lowerSlot] ?? null;
+    const slotHigh = slotMap[upperSlot] ?? null;
 
-    if (!slotLow && !slotHigh) return null
-    if (!slotLow) return slotHigh!
-    if (!slotHigh) return slotLow
-    return lerpSlot(slotLow, slotHigh, blendT)
-}
+    if (!slotLow && !slotHigh) return null;
+    if (!slotLow) return slotHigh!;
+    if (!slotHigh) return slotLow;
+    return lerpSlot(slotLow, slotHigh, blendT);
+};
 
-type Project = (typeof projectsInfo)[number]
+type Project = (typeof projectsInfo)[number];
 
 // ─── Pure DOM card renderer ───────────────────────────────────────────────────
 // No React, no async scheduling — innerHTML is set synchronously for avoiding flickering on item change
 // paints the correct content in the exact same frame the index changes.
 
 export const renderCardHTML = (project: Project, index: number, isMobile: boolean): string => {
-    const bullets = project.desc
-        .map(b => `<li>${b}</li>`)
-        .join('')
+    const bullets = project.desc.map((b) => `<li>${b}</li>`).join('');
 
     const icons = project.icons
-        .map(tech => {
-            const [techName, desc] = tech.split(':')
+        .map((tech) => {
+            const [techName, desc] = tech.split(':');
             return `
                 <span style="display:flex;align-items:center;gap:6px;padding:3px 12px;font-size:14px;border-bottom:1px solid var(--color-primary-700);background:rgba(212,212,212,0.25);border-radius:9999px;">
                     <img src="/icons/${techName}.svg" style="width:16px;height:16px;" alt="${techName}" />
                     <span style="color:var(--color-neutral-300);">${desc ?? techName}</span>
-                </span>`
+                </span>`;
         })
-        .join('')
+        .join('');
 
     const codeBtn = project.buttons[0].active
         ? `<a href="${project.code_url}" target="_blank" rel="noopener noreferrer">${GITHUB_SVG}</a>`
-        : ''
+        : '';
 
     const demoBtn = project.buttons[2]?.active
         ? `<a href="${project.demo_url}" target="_blank" rel="noopener noreferrer">${EXTERNAL_SVG}</a>`
-        : ''
+        : '';
 
     return `
         <div style="width:100%;height:fit-content;display:flex;flex-direction:column;">
@@ -130,5 +138,5 @@ export const renderCardHTML = (project: Project, index: number, isMobile: boolea
                     ${icons}
                 </div>
             </div>
-        </div>`
-}
+        </div>`;
+};

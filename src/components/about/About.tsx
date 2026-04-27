@@ -6,7 +6,7 @@ import { GSapBackground } from '../UI/GSapBackground';
 export const About = () => {
     const refInfo = useScrollReveal<HTMLDivElement>({
         fadeOut: true,
-        y: 40,
+        y: 80,
         z: 0,
         duration: 1,
         start: 'top 60%',
@@ -28,9 +28,10 @@ export const About = () => {
                             What I bring to a team
                         </h2>
                         <p className="md:w-2/3 text-neutral-400 text-lg font-body leading-relaxed text-justify">
-                            I don't just write code — I solve problems. With a strong foundation in both
-                            frontend and backend, I bring a product-oriented mindset to any project. I
-                            focus on building things that are fast, maintainable, and genuinely useful.
+                            I don't just write code — I solve problems. With a strong foundation in
+                            both frontend and backend, I bring a product-oriented mindset to any
+                            project. I focus on building things that are fast, maintainable, and
+                            genuinely useful.
                         </p>
                     </div>
 
@@ -49,7 +50,9 @@ export const About = () => {
                                 <span className="text-xl font-bold font-display text-neutral-300">
                                     {stat.title}
                                 </span>
-                                <span className="text-neutral-400/90 text-sm font-body">{stat.description}</span>
+                                <span className="text-neutral-400/90 text-sm font-body">
+                                    {stat.description}
+                                </span>
                             </div>
                         ))}
                     </div>

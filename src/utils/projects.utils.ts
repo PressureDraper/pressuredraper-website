@@ -1,226 +1,465 @@
-import { PropsProjectsInfo } from "../interfaces/projects.types";
+import { PropsProjectsInfo } from '../interfaces/projects.types';
 
 export const projectsInfo: PropsProjectsInfo[] = [
     {
         img: `/projects/xalapaMovil/cover.png`,
         title: 'Xalapa Móvil',
         date: 'Nov 2025 — Jan 2026',
-        desc: ["Built a mobile app for the Xalapa City Council to enhance citizen interaction", "Implemented features for submitting proposals, accessing services, and viewing local news", "Centralized communication between residents and government entities", "Improved accessibility and engagement with municipal services"],
-        problem: "Government needed a cross-platform mobile application to gather citizen proposals for city improvements and to expand the reach of website's services",
-        solution: 'Designed and developed a mobile application ready for running on Android and iOS',
-        key_decisions: 'Chose figma for wireframing screens and feature-based project architecture guaranteeing scalability over time',
+        desc: [
+            'Built a mobile app for the Xalapa City Council to enhance citizen interaction',
+            'Implemented features for submitting proposals, accessing services, and viewing local news',
+            'Centralized communication between residents and government entities',
+            'Improved accessibility and engagement with municipal services',
+        ],
+        problem:
+            "Government needed a cross-platform mobile application to gather citizen proposals for city improvements and to expand the reach of website's services",
+        solution:
+            'Designed and developed a mobile application ready for running on Android and iOS',
+        key_decisions:
+            'Chose figma for wireframing screens and feature-based project architecture guaranteeing scalability over time',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
-            { name: 'demo', active: false }
+            { name: 'demo', active: false },
         ],
-        icons: ['nodejs', 'expo', 'react:react native', 'zustand', 'typescript', 'tailwind', 'pnpm', 'github', 'android:android studio', 'apple:xcode'],
+        icons: [
+            'nodejs',
+            'expo',
+            'react:react native',
+            'zustand',
+            'typescript',
+            'tailwind',
+            'pnpm',
+            'github',
+            'android:android studio',
+            'apple:xcode',
+        ],
         code_url: '',
-        demo_url: ''
+        demo_url: '',
     },
     {
         img: `/projects/signsModule/cover.webp`,
         title: 'Digital Signature',
         date: ' Feb 2025 — Present',
-        desc: ["Built a digital signature module for a clinical administrative system", "Automated mass report generation for government compliance and validation", "Reduced manual processing time and improved operational efficiency", "Integrated doctor signatures directly into medical notes to streamline care workflows", "Improved data integrity and ensured regulatory compliance"],
-        problem: "Managers were spending almost 1/3 of their working time manually signing and medical consultations were overlapping",
-        solution: "Created a sub-module for HR system capturing employee's digital signature increasing productivity up to 90%",
-        key_decisions: 'Picked a symmetrical aes-256-cbc encrypt algorithm for keeping sensitive data safe and prevent stream manipulation',
+        desc: [
+            'Built a digital signature module for a clinical administrative system',
+            'Automated mass report generation for government compliance and validation',
+            'Reduced manual processing time and improved operational efficiency',
+            'Integrated doctor signatures directly into medical notes to streamline care workflows',
+            'Improved data integrity and ensured regulatory compliance',
+        ],
+        problem:
+            'Managers were spending almost 1/3 of their working time manually signing and medical consultations were overlapping',
+        solution:
+            "Created a sub-module for HR system capturing employee's digital signature increasing productivity up to 90%",
+        key_decisions:
+            'Picked a symmetrical aes-256-cbc encrypt algorithm for keeping sensitive data safe and prevent stream manipulation',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
-            { name: 'demo', active: false }
+            { name: 'demo', active: false },
         ],
-        icons: ['nodejs', 'docker', 'react', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'socketio', 'prisma-orm:prisma ORM', 'mysql', 'canvas', 'npm', 'gitlab', 'markdown'],
+        icons: [
+            'nodejs',
+            'docker',
+            'react',
+            'mui',
+            'typescript',
+            'express',
+            'eslint',
+            'prettier',
+            'socketio',
+            'prisma-orm:prisma ORM',
+            'mysql',
+            'canvas',
+            'npm',
+            'gitlab',
+            'markdown',
+        ],
         code_url: '',
-        demo_url: ''
+        demo_url: '',
     },
     {
         img: `/projects/personalWebsite/cover.webp`,
         title: 'Personal Website',
         date: 'Jan 2025 — Present',
-        desc: ["Built a personal portfolio platform to present my software engineering work", "Created a cohesive experience combining technical and creative disciplines", "Emphasized performance, responsive design, and modern UI/UX practices"],
-        problem: 'There were no personal website for showcasing my professional path as software engineer, limitating growth and global presence',
-        solution: 'Developed a responsive website with optimized SEO and performance, based on trend designs',
-        key_decisions: 'As we currently are going through an AI era, I wanted to reflect this through a futuristic design using emerging technologies such as Next.js and GSAP',
+        desc: [
+            'Built a personal portfolio platform to present my software engineering work',
+            'Created a cohesive experience combining technical and creative disciplines',
+            'Emphasized performance, responsive design, and modern UI/UX practices',
+        ],
+        problem:
+            'There were no personal website for showcasing my professional path as software engineer, limitating growth and global presence',
+        solution:
+            'Developed a responsive website with optimized SEO and performance, based on trend designs',
+        key_decisions:
+            'As we currently are going through an AI era, I wanted to reflect this through a futuristic design using emerging technologies such as Next.js and GSAP',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
-            { name: 'demo', active: true }
+            { name: 'demo', active: true },
         ],
-        icons: ['nodejs', 'vite', 'react', 'router-DOM:router DOM', 'mui', 'motion:framer motion', 'typescript', 'php', 'yarn', 'github', 'pages', 'cloudflare', 'railway'],
+        icons: [
+            'nodejs',
+            'vite',
+            'react',
+            'router-DOM:router DOM',
+            'mui',
+            'motion:framer motion',
+            'typescript',
+            'php',
+            'yarn',
+            'github',
+            'pages',
+            'cloudflare',
+            'railway',
+        ],
         code_url: 'https://github.com/PressureDraper/pressuredraper-website',
-        demo_url: 'https://pressuredraper.github.io/pressuredraper-website/#/'
+        demo_url: 'https://pressuredraper.github.io/pressuredraper-website/#/',
     },
     {
         img: `/projects/hresourcesSystem/cover.webp`,
         title: 'Human Resources System',
         date: 'Apr 2024 — Present',
-        desc: ["Engineered a microservice for an administrative clinical platform to manage HR operations", "Implemented modules for attendance, incidents, permissions, vacations, and holidays", "Designed a modular architecture with dedicated sub-modules for each HR function", "Enhanced HR efficiency by centralizing and streamlining employee data management"],
-        problem: "Legacy HR system wasn't covering all current needs for incoming policies resulting in heavy workload",
-        solution: 'Gathered all requirements for making an intuitive system that boosted operational efficency',
-        key_decisions: 'Adopted a modular architecture to accommodate future policy changes and prioritized usability to ensure quick adoption',
+        desc: [
+            'Engineered a microservice for an administrative clinical platform to manage HR operations',
+            'Implemented modules for attendance, incidents, permissions, vacations, and holidays',
+            'Designed a modular architecture with dedicated sub-modules for each HR function',
+            'Enhanced HR efficiency by centralizing and streamlining employee data management',
+        ],
+        problem:
+            "Legacy HR system wasn't covering all current needs for incoming policies resulting in heavy workload",
+        solution:
+            'Gathered all requirements for making an intuitive system that boosted operational efficency',
+        key_decisions:
+            'Adopted a modular architecture to accommodate future policy changes and prioritized usability to ensure quick adoption',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
-            { name: 'demo', active: false }
+            { name: 'demo', active: false },
         ],
-        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'prisma-orm:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
+        icons: [
+            'nodejs',
+            'docker',
+            'react',
+            'redux',
+            'mui',
+            'typescript',
+            'express',
+            'eslint',
+            'prettier',
+            'prisma-orm:prisma ORM',
+            'mysql',
+            'npm',
+            'gitlab',
+            'markdown',
+        ],
         code_url: '',
-        demo_url: ''
-
+        demo_url: '',
     },
     {
         img: `/projects/medicalCongressv2/cover.webp`,
         title: 'Medical Congress Landing Page v2.0.0',
         date: 'Sep 2023 — Present',
-        desc: ["Led UI/UX redesign to enhance usability and modernize the interface", "Implemented data management features", "Created an admin dashboard for real-time access to participant information"],
-        problem: "v1 suffered from poor UI/UX, lack of automation, and absence of a structured database, resulting in inefficient manual processes and limited scalability",
-        solution: 'Re-architected the platform with a modernized UI/UX, integrated data management capabilities, and built an admin dashboard for real-time monitoring of participants',
-        key_decisions: 'Introduced a dedicated database for data consistency, focused on workflow automation to reduce manual overhead, and designed the system to support recurring large-scale events',
+        desc: [
+            'Led UI/UX redesign to enhance usability and modernize the interface',
+            'Implemented data management features',
+            'Created an admin dashboard for real-time access to participant information',
+        ],
+        problem:
+            'v1 suffered from poor UI/UX, lack of automation, and absence of a structured database, resulting in inefficient manual processes and limited scalability',
+        solution:
+            'Re-architected the platform with a modernized UI/UX, integrated data management capabilities, and built an admin dashboard for real-time monitoring of participants',
+        key_decisions:
+            'Introduced a dedicated database for data consistency, focused on workflow automation to reduce manual overhead, and designed the system to support recurring large-scale events',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
-            { name: 'demo', active: true }
+            { name: 'demo', active: true },
         ],
-        icons: ['nodejs', 'react', 'redux', 'router-DOM:router DOM', 'mui', 'html', 'css', 'typescript', 'python', 'canvas', 'express', 'prisma-orm:prisma ORM', 'mysql', 'aws', 'github', 'pages', 'squarespace', 'smtp', 'yarn', 'markdown'],
+        icons: [
+            'nodejs',
+            'react',
+            'redux',
+            'router-DOM:router DOM',
+            'mui',
+            'html',
+            'css',
+            'typescript',
+            'python',
+            'canvas',
+            'express',
+            'prisma-orm:prisma ORM',
+            'mysql',
+            'aws',
+            'github',
+            'pages',
+            'squarespace',
+            'smtp',
+            'yarn',
+            'markdown',
+        ],
         code_url: 'https://github.com/JornadasMedicas?tab=repositories',
-        demo_url: 'https://jornadasmedicascae.com'
+        demo_url: 'https://jornadasmedicascae.com',
     },
     {
         img: `/projects/ticketsApp/cover.webp`,
         title: 'Tickets App',
         date: 'Dec 2023',
-        desc: ["Developed a real-time bank ticketing system using Socket.IO", "Enabled bidirectional communication for live queue and ticket updates", "Improved responsiveness and user interaction"],
-        problem: 'Traditional ticketing and queue systems lack real-time updates, causing delays, poor synchronization, and inefficient user experience',
-        solution: 'Developed a real-time bank ticketing system using Socket.IO to enable bidirectional communication and instant queue updates',
-        key_decisions: 'WebSocket-based architecture for low-latency communication, designed event-driven interactions for real-time updates, and ensured synchronization between clients and server',
+        desc: [
+            'Developed a real-time bank ticketing system using Socket.IO',
+            'Enabled bidirectional communication for live queue and ticket updates',
+            'Improved responsiveness and user interaction',
+        ],
+        problem:
+            'Traditional ticketing and queue systems lack real-time updates, causing delays, poor synchronization, and inefficient user experience',
+        solution:
+            'Developed a real-time bank ticketing system using Socket.IO to enable bidirectional communication and instant queue updates',
+        key_decisions:
+            'WebSocket-based architecture for low-latency communication, designed event-driven interactions for real-time updates, and ensured synchronization between clients and server',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
-            { name: 'demo', active: false }
+            { name: 'demo', active: false },
         ],
-        icons: ['nodejs', 'react', 'ant-design:ant design', 'html', 'css', 'express', 'socketio', 'github', 'yarn'],
+        icons: [
+            'nodejs',
+            'react',
+            'ant-design:ant design',
+            'html',
+            'css',
+            'express',
+            'socketio',
+            'github',
+            'yarn',
+        ],
         code_url: 'https://github.com/PressureDraper/socket-io-04-tickets',
-        demo_url: ''
+        demo_url: '',
     },
     {
         img: `/projects/medicalEvaluation/cover.webp`,
         title: 'Resident Medical Evaluation System',
         date: 'Jan 2024 — Present',
-        desc: ["Engineered a microservice-based evaluation system for medical residents", "Implemented modules for managing annual assessments and performance metrics", "Streamlined evaluation workflows for the teaching department", "Improved organization and accessibility of resident evaluation data"],
-        problem: 'Manual and disconnected evaluation processes led to inefficiencies, lack of data consistency, and difficulty tracking resident performance over time',
-        solution: 'Design a centralized system to show metrics and streamline evaluation workflows improving workload efficiency by up to 65%',
-        key_decisions: 'Used a modular, scalable architecture to support recurring annual workflows with role based profile (admin, teacher, resident)',
+        desc: [
+            'Engineered a microservice-based evaluation system for medical residents',
+            'Implemented modules for managing annual assessments and performance metrics',
+            'Streamlined evaluation workflows for the teaching department',
+            'Improved organization and accessibility of resident evaluation data',
+        ],
+        problem:
+            'Manual and disconnected evaluation processes led to inefficiencies, lack of data consistency, and difficulty tracking resident performance over time',
+        solution:
+            'Design a centralized system to show metrics and streamline evaluation workflows improving workload efficiency by up to 65%',
+        key_decisions:
+            'Used a modular, scalable architecture to support recurring annual workflows with role based profile (admin, teacher, resident)',
         buttons: [
             { name: 'code', active: false },
             { name: 'docs', active: true },
-            { name: 'demo', active: false }
+            { name: 'demo', active: false },
         ],
-        icons: ['nodejs', 'docker', 'react', 'redux', 'mui', 'typescript', 'express', 'eslint', 'prettier', 'smtp', 'prisma-orm:prisma ORM', 'mysql', 'npm', 'gitlab', 'markdown'],
+        icons: [
+            'nodejs',
+            'docker',
+            'react',
+            'redux',
+            'mui',
+            'typescript',
+            'express',
+            'eslint',
+            'prettier',
+            'smtp',
+            'prisma-orm:prisma ORM',
+            'mysql',
+            'npm',
+            'gitlab',
+            'markdown',
+        ],
         code_url: '',
-        demo_url: ''
+        demo_url: '',
     },
     {
         img: `/projects/medicalCongressv1/cover.webp`,
         title: 'Medical Congress Landing Page v1.0.0',
         date: 'Oct 2023 — Nov 2023',
-        desc: ["Built a web platform for hosting an annual medical congress since 2023", "Developed attendee registration workflows", "Provided internet presence through jornadasmedicascae.com domain"],
-        problem: 'Assistants were required to register in person due to the absence of a digital platform, limiting attendance and reducing event reach',
-        solution: 'Designed a landing page for online registration increasing reach and growth by 72%',
-        key_decisions: "Used React as UI Library for mantaining uniformity against hospital's systems along an enterprise Google Workspace solution for professional email presence and AWS hosting",
+        desc: [
+            'Built a web platform for hosting an annual medical congress since 2023',
+            'Developed attendee registration workflows',
+            'Provided internet presence through jornadasmedicascae.com domain',
+        ],
+        problem:
+            'Assistants were required to register in person due to the absence of a digital platform, limiting attendance and reducing event reach',
+        solution:
+            'Designed a landing page for online registration increasing reach and growth by 72%',
+        key_decisions:
+            "Used React as UI Library for mantaining uniformity against hospital's systems along an enterprise Google Workspace solution for professional email presence and AWS hosting",
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
-            { name: 'demo', active: true }
+            { name: 'demo', active: true },
         ],
-        icons: ['nodejs', 'react', 'router-DOM:router DOM', 'mui', 'html', 'css', 'javascript', 'python', 'canvas', 'firestore', 'aws', 'github', 'pages', 'domains', 'workspace', 'smtp', 'yarn'],
+        icons: [
+            'nodejs',
+            'react',
+            'router-DOM:router DOM',
+            'mui',
+            'html',
+            'css',
+            'javascript',
+            'python',
+            'canvas',
+            'firestore',
+            'aws',
+            'github',
+            'pages',
+            'domains',
+            'workspace',
+            'smtp',
+            'yarn',
+        ],
         code_url: 'https://github.com/JornadasMedicas/form',
-        demo_url: 'https://jornadasmedicas.github.io/form/#/home'
+        demo_url: 'https://jornadasmedicas.github.io/form/#/home',
     },
     {
         img: `/projects/heroesApp/cover.webp`,
         title: 'Heroes App',
         date: 'Nov 2023',
-        desc: ["Built a React-based web application with client-side state management using Context API and reducers", "Implemented authentication flow with protected public/private routes", "Leveraged localStorage for persistence of user session, theme (dark mode), and navigation state", "Developed dynamic search functionality with real-time input handling and keyboard events"],
-        problem: 'Managing client-side state, persistence, and route protection without a backend required a structured frontend architecture',
-        solution: 'Developed a React-based web app using Context API and reducers for state management, with localStorage to persist user data such as login status, theme, and navigation history',
+        desc: [
+            'Built a React-based web application with client-side state management using Context API and reducers',
+            'Implemented authentication flow with protected public/private routes',
+            'Leveraged localStorage for persistence of user session, theme (dark mode), and navigation state',
+            'Developed dynamic search functionality with real-time input handling and keyboard events',
+        ],
+        problem:
+            'Managing client-side state, persistence, and route protection without a backend required a structured frontend architecture',
+        solution:
+            'Developed a React-based web app using Context API and reducers for state management, with localStorage to persist user data such as login status, theme, and navigation history',
         key_decisions: 'Used centralized state + route protection',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
-            { name: 'demo', active: true }
+            { name: 'demo', active: true },
         ],
-        icons: ['nodejs', 'react', 'router-DOM:router DOM', 'local-storage:local storage', 'html', 'css', 'mui', 'javascript', 'github', 'pages', 'yarn'],
+        icons: [
+            'nodejs',
+            'react',
+            'router-DOM:router DOM',
+            'local-storage:local storage',
+            'html',
+            'css',
+            'mui',
+            'javascript',
+            'github',
+            'pages',
+            'yarn',
+        ],
         code_url: 'https://github.com/PressureDraper/react-heroesApp',
-        demo_url: 'https://pressuredraper.github.io/react-heroesApp/#/login'
+        demo_url: 'https://pressuredraper.github.io/react-heroesApp/#/login',
     },
     {
         img: `/projects/currencyConverter/cover.webp`,
         title: 'Currency Converter Challenge',
         date: 'March 2023',
-        desc: ["Developed a currency converter application as part of the Oracle Next Education Program", "Integrated an external Exchange Rate API to fetch real-time currency values", "Built a graphical user interface using Java Swing for an intuitive user experience", "Implemented dynamic currency conversion based on user input and API data"],
-        problem: 'Users needed a simple way to access up-to-date currency exchange rates without manually searching or calculating values',
-        solution: 'Developed a desktop application that integrates with an Exchange Rate API to fetch real-time currency data and perform dynamic conversions',
-        key_decisions: 'Implemented API integration from scratch to handle real-time data retrieval, used Java Swing for a lightweight desktop interface, and designed input-driven conversion logic for immediate user feedback',
+        desc: [
+            'Developed a currency converter application as part of the Oracle Next Education Program',
+            'Integrated an external Exchange Rate API to fetch real-time currency values',
+            'Built a graphical user interface using Java Swing for an intuitive user experience',
+            'Implemented dynamic currency conversion based on user input and API data',
+        ],
+        problem:
+            'Users needed a simple way to access up-to-date currency exchange rates without manually searching or calculating values',
+        solution:
+            'Developed a desktop application that integrates with an Exchange Rate API to fetch real-time currency data and perform dynamic conversions',
+        key_decisions:
+            'Implemented API integration from scratch to handle real-time data retrieval, used Java Swing for a lightweight desktop interface, and designed input-driven conversion logic for immediate user feedback',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
-            { name: 'demo', active: false }
+            { name: 'demo', active: false },
         ],
         icons: ['java', 'javax-swing:java swing', 'netbeans'],
         code_url: 'https://github.com/PressureDraper/CurrencyConverter-JavaG4',
-        demo_url: ''
+        demo_url: '',
     },
     {
         img: `/projects/cipherDecoder/cover.webp`,
         title: 'Cipher Challenge',
         date: 'Jan 2023',
-        desc: ["Built a web app for text encryption and decryption as part of the Oracle Next Education Program", "Implemented custom encoding/decoding algorithms for string manipulation", "Designed a simple and intuitive UI for user interaction", "Handled input validation and real-time text processing"],
-        problem: 'Project needed a simple way to encode and decode text based on predefined rules without performing manual transformations',
-        solution: 'Developed a web application that implements text encryption and decryption using custom encoding/decoding algorithms with real-time processing',
-        key_decisions: 'Implemented custom string manipulation logic to meet specific encoding rules, prioritized a trend UI for usability, and added real-time input handling for immediate feedback',
+        desc: [
+            'Built a web app for text encryption and decryption as part of the Oracle Next Education Program',
+            'Implemented custom encoding/decoding algorithms for string manipulation',
+            'Designed a simple and intuitive UI for user interaction',
+            'Handled input validation and real-time text processing',
+        ],
+        problem:
+            'Project needed a simple way to encode and decode text based on predefined rules without performing manual transformations',
+        solution:
+            'Developed a web application that implements text encryption and decryption using custom encoding/decoding algorithms with real-time processing',
+        key_decisions:
+            'Implemented custom string manipulation logic to meet specific encoding rules, prioritized a trend UI for usability, and added real-time input handling for immediate feedback',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
-            { name: 'demo', active: true }
+            { name: 'demo', active: true },
         ],
         icons: ['bootstrap', 'javascript', 'html', 'jquery', 'css', 'github', 'pages'],
         code_url: 'https://github.com/PressureDraper/Sprint01-ChallengeONE',
-        demo_url: 'https://pressuredraper.github.io/Sprint01-ChallengeONE/'
+        demo_url: 'https://pressuredraper.github.io/Sprint01-ChallengeONE/',
     },
     {
         img: `/projects/mp3GlassPlayer/cover.webp`,
         title: 'MP3 Glass Player',
         date: 'Dec 2022',
-        desc: ["Built a custom MP3 web player with a glassmorphism design system ", "Implemented interactive audio controls and dynamic UI states", "Designed a responsive and visually engaging interface with modern UI trends", "Enhanced user experience through smooth interactions and clean visual hierarchy"],
-        problem: 'Traditional web audio players often lack modern UI design and engaging user experience',
-        solution: 'Designed and developed an MP3 web player with a clean glassmorphism-inspired interface, focusing on aesthetics and usability',
-        key_decisions: 'Adopted a glassmorphism design system for a modern look and feel, prioritized intuitive playback controls, and ensured smooth user interaction through responsive UI design',
+        desc: [
+            'Built a custom MP3 web player with a glassmorphism design system ',
+            'Implemented interactive audio controls and dynamic UI states',
+            'Designed a responsive and visually engaging interface with modern UI trends',
+            'Enhanced user experience through smooth interactions and clean visual hierarchy',
+        ],
+        problem:
+            'Traditional web audio players often lack modern UI design and engaging user experience',
+        solution:
+            'Designed and developed an MP3 web player with a clean glassmorphism-inspired interface, focusing on aesthetics and usability',
+        key_decisions:
+            'Adopted a glassmorphism design system for a modern look and feel, prioritized intuitive playback controls, and ensured smooth user interaction through responsive UI design',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
-            { name: 'demo', active: true }
+            { name: 'demo', active: true },
         ],
         icons: ['bootstrap', 'javascript', 'html', 'jquery', 'css', 'github', 'pages'],
         code_url: 'https://github.com/PressureDraper/mp3-Glass-Player',
-        demo_url: 'https://pressuredraper.github.io/mp3-Glass-Player/'
+        demo_url: 'https://pressuredraper.github.io/mp3-Glass-Player/',
     },
     {
         img: `/projects/lotus/cover.webp`,
         title: 'Lotus Discord Bot',
         date: 'Feb 2022',
-        desc: ["Built a Discord music bot using Node.js with support for YouTube and Spotify integration", "Implemented real-time command handling and audio streaming within Discord voice channels", "Customized the bot experience with a Warframe-based game interface and responses"],
-        problem: 'Existing solutions for music playback in Discord were limited or lacked flexibility across multiple streaming platforms',
+        desc: [
+            'Built a Discord music bot using Node.js with support for YouTube and Spotify integration',
+            'Implemented real-time command handling and audio streaming within Discord voice channels',
+            'Customized the bot experience with a Warframe-based game interface and responses',
+        ],
+        problem:
+            'Existing solutions for music playback in Discord were limited or lacked flexibility across multiple streaming platforms',
         solution: 'Built a Node.js Discord bot for YouTube and Spotify playback',
-        key_decisions: 'API integrations for multiple audio sources, designed a command-driven interface for usability, and structured real-time interaction within Discord voice channels',
+        key_decisions:
+            'API integrations for multiple audio sources, designed a command-driven interface for usability, and structured real-time interaction within Discord voice channels',
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
-            { name: 'demo', active: false }
+            { name: 'demo', active: false },
         ],
-        icons: ['nodejs', 'javascript', 'discord-api:discord api', 'distube', 'aws', 'github', 'npm', 'markdown'],
+        icons: [
+            'nodejs',
+            'javascript',
+            'discord-api:discord api',
+            'distube',
+            'aws',
+            'github',
+            'npm',
+            'markdown',
+        ],
         code_url: 'https://github.com/PressureDraper/Lotus',
-        demo_url: ''
+        demo_url: '',
     },
-]
+];

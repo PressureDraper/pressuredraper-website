@@ -25,46 +25,37 @@ export const useScrollReveal = <T extends HTMLElement = HTMLElement>(
         const el = ref.current;
         if (!el) return;
 
-        
-
         const ctx = gsap.context(() => {
-            if (fadeOut) {
-                // Single timeline: fade in → hold → fade out
-                // One ScrollTrigger owns the whole sequence — no conflicts
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: el,
-                        start,           // fade-in starts here
-                        end, // fade-out ends here
-                        scrub: 1,
-                    },
-                });
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: el,
+                    start,
+                    end,
+                    scrub: 1,
+                },
+            });
 
-                // Segment 1: fade IN (from start → `end` offset)
-                tl.fromTo(
-                    el,
-                    { opacity: 0, y, z },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        z: 0,
-                        ease: 'power2.out',
-                        duration: 2,
-                    },
-                );
-
-                // Segment 2: hold fully visible
-                tl.to(el, { opacity: 1, duration: 1 });
-
-                // Segment 3: fade OUT
-                tl.to(el, {
-                    opacity: 0,
-                    y: -y,
+            tl.fromTo(
+                el,
+                { opacity: 0, y, z },
+                {
+                    opacity: 1,
+                    y: 0,
                     z: 0,
-                    ease: 'power2.in',
-                    duration: 1.5,
-                });
-            }
+                    ease: 'power2.out',
+                    duration: 2,
+                },
+            );
+
+            tl.to(el, { opacity: 1, duration: 1 });
+
+            tl.to(el, {
+                opacity: 0,
+                y: -y,
+                z: 0,
+                ease: 'power2.in',
+                duration: 2,
+            });
         }, el);
 
         return () => ctx.revert();
