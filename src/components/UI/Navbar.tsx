@@ -20,7 +20,6 @@ export const Navbar = () => {
         e.preventDefault();
 
         const section = document.getElementById(name.toLowerCase());
-        console.log(section);
 
         if (name === 'home' && section) {
             section.scrollTo({ top: 0, left: 0, behavior: 'smooth' });

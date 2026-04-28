@@ -18,7 +18,7 @@ export const Skills = () => {
     return (
         <section id="skills" className="relative w-full min-h-screen">
             <ParticlesBackground particleCount={30} />
-            <div className="min-h-screen flex items-center mx-auto lg:px-0 xxs:py-40 lg:py-24">
+            <div className="min-h-screen flex items-center mx-auto lg:px-0 xxs:py-24 lg:py-24">
                 <div
                     ref={refSkills}
                     className="flex flex-col gap-10 max-w-5xl md:max-w-5xl lg:max-w-6xl xl:max-w-6xl mx-auto justify-items-start px-8 md:px-10 lg:px-10 xl:px-0"

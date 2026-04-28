@@ -4,6 +4,20 @@ import { useState } from 'react';
 export const MenuButton = () => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
+    const handleItemClick = (e: React.MouseEvent<HTMLAnchorElement>, name: string) => {
+        e.preventDefault();
+
+        const section = document.getElementById(name.toLowerCase());
+
+        if (name === 'home' && section) {
+            section.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+            setIsMenuOpen(false);
+        } else if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+            setIsMenuOpen(false);
+        }
+    };
+
     return (
         <div className="md:hidden flex items-center justify-end">
             <button
@@ -28,6 +42,7 @@ export const MenuButton = () => {
                     <div key={item.name} className="">
                         <a
                             href={item.href}
+                            onClick={(e) => handleItemClick(e, item.name)}
                             className="block w-full font-body px-8 py-3 text-sm text-neutral-400/90 hover:text-neutral-200 hover:pl-10 border-b border-neutral-400/10 last:border-none transition-all duration-300"
                         >
                             {item.name}
