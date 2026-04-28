@@ -26,9 +26,18 @@ export const HomeButtons = () => {
         }
     };
 
+    const handleProjectsClick = (e: React.MouseEvent<HTMLButtonElement>, name: string) => {
+
+        const section = document.getElementById(name.toLowerCase());
+
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className="flex flex-row gap-4">
-            <button className="rounded-xl px-3.5 py-2.5 bg-transparent border-b border-accent-500 text-sm text-neutral-200 font-medium font-body hover:bg-accent-950/30 transition-colors duration-300 hover:cursor-pointer">
+            <button onClick={(e) => handleProjectsClick(e, 'projects')} className="rounded-xl px-3.5 py-2.5 bg-transparent border-b border-accent-500 text-sm text-neutral-200 font-medium font-body hover:bg-accent-950/30 transition-colors duration-300 hover:cursor-pointer">
                 View Projects <span className="ml-1 font-bold">→</span>
             </button>
             <button
