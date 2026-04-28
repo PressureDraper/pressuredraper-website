@@ -6,6 +6,7 @@ import { PoolNode } from '@/interfaces/carousel.types';
 import { AUTO_ADVANCE_SPEED, LERP_FACTOR, TOTAL_CARDS } from '@/utils/carousel.utils';
 import { lerp, renderCardHTML, resolveSlotAtOffset, wrapIndex } from '@/helpers/carousel.helper';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { ParticlesBackground } from '../UI/ParticlesBackground';
 
 export const Projects = () => {
     const sceneRef = useRef<HTMLDivElement>(null);
@@ -206,6 +207,7 @@ export const Projects = () => {
 
     return (
         <section id="projects" className="relative w-full min-h-screen">
+            <ParticlesBackground particleCount={20} />
             <div className="min-h-screen flex flex-col items-center justify-center mx-auto xxs:py-24 lg:px-0 lg:py-24">
                 <div
                     ref={refProjects}

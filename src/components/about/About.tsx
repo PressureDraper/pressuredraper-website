@@ -2,6 +2,7 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { aboutStats } from '@/utils/about.utils';
 import { GSapBackground } from '../UI/GSapBackground';
+import { ParticlesBackground } from '../UI/ParticlesBackground';
 
 export const About = () => {
     const refInfo = useScrollReveal<HTMLDivElement>({
@@ -15,6 +16,7 @@ export const About = () => {
 
     return (
         <section id="about" className="relative w-full min-h-screen">
+            <ParticlesBackground particleCount={10} />
             <GSapBackground />
             <div className="min-h-screen flex items-center mx-auto lg:px-0 xxs:py-24 lg:py-24">
                 <div

@@ -8,11 +8,12 @@ export default function Home() {
     return (
         <>
             <HomePage />
-            <div className="w-full h-px bg-linear-to-r from-transparent via-accent-400/40 to-transparent" />
+            <div className="w-full h-px bg-linear-to-r from-transparent via-accent-400/70 to-transparent" />
             <About />
             <Projects />
             <Skills />
             <Contact />
+            <div className="w-full h-px bg-linear-to-r from-transparent via-primary-400 to-transparent" />
         </>
     );
 }

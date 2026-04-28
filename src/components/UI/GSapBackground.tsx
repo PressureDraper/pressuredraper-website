@@ -98,11 +98,11 @@ export const GSapBackground = () => {
         <div ref={refBackground} className="absolute inset-0 z-0 w-full h-full">
             <div
                 ref={refLeftCircle}
-                className="absolute bottom-0 left-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-accent-500/20 rounded-full blur-[120px]"
+                className="absolute bottom-0 left-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-accent-500/10 xxs:bg-accent-500/25 md:bg-accent-500/10  rounded-full blur-[120px]"
             />
             <div
                 ref={refRightCircle}
-                className="absolute top-0 xxs:top-20 right-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-primary-500/20 rounded-full blur-[120px]"
+                className="absolute top-0 xxs:top-20 right-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-primary-500/10 xxs:bg-primary-500/25 md:bg-primary-500/10 rounded-full blur-[120px]"
             />
         </div>
     );

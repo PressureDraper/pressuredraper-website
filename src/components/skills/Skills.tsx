@@ -3,6 +3,7 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { skills } from '@/utils/skills.utils';
 import Image from 'next/image';
+import { ParticlesBackground } from '../UI/ParticlesBackground';
 
 export const Skills = () => {
     const refSkills = useScrollReveal<HTMLDivElement>({
@@ -16,6 +17,7 @@ export const Skills = () => {
 
     return (
         <section id="skills" className="relative w-full min-h-screen">
+            <ParticlesBackground particleCount={30} />
             <div className="min-h-screen flex items-center mx-auto lg:px-0 xxs:py-40 lg:py-24">
                 <div
                     ref={refSkills}
