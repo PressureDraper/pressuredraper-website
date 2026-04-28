@@ -82,13 +82,11 @@ nav::after {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        color-mix(in srgb, var(--color-primary-500) 40%, transparent),
-        color-mix(in srgb, var(--color-accent-400) 40%, transparent),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            color-mix(in srgb, var(--color-primary-500) 40%, transparent),
+            color-mix(in srgb, var(--color-accent-400) 40%, transparent),
+            transparent);
 }
 
 a.nav-link::after {
@@ -110,4 +108,28 @@ a.nav-link:hover::after {
 
 ul li::marker {
     color: var(--color-primary-300);
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    14% {
+        transform: scale(1.25);
+    }
+
+    28% {
+        transform: scale(1);
+    }
+
+    42% {
+        transform: scale(1.15);
+    }
+
+    56% {
+        transform: scale(1);
+    }
 }
