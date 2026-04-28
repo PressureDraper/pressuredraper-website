@@ -91,7 +91,7 @@ nav::after {
     );
 }
 
-a.nav-link::after {
+button.nav-link::after {
     content: "";
     position: absolute;
     left: 0;
@@ -103,7 +103,7 @@ a.nav-link::after {
     transition: transform 0.3s ease;
 }
 
-a.nav-link:hover::after {
+button.nav-link:hover::after {
     transform: scaleX(1);
 }
 

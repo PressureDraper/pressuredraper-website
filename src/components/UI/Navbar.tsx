@@ -16,6 +16,19 @@ export const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleItemClick = (e: React.MouseEvent<HTMLAnchorElement>, name: string) => {
+        e.preventDefault();
+
+        const section = document.getElementById(name.toLowerCase());
+        console.log(section);
+
+        if (name === 'home' && section) {
+            section.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        } else if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <header
             className={`text-neutral-400 w-full mx-auto px-4 h-16 border-b border-neutral-700/20 select-none transition-colors duration-300 fixed z-50 ${scrolled ? 'bg-neutral-600/10 backdrop-blur-sm' : 'bg-transparent'}`}
@@ -30,6 +43,7 @@ export const Navbar = () => {
                 <div className="hidden md:flex w-7/12 items-center justify-end gap-10">
                     {navItems.map((item) => (
                         <a
+                            onClick={(e) => handleItemClick(e, item.name)}
                             key={item.name}
                             href={item.href}
                             className="nav-link font-body relative text-sm text-neutral-400 hover:text-neutral-200 transition-colors"

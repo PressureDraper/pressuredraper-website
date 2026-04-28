@@ -2,9 +2,9 @@ import { HomeButtons } from './HomeButtons';
 
 export const Home = () => {
     return (
-        <section id="home" className="relative z-0 min-h-[calc(100vh-4rem)] mt-16 w-full">
+        <section id="home" className="relative z-0 min-h-[calc(100vh-4rem)] w-full pt-16">
             <video
-                className="absolute inset-0 h-full w-full object-cover z-0"
+                className="absolute inset-0 h-full w-full object-cover z-0 pt-16"
                 autoPlay
                 loop
                 muted
