@@ -91,7 +91,7 @@ nav::after {
     );
 }
 
-button.nav-link::after {
+a.nav-link::after {
     content: "";
     position: absolute;
     left: 0;
@@ -100,10 +100,11 @@ button.nav-link::after {
     height: 1px;
     background-color: var(--color-accent-300);
     transform: scaleX(0);
+    transform-origin: center;
     transition: transform 0.3s ease;
 }
 
-button.nav-link:hover::after {
+a.nav-link:hover::after {
     transform: scaleX(1);
 }
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { navItems } from '@/utils/navbar.utils';
+import { handleItemClick, navItems } from '@/utils/navbar.utils';
 import { MenuButton } from './MenuButton';
 import { useEffect, useState } from 'react';
 
@@ -15,18 +15,6 @@ export const Navbar = () => {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    const handleItemClick = (e: React.MouseEvent<HTMLAnchorElement>, name: string) => {
-        e.preventDefault();
-
-        const section = document.getElementById(name.toLowerCase());
-
-        if (name === 'home' && section) {
-            section.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        } else if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
     return (
         <header
