@@ -62,7 +62,7 @@ export const renderCardHTML = (project: Project, index: number, isMobile: boolea
             const [techName, desc] = tech.split(':');
             return `
                 <span style="display:flex;align-items:center;gap:6px;padding:3px 12px;font-size:14px;border-bottom:1px solid var(--color-primary-700);background:rgba(212,212,212,0.25);border-radius:9999px;">
-                    <img src="/icons/${techName}.svg" style="width:16px;height:16px;" alt="${techName}" />
+                    <img loading="lazy" src="/icons/${techName}.svg" style="width:16px;height:16px;" alt="${techName}" />
                     <span style="color:var(--color-neutral-300);">${desc ?? techName}</span>
                 </span>`;
         })
@@ -80,6 +80,7 @@ export const renderCardHTML = (project: Project, index: number, isMobile: boolea
         <div style="width:100%;height:fit-content;display:flex;flex-direction:column;">
             <div style="position:relative;width:100%;overflow:hidden;">
                 <img
+                    loading="lazy"
                     src="${project.img}"
                     alt="cover"
                     style="width:100%;height:100%;object-fit:cover;aspect-ratio: 16/9;border-radius:14px 14px 0 0;"
