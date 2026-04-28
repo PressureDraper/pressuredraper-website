@@ -152,7 +152,7 @@ export const Projects = () => {
         if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
         resumeTimerRef.current = setTimeout(() => {
             isAutoPlayingRef.current = true;
-        }, 4000);
+        }, 20000);
     }, []);
 
     const onDotClick = (dotIndex: number) => {
@@ -168,7 +168,7 @@ export const Projects = () => {
         if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
         resumeTimerRef.current = setTimeout(() => {
             isAutoPlayingRef.current = true;
-        }, 4000);
+        }, 20000);
     };
 
     const onTouchStart = (e: React.TouchEvent) => {
