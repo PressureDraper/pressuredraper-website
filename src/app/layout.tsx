@@ -5,7 +5,7 @@ import { Footer } from '@/components/UI/Footer';
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://presoftcore.com'),
-    title: 'Sahib Hernández – Software Engineer',
+    title: 'Sahib Hernández | Full-Stack Software Engineer',
     description:
         "Personal website created as a portfolio showcasing Sahib Hernandez's career as a software engineer, including projects, skills, and contact information.",
     keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
     authors: [{ name: 'Sahib Hernández' }],
     openGraph: {
-        title: 'Sahib Hernández – Software Engineer',
+        title: 'Sahib Hernández | Full-Stack Software Engineer',
         description:
             "Personal website created as a portfolio showcasing Sahib Hernandez's career as a software engineer, including projects, skills, and contact information.",
         url: 'https://presoftcore.com',
