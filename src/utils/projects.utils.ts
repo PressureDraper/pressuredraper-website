@@ -81,8 +81,8 @@ export const projectsInfo: PropsProjectsInfo[] = [
     },
     {
         img: `/projects/personalWebsite/cover.webp`,
-        title: 'Personal Website',
-        date: 'Jan 2025 — Present',
+        title: 'Old Personal Website',
+        date: 'Jan 2025 — Apr 2026',
         desc: [
             'Built a personal portfolio platform to present my software engineering work',
             'Created a cohesive experience combining technical and creative disciplines',
@@ -93,7 +93,8 @@ export const projectsInfo: PropsProjectsInfo[] = [
         solution:
             'Developed a responsive website with optimized SEO and performance, based on trend designs',
         key_decisions:
-            'As we currently are going through an AI era, I wanted to reflect this through a futuristic design using emerging technologies such as Next.js and GSAP',
+            'Used Vite for a fast development experience due to CRA Webpack is deprecated and Framer Motion for smooth animations, prioritizing sections design.',
+            /* 'As we currently are going through an AI era, I wanted to reflect this through a futuristic design using emerging technologies such as Next.js and GSAP', */
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },
@@ -114,8 +115,8 @@ export const projectsInfo: PropsProjectsInfo[] = [
             'cloudflare',
             'railway',
         ],
-        code_url: 'https://github.com/PressureDraper/pressuredraper-website',
-        demo_url: 'https://pressuredraper.github.io/pressuredraper-website/#/',
+        code_url: 'https://github.com/PressureDraper/pressuredraper-website-old',
+        demo_url: 'https://pressuredraper.github.io/pressuredraper-website-old/',
     },
     {
         img: `/projects/hresourcesSystem/cover.webp`,
