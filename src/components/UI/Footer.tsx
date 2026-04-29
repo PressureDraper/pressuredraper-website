@@ -3,13 +3,13 @@ export const Footer = () => {
         <div className="flex xxs:flex-col xxs:justify-center md:flex-row justify-between items-center max-w-5xl md:max-w-5xl lg:max-w-6xl xl:max-w-6xl mx-auto md:px-10 lg:px-10 xl:px-0 py-8 w-full xxs:gap-3 md:gap-0">
 
             <div>
-                <span className="font-body text-neutral-500 font-light tracking-wide">
+                <span className="font-body text-neutral-400 font-light tracking-wide">
                     © {new Date().getFullYear()} preSoftCore. All rights reserved.
                 </span>
             </div>
 
             <div className="md:absolute md:left-1/2 md:-translate-x-1/2">
-                <span className="text-md text-neutral-500 font-body font-light flex items-center justify-center gap-1.5">
+                <span className="text-md text-neutral-400 font-body font-light flex items-center justify-center gap-1.5">
                     Designed and built with{' '}
                     <span className="inline-block animate-[heartbeat_1.6s_ease-in-out_infinite]">❤️</span>
                 </span>

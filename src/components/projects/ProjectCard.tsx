@@ -29,7 +29,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                     </span>
                     <div className="flex gap-4">
                         {project.buttons[0].active && (
-                            <a href={project.code_url} target="_blank" rel="noopener noreferrer">
+                            <a href={project.code_url} target="_blank" rel="noopener noreferrer" aria-label="View Code">
                                 <svg
                                     viewBox="0 0 27 27"
                                     fill="none"
@@ -44,7 +44,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                             </a>
                         )}
                         {project.buttons[2].active && (
-                            <a href={project.demo_url} target="_blank" rel="noopener noreferrer">
+                            <a href={project.demo_url} target="_blank" rel="noopener noreferrer" aria-label="View Demo">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 27 27"

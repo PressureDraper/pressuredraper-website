@@ -35,6 +35,7 @@ export const Navbar = () => {
                             href={item.href}
                             className="nav-link font-body relative text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
                             style={{ '--line-width': '100%' } as React.CSSProperties}
+                            aria-label={`Navigate to ${item.name} section`}
                         >
                             {item.name}
                         </a>

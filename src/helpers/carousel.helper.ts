@@ -69,11 +69,11 @@ export const renderCardHTML = (project: Project, index: number, isMobile: boolea
         .join('');
 
     const codeBtn = project.buttons[0].active
-        ? `<a href="${project.code_url}" target="_blank" rel="noopener noreferrer">${GITHUB_SVG}</a>`
+        ? `<a href="${project.code_url}" target="_blank" rel="noopener noreferrer" aria-label="View Code">${GITHUB_SVG}</a>`
         : '';
 
     const demoBtn = project.buttons[2]?.active
-        ? `<a href="${project.demo_url}" target="_blank" rel="noopener noreferrer">${EXTERNAL_SVG}</a>`
+        ? `<a href="${project.demo_url}" target="_blank" rel="noopener noreferrer" aria-label="View Demo">${EXTERNAL_SVG}</a>`
         : '';
 
     return `

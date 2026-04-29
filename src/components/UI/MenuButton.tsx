@@ -30,6 +30,7 @@ export const MenuButton = () => {
                             href={item.href}
                             onClick={(e) => handleItemClick(e, item.name, setIsMenuOpen)}
                             className="block w-full font-body px-8 py-3 text-sm text-neutral-400/90 hover:text-neutral-200 hover:pl-10 border-b border-neutral-400/10 last:border-none transition-all duration-300"
+                            aria-label={`Navigate to ${item.name} section`}
                         >
                             {item.name}
                         </a>
