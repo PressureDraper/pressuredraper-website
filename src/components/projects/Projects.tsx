@@ -241,6 +241,7 @@ export const Projects = () => {
                             />
 
                             <button
+                                aria-label="Previous Project"
                                 onClick={() => navigate(-1)}
                                 className="absolute left-0 xxs:-left-7 md:left-0 top-1/2 z-30 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-neutral-500/30 bg-neutral-500/15 text-neutral-300/90 text-sm transition hover:bg-neutral-500/30 hover:text-neutral-100"
                             >
@@ -248,6 +249,7 @@ export const Projects = () => {
                             </button>
 
                             <button
+                                aria-label="Next Project"
                                 onClick={() => navigate(1)}
                                 className="absolute right-0 xxs:-right-7 md:right-0 top-1/2 z-30 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-neutral-500/30 bg-neutral-500/15 text-neutral-300/90 text-sm transition hover:bg-neutral-500/30 hover:text-neutral-100"
                             >
@@ -257,6 +259,7 @@ export const Projects = () => {
                             <div className="xxs:mt-60 sm:mt-0 md:mt-0 lg:mt-37 xl:mt-31 flex justify-center gap-2">
                                 {projectsInfo.map((_, dotIndex) => (
                                     <button
+                                        aria-label={`View project ${dotIndex + 1}`}
                                         key={dotIndex}
                                         ref={(el) => {
                                             if (el) dotsRef.current[dotIndex] = el;

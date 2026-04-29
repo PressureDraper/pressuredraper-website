@@ -2,7 +2,7 @@ import { PropsProjectsInfo } from '../interfaces/projects.types';
 
 export const projectsInfo: PropsProjectsInfo[] = [
     {
-        img: `/projects/xalapaMovil/cover.png`,
+        img: `/projects/xalapaMovil/cover.webp`,
         title: 'Xalapa Móvil',
         date: 'Nov 2025 — Jan 2026',
         desc: [

@@ -29,10 +29,11 @@ export const HomeButtons = () => {
 
     return (
         <div className="flex flex-row gap-4">
-            <button onClick={(e) => handleItemClick(e, 'projects')} className="rounded-xl px-3.5 py-2.5 bg-transparent border-b border-accent-500 text-sm text-neutral-200 font-medium font-body hover:bg-accent-950/30 transition-colors duration-300 hover:cursor-pointer">
+            <button aria-label="View Projects" onClick={(e) => handleItemClick(e, 'projects')} className="rounded-xl px-3.5 py-2.5 bg-transparent border-b border-accent-500 text-sm text-neutral-200 font-medium font-body hover:bg-accent-950/30 transition-colors duration-300 hover:cursor-pointer">
                 View Projects <span className="ml-1 font-bold">→</span>
             </button>
             <button
+                aria-label="Download Resume"
                 onClick={handleDownload}
                 disabled={loading}
                 className="rounded-xl px-3.5 py-2.5 bg-transparent text-sm text-neutral-200 font-medium font-body hover:bg-neutral-900 transition-colors duration-300 hover:cursor-pointer border-b border-neutral-500"
