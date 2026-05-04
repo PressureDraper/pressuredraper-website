@@ -3,6 +3,7 @@
 import { handleItemClick, navItems } from '@/utils/navbar.utils';
 import { MenuButton } from './MenuButton';
 import { useEffect, useState } from 'react';
+import { LanguageButton } from './LanguageButton';
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -41,6 +42,7 @@ export const Navbar = () => {
                         </a>
                     ))}
                 </div>
+                <LanguageButton />
                 <MenuButton />
             </nav>
         </header>
