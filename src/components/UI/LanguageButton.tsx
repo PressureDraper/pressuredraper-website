@@ -1,16 +1,30 @@
-import { useState } from "react";
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "next/navigation";
+import { startTransition } from "react";
 
 export const LanguageButton = () => {
-    const [lang, setLang] = useState<string>("en");
+    const locale = useLocale();
+    const router = useRouter();
+    const pathname = usePathname();
+
+    const toggle = () => {
+        const next = locale === "en" ? "es" : "en";
+
+        const newPath = pathname.replace(`/${locale}`, `/${next}`);
+
+        startTransition(() => {
+            router.replace(newPath);
+        });
+    };
 
     return (
         <button
-            onClick={() => setLang(lang === "en" ? "es" : "en")}
+            onClick={toggle}
             className="ml-10 cursor-pointer border border-primary-500 rounded-full p-0.5"
             aria-label="Change language"
         >
             {
-                lang === "en" ?
+                locale === "en" ?
                     <svg
                         width={22}
                         height={22}

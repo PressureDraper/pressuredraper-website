@@ -4,11 +4,11 @@ import { ScrollToPlugin } from 'gsap/all';
 gsap.registerPlugin(ScrollToPlugin);
 
 export const navItems = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Projects', href: '#' },
-    { name: 'Skills', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'home', href: '#' },
+    { name: 'about', href: '#' },
+    { name: 'projects', href: '#' },
+    { name: 'skills', href: '#' },
+    { name: 'contact', href: '#' },
 ];
 
 export const handleItemClick = (e: any, name: string, setIsMenuOpen?: (isOpen: boolean) => void) => {

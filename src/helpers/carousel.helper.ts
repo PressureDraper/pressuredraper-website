@@ -6,7 +6,7 @@ import {
     SLOT_MOBILE,
     TOTAL_CARDS,
 } from '@/utils/carousel.utils';
-import { projectsInfo } from '@/utils/projects.utils';
+import en from '@/locales/en.json';
 
 export const wrapIndex = (rawIndex: number) => {
     return ((rawIndex % TOTAL_CARDS) + TOTAL_CARDS) % TOTAL_CARDS;
@@ -48,7 +48,7 @@ export const resolveSlotAtOffset = (
     return lerpSlot(slotLow, slotHigh, blendT);
 };
 
-type Project = (typeof projectsInfo)[number];
+type Project = (typeof en.projects)[number];
 
 // ─── Pure DOM card renderer ───────────────────────────────────────────────────
 // No React, no async scheduling — innerHTML is set synchronously for avoiding flickering on item change

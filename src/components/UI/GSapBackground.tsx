@@ -2,6 +2,8 @@
 
 import { gsap } from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export const GSapBackground = () => {
     const refBackground = useRef<any>(null);
@@ -91,7 +93,12 @@ export const GSapBackground = () => {
             );
         });
 
-        return () => mm.revert();
+        return () => {
+            mm.revert();
+            ScrollTrigger.getAll()
+                .filter(st => !document.contains(st.trigger as Element))
+                .forEach(st => st.kill());
+        };
     }, []);
 
     return (

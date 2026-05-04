@@ -4,9 +4,11 @@ import { handleItemClick, navItems } from '@/utils/navbar.utils';
 import { MenuButton } from './MenuButton';
 import { useEffect, useState } from 'react';
 import { LanguageButton } from './LanguageButton';
+import { useTranslations } from "next-intl";
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const t = useTranslations("nav");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,7 +40,7 @@ export const Navbar = () => {
                             style={{ '--line-width': '100%' } as React.CSSProperties}
                             aria-label={`Navigate to ${item.name} section`}
                         >
-                            {item.name}
+                            {t(item.name)}
                         </a>
                     ))}
                 </div>

@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect, useRef, useCallback } from 'react';
-import { projectsInfo } from '../../utils/projects.utils';
 import { PoolNode } from '@/interfaces/carousel.types';
 import { AUTO_ADVANCE_SPEED, LERP_FACTOR, TOTAL_CARDS } from '@/utils/carousel.utils';
 import { lerp, renderCardHTML, resolveSlotAtOffset, wrapIndex } from '@/helpers/carousel.helper';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { ParticlesBackground } from '../UI/ParticlesBackground';
+import en from '@/locales/en.json';
 
 export const Projects = () => {
     const sceneRef = useRef<HTMLDivElement>(null);
@@ -68,7 +68,7 @@ export const Projects = () => {
 
             if (poolNode.renderedIndex !== projectIndex) {
                 poolNode.renderedIndex = projectIndex;
-                el.innerHTML = renderCardHTML(projectsInfo[projectIndex], projectIndex, isMobile);
+                el.innerHTML = renderCardHTML(en.projects[projectIndex], projectIndex, isMobile);
             }
 
             if (!slot) {
@@ -257,7 +257,7 @@ export const Projects = () => {
                             </button>
 
                             <div className="xxs:mt-60 sm:mt-0 md:mt-0 lg:mt-37 xl:mt-31 flex justify-center gap-2">
-                                {projectsInfo.map((_, dotIndex) => (
+                                {en.projects.map((_, dotIndex) => (
                                     <button
                                         aria-label={`View project ${dotIndex + 1}`}
                                         key={dotIndex}

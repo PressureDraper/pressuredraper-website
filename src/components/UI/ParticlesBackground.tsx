@@ -17,7 +17,8 @@ export function ParticlesBackground({ particleCount = 120 }: { particleCount?: n
         let PARTICLE_COUNT: number = particleCount;
         let isMobile = false;
 
-        gsap.matchMedia().add('(max-width: 768px)', () => {
+        const mm = gsap.matchMedia();
+        mm.add('(max-width: 768px)', () => {
             isMobile = true;
             PARTICLE_COUNT = particleCount - (particleCount * 0.4);
         });
@@ -112,12 +113,13 @@ export function ParticlesBackground({ particleCount = 120 }: { particleCount?: n
         section.addEventListener('mouseleave', onMouseLeave)
 
         return () => {
-            cancelAnimationFrame(animationFrame)
+            cancelAnimationFrame(animationFrame);
+            mm.revert();
             if (!isMobile) {
-                window.removeEventListener('resize', resize)
+                window.removeEventListener('resize', resize);
             }
-            section.removeEventListener('mousemove', onMouseMove)
-            section.removeEventListener('mouseleave', onMouseLeave)
+            section.removeEventListener('mousemove', onMouseMove);
+            section.removeEventListener('mouseleave', onMouseLeave);
         }
     }, [])
 
