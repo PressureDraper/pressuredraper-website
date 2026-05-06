@@ -42,569 +42,574 @@
             }
         ]
     },
-    "projects": [
-        {
-            "img": "/projects/xalapaMovil/cover.webp",
-            "title": "Xalapa Móvil",
-            "date": "Nov 2025 — Ene 2026",
-            "desc": [
-                "Desarrollé una app móvil para el Ayuntamiento de Xalapa para mejorar la interacción ciudadana",
-                "Implementé funciones para enviar propuestas, acceder a servicios y consultar noticias locales",
-                "Centralicé la comunicación entre residents y entidades de gobierno",
-                "Mejoré la accesibilidad y el acercamiento a los servicios municipales"
-            ],
-            "problem": "El gobierno necesitaba una aplicación móvil multiplataforma para recopilar propuestas ciudadanas de mejora urbana y ampliar el alcance de los servicios del sitio web",
-            "solution": "Diseñé y desarrollé una aplicación móvil lista para ejecutarse en Android e iOS",
-            "key_decisions": "Elegí Figma para el wireframing de pantallas y una arquitectura de proyecto basada en funcionalidades, garantizando escalabilidad a largo plazo",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": false
-                },
-                {
-                    "name": "docs",
-                    "active": true
-                },
-                {
-                    "name": "demo",
-                    "active": false
-                }
-            ],
-            "icons": [
-                "nodejs",
-                "expo",
-                "react:react native",
-                "zustand",
-                "typescript",
-                "tailwind",
-                "pnpm",
-                "github",
-                "android:android studio",
-                "apple:xcode"
-            ],
-            "code_url": "",
-            "demo_url": ""
-        },
-        {
-            "img": "/projects/signsModule/cover.webp",
-            "title": "Firma Digital",
-            "date": "Feb 2025 — Presente",
-            "desc": [
-                "Desarrollé un módulo de firma digital para un sistema administrativo clínico",
-                "Automaticé la generación masiva de reportes para cumplimiento y validación gubernamental",
-                "Reduje el tiempo de procesamiento manual y mejoré la eficiencia operativa",
-                "Integré las firmas de los médicos directamente en las notas médicas para agilizar los flujos de atención",
-                "Mejoré la integridad de los datos y aseguré el cumplimiento normativo"
-            ],
-            "problem": "Los directivos dedicaban casi 1/3 de su jornada laboral a firmar manualmente y las consultas médicas se sobreponían entre sí",
-            "solution": "Creé un submódulo para el sistema de RRHH que captura la firma digital del empleado, incrementando la productividad hasta en un 90%",
-            "key_decisions": "Elegí un algoritmo de cifrado simétrico aes-256-cbc para mantener los datos sensibles seguros y prevenir la manipulación del flujo",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": false
-                },
-                {
-                    "name": "docs",
-                    "active": true
-                },
-                {
-                    "name": "demo",
-                    "active": false
-                }
-            ],
-            "icons": [
-                "nodejs",
-                "docker",
-                "react",
-                "mui",
-                "typescript",
-                "express",
-                "eslint",
-                "prettier",
-                "socketio",
-                "prisma-orm:prisma ORM",
-                "mysql",
-                "canvas",
-                "npm",
-                "gitlab",
-                "markdown"
-            ],
-            "code_url": "",
-            "demo_url": ""
-        },
-        {
-            "img": "/projects/personalWebsite/cover.webp",
-            "title": "Sitio Web Personal Anterior",
-            "date": "Ene 2025 — Abr 2026",
-            "desc": [
-                "Desarrollé una plataforma de portafolio personal para presentar mi trabajo como ingeniero de software",
-                "Creé una experiencia cohesiva que combina disciplinas técnicas y creativas",
-                "Destaqué el rendimiento, el diseño responsivo y las prácticas modernas de UI/UX"
-            ],
-            "problem": "No contaba con un sitio web personal para mostrar mi trayectoria profesional como ingeniero de software, limitando mi crecimiento y presencia global",
-            "solution": "Desarrollé un sitio web responsivo con SEO y rendimiento optimizados, basado en diseños de tendencia",
-            "key_decisions": "Usé Vite para una experiencia de desarrollo ágil dado que CRA con Webpack está deprecado, y Framer Motion para animaciones fluidas, priorizando el diseño de las secciones",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": true
-                },
-                {
-                    "name": "docs",
-                    "active": false
-                },
-                {
-                    "name": "demo",
-                    "active": true
-                }
-            ],
-            "icons": [
-                "nodejs",
-                "vite",
-                "react",
-                "router-DOM:router DOM",
-                "mui",
-                "motion:framer motion",
-                "typescript",
-                "php",
-                "yarn",
-                "github",
-                "pages",
-                "cloudflare",
-                "railway"
-            ],
-            "code_url": "https://github.com/PressureDraper/pressuredraper-website-old",
-            "demo_url": "https://pressuredraper.github.io/pressuredraper-website-old/"
-        },
-        {
-            "img": "/projects/hresourcesSystem/cover.webp",
-            "title": "Sistema de Recursos Humanos",
-            "date": "Abr 2024 — Presente",
-            "desc": [
-                "Desarrollé un microservicio para una plataforma administrativa clínica que gestiona operaciones de RRHH",
-                "Implementé módulos para asistencia, incidencias, permisos, vacaciones y días festivos",
-                "Diseñé una arquitectura modular con submódulos dedicados a cada función de RRHH",
-                "Mejoré la eficiencia del área centralizando y agilizando la gestión de datos del personal"
-            ],
-            "problem": "El sistema de RRHH heredado no cubría todas las necesidades actuales ante las nuevas políticas, generando una carga de trabajo excesiva",
-            "solution": "Recopilé todos los requerimientos para construir un sistema intuitivo que impulsó la eficiencia operativa",
-            "key_decisions": "Adopté una arquitectura modular para adaptarse a cambios futuros de políticas y prioricé la usabilidad para asegurar una adopción rápida",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": false
-                },
-                {
-                    "name": "docs",
-                    "active": true
-                },
-                {
-                    "name": "demo",
-                    "active": false
-                }
-            ],
-            "icons": [
-                "nodejs",
-                "docker",
-                "react",
-                "redux",
-                "mui",
-                "typescript",
-                "express",
-                "eslint",
-                "prettier",
-                "prisma-orm:prisma ORM",
-                "mysql",
-                "npm",
-                "gitlab",
-                "markdown"
-            ],
-            "code_url": "",
-            "demo_url": ""
-        },
-        {
-            "img": "/projects/medicalCongressv2/cover.webp",
-            "title": "Landing Page Congreso Médico v2.0.0",
-            "date": "Sep 2023 — Presente",
-            "desc": [
-                "Lideré el rediseño de UI/UX para mejorar la usabilidad y modernizar la interfaz",
-                "Implementé funcionalidades de gestión de datos",
-                "Creé un panel de administración para acceso en tiempo real a la información de los participantes"
-            ],
-            "problem": "La v1 tenía una UI/UX deficiente, falta de automatización y ausencia de una base de datos estructurada, lo que resultaba en procesos manuales ineficientes y escalabilidad limitada",
-            "solution": "Rediseñé la plataforma con una UI/UX modernizada, integré capacidades de gestión de datos y construí un panel de administración para monitoreo en tiempo real de los participantes",
-            "key_decisions": "Introduje una base de datos dedicada para la consistencia de datos, me enfoqué en la automatización de flujos para reducir la carga manual, y diseñé el sistema para soportar eventos recurrentes a gran escala",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": false
-                },
-                {
-                    "name": "docs",
-                    "active": true
-                },
-                {
-                    "name": "demo",
-                    "active": true
-                }
-            ],
-            "icons": [
-                "nodejs",
-                "react",
-                "redux",
-                "router-DOM:router DOM",
-                "mui",
-                "html",
-                "css",
-                "typescript",
-                "python",
-                "canvas",
-                "express",
-                "prisma-orm:prisma ORM",
-                "mysql",
-                "aws",
-                "github",
-                "pages",
-                "squarespace",
-                "smtp",
-                "yarn",
-                "markdown"
-            ],
-            "code_url": "https://github.com/JornadasMedicas?tab=repositories",
-            "demo_url": "https://jornadasmedicascae.com"
-        },
-        {
-            "img": "/projects/ticketsApp/cover.webp",
-            "title": "App de Tickets",
-            "date": "Dic 2023",
-            "desc": [
-                "Desarrollé un sistema de tickets bancarios en tiempo real usando Socket.IO",
-                "Habilité comunicación bidireccional para actualizaciones en vivo de filas y tickets",
-                "Mejoré la capacidad de respuesta y la interacción con el usuario"
-            ],
-            "problem": "Los sistemas tradicionales de tickets y filas carecen de actualizaciones en tiempo real, provocando demoras, mala sincronización y una experiencia de usuario ineficiente",
-            "solution": "Desarrollé un sistema de tickets bancarios en tiempo real usando Socket.IO para habilitar comunicación bidireccional y actualizaciones instantáneas de la fila",
-            "key_decisions": "Arquitectura basada en WebSockets para comunicación de baja latencia, diseñé interacciones orientadas a eventos para actualizaciones en tiempo real, y aseguré la sincronización entre clientes y servidor",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": true
-                },
-                {
-                    "name": "docs",
-                    "active": false
-                },
-                {
-                    "name": "demo",
-                    "active": false
-                }
-            ],
-            "icons": [
-                "nodejs",
-                "react",
-                "ant-design:ant design",
-                "html",
-                "css",
-                "express",
-                "socketio",
-                "github",
-                "yarn"
-            ],
-            "code_url": "https://github.com/PressureDraper/socket-io-04-tickets",
-            "demo_url": ""
-        },
-        {
-            "img": "/projects/medicalEvaluation/cover.webp",
-            "title": "Sistema de Evaluación de Residentes Médicos",
-            "date": "Ene 2024 — Presente",
-            "desc": [
-                "Desarrollé un sistema de evaluación basado en microservicios para residentes médicos",
-                "Implementé módulos para gestionar evaluaciones anuales y métricas de desempeño",
-                "Agilicé los flujos de evaluación para el departamento de enseñanza",
-                "Mejoré la organización y accesibilidad de los datos de evaluación de residentes"
-            ],
-            "problem": "Los procesos de evaluación manuales y desconectados generaban ineficiencias, falta de consistencia en los datos y dificultad para dar seguimiento al desempeño de los residentes a lo largo del tiempo",
-            "solution": "Diseñé un sistema centralizado para mostrar métricas y agilizar los flujos de evaluación, mejorando la eficiencia operativa hasta en un 65%",
-            "key_decisions": "Usé una arquitectura modular y escalable para soportar flujos de trabajo anuales recurrentes con perfil basado en roles (administrador, docente, residente)",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": false
-                },
-                {
-                    "name": "docs",
-                    "active": true
-                },
-                {
-                    "name": "demo",
-                    "active": false
-                }
-            ],
-            "icons": [
-                "nodejs",
-                "docker",
-                "react",
-                "redux",
-                "mui",
-                "typescript",
-                "express",
-                "eslint",
-                "prettier",
-                "smtp",
-                "prisma-orm:prisma ORM",
-                "mysql",
-                "npm",
-                "gitlab",
-                "markdown"
-            ],
-            "code_url": "",
-            "demo_url": ""
-        },
-        {
-            "img": "/projects/medicalCongressv1/cover.webp",
-            "title": "Landing Page Congreso Médico v1.0.0",
-            "date": "Oct 2023 — Nov 2023",
-            "desc": [
-                "Construí una plataforma web para albergar un congreso médico anual desde 2023",
-                "Desarrollé flujos de registro para asistentes",
-                "Proporcioné presencia en internet a través del dominio jornadasmedicascae.com"
-            ],
-            "problem": "Los asistentes debían registrarse de forma presencial por la falta de una plataforma digital, limitando la asistencia y reduciendo el alcance del evento",
-            "solution": "Diseñé una landing page para registro en línea que incrementó el alcance y crecimiento en un 72%",
-            "key_decisions": "Usé React como librería de UI para mantener uniformidad con los sistemas del hospital, junto con una solución empresarial de Google Workspace para presencia de correo profesional y alojamiento en AWS",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": true
-                },
-                {
-                    "name": "docs",
-                    "active": false
-                },
-                {
-                    "name": "demo",
-                    "active": true
-                }
-            ],
-            "icons": [
-                "nodejs",
-                "react",
-                "router-DOM:router DOM",
-                "mui",
-                "html",
-                "css",
-                "javascript",
-                "python",
-                "canvas",
-                "firestore",
-                "aws",
-                "github",
-                "pages",
-                "domains",
-                "workspace",
-                "smtp",
-                "yarn"
-            ],
-            "code_url": "https://github.com/JornadasMedicas/form",
-            "demo_url": "https://jornadasmedicas.github.io/form/#/home"
-        },
-        {
-            "img": "/projects/heroesApp/cover.webp",
-            "title": "Heroes App",
-            "date": "Nov 2023",
-            "desc": [
-                "Construí una aplicación web con React usando gestión de estado del lado del cliente con Context API y reducers",
-                "Implementé un flujo de autenticación con rutas públicas y privadas protegidas",
-                "Aproveché localStorage para la persistencia de la sesión de usuario, el tema (modo oscuro) y el estado de navegación",
-                "Desarrollé funcionalidad de búsqueda dinámica con manejo de input en tiempo real y eventos de teclado"
-            ],
-            "problem": "Gestionar el estado del lado del cliente, la persistencia y la protección de rutas sin un backend requería una arquitectura frontend estructurada",
-            "solution": "Desarrollé una app web con React usando Context API y reducers para la gestión de estado, con localStorage para persistir datos del usuario como el estado de sesión, el tema y el historial de navegación",
-            "key_decisions": "Usé estado centralizado con protección de rutas",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": true
-                },
-                {
-                    "name": "docs",
-                    "active": false
-                },
-                {
-                    "name": "demo",
-                    "active": true
-                }
-            ],
-            "icons": [
-                "nodejs",
-                "react",
-                "router-DOM:router DOM",
-                "local-storage:local storage",
-                "html",
-                "css",
-                "mui",
-                "javascript",
-                "github",
-                "pages",
-                "yarn"
-            ],
-            "code_url": "https://github.com/PressureDraper/react-heroesApp",
-            "demo_url": "https://pressuredraper.github.io/react-heroesApp/#/login"
-        },
-        {
-            "img": "/projects/currencyConverter/cover.webp",
-            "title": "Reto: Conversor de Divisas",
-            "date": "Marzo 2023",
-            "desc": [
-                "Desarrollé una aplicación de conversión de divisas como parte del programa Oracle Next Education",
-                "Integré una API externa de tipos de cambio para obtener valores de divisas en tiempo real",
-                "Construí una interfaz gráfica de usuario con Java Swing para una experiencia de usuario intuitiva",
-                "Implementé conversión de divisas dinámica basada en la entrada del usuario y los datos de la API"
-            ],
-            "problem": "Los usuarios necesitaban una forma sencilla de acceder a los tipos de cambio actualizados sin buscar ni calcular valores manualmente",
-            "solution": "Desarrollé una aplicación de escritorio que se integra con una API de tipos de cambio para obtener datos de divisas en tiempo real y realizar conversiones dinámicas",
-            "key_decisions": "Implementé la integración con la API desde cero para manejar la recuperación de datos en tiempo real, usé Java Swing para una interfaz de escritorio ligera, y diseñé una lógica de conversión orientada al input para retroalimentación inmediata al usuario",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": true
-                },
-                {
-                    "name": "docs",
-                    "active": false
-                },
-                {
-                    "name": "demo",
-                    "active": false
-                }
-            ],
-            "icons": [
-                "java",
-                "javax-swing:java swing",
-                "netbeans"
-            ],
-            "code_url": "https://github.com/PressureDraper/CurrencyConverter-JavaG4",
-            "demo_url": ""
-        },
-        {
-            "img": "/projects/cipherDecoder/cover.webp",
-            "title": "Reto: Cifrado de Texto",
-            "date": "Ene 2023",
-            "desc": [
-                "Construí una aplicación web para cifrado y descifrado de texto como parte del programa Oracle Next Education",
-                "Implementé algoritmos personalizados de codificación/decodificación para manipulación de cadenas",
-                "Diseñé una UI simple e intuitiva para la interacción del usuario",
-                "Manejé validación de entrada y procesamiento de texto en tiempo real"
-            ],
-            "problem": "El proyecto necesitaba una forma sencilla de codificar y decodificar texto basándose en reglas predefinidas sin realizar transformaciones manuales",
-            "solution": "Desarrollé una aplicación web que implementa cifrado y descifrado de texto usando algoritmos personalizados de codificación/decodificación con procesamiento en tiempo real",
-            "key_decisions": "Implementé lógica personalizada de manipulación de cadenas para cumplir con las reglas de codificación específicas, prioricé una UI de tendencia para la usabilidad y añadí manejo de input en tiempo real para retroalimentación inmediata",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": true
-                },
-                {
-                    "name": "docs",
-                    "active": false
-                },
-                {
-                    "name": "demo",
-                    "active": true
-                }
-            ],
-            "icons": [
-                "bootstrap",
-                "javascript",
-                "html",
-                "jquery",
-                "css",
-                "github",
-                "pages"
-            ],
-            "code_url": "https://github.com/PressureDraper/Sprint01-ChallengeONE",
-            "demo_url": "https://pressuredraper.github.io/Sprint01-ChallengeONE/"
-        },
-        {
-            "img": "/projects/mp3GlassPlayer/cover.webp",
-            "title": "MP3 Glass Player",
-            "date": "Dic 2022",
-            "desc": [
-                "Construí un reproductor de MP3 web personalizado con un sistema de diseño glassmorphism",
-                "Implementé controles de audio interactivos y estados dinámicos de UI",
-                "Diseñé una interfaz visualmente atractiva y responsiva con tendencias modernas de UI",
-                "Mejoré la experiencia de usuario mediante interacciones fluidas y una jerarquía visual limpia"
-            ],
-            "problem": "Los reproductores de audio web tradicionales suelen carecer de diseño de UI moderno y una experiencia de usuario atractiva",
-            "solution": "Diseñé y desarrollé un reproductor de MP3 web con una interfaz limpia inspirada en el glassmorphism, enfocándome en la estética y la usabilidad",
-            "key_decisions": "Adopté un sistema de diseño glassmorphism para una apariencia moderna, prioricé controles de reproducción intuitivos y aseguré una interacción fluida del usuario mediante un diseño de UI responsivo",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": true
-                },
-                {
-                    "name": "docs",
-                    "active": false
-                },
-                {
-                    "name": "demo",
-                    "active": true
-                }
-            ],
-            "icons": [
-                "bootstrap",
-                "javascript",
-                "html",
-                "jquery",
-                "css",
-                "github",
-                "pages"
-            ],
-            "code_url": "https://github.com/PressureDraper/mp3-Glass-Player",
-            "demo_url": "https://pressuredraper.github.io/mp3-Glass-Player/"
-        },
-        {
-            "img": "/projects/lotus/cover.webp",
-            "title": "Lotus Discord Bot",
-            "date": "Feb 2022",
-            "desc": [
-                "Construí un bot de música para Discord con Node.js con soporte para integración de YouTube y Spotify",
-                "Implementé manejo de comandos en tiempo real y streaming de audio dentro de canales de voz de Discord",
-                "Personalicé la experiencia del bot con una interfaz y respuestas temáticas basadas en Warframe"
-            ],
-            "problem": "Las soluciones existentes para reproducción de música en Discord eran limitadas o carecían de flexibilidad entre múltiples plataformas de streaming",
-            "solution": "Construí un bot de Discord con Node.js para reproducción de YouTube y Spotify",
-            "key_decisions": "Integré APIs de múltiples fuentes de audio, diseñé una interfaz basada en comandos para facilitar el uso, y estructuré la interacción en tiempo real dentro de los canales de voz de Discord",
-            "buttons": [
-                {
-                    "name": "code",
-                    "active": true
-                },
-                {
-                    "name": "docs",
-                    "active": false
-                },
-                {
-                    "name": "demo",
-                    "active": false
-                }
-            ],
-            "icons": [
-                "nodejs",
-                "javascript",
-                "discord-api:discord api",
-                "distube",
-                "aws",
-                "github",
-                "npm",
-                "markdown"
-            ],
-            "code_url": "https://github.com/PressureDraper/Lotus",
-            "demo_url": ""
-        }
-    ],
+    "projects": {
+        "title": "Proyectos",
+        "subtitle": "Trabajo Seleccionado",
+        "description": "Algunos proyectos que muestran cómo pienso — desde la identificación del problema hasta las decisiones de arquitectura y las disyuntivas.",
+        "cards": [
+            {
+                "img": "/projects/xalapaMovil/cover.webp",
+                "title": "Xalapa Móvil",
+                "date": "Nov 2025 — Ene 2026",
+                "desc": [
+                    "Desarrollé una app móvil para el Ayuntamiento de Xalapa para mejorar la interacción ciudadana",
+                    "Implementé funciones para enviar propuestas, acceder a servicios y consultar noticias locales",
+                    "Centralicé la comunicación entre residentes y entidades de gobierno",
+                    "Mejoré la accesibilidad y el acercamiento a los servicios municipales"
+                ],
+                "problem": "El gobierno necesitaba una aplicación móvil multiplataforma para recopilar propuestas ciudadanas de mejora urbana y ampliar el alcance de los servicios del sitio web",
+                "solution": "Diseñé y desarrollé una aplicación móvil lista para ejecutarse en Android e iOS",
+                "key_decisions": "Elegí Figma para el wireframing de pantallas y una arquitectura de proyecto basada en funcionalidades, garantizando escalabilidad a largo plazo",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": false
+                    },
+                    {
+                        "name": "docs",
+                        "active": true
+                    },
+                    {
+                        "name": "demo",
+                        "active": false
+                    }
+                ],
+                "icons": [
+                    "nodejs",
+                    "expo",
+                    "react:react native",
+                    "zustand",
+                    "typescript",
+                    "tailwind",
+                    "pnpm",
+                    "github",
+                    "android:android studio",
+                    "apple:xcode"
+                ],
+                "code_url": "",
+                "demo_url": ""
+            },
+            {
+                "img": "/projects/signsModule/cover.webp",
+                "title": "Firma Digital",
+                "date": "Feb 2025 — Presente",
+                "desc": [
+                    "Desarrollé un módulo de firma digital para un sistema administrativo clínico",
+                    "Automaticé la generación masiva de reportes para cumplimiento y validación gubernamental",
+                    "Reduje el tiempo de procesamiento manual y mejoré la eficiencia operativa",
+                    "Integré las firmas de los médicos directamente en las notas médicas para agilizar los flujos de atención",
+                    "Mejoré la integridad de los datos y aseguré el cumplimiento normativo"
+                ],
+                "problem": "Los directivos dedicaban casi 1/3 de su jornada laboral a firmar manualmente y las consultas médicas se sobreponían entre sí",
+                "solution": "Creé un submódulo para el sistema de RRHH que captura la firma digital del empleado, incrementando la productividad hasta en un 90%",
+                "key_decisions": "Elegí un algoritmo de cifrado simétrico aes-256-cbc para mantener los datos sensibles seguros y prevenir la manipulación y filtración del flujo de datos",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": false
+                    },
+                    {
+                        "name": "docs",
+                        "active": true
+                    },
+                    {
+                        "name": "demo",
+                        "active": false
+                    }
+                ],
+                "icons": [
+                    "nodejs",
+                    "docker",
+                    "react",
+                    "mui",
+                    "typescript",
+                    "express",
+                    "eslint",
+                    "prettier",
+                    "socketio",
+                    "prisma-orm:prisma ORM",
+                    "mysql",
+                    "canvas",
+                    "npm",
+                    "gitlab",
+                    "markdown"
+                ],
+                "code_url": "",
+                "demo_url": ""
+            },
+            {
+                "img": "/projects/personalWebsite/cover.webp",
+                "title": "Sitio Web Personal Anterior",
+                "date": "Ene 2025 — Abr 2026",
+                "desc": [
+                    "Desarrollé una plataforma de portafolio personal para presentar mi trabajo como ingeniero de software",
+                    "Creé una experiencia cohesiva que combina disciplinas técnicas y creativas",
+                    "Destaqué el rendimiento, el diseño responsivo y las prácticas modernas de UI/UX"
+                ],
+                "problem": "No contaba con un sitio web personal para mostrar mi trayectoria profesional como ingeniero de software, limitando mi crecimiento y presencia global",
+                "solution": "Desarrollé un sitio web responsivo con SEO y rendimiento optimizados, basado en diseños de tendencia",
+                "key_decisions": "Usé Vite para una experiencia de desarrollo ágil dado que CRA con Webpack está deprecado, y Framer Motion para animaciones fluidas, priorizando el diseño de las secciones",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": true
+                    },
+                    {
+                        "name": "docs",
+                        "active": false
+                    },
+                    {
+                        "name": "demo",
+                        "active": true
+                    }
+                ],
+                "icons": [
+                    "nodejs",
+                    "vite",
+                    "react",
+                    "router-DOM:router DOM",
+                    "mui",
+                    "motion:framer motion",
+                    "typescript",
+                    "php",
+                    "yarn",
+                    "github",
+                    "pages",
+                    "cloudflare",
+                    "railway"
+                ],
+                "code_url": "https://github.com/PressureDraper/pressuredraper-website-old",
+                "demo_url": "https://pressuredraper.github.io/pressuredraper-website-old/"
+            },
+            {
+                "img": "/projects/hresourcesSystem/cover.webp",
+                "title": "Sistema de Recursos Humanos",
+                "date": "Abr 2024 — Presente",
+                "desc": [
+                    "Desarrollé un microservicio para una plataforma administrativa clínica que gestiona operaciones de RRHH",
+                    "Implementé módulos para asistencia, incidencias, permisos, vacaciones y días festivos",
+                    "Diseñé una arquitectura modular con submódulos dedicados a cada función de RRHH",
+                    "Mejoré la eficiencia del área centralizando y agilizando la gestión de datos del personal"
+                ],
+                "problem": "El sistema de RRHH heredado no cubría todas las necesidades actuales ante las nuevas políticas, generando una carga de trabajo excesiva",
+                "solution": "Recopilé todos los requerimientos para construir un sistema intuitivo que impulsó la eficiencia operativa",
+                "key_decisions": "Adopté una arquitectura modular para adaptarse a cambios futuros de políticas y prioricé la usabilidad para asegurar una adopción rápida",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": false
+                    },
+                    {
+                        "name": "docs",
+                        "active": true
+                    },
+                    {
+                        "name": "demo",
+                        "active": false
+                    }
+                ],
+                "icons": [
+                    "nodejs",
+                    "docker",
+                    "react",
+                    "redux",
+                    "mui",
+                    "typescript",
+                    "express",
+                    "eslint",
+                    "prettier",
+                    "prisma-orm:prisma ORM",
+                    "mysql",
+                    "npm",
+                    "gitlab",
+                    "markdown"
+                ],
+                "code_url": "",
+                "demo_url": ""
+            },
+            {
+                "img": "/projects/medicalCongressv2/cover.webp",
+                "title": "Landing Page Congreso Médico v2.0.0",
+                "date": "Sep 2023 — Presente",
+                "desc": [
+                    "Lideré el rediseño de UI/UX para mejorar la usabilidad y modernizar la interfaz",
+                    "Implementé funcionalidades de gestión de datos",
+                    "Creé un panel de administración para acceso en tiempo real a la información de los participantes"
+                ],
+                "problem": "La v1 tenía una UI/UX deficiente, falta de automatización y ausencia de una base de datos estructurada, lo que resultaba en procesos manuales ineficientes y escalabilidad limitada",
+                "solution": "Rediseñé la plataforma con una UI/UX modernizada, integré capacidades de gestión de datos y construí un panel de administración para monitoreo en tiempo real de los participantes",
+                "key_decisions": "Introduje una base de datos dedicada para la consistencia de datos, me enfoqué en la automatización de flujos para reducir la carga manual, y diseñé el sistema para soportar eventos recurrentes a gran escala",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": false
+                    },
+                    {
+                        "name": "docs",
+                        "active": true
+                    },
+                    {
+                        "name": "demo",
+                        "active": true
+                    }
+                ],
+                "icons": [
+                    "nodejs",
+                    "react",
+                    "redux",
+                    "router-DOM:router DOM",
+                    "mui",
+                    "html",
+                    "css",
+                    "typescript",
+                    "python",
+                    "canvas",
+                    "express",
+                    "prisma-orm:prisma ORM",
+                    "mysql",
+                    "aws",
+                    "github",
+                    "pages",
+                    "squarespace",
+                    "smtp",
+                    "yarn",
+                    "markdown"
+                ],
+                "code_url": "https://github.com/JornadasMedicas?tab=repositories",
+                "demo_url": "https://jornadasmedicascae.com"
+            },
+            {
+                "img": "/projects/ticketsApp/cover.webp",
+                "title": "App de Tickets",
+                "date": "Dic 2023",
+                "desc": [
+                    "Desarrollé un sistema de tickets bancarios en tiempo real usando Socket.IO",
+                    "Habilité comunicación bidireccional para actualizaciones en vivo de filas y tickets",
+                    "Mejoré la capacidad de respuesta y la interacción con el usuario"
+                ],
+                "problem": "Los sistemas tradicionales de tickets y filas carecen de actualizaciones en tiempo real, provocando demoras, mala sincronización y una experiencia de usuario ineficiente",
+                "solution": "Desarrollé un sistema de tickets bancarios en tiempo real usando Socket.IO para habilitar comunicación bidireccional y actualizaciones instantáneas de la fila",
+                "key_decisions": "Arquitectura basada en WebSockets para comunicación de baja latencia, diseñé interacciones orientadas a eventos para actualizaciones en tiempo real, y aseguré la sincronización entre clientes y servidor",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": true
+                    },
+                    {
+                        "name": "docs",
+                        "active": false
+                    },
+                    {
+                        "name": "demo",
+                        "active": false
+                    }
+                ],
+                "icons": [
+                    "nodejs",
+                    "react",
+                    "ant-design:ant design",
+                    "html",
+                    "css",
+                    "express",
+                    "socketio",
+                    "github",
+                    "yarn"
+                ],
+                "code_url": "https://github.com/PressureDraper/socket-io-04-tickets",
+                "demo_url": ""
+            },
+            {
+                "img": "/projects/medicalEvaluation/cover.webp",
+                "title": "Sistema de Evaluación de Residentes Médicos",
+                "date": "Ene 2024 — Presente",
+                "desc": [
+                    "Desarrollé un sistema de evaluación basado en microservicios para residentes médicos",
+                    "Implementé módulos para gestionar evaluaciones anuales y métricas de desempeño",
+                    "Agilicé los flujos de evaluación para el departamento de enseñanza",
+                    "Mejoré la organización y accesibilidad de los datos de evaluación de residentes"
+                ],
+                "problem": "Los procesos de evaluación manuales y desconectados generaban ineficiencias, falta de consistencia en los datos y dificultad para dar seguimiento al desempeño de los residentes a lo largo del tiempo",
+                "solution": "Diseñé un sistema centralizado para mostrar métricas y agilizar los flujos de evaluación, mejorando la eficiencia operativa hasta en un 65%",
+                "key_decisions": "Usé una arquitectura modular y escalable para soportar flujos de trabajo anuales recurrentes con perfil basado en roles (administrador, docente, residente)",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": false
+                    },
+                    {
+                        "name": "docs",
+                        "active": true
+                    },
+                    {
+                        "name": "demo",
+                        "active": false
+                    }
+                ],
+                "icons": [
+                    "nodejs",
+                    "docker",
+                    "react",
+                    "redux",
+                    "mui",
+                    "typescript",
+                    "express",
+                    "eslint",
+                    "prettier",
+                    "smtp",
+                    "prisma-orm:prisma ORM",
+                    "mysql",
+                    "npm",
+                    "gitlab",
+                    "markdown"
+                ],
+                "code_url": "",
+                "demo_url": ""
+            },
+            {
+                "img": "/projects/medicalCongressv1/cover.webp",
+                "title": "Landing Page Congreso Médico v1.0.0",
+                "date": "Oct 2023 — Nov 2023",
+                "desc": [
+                    "Construí una plataforma web para albergar un congreso médico anual desde 2023",
+                    "Desarrollé flujos de registro para asistentes",
+                    "Proporcioné presencia en internet a través del dominio jornadasmedicascae.com"
+                ],
+                "problem": "Los asistentes debían registrarse de forma presencial por la falta de una plataforma digital, limitando la asistencia y reduciendo el alcance del evento",
+                "solution": "Diseñé una landing page para registro en línea que incrementó el alcance y crecimiento en un 72%",
+                "key_decisions": "Usé React como librería de UI para mantener uniformidad con los sistemas del hospital, junto con una solución empresarial de Google Workspace para presencia de correo profesional y alojamiento en AWS",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": true
+                    },
+                    {
+                        "name": "docs",
+                        "active": false
+                    },
+                    {
+                        "name": "demo",
+                        "active": true
+                    }
+                ],
+                "icons": [
+                    "nodejs",
+                    "react",
+                    "router-DOM:router DOM",
+                    "mui",
+                    "html",
+                    "css",
+                    "javascript",
+                    "python",
+                    "canvas",
+                    "firestore",
+                    "aws",
+                    "github",
+                    "pages",
+                    "domains",
+                    "workspace",
+                    "smtp",
+                    "yarn"
+                ],
+                "code_url": "https://github.com/JornadasMedicas/form",
+                "demo_url": "https://jornadasmedicas.github.io/form/#/home"
+            },
+            {
+                "img": "/projects/heroesApp/cover.webp",
+                "title": "Heroes App",
+                "date": "Nov 2023",
+                "desc": [
+                    "Construí una aplicación web con React usando gestión de estado del lado del cliente con Context API y reducers",
+                    "Implementé un flujo de autenticación con rutas públicas y privadas protegidas",
+                    "Aproveché localStorage para la persistencia de la sesión de usuario, el tema (modo oscuro) y el estado de navegación",
+                    "Desarrollé funcionalidad de búsqueda dinámica con manejo de input en tiempo real y eventos de teclado"
+                ],
+                "problem": "Gestionar el estado del lado del cliente, la persistencia y la protección de rutas sin un backend requería una arquitectura frontend estructurada",
+                "solution": "Desarrollé una app web con React usando Context API y reducers para la gestión de estado, con localStorage para persistir datos del usuario como el estado de sesión, el tema y el historial de navegación",
+                "key_decisions": "Usé estado centralizado con protección de rutas",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": true
+                    },
+                    {
+                        "name": "docs",
+                        "active": false
+                    },
+                    {
+                        "name": "demo",
+                        "active": true
+                    }
+                ],
+                "icons": [
+                    "nodejs",
+                    "react",
+                    "router-DOM:router DOM",
+                    "local-storage:local storage",
+                    "html",
+                    "css",
+                    "mui",
+                    "javascript",
+                    "github",
+                    "pages",
+                    "yarn"
+                ],
+                "code_url": "https://github.com/PressureDraper/react-heroesApp",
+                "demo_url": "https://pressuredraper.github.io/react-heroesApp/#/login"
+            },
+            {
+                "img": "/projects/currencyConverter/cover.webp",
+                "title": "Reto: Conversor de Divisas",
+                "date": "Marzo 2023",
+                "desc": [
+                    "Desarrollé una aplicación de conversión de divisas como parte del programa Oracle Next Education",
+                    "Integré una API externa de tipos de cambio para obtener valores de divisas en tiempo real",
+                    "Construí una interfaz gráfica de usuario con Java Swing para una experiencia de usuario intuitiva",
+                    "Implementé conversión de divisas dinámica basada en la entrada del usuario y los datos de la API"
+                ],
+                "problem": "Los usuarios necesitaban una forma sencilla de acceder a los tipos de cambio actualizados sin buscar ni calcular valores manualmente",
+                "solution": "Desarrollé una aplicación de escritorio que se integra con una API de tipos de cambio para obtener datos de divisas en tiempo real y realizar conversiones dinámicas",
+                "key_decisions": "Implementé la integración con la API desde cero para manejar la recuperación de datos en tiempo real, usé Java Swing para una interfaz de escritorio ligera, y diseñé una lógica de conversión orientada al input para retroalimentación inmediata al usuario",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": true
+                    },
+                    {
+                        "name": "docs",
+                        "active": false
+                    },
+                    {
+                        "name": "demo",
+                        "active": false
+                    }
+                ],
+                "icons": [
+                    "java",
+                    "javax-swing:java swing",
+                    "netbeans"
+                ],
+                "code_url": "https://github.com/PressureDraper/CurrencyConverter-JavaG4",
+                "demo_url": ""
+            },
+            {
+                "img": "/projects/cipherDecoder/cover.webp",
+                "title": "Reto: Cifrado de Texto",
+                "date": "Ene 2023",
+                "desc": [
+                    "Construí una aplicación web para cifrado y descifrado de texto como parte del programa Oracle Next Education",
+                    "Implementé algoritmos personalizados de codificación/decodificación para manipulación de cadenas",
+                    "Diseñé una UI simple e intuitiva para la interacción del usuario",
+                    "Manejé validación de entrada y procesamiento de texto en tiempo real"
+                ],
+                "problem": "El proyecto necesitaba una forma sencilla de codificar y decodificar texto basándose en reglas predefinidas sin realizar transformaciones manuales",
+                "solution": "Desarrollé una aplicación web que implementa cifrado y descifrado de texto usando algoritmos personalizados de codificación/decodificación con procesamiento en tiempo real",
+                "key_decisions": "Implementé lógica personalizada de manipulación de cadenas para cumplir con las reglas de codificación específicas, prioricé una UI de tendencia para la usabilidad y añadí manejo de input en tiempo real para retroalimentación inmediata",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": true
+                    },
+                    {
+                        "name": "docs",
+                        "active": false
+                    },
+                    {
+                        "name": "demo",
+                        "active": true
+                    }
+                ],
+                "icons": [
+                    "bootstrap",
+                    "javascript",
+                    "html",
+                    "jquery",
+                    "css",
+                    "github",
+                    "pages"
+                ],
+                "code_url": "https://github.com/PressureDraper/Sprint01-ChallengeONE",
+                "demo_url": "https://pressuredraper.github.io/Sprint01-ChallengeONE/"
+            },
+            {
+                "img": "/projects/mp3GlassPlayer/cover.webp",
+                "title": "MP3 Glass Player",
+                "date": "Dic 2022",
+                "desc": [
+                    "Construí un reproductor de MP3 web personalizado con un sistema de diseño glassmorphism",
+                    "Implementé controles de audio interactivos y estados dinámicos de UI",
+                    "Diseñé una interfaz visualmente atractiva y responsiva con tendencias modernas de UI",
+                    "Mejoré la experiencia de usuario mediante interacciones fluidas y una jerarquía visual limpia"
+                ],
+                "problem": "Los reproductores de audio web tradicionales suelen carecer de diseño de UI moderno y una experiencia de usuario atractiva",
+                "solution": "Diseñé y desarrollé un reproductor de MP3 web con una interfaz limpia inspirada en el glassmorphism, enfocándome en la estética y la usabilidad",
+                "key_decisions": "Adopté un sistema de diseño glassmorphism para una apariencia moderna, prioricé controles de reproducción intuitivos y aseguré una interacción fluida del usuario mediante un diseño de UI responsivo",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": true
+                    },
+                    {
+                        "name": "docs",
+                        "active": false
+                    },
+                    {
+                        "name": "demo",
+                        "active": true
+                    }
+                ],
+                "icons": [
+                    "bootstrap",
+                    "javascript",
+                    "html",
+                    "jquery",
+                    "css",
+                    "github",
+                    "pages"
+                ],
+                "code_url": "https://github.com/PressureDraper/mp3-Glass-Player",
+                "demo_url": "https://pressuredraper.github.io/mp3-Glass-Player/"
+            },
+            {
+                "img": "/projects/lotus/cover.webp",
+                "title": "Lotus Discord Bot",
+                "date": "Feb 2022",
+                "desc": [
+                    "Construí un bot de música para Discord con Node.js con soporte para integración de YouTube y Spotify",
+                    "Implementé manejo de comandos en tiempo real y streaming de audio dentro de canales de voz de Discord",
+                    "Personalicé la experiencia del bot con una interfaz y respuestas temáticas basadas en Warframe"
+                ],
+                "problem": "Las soluciones existentes para reproducción de música en Discord eran limitadas o carecían de flexibilidad entre múltiples plataformas de streaming",
+                "solution": "Construí un bot de Discord con Node.js para reproducción de YouTube y Spotify",
+                "key_decisions": "Integré APIs de múltiples fuentes de audio, diseñé una interfaz basada en comandos para facilitar el uso, y estructuré la interacción en tiempo real dentro de los canales de voz de Discord",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": true
+                    },
+                    {
+                        "name": "docs",
+                        "active": false
+                    },
+                    {
+                        "name": "demo",
+                        "active": false
+                    }
+                ],
+                "icons": [
+                    "nodejs",
+                    "javascript",
+                    "discord-api:discord api",
+                    "distube",
+                    "aws",
+                    "github",
+                    "npm",
+                    "markdown"
+                ],
+                "code_url": "https://github.com/PressureDraper/Lotus",
+                "demo_url": ""
+            }
+        ]
+    },
     "skills": {
         "title": "Habilidades",
         "subtitle": "Profundidad técnica",

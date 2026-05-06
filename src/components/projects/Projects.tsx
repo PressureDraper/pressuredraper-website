@@ -6,9 +6,11 @@ import { AUTO_ADVANCE_SPEED, LERP_FACTOR, TOTAL_CARDS } from '@/utils/carousel.u
 import { lerp, renderCardHTML, resolveSlotAtOffset, wrapIndex } from '@/helpers/carousel.helper';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { ParticlesBackground } from '../UI/ParticlesBackground';
-import en from '@/locales/en.json';
+import { useTranslations } from 'next-intl';
 
 export const Projects = () => {
+    const t = useTranslations("projects");
+    const projects = t.raw("cards");
     const sceneRef = useRef<HTMLDivElement>(null);
     const poolRef = useRef<PoolNode[]>([]);
     const currentPositionRef = useRef(0);
@@ -68,7 +70,7 @@ export const Projects = () => {
 
             if (poolNode.renderedIndex !== projectIndex) {
                 poolNode.renderedIndex = projectIndex;
-                el.innerHTML = renderCardHTML(en.projects[projectIndex], projectIndex, isMobile);
+                el.innerHTML = renderCardHTML(projects[projectIndex], projectIndex, isMobile);
             }
 
             if (!slot) {
@@ -217,14 +219,13 @@ export const Projects = () => {
                     <div className="max-w-7xl w-full overflow-visible">
                         <div className="flex flex-col gap-4">
                             <span className="text-accent-500 font-display tracking-widest">
-                                Projects
+                                {t("title")}
                             </span>
                             <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold font-display">
-                                Selected Work
+                                {t("subtitle")}
                             </h2>
                             <p className="md:w-2/3 text-neutral-400 text-lg font-body leading-relaxed text-justify">
-                                A few projects that showcase how I think — from problem
-                                identification to architecture decisions and trade-offs.
+                                {t("description")}
                             </p>
                         </div>
                     </div>
@@ -257,7 +258,7 @@ export const Projects = () => {
                             </button>
 
                             <div className="xxs:mt-60 sm:mt-0 md:mt-0 lg:mt-37 xl:mt-29 flex justify-center gap-2">
-                                {en.projects.map((_, dotIndex) => (
+                                {projects.map((_: any, dotIndex: number) => (
                                     <button
                                         aria-label={`View project ${dotIndex + 1}`}
                                         key={dotIndex}
