@@ -256,7 +256,7 @@ export const Projects = () => {
                                 →
                             </button>
 
-                            <div className="xxs:mt-60 sm:mt-0 md:mt-0 lg:mt-37 xl:mt-31 flex justify-center gap-2">
+                            <div className="xxs:mt-60 sm:mt-0 md:mt-0 lg:mt-37 xl:mt-29 flex justify-center gap-2">
                                 {en.projects.map((_, dotIndex) => (
                                     <button
                                         aria-label={`View project ${dotIndex + 1}`}

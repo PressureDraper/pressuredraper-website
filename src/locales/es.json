@@ -18,15 +18,29 @@
     "about": {
         "title": "Sobre mí",
         "subtitle": "Lo que aporto a un equipo",
-        "description": "No solo escribo código — resuelvo problemas. Con una base sólida tanto en frontend como en backend, aporto una mentalidad orientada al producto en cualquier proyecto. Me enfoco en construir cosas que sean rápidas, mantenibles y genuinamente útiles.",
-        "card1-title": "Rendimiento Primero",
-        "card1-description": "Me obsesiona el tiempo de carga y la eficiencia en tiempo de ejecución. Cada milisegundo importa para brindarle a tus clientes la mejor experiencia y mantenerse competitivo.",
-        "card2-title": "Profundidad Full-stack",
-        "card2-description": "Desde el diseño de bases de datos hasta interfaces de usuario perfectas al píxel. Conecto los sistemas backend con el acabado del frontend.",
-        "card3-title": "Confiabilidad a Escala",
-        "card3-description": "Construyendo sistemas que manejan el crecimiento con solidez — mediante caché, arquitecturas de proyecto y manejo cuidadoso de errores.",
-        "card4-title": "Arquitectura Limpia",
-        "card4-description": "El código mantenible no es opcional. Escribo sistemas por los que los ingenieros del futuro me van a agradecer."
+        "description": "No solo escribo código — resuelvo problemas. Con una base sólida tanto en frontend como en backend, aporto una mentalidad orientada al producto. Me enfoco en construir cosas que sean rápidas, mantenibles y genuinamente útiles.",
+        "stats": [
+            {
+                "title": "Enfoque en el rendimiento",
+                "description": "Me preocupo significativamente por los tiempos de carga y la eficiencia en ejecución. Cada milisegundo cuenta para ofrecer a tus clientes la mejor experiencia y mantenerte competitivo.",
+                "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-zap-icon lucide-zap'><path d='M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z'/></svg>"
+            },
+            {
+                "title": "Profundidad full-stack",
+                "description": "Desde el diseño de bases de datos hasta interfaces detalladas a nivel píxel. Conecto el mundo del backend con el acabado del frontend.",
+                "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-layers-icon lucide-layers'><path d='M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z'/><path d='M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12'/><path d='M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17'/></svg>"
+            },
+            {
+                "title": "Confiabilidad a gran escala",
+                "description": "Construyo sistemas que manejan el crecimiento de forma eficiente, mediante caché, seguridad, arquitecturas de proyecto sólidas y un manejo cuidadoso de errores.",
+                "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-shield-cog-corner-icon lucide-shield-cog-corner'><path d='M11 22c-3.806-1.45-7-3.966-7-9V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1v4'/><path d='M14.923 16.547 14 16.164'/><path d='m14.923 18.843-.923.383'/><path d='M16.547 14.923 16.164 14'/><path d='m16.547 20.467-.383.924'/><path d='m18.843 14.923.383-.923'/><path d='m19.225 21.391-.382-.924'/><path d='m20.467 16.547.923-.383'/><path d='m20.467 18.843.923.383'/><circle cx='17.695' cy='17.695' r='3'/></svg>"
+            },
+            {
+                "title": "Arquitectura limpia",
+                "description": "El código mantenible no es opcional. Desarrollo sistemas que los futuros ingenieros agradecerán.",
+                "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-code-xml-icon lucide-code-xml'><path d='m18 16 4-4-4-4'/><path d='m6 8-4 4 4 4'/><path d='m14.5 4-5 16'/></svg>"
+            }
+        ]
     },
     "projects": [
         {
