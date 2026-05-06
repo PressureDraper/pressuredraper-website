@@ -48,7 +48,7 @@ export const resolveSlotAtOffset = (
     return lerpSlot(slotLow, slotHigh, blendT);
 };
 
-type Project = (typeof en.projects)[number];
+type Project = (typeof en.projects.cards)[number];
 
 // ─── Pure DOM card renderer ───────────────────────────────────────────────────
 // No React, no async scheduling — innerHTML is set synchronously for avoiding flickering on item change
