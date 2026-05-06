@@ -7,8 +7,10 @@
         "contact": "Contact"
     },
     "hero": {
-        "title": "Precision, by design",
-        "subtitle": "Depth in every layer",
+        "title": "Precision, by",
+        "title2": "design",
+        "subtitle": "Depth",
+        "subtitle2": "in every layer",
         "description": "Software Engineer with +4 years of experience specialized in full-stack development — building a seamless blend of performance, security and aesthetics.",
         "button1": "View Projects",
         "button2": "Download Resume"

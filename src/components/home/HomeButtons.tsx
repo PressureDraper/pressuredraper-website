@@ -1,10 +1,12 @@
 'use client';
 
 import { handleItemClick } from '@/utils/navbar.utils';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 export const HomeButtons = () => {
     const [loading, setLoading] = useState<boolean>(false);
+    const t = useTranslations("hero");
 
     const handleDownload = async () => {
         setLoading(true);
@@ -30,7 +32,7 @@ export const HomeButtons = () => {
     return (
         <div className="flex flex-row gap-4">
             <button aria-label="View Projects" onClick={(e) => handleItemClick(e, 'projects')} className="rounded-xl px-3.5 py-2.5 bg-transparent border-b border-accent-500 text-sm text-neutral-200 font-medium font-body hover:bg-accent-950/30 transition-colors duration-300 hover:cursor-pointer">
-                View Projects <span className="ml-1 font-bold">→</span>
+                {t("button1")} <span className="ml-1 font-bold">→</span>
             </button>
             <button
                 aria-label="Download Resume"
@@ -63,7 +65,7 @@ export const HomeButtons = () => {
                     </div>
                 ) : (
                     <>
-                        <span className="font-bold">↓</span> Download Resume
+                        <span className="font-bold">↓</span> {t("button2")}
                     </>
                 )}
             </button>

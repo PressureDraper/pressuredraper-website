@@ -7,9 +7,11 @@
         "contact": "Contacto"
     },
     "hero": {
-        "title": "Precisión, por diseño",
-        "subtitle": "Profundidad en cada capa",
-        "description": "Ingeniero de Software con +4 años de experiencia especializado en desarrollo full-stack — construyendo una combinación fluida de rendimiento, seguridad y estética.",
+        "title": "Precisión, por",
+        "title2": "diseño",
+        "subtitle": "Profundidad",
+        "subtitle2": "en cada capa",
+        "description": "Ingeniero de Software con +4 años de experiencia especializado en desarrollo full-stack — construyendo una combinación adecuada de rendimiento, seguridad y estética.",
         "button1": "Ver Proyectos",
         "button2": "Descargar CV"
     },
