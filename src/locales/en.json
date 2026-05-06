@@ -618,7 +618,8 @@
     "contact": {
         "title": "Contact",
         "subtitle": "Let's build something great",
-        "description": "I'm open to full-time roles, contract work, and interesting collaborations. Working remotely worldwide. If you're looking for an engineer who cares about quality."
+        "description": "I'm open to full-time roles, contract work, and interesting collaborations. Working remotely worldwide. If you're looking for an engineer who cares about quality.",
+        "button": "Get in Touch"
     },
     "footer": {
         "text1": "All rights reserved.",

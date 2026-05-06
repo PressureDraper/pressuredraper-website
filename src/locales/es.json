@@ -618,7 +618,8 @@
     "contact": {
         "title": "Contacto",
         "subtitle": "Construyamos algo genial",
-        "description": "Estoy abierto a posiciones de tiempo completo, trabajo por contrato y colaboraciones interesantes. Trabajo de forma remota a nivel mundial. Si buscas un ingeniero que se preocupe por la calidad."
+        "description": "Estoy abierto a posiciones de tiempo completo, trabajo por contrato y colaboraciones interesantes. Trabajo de forma remota a nivel mundial. Si buscas un ingeniero que se preocupe por la calidad.",
+        "button": "Contáctame"
     },
     "footer": {
         "text1": "Todos los derechos reservados.",
