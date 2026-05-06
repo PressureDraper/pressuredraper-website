@@ -4,8 +4,10 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { skills } from '@/utils/skills.utils';
 import Image from 'next/image';
 import { ParticlesBackground } from '../UI/ParticlesBackground';
+import { useTranslations } from 'next-intl';
 
 export const Skills = () => {
+    const t = useTranslations("skills");
     const refSkills = useScrollReveal<HTMLDivElement>({
         fadeOut: true,
         y: 80,
@@ -25,14 +27,13 @@ export const Skills = () => {
                 >
                     <div className="flex flex-col gap-6">
                         <span className="text-primary-400 font-display tracking-widest">
-                            Skills
+                            {t("title")}
                         </span>
                         <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold font-display">
-                            Technical depth
+                            {t("subtitle")}
                         </h2>
                         <p className="md:w-2/3 text-neutral-400 text-lg font-body leading-relaxed text-justify">
-                            Technologies I've worked with, grouped by domain. I value depth over
-                            breadth — I'd generally rather master a few tools than skim many.
+                            {t("description")}
                         </p>
                     </div>
 
