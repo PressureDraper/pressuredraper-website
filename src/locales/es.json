@@ -458,7 +458,7 @@
             },
             {
                 "img": "/projects/currencyConverter/cover.webp",
-                "title": "Reto: Conversor de Divisas",
+                "title": "Conversor de Divisas",
                 "date": "Marzo 2023",
                 "desc": [
                     "Desarrollé una aplicación de conversión de divisas como parte del programa Oracle Next Education",
@@ -493,7 +493,7 @@
             },
             {
                 "img": "/projects/cipherDecoder/cover.webp",
-                "title": "Reto: Cifrado de Texto",
+                "title": "Cifrador / Descifrador",
                 "date": "Ene 2023",
                 "desc": [
                     "Construí una aplicación web para cifrado y descifrado de texto como parte del programa Oracle Next Education",

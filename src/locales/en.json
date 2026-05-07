@@ -458,7 +458,7 @@
             },
             {
                 "img": "/projects/currencyConverter/cover.webp",
-                "title": "Currency Converter Challenge",
+                "title": "Currency Converter",
                 "date": "March 2023",
                 "desc": [
                     "Developed a currency converter application as part of the Oracle Next Education Program",
@@ -493,7 +493,7 @@
             },
             {
                 "img": "/projects/cipherDecoder/cover.webp",
-                "title": "Cipher Challenge",
+                "title": "Cipher Decoder",
                 "date": "Jan 2023",
                 "desc": [
                     "Built a web app for text encryption and decryption as part of the Oracle Next Education Program",

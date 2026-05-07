@@ -83,7 +83,7 @@ export const renderCardHTML = (project: Project, index: number, isMobile: boolea
                     loading="lazy"
                     src="${project.img}"
                     alt="cover"
-                    style="width:100%;height:100%;object-fit:cover;aspect-ratio: 16/9;border-radius:14px 14px 0 0;"
+                    style="width:100%;height:auto;object-fit:cover;aspect-ratio: 16/9;"
                 />
             </div>
             <div style="
