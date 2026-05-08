@@ -19,8 +19,8 @@ export const Footer = async () => {
                 </span>
             </div>
 
-            <div className="md:ml-auto flex items-center gap-2">
-                <span className="relative flex items-center justify-center w-4 h-4 -top-0.5">
+            <div className="md:ml-auto flex items-center justify-center gap-2">
+                <span className="relative flex items-center justify-center w-4 h-4">
                     <span
                         className="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-accent-500 opacity-30"
                         style={{ animationDuration: '2s' }}
