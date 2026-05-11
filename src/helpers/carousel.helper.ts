@@ -7,6 +7,7 @@ import {
     TOTAL_CARDS,
 } from '@/utils/carousel.utils';
 import en from '@/locales/en.json';
+import { useLocale } from 'next-intl';
 
 export const wrapIndex = (rawIndex: number) => {
     return ((rawIndex % TOTAL_CARDS) + TOTAL_CARDS) % TOTAL_CARDS;
@@ -55,6 +56,8 @@ type Project = (typeof en.projects.cards)[number];
 // paints the correct content in the exact same frame the index changes.
 
 export const renderCardHTML = (project: Project, index: number, isMobile: boolean): string => {
+    const locale = document.documentElement.lang;
+    
     const bullets = project.desc.map((b) => `<li>${b}</li>`).join('');
 
     const icons = project.icons
@@ -123,15 +126,21 @@ export const renderCardHTML = (project: Project, index: number, isMobile: boolea
                 </ul>
                 <div style="display:grid;grid-template-columns:1;gap:12px;">
                     <div style="display:flex;flex-direction:column;gap:6px;">
-                        <span style="color:var(--color-accent-400);font-size:12px;font-family:var(--font-display);letter-spacing:0.1em;">PROBLEM</span>
+                        <span style="color:var(--color-accent-400);font-size:12px;font-family:var(--font-display);letter-spacing:0.1em;">
+                            ${locale === 'en' ? 'PROBLEM' : 'PROBLEMA'}
+                        </span>
                         <span style="color:var(--color-neutral-300);font-size:14px;font-family:var(--font-body);">${project.problem}</span>
                     </div>
                     <div style="display:flex;flex-direction:column;gap:6px;">
-                        <span style="color:var(--color-accent-400);font-size:12px;font-family:var(--font-display);letter-spacing:0.1em;">SOLUTION</span>
+                        <span style="color:var(--color-accent-400);font-size:12px;font-family:var(--font-display);letter-spacing:0.1em;">
+                            ${locale === 'en' ? 'SOLUTION' : 'SOLUCIÓN'}
+                        </span>
                         <span style="color:var(--color-neutral-300);font-size:14px;font-family:var(--font-body);">${project.solution}</span>
                     </div>
                     <div style="display:flex;flex-direction:column;gap:6px;">
-                        <span style="color:var(--color-accent-400);font-size:12px;font-family:var(--font-display);letter-spacing:0.1em;">KEY DECISIONS</span>
+                        <span style="color:var(--color-accent-400);font-size:12px;font-family:var(--font-display);letter-spacing:0.1em;">
+                            ${locale === 'en' ? 'KEY DECISIONS' : 'DECISIONES CLAVE'}
+                        </span>
                         <span style="color:var(--color-neutral-300);font-size:14px;font-family:var(--font-body);">${project.key_decisions}</span>
                     </div>
                 </div>

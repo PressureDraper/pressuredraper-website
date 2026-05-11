@@ -45,7 +45,7 @@
     "projects": {
         "title": "Proyectos",
         "subtitle": "Trabajo Seleccionado",
-        "description": "Algunos proyectos que muestran cómo pienso — desde la identificación del problema hasta las decisiones de arquitectura y las disyuntivas.",
+        "description": "Algunos proyectos que muestran cómo pienso — desde la identificación del problema hasta las decisiones de arquitectura y disyuntivas.",
         "cards": [
             {
                 "img": "/projects/xalapaMovil/cover.webp",
