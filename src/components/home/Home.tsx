@@ -12,8 +12,9 @@ export const Home = async () => {
                 loop
                 muted
                 playsInline
+                preload='none'
             >
-                <source src="./background.mp4" type="video/mp4" />
+                <source src="./optimized.mp4" type="video/mp4" />
             </video>
 
             <div className="absolute inset-0 bg-neutral-950/55 z-0" />

@@ -24,6 +24,8 @@ export const GSapBackground = () => {
                 {
                     opacity: 1,
                     ease: 'power2.out',
+                    z: 0,
+                    force3D: true,
                     scrollTrigger: {
                         trigger: '#about',
                         start: 'top 70%',
@@ -40,6 +42,8 @@ export const GSapBackground = () => {
                 },
                 {
                     y: (i) => (i === 0 ? '-30dvh' : '220dvh'),
+                    z: 0,
+                    force3D: true,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: '#about',
@@ -62,6 +66,8 @@ export const GSapBackground = () => {
                 {
                     opacity: 1,
                     ease: 'power2.out',
+                    z: 0,
+                    force3D: true,
                     scrollTrigger: {
                         trigger: '#about',
                         start: 'top 70%',
@@ -78,6 +84,8 @@ export const GSapBackground = () => {
                 },
                 {
                     y: (i) => (i === 0 ? '30dvh' : '110dvh'),
+                    z: 0,
+                    force3D: true,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: '#about',
@@ -105,11 +113,13 @@ export const GSapBackground = () => {
         <div ref={refBackground} className="absolute inset-0 z-0 w-full h-full">
             <div
                 ref={refLeftCircle}
-                className="absolute bottom-0 left-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-accent-500/10 xxs:bg-accent-500/25 md:bg-accent-500/10  rounded-full blur-[120px]"
+                className="absolute bottom-0 left-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-accent-500/10 xxs:bg-accent-500/25 md:bg-accent-500/10 rounded-full blur-[80px] md:blur-[120px]"
+                style={{ willChange: 'transform' }}
             />
             <div
                 ref={refRightCircle}
-                className="absolute top-0 xxs:top-20 right-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-primary-500/10 xxs:bg-primary-500/25 md:bg-primary-500/10 rounded-full blur-[120px]"
+                className="absolute top-0 xxs:top-20 right-0 w-80 h-80 md:w-100 md:h-100 2xl:w-150 2xl:h-150 bg-primary-500/10 xxs:bg-primary-500/25 md:bg-primary-500/10 rounded-full blur-[80px] md:blur-[120px]"
+                style={{ willChange: 'transform' }}
             />
         </div>
     );
