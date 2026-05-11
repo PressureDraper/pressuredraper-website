@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { NextIntlClientProvider } from 'next-intl';
+import { SmoothScrollProvider } from '@/components/UI/SmoothScrollProvider';
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://presoftcore.com'),
@@ -107,9 +108,11 @@ export default async function RootLayout({
             </head>
             <body className="flex flex-col min-h-screen bg-neutral-950">
                 <NextIntlClientProvider messages={messages}>
-                    <Navbar />
-                    <main className="flex-1">{children}</main>
-                    <Footer />
+                    <SmoothScrollProvider>
+                        <Navbar />
+                        <main className="flex-1">{children}</main>
+                        <Footer />
+                    </SmoothScrollProvider>
                 </NextIntlClientProvider>
             </body>
         </html>
