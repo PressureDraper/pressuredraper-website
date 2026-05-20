@@ -48,6 +48,50 @@
         "description": "Algunos proyectos que muestran cómo pienso — desde la identificación del problema hasta las decisiones de arquitectura y disyuntivas.",
         "cards": [
             {
+                "img": "/projects/pathology/cover.png",
+                "title": "Órdenes Clínicas",
+                "date": "Mar 2026 — Presente",
+                "desc": [
+                    "Lideré la refactorización de un módulo de órdenes médicas multiárea dentro de un sistema clínico legacy",
+                    "Rediseñé flujos de trabajo para servicios de radiología, laboratorio, banco de sangre, hemodiálisis y patología para mejorar la eficiencia en la atención al paciente",
+                    "Implementé funcionalidades específicas adaptadas a los requerimientos de cada departamento médico",
+                    "Mantuve y extendí un sistema legacy desarrollado con PHP 7.1 y Laravel 8"
+                ],
+                "problem": "El módulo legacy de órdenes médicas carecía de flujos de trabajo optimizados, contenía procesos obsoletos y requería una mejor especialización para las diferentes áreas clínicas",
+                "solution": "Se refactorizó el módulo para mejorar los procesos de atención al paciente mediante formularios rediseñados y funcionalidades específicas para cada departamento",
+                "key_decisions": "Se mantuvo compatibilidad con el sistema legacy, reutilizando código existente y refactorizando cuando fue necesario para mejorar la usabilidad y modularidad",
+                "buttons": [
+                    {
+                        "name": "code",
+                        "active": false
+                    },
+                    {
+                        "name": "docs",
+                        "active": true
+                    },
+                    {
+                        "name": "demo",
+                        "active": false
+                    }
+                ],
+                "icons": [
+                    "laravel",
+                    "php",
+                    "vue",
+                    "typescript",
+                    "bootstrap",
+                    "html",
+                    "css",
+                    "jquery",
+                    "composer",
+                    "gitlab",
+                    "docker",
+                    "mysql"
+                ],
+                "code_url": "",
+                "demo_url": ""
+            },
+            {
                 "img": "/projects/xalapaMovil/cover.webp",
                 "title": "Xalapa Móvil",
                 "date": "Nov 2025 — Ene 2026",
@@ -280,7 +324,7 @@
             },
             {
                 "img": "/projects/ticketsApp/cover.webp",
-                "title": "App de Tickets",
+                "title": "Tickets Bancarios",
                 "date": "Dic 2023",
                 "desc": [
                     "Desarrollé un sistema de tickets bancarios en tiempo real usando Socket.IO",

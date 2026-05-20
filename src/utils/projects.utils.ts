@@ -2,6 +2,44 @@ import { PropsProjectsInfo } from '../interfaces/projects.types';
 
 export const projectsInfo: PropsProjectsInfo[] = [
     {
+        img: `/projects/pathology/cover.png`,
+        title: 'Clinical Orders',
+        date: 'Mar 2026 — Present',
+        desc: [
+            'Led the refactor of a multi-department medical orders module within a legacy clinical system',
+            'Redesigned workflows for radiology, laboratory, blood bank, hemodialysis, and pathology services to improve patient care efficiency',
+            'Implemented area-specific features tailored to each medical department’s requirements',
+            'Maintained and extended a legacy system built with PHP 7.1 and Laravel 8',
+        ],
+        problem:
+            "The legacy medical orders module lacked optimized workflows, contained outdated processes, and required better specialization for different clinical departments",
+        solution:
+            'Refactored the module to improve patient caring processes through redesigned forms and department-specific features',
+        key_decisions:
+            'Maintained legacy compatibility, rehusing current code and refactoring when needed for improving usability and modularity',
+        buttons: [
+            { name: 'code', active: false },
+            { name: 'docs', active: true },
+            { name: 'demo', active: false },
+        ],
+        icons: [
+            'laravel',
+            'php',
+            'vue',
+            'typescript',
+            'bootstrap',
+            'html',
+            'css',
+            'jquery',
+            'composer',
+            'gitlab',
+            'docker',
+            'mysql'
+        ],
+        code_url: '',
+        demo_url: '',
+    },
+    {
         img: `/projects/xalapaMovil/cover.webp`,
         title: 'Xalapa Móvil',
         date: 'Nov 2025 — Jan 2026',
@@ -94,7 +132,7 @@ export const projectsInfo: PropsProjectsInfo[] = [
             'Developed a responsive website with optimized SEO and performance, based on trend designs',
         key_decisions:
             'Used Vite for a fast development experience due to CRA Webpack is deprecated and Framer Motion for smooth animations, prioritizing sections design.',
-            /* 'As we currently are going through an AI era, I wanted to reflect this through a futuristic design using emerging technologies such as Next.js and GSAP', */
+        /* 'As we currently are going through an AI era, I wanted to reflect this through a futuristic design using emerging technologies such as Next.js and GSAP', */
         buttons: [
             { name: 'code', active: true },
             { name: 'docs', active: false },

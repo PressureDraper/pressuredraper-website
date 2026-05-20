@@ -7,7 +7,6 @@ import {
     TOTAL_CARDS,
 } from '@/utils/carousel.utils';
 import en from '@/locales/en.json';
-import { useLocale } from 'next-intl';
 
 export const wrapIndex = (rawIndex: number) => {
     return ((rawIndex % TOTAL_CARDS) + TOTAL_CARDS) % TOTAL_CARDS;
