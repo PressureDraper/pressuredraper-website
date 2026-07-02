@@ -25,11 +25,12 @@ export const skills = [
         badges: [
             'nodejs:Node.js',
             'express:Express.js',
-            'django:Django',
+            'fastapi:FastAPI',
             'prisma-ORM:Prisma ORM',
             'Redis',
             'socketio:Socket.IO',
             'JWT',
+            'oauth:OAuth 2.0',
             'rest:REST APIs',
             'webhook:Webhooks',
         ],
