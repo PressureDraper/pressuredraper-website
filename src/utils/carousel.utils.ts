@@ -20,5 +20,5 @@ export const SLOT_MOBILE: Record<number, SlotDef> = {
 };
 
 export const TOTAL_CARDS = projectsInfo.length;
-export const AUTO_ADVANCE_SPEED = 0.004;
-export const LERP_FACTOR = 0.07;
+export const AUTO_ADVANCE_SPEED = 0.000;
+export const LERP_FACTOR = 0.00;
